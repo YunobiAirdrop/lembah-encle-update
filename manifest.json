@@ -1,0 +1,15 @@
+{
+  "build": "3.8",
+  "appVersion": "3.8",
+  "minWrapper": 24,
+  "publishedAt": "2026-10-29T15:46:45.202Z",
+  "notes": "🌾 Lembah Encle — versi 3.8\n• BARU: Pembaruan di dalam game! Mulai sekarang versi baru cukup diunduh dari dalam game (Pengaturan → Periksa Pembaruan) — tidak perlu lagi memasang ulang APK.\n• Nama game kini \"Lembah Encle\" (nama kampung halaman pembuatnya) — isi permainan & simpananmu tidak berubah.\n• Di balik layar: pemeriksaan versi senyap di layar judul, unduhan terverifikasi keamanan, dan pemulihan otomatis bila versi baru gagal dimuat.",
+  "files": [
+    {
+      "path": "index.html",
+      "url": "files/index.html",
+      "size": 5980072,
+      "sha256": "bd4e75d02c43df8deb7ab09421d6201f7b30cee0f881cb50d2ee41b887fb0e1b"
+    }
+  ]
+}
