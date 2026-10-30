@@ -1,15 +1,15 @@
 {
-  "build": "4.8",
-  "appVersion": "4.8",
+  "build": "4.9",
+  "appVersion": "4.9",
   "minWrapper": 24,
-  "publishedAt": "2026-10-30T09:51:32.490Z",
-  "notes": "Lembah Encle 4.8 — Warisan & Desa Makmur (6 fitur)\n• Proyek Desa: donasikan dana di Balai Desa untuk membangun Jembatan Batu Sungai Timur, Perpustakaan Desa, dan Taman Bunga Desa — kemajuan bangunannya terlihat langsung di dunia, tahap demi tahap.\n• Lomba Antar Desa tahunan: lomba panen, mancing, dan masak bergilir melawan Desa Cempaka, Desa Melati Wetan & Desa Karang Sari — rebut Piala Bergilir untuk Lembah Encle.\n• Pohon Keluarga di Buku Harian: silsilah dari Kakek, kamu, pasangan, anak-anak, sampai Generasi Penerus tercatat rapi.\n• Desa Wisata Bintang 5: penuhi 5 syarat kemakmuran desa (proyek tuntas, rumah renovasi penuh, Album Wisata lengkap, museum, warga bahagia) untuk peresmian + papan nama EMAS \"Desa Wisata Bintang 5\" di gapura desa.\n• Tahun Baru+: mulai permainan baru dari simpanan yang sudah tamat dengan bonus warisan (10% tabungan lama, maks Rp 25.000) + Piagam Warisan — hutang & Segel Bulan tetap dari nol.\n• Surat Terima Kasih: sesudah tamat, warga mengirimi surat terima kasih bergiliran lewat kotak surat rumah.",
+  "publishedAt": "2026-10-30T17:57:29.073Z",
+  "notes": "Lembah Encle 4.9 — Perbaikan Vonis HP: Layar Lega, Visual Naik Kelas (OTA)\n• Toolbar benih permanen DIHAPUS: benih sekarang tinggal di TAS. Ketuk \"Pegang\" pada benih/alat di TAS — hanya item yang dipegang itu yang tampil sebagai satu slot kecil di layar. Layar jauh lebih lega.\n• Potret + nama pemain dipindah menyatu ramping di bar atas bersama pil jam/uang/stamina — tidak lagi melayang menutupi area main.\n• Grafik naik kelas arah Stardew (semua gambar tetap orisinal): tanah garapan bertekstur berlapis, petak & tahap tumbuh tanaman lebih rinci, rumput/jalan lebih kaya, bangunan ber-shading dengan genteng berlapis & papan bertekstur, danau bergradasi dengan kilau air & dermaga rinci, tajuk pohon berlapis, bayangan lebih lembut.\n• Tipografi baru \"Lembah Serif\" (font serif terbuka SIL OFL) di semua layar: dialog, judul panel, HUD, dan menu terasa seperti buku dongeng.\n• Kotak dialog sekarang menempel di BAWAH layar dengan tinggi terbatas — karaktermu dan warga yang bicara tetap terlihat penuh beranimasi di atasnya; kamera bergeser otomatis saat dialog.\n• PEMBUKA SINEMATIK untuk permainan baru: baca Surat Warisan Kakek di layar perkamen, nikmati perjalanan beranimasi menuju Lembah Encle, disambut Pak Kades di gapura, lalu berjalan bersama ke rumah ladang sebelum serah-terima. Ada tombol Lewati; simpanan lama tidak dipaksa mengulang.\n• Hutang KUD, misi, Segel Bulan, dan seluruh isi simpanan lama tetap utuh.",
   "files": [
     {
       "path": "index.html",
       "url": "files/index.html",
-      "size": 6531212,
-      "sha256": "005410250e535333c62e3727d2352a5c8fa3c331368b072e02b4d429262e6453"
+      "size": 6733563,
+      "sha256": "27a816f95acaa956cef1cbf4c28618c210a2376b0bc45d4ca67cefe232d168b1"
     }
   ]
 }
