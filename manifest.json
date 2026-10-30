@@ -1,15 +1,15 @@
 {
-  "build": "3.8",
-  "appVersion": "3.8",
+  "build": "4.8",
+  "appVersion": "4.8",
   "minWrapper": 24,
-  "publishedAt": "2026-10-29T15:46:45.202Z",
-  "notes": "🌾 Lembah Encle — versi 3.8\n• BARU: Pembaruan di dalam game! Mulai sekarang versi baru cukup diunduh dari dalam game (Pengaturan → Periksa Pembaruan) — tidak perlu lagi memasang ulang APK.\n• Nama game kini \"Lembah Encle\" (nama kampung halaman pembuatnya) — isi permainan & simpananmu tidak berubah.\n• Di balik layar: pemeriksaan versi senyap di layar judul, unduhan terverifikasi keamanan, dan pemulihan otomatis bila versi baru gagal dimuat.",
+  "publishedAt": "2026-10-30T09:51:32.490Z",
+  "notes": "Lembah Encle 4.8 — Warisan & Desa Makmur (6 fitur)\n• Proyek Desa: donasikan dana di Balai Desa untuk membangun Jembatan Batu Sungai Timur, Perpustakaan Desa, dan Taman Bunga Desa — kemajuan bangunannya terlihat langsung di dunia, tahap demi tahap.\n• Lomba Antar Desa tahunan: lomba panen, mancing, dan masak bergilir melawan Desa Cempaka, Desa Melati Wetan & Desa Karang Sari — rebut Piala Bergilir untuk Lembah Encle.\n• Pohon Keluarga di Buku Harian: silsilah dari Kakek, kamu, pasangan, anak-anak, sampai Generasi Penerus tercatat rapi.\n• Desa Wisata Bintang 5: penuhi 5 syarat kemakmuran desa (proyek tuntas, rumah renovasi penuh, Album Wisata lengkap, museum, warga bahagia) untuk peresmian + papan nama EMAS \"Desa Wisata Bintang 5\" di gapura desa.\n• Tahun Baru+: mulai permainan baru dari simpanan yang sudah tamat dengan bonus warisan (10% tabungan lama, maks Rp 25.000) + Piagam Warisan — hutang & Segel Bulan tetap dari nol.\n• Surat Terima Kasih: sesudah tamat, warga mengirimi surat terima kasih bergiliran lewat kotak surat rumah.",
   "files": [
     {
       "path": "index.html",
       "url": "files/index.html",
-      "size": 5980072,
-      "sha256": "bd4e75d02c43df8deb7ab09421d6201f7b30cee0f881cb50d2ee41b887fb0e1b"
+      "size": 6531212,
+      "sha256": "005410250e535333c62e3727d2352a5c8fa3c331368b072e02b4d429262e6453"
     }
   ]
 }
