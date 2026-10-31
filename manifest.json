@@ -1,15 +1,15 @@
 {
-  "build": "4.9",
-  "appVersion": "4.9",
+  "build": "4.10",
+  "appVersion": "4.10",
   "minWrapper": 24,
-  "publishedAt": "2026-10-30T17:57:29.073Z",
-  "notes": "Lembah Encle 4.9 — Perbaikan Vonis HP: Layar Lega, Visual Naik Kelas (OTA)\n• Toolbar benih permanen DIHAPUS: benih sekarang tinggal di TAS. Ketuk \"Pegang\" pada benih/alat di TAS — hanya item yang dipegang itu yang tampil sebagai satu slot kecil di layar. Layar jauh lebih lega.\n• Potret + nama pemain dipindah menyatu ramping di bar atas bersama pil jam/uang/stamina — tidak lagi melayang menutupi area main.\n• Grafik naik kelas arah Stardew (semua gambar tetap orisinal): tanah garapan bertekstur berlapis, petak & tahap tumbuh tanaman lebih rinci, rumput/jalan lebih kaya, bangunan ber-shading dengan genteng berlapis & papan bertekstur, danau bergradasi dengan kilau air & dermaga rinci, tajuk pohon berlapis, bayangan lebih lembut.\n• Tipografi baru \"Lembah Serif\" (font serif terbuka SIL OFL) di semua layar: dialog, judul panel, HUD, dan menu terasa seperti buku dongeng.\n• Kotak dialog sekarang menempel di BAWAH layar dengan tinggi terbatas — karaktermu dan warga yang bicara tetap terlihat penuh beranimasi di atasnya; kamera bergeser otomatis saat dialog.\n• PEMBUKA SINEMATIK untuk permainan baru: baca Surat Warisan Kakek di layar perkamen, nikmati perjalanan beranimasi menuju Lembah Encle, disambut Pak Kades di gapura, lalu berjalan bersama ke rumah ladang sebelum serah-terima. Ada tombol Lewati; simpanan lama tidak dipaksa mengulang.\n• Hutang KUD, misi, Segel Bulan, dan seluruh isi simpanan lama tetap utuh.",
+  "publishedAt": "2026-10-31T00:27:32.153Z",
+  "notes": "Lembah Encle 4.10 — Perbaikan Vonis HP Kedua: TAS Sembuh, Menu Wajar, Desa Ditata Ulang (OTA)\n• BUG TAS DIPERBAIKI: tombol TAS sempat tidak merespons ketukan karena zona joystik menutupi pita HUD sesudah tata letak bar atas berubah. Zona joystik kini mulai di bawah pita HUD dan ada jaring pengaman ketukan TAS — TAS selalu bisa dibuka, termasuk saat memegang benih/alat dan sesudah menutup panel lain.\n• MENU JEDA MODEL GAME PADA UMUMNYA: kisi tombol emas diganti menu daftar rapi dengan bagian Permainan / Suara & Musik / Kontrol / Lainnya — ada slider Volume Musik, Volume SFX & Sensitivitas Joystick, saklar NYALA/MATI untuk Musik, Suara & Getar, dan semua menu lama (Buku Harian, Peta Dunia, Kendaraan, Profil & Prestasi, Ensiklopedia, Buku Koleksi & Museum, Kode Hadiah, Kostum, Makan/Minum dari Tas, Mode Foto, Pengaturan, Periksa Pembaruan, Kredit) tetap lengkap.\n• TOMBOL HP DI TEPI KIRI: Ponselku sekarang dibuka dari tombol berbentuk HP yang menempel ramping di bar tepi kiri layar — selalu siap selama bermain, tidak lagi terkubur di menu. Isi Ponselku tidak berubah.\n• TATA DESA BARU: rumah & toko tidak lagi berjajar satu baris. Enam belas bangunan ditata ulang organik mengelilingi jalan & plaza — toko pancing di selatan dekat guild, toko sepeda di utara dekat rumah, bengkel & dealer jadi distrik otomotif di timur, puskesmas & klinik menyebar, warung & stan pindah dekat persimpangan — lengkap dengan teras paving & jalan setapak ke tiap pintu, pepohonan & semak pengisi celah. Semua toko tetap buka seperti biasa, jadwal warga & semua titik kumpul (musholla, Balai, terminal, festival, proyek desa) sudah diverifikasi ulang sampai.\n• SAPU TAMPANG PANEL: panel-panel yang sering dipakai (pilihan dialog, TAS, toko, pengaturan) dinormalkan ke pola daftar & baris item yang wajar — tidak ada lagi kisi tombol emas seragam.\n• Seluruh simpanan lama tetap terbaca; hutang KUD, misi, Segel Bulan, dan progresmu utuh.",
   "files": [
     {
       "path": "index.html",
       "url": "files/index.html",
-      "size": 6733563,
-      "sha256": "27a816f95acaa956cef1cbf4c28618c210a2376b0bc45d4ca67cefe232d168b1"
+      "size": 6742223,
+      "sha256": "9a537533bb44a4f55df670f3d0dc6c8c08ace25b594f3d1fabdbc7b67e75006b"
     }
   ]
 }
