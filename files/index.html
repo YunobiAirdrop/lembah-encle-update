@@ -155,7 +155,7 @@ window.addEventListener('load', function(){ setTimeout(function(){ if(!window.__
      BUKAN hanya strip bar bawah, agar jempol bisa mendarat di mana pun di sisi kiri. */
   #joy { position:fixed; width:104px; height:104px; margin:-52px 0 0 -52px; opacity:0; transition:opacity .15s; z-index:6; pointer-events:none; }
   #joy.on { opacity:1; }
-  #joyZone { position:fixed; left:0; top:0; width:48%; height:100%; height:100dvh; z-index:4; pointer-events:auto; touch-action:none; }
+  #joyZone { position:fixed; left:0; top:118px; width:48%; height:calc(100% - 118px); height:calc(100dvh - 118px); z-index:4; pointer-events:auto; touch-action:none; }
   #minimap { position:absolute; top:54px; right:8px; z-index:5; border:2px solid rgba(201,164,92,.8); border-radius:8px; opacity:.88; background:#2c4d22; pointer-events:auto; cursor:pointer; }
   #btnPause { position:absolute; top:8px; right:8px; z-index:7; width:40px; height:40px; border-radius:50%; border:2px solid #c9a45c; background:rgba(30,24,14,.8); color:#ffd968; font-size:17px; cursor:pointer; display:none; }
   #rotateHint { position:absolute; left:50%; bottom:134px; transform:translateX(-50%); z-index:15; display:none; background:rgba(20,30,12,.85); color:#ffe9a8; font-size:13px; text-align:center; padding:7px 16px; border-radius:16px; line-height:1.4; pointer-events:none; white-space:nowrap; max-width:94vw; }
@@ -293,6 +293,38 @@ body, button, input, select, textarea, .panel, .hudbox, .toolbtn, .shoprow, .cho
 #cineJourney21 .cineBtns21 { justify-content:center; }
 .cineBtns21 button { font-family:inherit; font-size:13.5px; font-weight:700; border:2px solid #6a4a10; background:linear-gradient(180deg,#f7e8c3,#ecd9a8); color:#4a3208; border-radius:9px; padding:8px 13px; cursor:pointer; }
 .cineBtns21 button.utama { background:linear-gradient(180deg,#b57e42,#8a5a2b 55%,#74491f); color:#ffe9a8; border-color:#40260a; box-shadow:0 3px 0 #40260a; }
+</style>
+<style id="p22style">
+
+/* ================= TAHAP P22 — menu konvensional, bar HP kiri, sapu panel ================= */
+/* B: menu jeda model daftar game pada umumnya */
+#pauseBtns { display:block !important; max-height:60dvh; overflow-y:auto; padding:2px 2px 4px; }
+#pauseBtns .m22sec { font:700 11px var(--fontUI); letter-spacing:.13em; text-transform:uppercase; color:#8a6a3f; margin:11px 2px 5px; }
+#pauseBtns .m22sec:first-child { margin-top:2px; }
+#pauseBtns .m22row { display:flex; align-items:center; gap:8px; width:100%; box-sizing:border-box; padding:7px 10px; margin:0 0 5px; background:#fdf6e3; border:1.5px solid #b98d54; border-radius:8px; color:#4a2f14; font:600 13.5px var(--fontUI); text-align:left; cursor:pointer; box-shadow:none; text-shadow:none; }
+#pauseBtns .m22row:active { background:#f0dcb2; }
+#pauseBtns .m22lab { flex:1; }
+#pauseBtns .m22lab b { color:#7a4d16; }
+#pauseBtns .m22chev { flex:0 0 auto; font-weight:700; color:#a3763a; font-size:15px; }
+#pauseBtns .m22tog { flex:0 0 auto; min-width:56px; text-align:center; padding:3px 8px; border-radius:20px; border:1.5px solid #8a5a1e; font:700 11px var(--fontUI); }
+#pauseBtns .m22tog.on { background:#3e7d32; color:#fff; border-color:#2c5c23; }
+#pauseBtns .m22tog.off { background:#e9e1cd; color:#6b543a; }
+#pauseBtns .m22row input[type=range] { flex:0 0 108px; accent-color:#8a5a1e; height:22px; }
+/* C: bar tepi kiri + tombol berbentuk HP */
+#sideBar22 { position:fixed; left:5px; top:50%; transform:translateY(-50%); z-index:7; display:none; flex-direction:column; align-items:center; gap:8px; }
+body.playing #sideBar22 { display:flex; }
+body.photomode #sideBar22 { display:none !important; }
+#btnPhone22 { position:relative; width:30px; height:52px; border-radius:9px; background:linear-gradient(180deg,#3a3f4a,#22252c); border:2px solid #101216; box-shadow:0 2px 6px rgba(0,0,0,.45), inset 0 0 0 2px #4a505c; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; padding:4px 0 0; cursor:pointer; }
+#btnPhone22 .ph-scr22 { width:19px; height:25px; border-radius:3px; background:linear-gradient(180deg,#a8dcf0,#5aa7c7); box-shadow:inset 0 0 3px rgba(255,255,255,.7); }
+#btnPhone22 .ph-lab22 { font:700 8.5px var(--fontUI); color:#ffd75e; letter-spacing:.08em; margin-top:2px; }
+#btnPhone22 .ph-dot22 { width:5px; height:5px; border-radius:50%; background:#9aa0a8; margin-top:2px; }
+#btnPhone22 .badge22 { position:absolute; top:-6px; right:-7px; min-width:16px; height:16px; border-radius:9px; background:#d3352b; color:#fff; font:700 10px var(--fontUI); display:none; align-items:center; justify-content:center; padding:0 3px; box-shadow:0 1px 3px rgba(0,0,0,.4); }
+/* E: sapu tampang "kisi tombol emas" pada panel-panel umum -> daftar perkamen */
+.choices button, .shoprow button { background:#fdf6e3 !important; background-image:none !important; color:#4a2f14 !important; border:1.5px solid #b98d54 !important; border-radius:8px !important; box-shadow:none !important; text-shadow:none !important; font-weight:600 !important; }
+.choices button:active, .shoprow button:active { background:#f0dcb2 !important; }
+#shop .shoprow, #settings .shoprow { border-radius:6px; }
+.panel h3 { letter-spacing:.01em; }
+
 </style>
 </head>
 <body>
@@ -937,6 +969,10 @@ function rectG(x,y,w,h,v){ for(let j=y;j<y+h;j++) for(let i=x;i<x+w;i++) setG(i,
 rectG(0,14,MAPW,2,1); rectG(19,0,2,MAPH,1);
 // Paving depan bangunan
 rectG(2,8,7,1,2); rectG(28,8,9,1,2); rectG(28,22,9,1,2); rectG(8,22,9,1,2);
+// Tahap P22: teras & setapak tata desa baru
+rectG(16,8,3,1,2); rectG(44,23,3,1,2); rectG(42,21,3,1,2); rectG(21,21,9,1,2);
+rectG(11,17,2,1,2); rectG(26,28,3,1,2); rectG(42,29,3,1,2); rectG(40,39,3,1,2);
+rectG(8,34,3,1,2); rectG(24,24,3,1,2); rectG(33,23,3,1,2);
 // Sawah berjenjang di tepi kanan & bawah-kiri
 rectG(34,17,6,4,3); rectG(35,21,5,4,3); rectG(36,25,4,5,3);
 rectG(0,24,5,3,3); rectG(0,27,6,3,3);
@@ -1441,7 +1477,7 @@ addProp({ id:'board', x:18, y:29, w:2, h:1, interact:'board', draw(gx,gy){
 }});
 
 /* Warkop — buka malam, tempat nongkrong warga */
-addProp({ id:'warkop', x:4, y:22, w:2, h:2, interact:'warkop', door:{x:5,y:23}, draw(gx,gy){ // Tahap 11: digeser ke barat Balai (lahan lama jadi Petak Timur)
+addProp({ id:'warkop', x:6, y:12, w:2, h:2, interact:'warkop', door:{x:7,y:13}, draw(gx,gy){ // Tahap 11: digeser ke barat Balai (lahan lama jadi Petak Timur)
   const w = 2*TILE, h = 2*TILE;
   ctx.fillStyle = 'rgba(0,0,0,.15)'; ctx.fillRect(gx+3, gy+h-5, w-2, 6);
   ctx.fillStyle = '#4a6b8a'; ctx.beginPath(); ctx.moveTo(gx-3, gy+16); ctx.lineTo(gx+w/2, gy+0); ctx.lineTo(gx+w+3, gy+16); ctx.closePath(); ctx.fill();
@@ -1468,7 +1504,7 @@ addProp({ id:'madura', x:17, y:17, w:2, h:2, interact:'madura', door:{x:18,y:18}
 }});
 
 /* Toko Bunga Laras (Tahap 7) — stan bunga di dekat Balai Desa */
-addProp({ id:'tokobunga', x:17, y:22, w:2, h:2, interact:'tokobunga', door:{x:18,y:23}, draw(gx,gy){
+addProp({ id:'tokobunga', x:21, y:19, w:2, h:2, interact:'tokobunga', door:{x:22,y:20}, draw(gx,gy){
   const w = 2*TILE, h = 2*TILE;
   ctx.fillStyle = 'rgba(0,0,0,.15)'; ctx.fillRect(gx+3, gy+h-5, w-2, 6);
   ctx.fillStyle = '#7a4d21'; ctx.fillRect(gx+4, gy+16, 4, h-18); ctx.fillRect(gx+w-8, gy+16, 4, h-18);
@@ -1483,7 +1519,7 @@ addProp({ id:'tokobunga', x:17, y:22, w:2, h:2, interact:'tokobunga', door:{x:18
 }});
 
 /* Bengkel Kayu Bimo (Tahap 7) — bengkel terbuka dekat hutan utara */
-addProp({ id:'bengkel', x:30, y:11, w:3, h:2, interact:'bengkel', door:{x:31,y:12}, draw(gx,gy){
+addProp({ id:'bengkel', x:44, y:21, w:3, h:2, interact:'bengkel', door:{x:45,y:22}, draw(gx,gy){
   const w = 3*TILE, h = 2*TILE;
   ctx.fillStyle = 'rgba(0,0,0,.15)'; ctx.fillRect(gx+3, gy+h-5, w-2, 6);
   ctx.fillStyle = '#6e4520'; ctx.fillRect(gx+4, gy+14, 5, h-16); ctx.fillRect(gx+w-9, gy+14, 5, h-16); ctx.fillRect(gx+w/2-2, gy+14, 5, h-16);
@@ -1503,7 +1539,7 @@ addProp({ id:'bengkel', x:30, y:11, w:3, h:2, interact:'bengkel', door:{x:31,y:1
 /* Rumah kecil Nenek Sarmi (Tahap 7) — dekat Musholla (timur-lautnya; titik bebas semak melati & jangkar festival) */
 /* RM Padang Uni Ros (Tahap 8) — stan 2×2 di kawasan pasar depan Balai, atap gonjong khas Minang */
 /* Tahap 11: Traktor Mini parkir di samping Bengkel Bimo (kosong dari parkiran saat disewa pemain) */
-addProp({ id:'traktor', x:28, y:12, w:2, h:1, draw(gx,gy){ drawTractorPark(gx, gy); } });
+addProp({ id:'traktor', x:42, y:22, w:2, h:1, draw(gx,gy){ drawTractorPark(gx, gy); } });
 /* Tahap 11: papan & pagar Petak Timur — sebelum dibeli bertuliskan TANAH DIJUAL (KUD),
    sesudah dibeli jadi papan LAHAN BARU dengan tiang pagar bambu di tepi utaranya */
 addProp({ id:'lahanTimur', x:21, y:7, w:1, h:1, solid:false, draw(gx,gy){
@@ -1516,7 +1552,7 @@ addProp({ id:'lahanTimur', x:21, y:7, w:1, h:1, solid:false, draw(gx,gy){
     signBoard(gx - 20, gy + 8, 74, 'TANAH DIJUAL', '#8a7a5a', '#fff2cf');
   }
 } });
-addProp({ id:'rmpadang', x:15, y:22, w:2, h:2, interact:'rmpadang', door:{x:16,y:23}, draw(gx,gy){
+addProp({ id:'rmpadang', x:10, y:20, w:2, h:2, interact:'rmpadang', door:{x:11,y:21}, draw(gx,gy){
   const w = 2*TILE, h = 2*TILE;
   ctx.fillStyle = 'rgba(0,0,0,.15)'; ctx.fillRect(gx+2, gy+h-4, w-2, 6);
   ctx.fillStyle = '#fdf3e0'; ctx.fillRect(gx+4, gy+22, w-8, h-24);
@@ -1535,7 +1571,7 @@ addProp({ id:'rmpadang', x:15, y:22, w:2, h:2, interact:'rmpadang', door:{x:16,y
 }});
 
 /* Klinik Hewan (Tahap 8) — menempel di sisi barat Puskesmas */
-addProp({ id:'klinik', x:22, y:24, w:2, h:2, interact:'klinik', door:{x:23,y:25}, draw(gx,gy){
+addProp({ id:'klinik', x:24, y:22, w:2, h:2, interact:'klinik', door:{x:25,y:23}, draw(gx,gy){
   const w = 2*TILE, h = 2*TILE;
   ctx.fillStyle = 'rgba(0,0,0,.15)'; ctx.fillRect(gx+2, gy+h-4, w-2, 6);
   ctx.fillStyle = '#f2fbf2'; ctx.fillRect(gx+4, gy+20, w-8, h-22);
@@ -1662,7 +1698,7 @@ addProp({ id:'bendera', x:16, y:26, w:1, h:2, interact:'festival', draw(gx,gy){
 }});
 
 /* Puskesmas — palang hijau */
-addProp({ id:'puskesmas', x:24, y:24, w:7, h:5, door:{x:27,y:28}, interact:'puskesmas', draw(gx,gy){
+addProp({ id:'puskesmas', x:40, y:24, w:7, h:5, door:{x:43,y:28}, interact:'puskesmas', draw(gx,gy){
   const w = 7*TILE, h = 5*TILE;
   ctx.fillStyle = 'rgba(0,0,0,.15)'; ctx.fillRect(gx+4, gy+h-6, w-4, 8);
   ctx.fillStyle = '#ffffff'; ctx.fillRect(gx+10, gy+46, w-20, h-46);
@@ -1778,7 +1814,7 @@ addProp({ id:'sd', x:9, y:0, w:6, h:3, door:{ x:11, y:2 }, sign:'🏫 SD NEGERI'
   ctx.fillStyle = '#f5f5f5'; ctx.fillRect(gx + 15, gy + h - 34, 16, 6);
 }});
 
-addProp({ id:'stanCukur', x:2, y:22, w:2, h:1, interact:'cukur', door:{x:3,y:22}, sign:'💈 CUKUR', draw(gx, gy){
+addProp({ id:'stanCukur', x:11, y:16, w:2, h:1, interact:'cukur', door:{x:12,y:16}, sign:'💈 CUKUR', draw(gx, gy){
   ctx.fillStyle = 'rgba(0,0,0,.12)'; ctx.fillRect(gx + 2, gy + 29, 60, 4);
   ctx.fillStyle = '#e8e0cc'; ctx.fillRect(gx + 4, gy + 12, 56, 18);
   ctx.fillStyle = '#6e4520'; ctx.fillRect(gx + 4, gy + 12, 3, 18); ctx.fillRect(gx + 57, gy + 12, 3, 18);
@@ -1793,7 +1829,7 @@ addProp({ id:'stanCukur', x:2, y:22, w:2, h:1, interact:'cukur', door:{x:3,y:22}
   ctx.fillStyle = '#e8c85a'; ctx.fillRect(gx + 35, gy + 21, 2.6, 2.6);
 }});
 
-addProp({ id:'penggilingan', x:33, y:22, w:2, h:1, interact:'giling', door:{x:34,y:22}, sign:'🌾 GILING PADI', draw(gx, gy){
+addProp({ id:'penggilingan', x:22, y:17, w:2, h:1, interact:'giling', door:{x:23,y:17}, sign:'🌾 GILING PADI', draw(gx, gy){
   ctx.fillStyle = 'rgba(0,0,0,.12)'; ctx.fillRect(gx + 2, gy + 29, 60, 4);
   ctx.fillStyle = '#cbb489'; ctx.fillRect(gx + 4, gy + 12, 56, 18);
   ctx.fillStyle = '#6e4520'; ctx.fillRect(gx + 4, gy + 12, 3, 18); ctx.fillRect(gx + 57, gy + 12, 3, 18);
@@ -1803,7 +1839,7 @@ addProp({ id:'penggilingan', x:33, y:22, w:2, h:1, interact:'giling', door:{x:34
   ctx.fillStyle = '#d9c391'; ctx.beginPath(); ctx.roundRect(gx + 48, gy + 21, 11, 9, 3); ctx.fill(); ctx.fillStyle = '#8a6a34'; ctx.fillRect(gx + 50, gy + 23.5, 7, 2);
 }});
 
-addProp({ id:'gerobakGorengan', x:21, y:23, w:2, h:1, interact:'gorengan', door:{x:22,y:23}, sign:'🍌 GORENGAN', draw(gx, gy){
+addProp({ id:'gerobakGorengan', x:33, y:22, w:2, h:1, interact:'gorengan', door:{x:34,y:22}, sign:'🍌 GORENGAN', draw(gx, gy){
   ctx.fillStyle = 'rgba(0,0,0,.12)'; ctx.fillRect(gx + 2, gy + 29, 60, 4);
   ctx.fillStyle = '#e5cf9f'; ctx.fillRect(gx + 4, gy + 12, 56, 18);
   ctx.fillStyle = '#6e4520'; ctx.fillRect(gx + 4, gy + 12, 3, 18); ctx.fillRect(gx + 57, gy + 12, 3, 18);
@@ -1818,11 +1854,11 @@ addProp({ id:'gerobakGorengan', x:21, y:23, w:2, h:1, interact:'gorengan', door:
 
 /* ================= TAHAP P3: BANGUNAN TOKO BARU (berpintu, berinterior) ================= */
 rectG(1, 13, 5, 1, 2); rectG(12, 13, 5, 1, 2); rectG(33, 13, 6, 1, 2); rectG(7, 35, 6, 1, 2); rectG(39, 36, 6, 1, 2);
-addProp({ id:'tokopancing', x:1, y:10, w:5, h:3, door:{x:3,y:12}, draw(gx, gy){ drawShopP3(gx, gy, { wt:5, ht:3, wall:'#dcebe4', roof:'#2c7a3f', roof2:'#35914e', sign:'TOKO PANCING', signBg:'#1f5c2e' }); } });
-addProp({ id:'tokosepeda', x:12, y:10, w:5, h:3, door:{x:15,y:12}, draw(gx, gy){ drawShopP3(gx, gy, { wt:5, ht:3, wall:'#f3e3c2', roof:'#8a5a2b', roof2:'#a5713d', sign:'TOKO SEPEDA', signBg:'#7a4d12' }); } });
-addProp({ id:'dealer', x:33, y:10, w:6, h:4, door:{x:36,y:13}, draw(gx, gy){ drawShopP3(gx, gy, { wt:6, ht:4, wall:'#e8e6df', roof:'#37455e', roof2:'#46586e', sign:'DEALER MOTOR & MOBIL', signBg:'#26374a', showroom:true }); } });
-addProp({ id:'tokoperabot', x:7, y:31, w:6, h:4, door:{x:10,y:34}, draw(gx, gy){ drawShopP3(gx, gy, { wt:6, ht:4, wall:'#f7e8ee', roof:'#8a2f4f', roof2:'#a83a5f', sign:'TOKO PERABOTAN', signBg:'#6e243d' }); } });
-addProp({ id:'tokobangunan', x:39, y:32, w:6, h:4, door:{x:42,y:35}, draw(gx, gy){ drawShopP3(gx, gy, { wt:6, ht:4, wall:'#e9dfc8', roof:'#6e5136', roof2:'#84643f', sign:'TOKO BANGUNAN', signBg:'#54350f' }); } });
+addProp({ id:'tokopancing', x:7, y:31, w:5, h:3, door:{x:9,y:33}, draw(gx, gy){ drawShopP3(gx, gy, { wt:5, ht:3, wall:'#dcebe4', roof:'#2c7a3f', roof2:'#35914e', sign:'TOKO PANCING', signBg:'#1f5c2e' }); } });
+addProp({ id:'tokosepeda', x:13, y:5, w:5, h:3, door:{x:16,y:7}, draw(gx, gy){ drawShopP3(gx, gy, { wt:5, ht:3, wall:'#f3e3c2', roof:'#8a5a2b', roof2:'#a5713d', sign:'TOKO SEPEDA', signBg:'#7a4d12' }); } });
+addProp({ id:'dealer', x:40, y:17, w:6, h:4, door:{x:43,y:20}, draw(gx, gy){ drawShopP3(gx, gy, { wt:6, ht:4, wall:'#e8e6df', roof:'#37455e', roof2:'#46586e', sign:'DEALER MOTOR & MOBIL', signBg:'#26374a', showroom:true }); } });
+addProp({ id:'tokoperabot', x:24, y:24, w:6, h:4, door:{x:27,y:27}, draw(gx, gy){ drawShopP3(gx, gy, { wt:6, ht:4, wall:'#f7e8ee', roof:'#8a2f4f', roof2:'#a83a5f', sign:'TOKO PERABOTAN', signBg:'#6e243d' }); } });
+addProp({ id:'tokobangunan', x:38, y:35, w:6, h:4, door:{x:41,y:38}, draw(gx, gy){ drawShopP3(gx, gy, { wt:6, ht:4, wall:'#e9dfc8', roof:'#6e5136', roof2:'#84643f', sign:'TOKO BANGUNAN', signBg:'#54350f' }); } });
 
 /* Gapura desa */
 /* Terminal bus antarkota (Tahap 10) — pintu ke Area 2 JAKARTA, di sebelah timur gapura */
@@ -1884,7 +1920,7 @@ addProp({ id:'gerobak', x:24, y:13, w:2, h:1, draw(gx,gy){ // Tahap 11: digeser 
 }});
 
 /* Motor bebek & sepeda ontel terparkir */
-addProp({ id:'motor', x:29, y:12, w:1, h:1, draw(gx,gy){ // Tahap 11: digeser ke samping Bengkel Bimo
+addProp({ id:'motor', x:47, y:21, w:1, h:1, draw(gx,gy){ // Tahap 11: digeser ke samping Bengkel Bimo
   ctx.fillStyle = 'rgba(0,0,0,.18)'; ctx.fillRect(gx+2, gy+25, 28, 4);
   ctx.fillStyle = '#222'; ctx.beginPath(); ctx.arc(gx+7, gy+23, 5, 0, 7); ctx.arc(gx+26, gy+23, 5, 0, 7); ctx.fill();
   ctx.fillStyle = '#c22f2f'; ctx.fillRect(gx+8, gy+12, 14, 8); ctx.fillRect(gx+20, gy+8, 6, 6);
@@ -1975,7 +2011,7 @@ function semakBunga(gx,gy){
 const TREE_DRAW = { mangga:pohonMangga, pisang:pohonPisang, kelapa:pohonKelapa, bunga:semakBunga };
 [[1,1,'mangga'],[8,1,'pisang'],[16,1,'kelapa'],[31,1,'pisang'],[38,1,'kelapa'],
  [1,12,'pisang'],[5,16,'kelapa'],[14,16,'bunga'],[30,15,'bunga'],[38,20,'pisang'],
- [1,21,'mangga'],[22,20,'pisang'],[8,20,'bunga'],[15,27,'mangga'],[21,28,'pisang'],[33,28,'kelapa'],[39,7,'mangga'],[11,16,'pisang']
+ [1,21,'mangga'],[23,16,'pisang'],[8,20,'bunga'],[15,27,'mangga'],[21,28,'pisang'],[33,28,'kelapa'],[39,7,'mangga'],[10,13,'pisang'],[31,16,'bunga'],[46,29,'mangga'],[23,24,'bunga'],[7,29,'mangga']
 ].forEach(([x,y,k])=> addProp({ id:'pohon'+x+'_'+y, x, y, w:1, h:1, interact: k==='bunga' ? 'bunga' : undefined, draw:(gx,gy)=>TREE_DRAW[k](gx,gy) }));
 
 /* Rumah Pohon Beringin — landmark pusat desa (acuan livery; digambar prosedural, orisinal) */
@@ -5242,29 +5278,29 @@ function clinicCare(){
 const NPC_SCHEDULES = {
   slamet:  [[8,12,23,0],[11,11,29,1],[14,12,22,1],[19,23,13,1],[24,12,23,0]],
   tini:    [[9,31,8,0],[12,31,8,0],[15,30,15,2],[18,23,14,1],[20,11,29,1],[24,31,8,0]],
-  budi:    [[8,26,13,1],[11,33,22,0],[15,33,22,0],[18,18,19,1],[20,20,17,2],[24,33,22,0]],
-  ayu:     [[7,23,28,1],[15,26,23,0],[18,24,14,1],[21,15,29,1],[24,26,23,0]],
+  budi:    [[8,26,13,1],[11,22,17,0],[15,22,17,0],[18,18,19,1],[20,20,17,2],[24,22,17,0]],
+  ayu:     [[7,23,28,1],[15,42,23,0],[18,24,14,1],[21,15,29,1],[24,42,23,0]],
   dimas:   [[10,10,29,1],[13,10,3,1],[15,20,17,2],[18,20,9,2],[24,14,14,0]],
   harto:   [[9,12,29,1],[13,12,22,1],[16,23,28,1],[19,20,14,1],[24,12,29,0]],
   sri:     [[9,25,14,1],[13,23,14,1],[16,11,29,1],[19,24,28,1],[24,25,14,0]],
   udin:    [[9,20,26,1],[12,27,15,1],[15,25,13,1],[19,23,14,1],[23,27,13,1],[24,20,26,0]],
   ratna:   [[10,11,29,1],[13,10,3,1],[17,11,29,1],[19,23,14,1],[21,20,14,1],[24,11,29,0]],
-  karso:   [[9,24,22,1],[13,3,23,2],[17,22,28,1],[19,11,29,1],[24,24,22,0]],
+  karso:   [[9,23,21,1],[13,3,23,2],[17,22,28,1],[19,11,29,1],[24,23,21,0]],
   pengepul:[[24,25,13,0]],
-  laras:   [[8,15,29,0],[11,17,24,0],[13,23,14,1],[16,17,24,0],[19,12,20,1],[24,15,29,0]],
-  bimo:    [[9,20,17,2],[13,31,13,0],[16,31,13,0],[19,20,9,2],[24,22,21,0]],
-  sarmi:   [[9,15,17,0],[12,15,22,0],[15,23,14,1],[18,15,22,0],[20,11,29,1],[24,15,17,0]],
+  laras:   [[8,15,29,0],[11,21,21,0],[13,23,14,1],[16,21,21,0],[19,12,20,1],[24,15,29,0]],
+  bimo:    [[9,20,17,2],[13,45,23,0],[16,45,23,0],[19,20,9,2],[24,22,21,0]],
+  sarmi:   [[9,15,17,0],[12,10,20,0],[15,23,14,1],[18,10,20,0],[20,11,29,1],[24,15,17,0]],
   raka:    [[10,20,17,1],[14,13,23,2],[17,20,9,2],[20,16,15,1],[24,11,21,0]],
   rani:    [[10,21,17,1],[14,14,23,2],[17,20,9,2],[20,17,15,1],[24,12,21,0]],
   ros:     [[7,20,14,1],[12,14,23,0],[15,23,14,1],[18,14,23,0],[21,18,19,1],[24,14,23,0]],
   wiryo:   [[24,28,17,0]],
   oman:    [[9,15,24,1],[12,12,21,0],[15,12,22,1],[18,23,28,1],[20,11,29,1],[24,15,24,0]],
   yati:    [[9,23,28,1],[13,23,14,1],[16,22,16,1],[19,11,29,1],[24,20,14,0]],
-  ujang:   [[11,3,23,0],[14,24,14,1],[17,5,15,2],[19,8,22,1],[24,3,23,0]],
-  jaka:    [[11,34,23,1],[14,24,22,1],[17,22,28,1],[19,11,29,1],[24,34,23,0]],
+  ujang:   [[11,12,17,0],[14,24,14,1],[17,5,15,2],[19,8,22,1],[24,12,17,0]],
+  jaka:    [[11,23,18,1],[14,24,22,1],[17,22,28,1],[19,11,29,1],[24,23,18,0]],
   wulan:   [[9,22,16,1],[13,23,28,1],[16,24,14,1],[19,11,29,1],[24,15,29,0]],
   asep:    [[11,7,19,1],[14,24,22,1],[17,20,17,2],[19,11,29,1],[24,7,19,0]],
-  imas:    [[8,23,14,1],[12,22,16,1],[17,21,24,1],[19,11,29,1],[24,23,14,0]],
+  imas:    [[8,23,14,1],[12,22,16,1],[17,23,22,1],[19,11,29,1],[24,23,14,0]],
   darma:   [[10,10,3,1],[13,11,29,1],[16,24,22,1],[19,20,17,2],[24,10,3,0]],
   nadia:   [[12,12,3,1],[15,20,17,2],[18,15,14,2],[20,11,29,1],[24,12,21,0]],
 };
@@ -10666,36 +10702,46 @@ function exitPhotoOnce(){
   toast('📸 Keluar dari Mode Foto.');
 }
 function openPause(){
+  /* Tahap P22: menu jeda model daftar konvensional (bagian + baris label/kontrol),
+     menggantikan kisi tombol emas. Semua fungsi lama dipertahankan. */
   if(!started) return;
   const box = document.getElementById('pauseBtns'); box.innerHTML = '';
-  const mk = (label, fn) => { const b = document.createElement('button'); b.textContent = label; b.addEventListener('click', () => { sndBlip(); fn(); }); box.appendChild(b); };
-  mk('▶ Lanjut Main', closePanels);
-  mk('📖 Ke Buku Harian (Rumah)', () => { closePanels(); toast('Buku Harian ada di dalam rumahmu, di samping kasur. Masuk lewat pintu rumah ya.'); });
-  mk('📚 Ensiklopedia Tanaman', () => { closePanels(); openEncyclopedia(); });
-  mk('🎬 Kredit', () => { closePanels(); openCredits(); });
-  mk('🍽️ Makan/Minum dari Tas', () => { closePanels(); openConsume(); });
-  mk(AudioMan.muted ? '🔇 Suara: MATI' : '🔊 Suara: NYALA', () => { AudioMan.toggleMute(); openPause(); });
-  mk('🎚️ Volume: ' + Math.round(AudioMan.volume * 100) + '%', () => { AudioMan.volume = AudioMan.volume >= 1 ? 0.3 : Math.min(1, Math.round((AudioMan.volume + 0.25) * 100) / 100); SETTINGS.volSfx = Math.round(AudioMan.volume * 100); saveSettings(); openPause(); });
-  /* --- Tahap 7: kontrol, musik & getar --- */
-  mk('🎮 Kontrol: ' + (SETTINGS.scheme === 'dpad' ? 'D-Pad' : 'Joystick'), () => { SETTINGS.scheme = SETTINGS.scheme === 'dpad' ? 'joy' : 'dpad'; saveSettings(); applyScheme(); openPause(); });
-  if(SETTINGS.scheme === 'joy') mk('🕹️ Sensitivitas Joystick: ' + SETTINGS.joySens + '%', () => { SETTINGS.joySens = SETTINGS.joySens >= 140 ? 60 : SETTINGS.joySens + 20; saveSettings(); openPause(); });
-  mk(SETTINGS.music ? '🎵 Musik: NYALA' : '🎵 Musik: MATI', () => { SETTINGS.music = !SETTINGS.music; saveSettings(); MusicMan.tick(); openPause(); });
-  mk(SETTINGS.haptics ? '📳 Getar: NYALA' : '📳 Getar: MATI', () => { SETTINGS.haptics = !SETTINGS.haptics; saveSettings(); if(SETTINGS.haptics) vib(25); openPause(); });
-  /* Tahap 8: Profil & Prestasi — sengaja PALING AKHIR agar posisi tombol lama tidak bergeser */
-  mk('🏆 Profil & Prestasi (' + Object.keys(S.ach || {}).length + '/' + ACH.length + ')', () => { closePanels(); openProfile(); });
-  /* Tahap 13: Peta Dunia — tombol baru PALING AKHIR, alasan sama seperti Profil */
-  mk('🗺️ Peta Dunia (Gaya GTA)', () => { closePanels(); openWorldMap(); });
-  mk('🚗 Kendaraan' + (VEH.ride ? ' — sedang naik ' + VEH_INFO[VEH.ride].nama : ''), () => { closePanels(); kendaraanDialog(); }); // Tahap P3
-  /* Tahap 14: Pengaturan — panel tunggal (kontrol, sensitivitas, volume Musik & SFX terpisah) */
-  mk('⚙️ Pengaturan', () => { openSettings(); });
-  mk('📸 Mode Foto (sembunyikan HUD)', () => { enterPhoto(); }); // Tahap 15
-  mk('📖 Buku Koleksi & Museum', () => { if(window.__p7OpenP7) __p7OpenP7('col'); });
-  mk('🎁 Kode Hadiah', () => { if(window.__p7OpenP7) __p7OpenP7('redeem'); });
-  mk('👕 Kostum & Pendamping', () => { if(window.__p7OpenP7) __p7OpenP7('hub'); });
-  mk('📱 HP (Ponsel)' + ((typeof reqBadgeCount16E === 'function' && reqBadgeCount16E() > 0) ? ' 🔴 ' + reqBadgeCount16E() : ''), () => { if(window.__p8Phone) __p8Phone.open(); }); // P16-E: lencana permintaan
-  mk('🌾 Layanan Desa & Tani', () => { if(window.__p8Open) __p8Open(); });
-  mk('🏠 Keluarga, Rumah & Petualangan', () => { if(window.__p9Open) __p9Open(); }); // Tahap P9
-  document.getElementById('pauseInfo').textContent = `Lembah Encle • ${seasonName()}, hari ke-${dayOfSeason()} • Uang Rp ${S.money.toLocaleString('id-ID')} • 🏃 LARI: tahan tombol LARI (atau Shift) — 1,6× lebih cepat, menguras stamina −0,5/dtk & kantuk −0,35/dtk (sangat pelan) • 🧰 TAHAN tombol alat untuk roda alat cepat • ⚠️ Tidak ada simpan otomatis: simpan manual lewat Buku Harian di rumah sebelum berhenti main.` + (GP.connected ? ' 🎮 Gamepad tersambung' + (GP.id ? ' (' + GP.id + ')' : '') + ' — stik kiri: gerak • A: AKSI • B: tutup • Y: roda alat • Start: jeda.' : ' 🎮 Gamepad: belum tersambung — hubungkan gamepad Bluetooth/USB lalu tekan tombol apa pun untuk mengaktifkannya.');
+  const sec = t => { const d = document.createElement('div'); d.className = 'm22sec'; d.textContent = t; box.appendChild(d); };
+  const row = (label, fn) => { const b = document.createElement('button'); b.className = 'm22row'; const s = document.createElement('span'); s.className = 'm22lab'; s.textContent = label; b.appendChild(s); const v = document.createElement('span'); v.className = 'm22chev'; v.textContent = '›'; b.appendChild(v); b.addEventListener('click', () => { sndBlip(); fn(); }); box.appendChild(b); };
+  const tog = (label, on, fn) => { const b = document.createElement('button'); b.className = 'm22row'; const s = document.createElement('span'); s.className = 'm22lab'; s.textContent = label; b.appendChild(s); const v = document.createElement('span'); v.className = 'm22tog ' + (on ? 'on' : 'off'); v.textContent = on ? 'NYALA' : 'MATI'; b.appendChild(v); b.addEventListener('click', () => { sndBlip(); fn(); }); box.appendChild(b); };
+  const cyc = (label, fn) => { const b = document.createElement('button'); b.className = 'm22row'; const s = document.createElement('span'); s.className = 'm22lab'; s.textContent = label; b.appendChild(s); const v = document.createElement('span'); v.className = 'm22chev'; v.textContent = '⇄'; b.appendChild(v); b.addEventListener('click', () => { sndBlip(); fn(); }); box.appendChild(b); };
+  const sld = (label, get, set, min, max, step) => { const d = document.createElement('div'); d.className = 'm22row'; const s = document.createElement('span'); s.className = 'm22lab'; s.textContent = label + ' '; const val = document.createElement('b'); val.textContent = get() + '%'; s.appendChild(val); d.appendChild(s); const inp = document.createElement('input'); inp.type = 'range'; inp.min = String(min); inp.max = String(max); inp.step = String(step); inp.value = get(); inp.setAttribute('aria-label', label); inp.addEventListener('input', () => { set(+inp.value); val.textContent = inp.value + '%'; }); d.appendChild(inp); box.appendChild(d); };
+  sec('Permainan');
+  row('▶ Lanjut Main', closePanels);
+  row('📔 Buku Harian (di Rumah)', () => { closePanels(); toast('Buku Harian ada di dalam rumahmu, di samping kasur. Masuk lewat pintu rumah ya.'); });
+  row('🗺️ Peta Dunia', () => { closePanels(); openWorldMap(); });
+  row('🚗 Kendaraan' + (VEH.ride ? ' — sedang naik ' + VEH_INFO[VEH.ride].nama : ''), () => { closePanels(); kendaraanDialog(); });
+  row('🏆 Profil & Prestasi (' + Object.keys(S.ach || {}).length + '/' + ACH.length + ')', () => { closePanels(); openProfile(); });
+  row('📚 Ensiklopedia Tanaman', () => { closePanels(); openEncyclopedia(); });
+  row('📖 Buku Koleksi & Museum', () => { if(window.__p7OpenP7) __p7OpenP7('col'); });
+  row('🎁 Kode Hadiah', () => { if(window.__p7OpenP7) __p7OpenP7('redeem'); });
+  row('👕 Kostum & Pendamping', () => { if(window.__p7OpenP7) __p7OpenP7('hub'); });
+  row('🍽️ Makan/Minum dari Tas', () => { closePanels(); openConsume(); });
+  row('📸 Mode Foto (sembunyikan HUD)', () => { enterPhoto(); });
+  sec('Suara & Musik');
+  sld('🎵 Volume Musik', () => SETTINGS.volMusic, v => { SETTINGS.volMusic = v; saveSettings(); if(typeof MusicMan !== 'undefined') MusicMan.tick(); }, 0, 100, 5);
+  sld('🔊 Volume SFX', () => Math.round(AudioMan.volume * 100), v => { AudioMan.volume = v / 100; SETTINGS.volSfx = v; saveSettings(); }, 0, 100, 5);
+  tog('🎵 Musik Latar', !!SETTINGS.music, () => { SETTINGS.music = !SETTINGS.music; saveSettings(); if(typeof MusicMan !== 'undefined') MusicMan.tick(); openPause(); });
+  tog('🔊 Suara', !AudioMan.muted, () => { AudioMan.toggleMute(); openPause(); });
+  sec('Kontrol');
+  cyc('🎮 Skema Kontrol: ' + (SETTINGS.scheme === 'dpad' ? 'D-Pad' : 'Joystick'), () => { SETTINGS.scheme = SETTINGS.scheme === 'dpad' ? 'joy' : 'dpad'; saveSettings(); applyScheme(); openPause(); });
+  if(SETTINGS.scheme === 'joy') sld('🕹️ Sensitivitas Joystick', () => SETTINGS.joySens, v => { SETTINGS.joySens = v; saveSettings(); }, 60, 140, 5);
+  tog('📳 Getar (Haptik)', !!SETTINGS.haptics, () => { SETTINGS.haptics = !SETTINGS.haptics; saveSettings(); if(SETTINGS.haptics) vib(25); openPause(); });
+  sec('Lainnya');
+  row('📱 HP (Ponselku)' + ((typeof reqBadgeCount16E === 'function' && reqBadgeCount16E() > 0) ? ' — ' + reqBadgeCount16E() + ' permintaan warga' : ''), () => { if(window.__p8Phone) __p8Phone.open(); });
+  row('🌾 Layanan Desa & Tani', () => { if(window.__p8Open) __p8Open(); });
+  row('🏠 Keluarga, Rumah & Petualangan', () => { if(window.__p9Open) __p9Open(); });
+  row('⚙️ Pengaturan', () => { openSettings(); });
+  row('🔄 Periksa Pembaruan', () => { if(typeof otaCheckNow === 'function') otaCheckNow(true); });
+  row('❓ Bantuan Kontrol', () => { closePanels(); showDialog('❓ Bantuan Kontrol', infoLengkap22); });
+  row('🎬 Kredit', () => { closePanels(); openCredits(); });
+  const infoLengkap22 = (`Lembah Encle • ${seasonName()}, hari ke-${dayOfSeason()} • Uang Rp ${S.money.toLocaleString('id-ID')} • 🏃 LARI: tahan tombol LARI (atau Shift) — 1,6× lebih cepat, menguras stamina −0,5/dtk & kantuk −0,35/dtk (sangat pelan) • 🧰 TAHAN tombol alat untuk roda alat cepat • ⚠️ Tidak ada simpan otomatis: simpan manual lewat Buku Harian di rumah sebelum berhenti main.` + (GP.connected ? ' 🎮 Gamepad tersambung' + (GP.id ? ' (' + GP.id + ')' : '') + ' — stik kiri: gerak • A: AKSI • B: tutup • Y: roda alat • Start: jeda.' : ' 🎮 Gamepad: belum tersambung — hubungkan gamepad Bluetooth/USB lalu tekan tombol apa pun untuk mengaktifkannya.'));
+  document.getElementById('pauseInfo').textContent = 'Lembah Encle • ' + seasonName() + ', hari ke-' + dayOfSeason() + ' • Uang Rp ' + S.money.toLocaleString('id-ID') + ' • ⚠️ Tidak ada simpan otomatis — simpan manual lewat Buku Harian di rumah sebelum berhenti main. Bantuan kontrol lengkap: Lainnya → ❓ Bantuan Kontrol.';
   dlg.classList.remove('show'); shopEl.classList.remove('show'); pauseEl.classList.add('show');
 }
 bindTap(document.getElementById('btnPause'), openPause);
@@ -10757,7 +10803,7 @@ function drawMinimap(){
    penuh. Panel Pengaturan tunggal (tombol di layar judul & menu jeda): skema
    kontrol, sensitivitas, volume Musik & SFX TERPISAH, musik & haptik on/off. */
 FISH_SPOTS.push([27, 34], [33, 35], [30, 36], [36, 34], [24, 33], [35, 36], [31, 33], [26, 37]); // Tahap 14+P4: ikan melompat di Danau Encle besar
-const TUFTS14 = [[42,18],[45,19],[48,18],[52,18],[51,20],[43,22],[52,22],[47,23],[50,24],[41,24],[44,25],[48,26]];
+const TUFTS14 = [[41,22],[46,19],[48,18],[52,18],[51,20],[43,22],[52,22],[47,23],[50,24],[41,24],[44,25],[48,26]];
 for(const [tx14, ty14] of TUFTS14){
   addProp({ id:'rumpun' + tx14 + '_' + ty14, x:tx14, y:ty14, w:1, h:1, solid:false, interact:'rumpun', draw(gx, gy){
     const cut = !!(S && S.grass && S.grass[tx14 + ',' + ty14] === S.totalDay);
@@ -10821,7 +10867,7 @@ function drawPohonBesar14(gx, gy){
   ctx.beginPath(); ctx.arc(gx + 26 + sw, gy + 8, 9, 0, 7); ctx.arc(gx + 40 + sw, gy + 12, 7, 0, 7); ctx.fill();
   leafSpeck(gx, gy, 32, 16, 16, gx + gy);
 }
-addProp({ id:'pohonPadang1', x:41, y:17, w:2, h:2, solidTiles:[[41,17],[42,17],[41,18],[42,18]], draw(gx, gy){ drawPohonBesar14(gx, gy); } });
+addProp({ id:'pohonPadang1', x:48, y:19, w:2, h:2, solidTiles:[[48,19],[49,19],[48,20],[49,20]], draw(gx, gy){ drawPohonBesar14(gx, gy); } });
 addProp({ id:'pohonPadang2', x:52, y:25, w:2, h:2, solidTiles:[[52,25],[53,25],[52,26],[53,26]], draw(gx, gy){ drawPohonBesar14(gx, gy); } });
 addProp({ id:'pohonDanau', x:21, y:33, w:2, h:2, solidTiles:[[21,33],[22,33],[21,34],[22,34]], draw(gx, gy){ drawPohonBesar14(gx, gy); } });
 addProp({ id:'pohonSelatan', x:8, y:36, w:2, h:2, solidTiles:[[8,36],[9,36],[8,37],[9,37]], draw(gx, gy){ drawPohonBesar14(gx, gy); } });
@@ -11582,7 +11628,7 @@ function drawLampu15(gx, gy){
   else { ctx.fillStyle = '#ffe9a8'; ctx.fillRect(gx + 13, gy + 3, 6, 6); ctx.fillStyle = 'rgba(255,255,255,.55)'; ctx.fillRect(gx + 13, gy + 3, 2.4, 2.4); }
   ctx.fillStyle = '#3a2c1c'; ctx.fillRect(gx + 10, gy + 0, 12, 2.4);
 }
-[[18, 13], [21, 16], [2, 13], [40, 13], [28, 29], [44, 28]].forEach(([x, y], i) => addProp({ id: 'lampu15_' + i, x, y, w: 1, h: 1, solid: false, draw: (gx, gy) => drawLampu15(gx, gy) }));
+[[18, 13], [21, 16], [2, 13], [40, 13], [28, 29], [47, 29]].forEach(([x, y], i) => addProp({ id: 'lampu15_' + i, x, y, w: 1, h: 1, solid: false, draw: (gx, gy) => drawLampu15(gx, gy) }));
 window.__p15 = { P15VIS, buildDeco15, drawDeco15 };
 
 window.__harvBooted = true; // penanda untuk watchdog boot di <head>
@@ -19533,7 +19579,7 @@ if(typeof openShop === 'function'){
      "v2.5" di layar judul (label itu urusan P16-V, tak disentuh di sini).
    Di peramban biasa (tanpa __otaBridge) modul ini pasif: tidak ada unduhan
    yang bisa dipasang, pemeriksaan senyap tidak berjalan. */
-const GAME_BUILD = "4.9"; // P21: PERBAIKAN VONIS HP (toolbar pegangan, visual, tipografi, pembuka sinematik)
+const GAME_BUILD = "4.10"; // P21: PERBAIKAN VONIS HP (toolbar pegangan, visual, tipografi, pembuka sinematik)
 const UPDATE_MANIFEST_URL = "https://raw.githubusercontent.com/YunobiAirdrop/lembah-encle-update/main/manifest.json";
 (function(){
 'use strict';
@@ -28380,6 +28426,69 @@ if(typeof window !== 'undefined') window.__p21 = {
   surat: P21_SURAT, newAnims: P21_NEW_ANIMS, animDesc: P21_ANIM_DESC,
   fontFamily: 'Lembah Serif',
 };
+})();
+
+</script>
+<script>
+
+/* ================= TAHAP P22 — VONIS HP KEDUA: BAR HP TEPI KIRI + JARING PENGAMAN TAS =================
+   A) TAS: penyebab terverifikasi — zona joystik #joyZone (di dalam #touch, z-index 6) menutupi
+      sebagian pita HUD (#hud, z-index 5) di tepi kiri layar; sesudah pergeseran tata letak HUD
+      P21, ketukan pada pil TAS bisa mendarat di #joyZone dan tertelan sebagai sentuhan joystik.
+      Perbaikan inti: #joyZone kini mulai di bawah pita HUD (top:118px). Modul ini menambah
+      jaring pengaman: penangkap pointerdown fase-capture memeriksa apakah titik ketuk berada
+      di dalam persegi pil TAS; bila ya & tidak ada panel terbuka, TAS dibuka langsung.
+   C) Tombol berbentuk HP di bar tepi kiri → membuka Ponselku (__p8Phone), selalu tampil
+      selama bermain (body.playing), ramping 30×52px agar tidak menutupi area main, dan
+      bersembunyi pada mode foto (mengikuti pola body.photomode yang lama). */
+(function () {
+  'use strict';
+
+  /* ---------- C: bar tepi kiri + tombol HP ---------- */
+  var bar = document.createElement('div');
+  bar.id = 'sideBar22';
+  bar.setAttribute('aria-hidden', 'false');
+  var btn = document.createElement('button');
+  btn.id = 'btnPhone22';
+  btn.setAttribute('aria-label', 'Buka HP (Ponselku)');
+  btn.innerHTML = '<span class="ph-scr22"></span><span class="ph-lab22">HP</span><span class="ph-dot22"></span><span class="badge22" id="badgePhone22"></span>';
+  btn.addEventListener('click', function (ev) {
+    ev.stopPropagation();
+    try { if (window.__p8Phone) __p8Phone.open(); } catch (e) {}
+  });
+  bar.appendChild(btn);
+  document.body.appendChild(bar);
+  setInterval(function () {
+    try {
+      var b = document.getElementById('badgePhone22');
+      if (!b) return;
+      var n = (typeof reqBadgeCount16E === 'function') ? reqBadgeCount16E() : 0;
+      b.textContent = n;
+      b.style.display = n > 0 ? 'flex' : 'none';
+    } catch (e) {}
+  }, 900);
+
+  /* ---------- A: jaring pengaman ketukan TAS ---------- */
+  var lastBagTap = 0;
+  document.addEventListener('pointerdown', function (ev) {
+    try {
+      if (typeof started === 'undefined' || !started) return;
+      if (typeof S === 'undefined' || !S) return;
+      if (typeof openBag !== 'function') return;
+      var bag = document.getElementById('hudBag');
+      if (!bag) return;
+      var r = bag.getBoundingClientRect();
+      if (!r.width) return;
+      if (ev.clientX < r.left - 6 || ev.clientX > r.right + 6 || ev.clientY < r.top - 6 || ev.clientY > r.bottom + 6) return;
+      if (typeof panelOpen === 'function' && panelOpen()) return; // panel terbuka: jangan menembus
+      var now = performance.now();
+      if (now - lastBagTap < 400) return; // cegah dobel dengan bindTap asli
+      lastBagTap = now;
+      ev.preventDefault();
+      ev.stopPropagation();
+      openBag();
+    } catch (e) {}
+  }, true);
 })();
 
 </script>
