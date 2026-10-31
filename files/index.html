@@ -326,6 +326,105 @@ body.photomode #sideBar22 { display:none !important; }
 .panel h3 { letter-spacing:.01em; }
 
 </style>
+<style id="p24style">
+/* ===== TAHAP P24 — PRESENTASI SEKELAS GAME BUATAN TANGAN (keluhan #7, baseline;
+   disesuaikan lagi mengikuti lampiran studi visual induk) =====
+   Bahasa visual tunggal: KAYUPAPAN + PERKAMEN + sekrup sudut, font Lembah Serif.
+   Tanpa gradien emas mencolok (sisa rasa template yang dikeluhkan di P22). */
+/* --- HUD: chip kayu bertekstur papan + sekrup sudut --- */
+.hudbox { font-family:"Lembah Serif", Georgia, serif; letter-spacing:.01em;
+  background-image:
+    radial-gradient(circle at 6px 6px, rgba(30,18,4,.6) 1.6px, rgba(255,240,200,.35) 2.4px, transparent 3px),
+    radial-gradient(circle at calc(100% - 6px) 6px, rgba(30,18,4,.6) 1.6px, rgba(255,240,200,.35) 2.4px, transparent 3px),
+    repeating-linear-gradient(180deg, rgba(255,255,255,.05) 0 6px, rgba(0,0,0,.07) 6px 12px),
+    linear-gradient(180deg, rgba(122,84,40,.95), rgba(84,54,22,.96)); }
+/* panel jam/tanggal/musim: potongan kayu lebih besar & menonjol seperti panel jam game tani */
+#hudTime { font-size:13.5px; font-weight:700; padding:5px 12px; border-width:2.5px; border-radius:11px;
+  box-shadow:0 3px 8px rgba(0,0,0,.45), inset 0 0 0 1.6px rgba(255,233,168,.6), inset 0 2px 0 rgba(255,240,200,.35); }
+#hudMoney { font-size:13px; padding:5px 11px; }
+/* bar stamina & kebutuhan: rel gelap + isi bergradasi halus + tepi membulat */
+#stamwrap, .nwrap { background:rgba(20,14,6,.55); border:1.5px solid rgba(30,18,4,.8); border-radius:6px; box-shadow:inset 0 1.5px 3px rgba(0,0,0,.6); overflow:hidden; }
+#stambar { background:linear-gradient(180deg,#b6e388,#7ec850 55%,#5da53a); border-radius:5px; }
+.nbar { border-radius:5px; }
+/* --- Panel umum: judul panel di atas strip kayu (Pengaturan & Jeda) --- */
+#settings .who, #pause .who { background:linear-gradient(180deg,#8a5a2b,#6e4520); color:#ffe9a8;
+  margin:-12px -14px 9px; padding:8px 14px; border-radius:10px 10px 0 0; border-bottom:2.5px solid #40260a;
+  text-shadow:0 1px 1px rgba(0,0,0,.5); font-family:"Lembah Serif", Georgia, serif; letter-spacing:.02em; }
+#dialog .who { font-family:"Lembah Serif", Georgia, serif; color:#7a4d12; border-bottom:1.5px dashed rgba(122,77,18,.45); padding-bottom:2px; }
+/* --- Toast: keping kayu kecil, bukan kotak hitam generik --- */
+#toast { background:linear-gradient(180deg, rgba(122,84,40,.96), rgba(84,54,22,.97)); border:2px solid #40260a;
+  box-shadow:0 3px 10px rgba(0,0,0,.45), inset 0 0 0 1.4px rgba(255,233,168,.5); color:#fff3d0;
+  font-family:"Lembah Serif", Georgia, serif; border-radius:12px; }
+/* --- Layar judul: panel buat tokoh = meja kayu berbingkai + kartu perkamen --- */
+#createPanel16 { background:
+    repeating-linear-gradient(90deg, rgba(0,0,0,.10) 0 2px, transparent 2px 64px),
+    repeating-linear-gradient(180deg, rgba(255,235,190,.06) 0 7px, rgba(0,0,0,.08) 7px 14px),
+    linear-gradient(180deg,#8a5a2b,#6e4520);
+  border:3px solid #40260a; outline:2px solid rgba(217,185,110,.75); outline-offset:-6px; }
+#createPanel16 .createForm16 { background:linear-gradient(180deg,#fdf6dd,#f3e5c0); border:2px solid #54350f;
+  border-radius:10px; padding:10px 12px; box-shadow:inset 0 0 18px rgba(160,120,50,.16); color:#4a3208; }
+#createPanel16 .createPrev16 { color:#ffe9a8; text-shadow:0 1px 1px rgba(0,0,0,.55); }
+#createPanel16 .createPrev16 canvas { background:linear-gradient(180deg,#fdf6dd,#efdfba); border:3px solid #40260a;
+  border-radius:9px; box-shadow:0 3px 8px rgba(0,0,0,.4), inset 0 0 14px rgba(160,120,50,.18); }
+#nameInput { background:#fffbe8; border:2px solid #6e4520; border-radius:8px; padding:6px 10px;
+  font-family:"Lembah Serif", Georgia, serif; font-size:15px; color:#40260a; box-shadow:inset 0 1.5px 4px rgba(90,60,20,.25); }
+#titleInfo16 { font-family:"Lembah Serif", Georgia, serif; }
+#title .row button { font-family:"Lembah Serif", Georgia, serif; letter-spacing:.03em; }
+/* ===== P24-UI (lampiran spek visual video): tata letak HUD & panel ===== */
+/* Panel jam kanan atas: dial lingkaran + hari/tanggal/musim/jam + uang angka merah + akses cepat */
+#sideHud24 { position:absolute; top:8px; right:54px; display:flex; flex-direction:column; align-items:flex-end; gap:5px; z-index:6; pointer-events:none; }
+#clockRow24 { display:flex; align-items:center; }
+#dial24 { width:46px; height:46px; border-radius:50%; border:3px solid #40260a; background:#87b5d9; box-shadow:0 2px 6px rgba(0,0,0,.4), inset 0 0 0 2px rgba(255,233,168,.55); margin-right:-7px; position:relative; z-index:1; flex:0 0 auto; }
+#sideHud24 #hudTime { white-space:normal; max-width:302px; text-align:left; line-height:1.35; }
+#sideHud24 #hudMoney b { color:#ff7a5e; }
+#quick24 { display:flex; gap:5px; }
+#quick24 #hudBag { pointer-events:auto; }
+#sideHud24 #needbox { transform:scale(.94); transform-origin:top right; }
+#minimap { top:170px; right:54px; }
+/* Bar HP & Energi VERTIKAL berdampingan di tepi kanan, bingkai kayu */
+#vBars24 { position:absolute; right:8px; top:50%; transform:translateY(-50%); display:flex; gap:6px; z-index:6; pointer-events:none; }
+.vbCol { display:flex; flex-direction:column; align-items:center; gap:3px; }
+.vbLbl { font-family:"Lembah Serif", Georgia, serif; font-weight:700; font-size:11px; color:#ffe9a8; background:linear-gradient(180deg,#8a5a2b,#6e4520); border:2px solid #40260a; border-radius:6px; padding:1px 6px; text-shadow:0 1px 1px rgba(0,0,0,.5); }
+.vbTrack { width:17px; height:118px; background:linear-gradient(180deg,#7a5230,#5d4020); border:2.5px solid #40260a; border-radius:8px; position:relative; box-shadow:inset 0 0 0 1.5px rgba(255,233,168,.45), 0 2px 6px rgba(0,0,0,.4); overflow:hidden; }
+.vbFill { position:absolute; left:2px; right:2px; bottom:2px; height:100%; background:linear-gradient(180deg,#9be15d,#58b531); border-radius:5px; transition:height .3s ease; }
+.vbFill.low { background:linear-gradient(180deg,#ffb03a,#f08c1e); }
+.vbFill.hp { background:linear-gradient(180deg,#8fe388,#4db04a); }
+.vbNum { font-size:10.5px; font-weight:700; color:#fff7e0; text-shadow:0 1px 2px rgba(0,0,0,.85); font-family:"Lembah Serif", Georgia, serif; }
+/* Label perolehan item: kotak kayu kecil kiri bawah, hilang sendiri */
+#pickup24 { position:absolute; left:10px; bottom:132px; z-index:6; pointer-events:none; opacity:0; transform:translateY(6px); transition:opacity .25s ease, transform .25s ease;
+  background:linear-gradient(180deg, rgba(122,84,40,.96), rgba(84,54,22,.97)); border:2px solid #40260a; border-radius:10px; color:#fff3d0;
+  box-shadow:0 3px 8px rgba(0,0,0,.4), inset 0 0 0 1.4px rgba(255,233,168,.5); padding:5px 11px; font-family:"Lembah Serif", Georgia, serif; font-size:13.5px; }
+#pickup24.show { opacity:1; transform:translateY(0); }
+/* Tooltip tanaman di dunia: kotak kayu kecil di atas toolbar */
+#cropTip24 { position:absolute; left:50%; bottom:118px; transform:translateX(-50%) translateY(6px); z-index:6; pointer-events:none; opacity:0; transition:opacity .2s ease, transform .2s ease;
+  background:linear-gradient(180deg, rgba(122,84,40,.96), rgba(84,54,22,.97)); border:2px solid #40260a; border-radius:10px; color:#fff3d0;
+  box-shadow:0 3px 8px rgba(0,0,0,.4), inset 0 0 0 1.4px rgba(255,233,168,.5); padding:4px 11px; font-family:"Lembah Serif", Georgia, serif; font-size:13px; white-space:nowrap; }
+#cropTip24.show { opacity:1; transform:translateX(-50%) translateY(0); }
+/* Dialog: kolom potret di KANAN + papan nama kayu di bawah potret */
+#dlgCol24 { display:flex; flex-direction:column; align-items:center; gap:4px; margin-left:10px; flex:0 0 auto; }
+#dlgCol24 #dlgWho { background:linear-gradient(180deg,#8a5a2b,#6e4520); color:#ffe9a8; border:2px solid #40260a; border-bottom:2px solid #40260a; border-radius:7px; padding:2.5px 10px; font-size:12.5px; font-family:"Lembah Serif", Georgia, serif; box-shadow:0 2px 0 rgba(64,38,10,.55); text-shadow:0 1px 1px rgba(0,0,0,.5); white-space:nowrap; max-width:104px; overflow:hidden; text-overflow:ellipsis; }
+#dialog .choices button:first-child::before { content:'▶ '; color:#a83226; }
+/* TAS: deretan tab ikon kayu + strip karakter + tombol X merah */
+#bagTabs24 { display:none; gap:4px; margin:0 0 8px; }
+#bagTabs24 .bt { flex:1; display:flex; flex-direction:column; align-items:center; gap:0; padding:4px 2px 3px; font-size:16px; line-height:1.15;
+  background:linear-gradient(180deg,#8a5a2b,#6e4520); color:#ffe9a8; border:2px solid #40260a; border-radius:8px; cursor:pointer; font-family:"Lembah Serif", Georgia, serif; }
+#bagTabs24 .bt small { font-size:9.5px; letter-spacing:.02em; }
+#bagTabs24 .bt.on { background:linear-gradient(180deg,#fdf6dd,#f3e5c0); color:#7a3a10; box-shadow:inset 0 -3px 0 #a83226; }
+/* Sasaran sentuh >=44px (skill lembah-visual-craft): tombol HP visual tetap
+   ramping 30px, tetapi area ketuknya diperluas tak terlihat. */
+#btnPhone22::after { content:''; position:absolute; top:-3px; bottom:-3px; left:-7px; right:-15px; }
+#btnPause::after { content:''; position:absolute; inset:-3px; border-radius:50%; }
+#hudBag { position:relative; }
+#hudBag::after { content:''; position:absolute; left:0; right:0; top:-9px; bottom:-9px; }
+/* Keadaan ditekan untuk tombol aksi utama: geser turun + sedikit mengecil. */
+#btnAct:active { transform:translateY(2px) scale(.97); }
+#btnRun:active, #btnJump:active { transform:translateY(2px); }
+#charStrip24 { display:none; align-items:center; gap:10px; background:linear-gradient(180deg,#fdf6dd,#f3e5c0); border:2px solid #54350f; border-radius:10px; padding:7px 10px; margin:0 0 9px; box-shadow:inset 0 0 14px rgba(160,120,50,.15); }
+#charStrip24 canvas { width:54px; height:54px; border:2.5px solid #40260a; border-radius:8px; background:#a8d08a; flex:0 0 auto; }
+#charStrip24 .csName { font-family:"Lembah Serif", Georgia, serif; font-weight:700; font-size:15px; color:#40260a; }
+#charStrip24 .csLine, #charStrip24 .csLine2 { font-size:12px; color:#6b4a1e; line-height:1.45; }
+#shop.bagmode16 #shopClose { background:#c0392b !important; color:#fff !important; border:2px solid #7c241a !important; border-radius:50% !important; width:34px; height:34px; padding:0 !important; font-size:15px; line-height:1; box-shadow:0 2px 0 #7c241a !important; }
+</style>
 </head>
 <body>
 <div id="wrap">
@@ -403,7 +502,7 @@ body.photomode #sideBar22 { display:none !important; }
     <div id="titleVer16">🌾 Versi <span id="titleVerNum16"></span> — pembaruan berikutnya cukup dari dalam game</div>
     <div id="mediaPrepNote" style="display:none;margin:4px auto;max-width:520px;background:rgba(46,32,12,.88);color:#ffe9a8;border:1px solid #a5713d;border-radius:10px;padding:6px 12px;font-size:13px">📦 Menyiapkan berkas suara sekali saja… (sesudah ini pembaruan berikutnya jadi kecil &amp; cepat)</div>
     <div class="woodPanel16" id="titleInfo16">Bertani ala desa Indonesia: cangkul, tanam, siram, panen — hasil masuk <b>kotak penjualan</b>, uangnya datang besok pagi.<br>
-    🎮 <b>WASD / panah / joystick</b> • Aksi <b>Spasi / E / AKSI</b> • Benih dari <b>toolbar / TAS</b> • 📖 <b>Tanpa simpan otomatis</b> — simpan lewat <b>Buku Harian</b> di rumah. Mulai dari <b>serah terima tanah warisan Pak Kades Harto</b> — isi <b>namamu</b> dulu!</div>
+    🎮 <b>WASD / panah / joystick analog</b> — atau <b>ketuk tanah</b> untuk berjalan ke sana (atur mode kontrol di <b>Pengaturan</b>) • Aksi <b>Spasi / E / AKSI</b> (tahan AKSI di ladang = pakai alat beruntun) • Benih dari <b>toolbar / TAS</b> • 📖 <b>Tanpa simpan otomatis</b> — simpan lewat <b>Buku Harian</b> di rumah. Mulai dari <b>serah terima tanah warisan Pak Kades Harto</b> — isi <b>namamu</b> dulu!</div>
     <div class="woodPanel16" id="createPanel16">
       <div class="createFlex16">
         <div class="createForm16">
@@ -436,6 +535,28 @@ body.photomode #sideBar22 { display:none !important; }
   <p style="font-size:17px; line-height:1.6">Game belum berhasil dimuat di browser HP ini.<br>Periksa koneksi, lalu coba muat ulang.</p>
   <button onclick="location.reload()" style="font-size:16px; font-weight:700; padding:12px 26px; border-radius:10px; border:2px solid #6a4a10; background:#ffd968; color:#4a3208;">&#8635; Muat Ulang</button>
 </div>
+<script>
+/* P24 #8 — Pencatat error dalam game (menutup Checklist Lapis 6): dipasang
+   SEBELUM skrip utama agar menangkap error sejak awal. Ring-buffer 50 entri
+   di localStorage 'le_errorlog' (waktu/pesan/sumber/versi build), dibaca &
+   dibersihkan pemain dari Pengaturan → "Catatan Error". Logger dibungkus
+   try/catch berlapis: TIDAK BOLEH ikut merusak game. */
+(function(){
+  function leBuild(){ try{ if(typeof GAME_BUILD !== 'undefined' && GAME_BUILD) return String(GAME_BUILD); }catch(e){} return 'boot'; }
+  function leLog(msg, src){
+    try{
+      var arr = [];
+      try{ arr = JSON.parse(localStorage.getItem('le_errorlog') || '[]'); if(!Array.isArray(arr)) arr = []; }catch(e){ arr = []; }
+      arr.push({ t: new Date().toISOString(), msg: String(msg == null ? '' : msg).slice(0, 300), src: String(src == null ? '' : src).slice(0, 160), build: leBuild() });
+      if(arr.length > 50) arr = arr.slice(arr.length - 50);
+      try{ localStorage.setItem('le_errorlog', JSON.stringify(arr)); }catch(e){}
+    }catch(e){}
+  }
+  try{ window.__leLog = leLog; }catch(e){}
+  try{ window.addEventListener('error', function(ev){ try{ leLog(ev && ev.message ? ev.message : 'error', (ev && ev.filename ? String(ev.filename).split('/').pop() : '') + ((ev && ev.lineno) ? ':' + ev.lineno : '')); }catch(e){} }); }catch(e){}
+  try{ window.addEventListener('unhandledrejection', function(ev){ try{ var r = ev && ev.reason; leLog('unhandledrejection: ' + (r && r.message ? r.message : String(r)), 'promise'); }catch(e){} }); }catch(e){}
+})();
+</script>
 <script>
 'use strict';
 window.addEventListener('error', e => { const d=document.getElementById('err'); d.style.display='block'; d.textContent += 'Error: '+e.message+'\n'; });
@@ -589,7 +710,7 @@ function sndAnimal(kind){ // suara hewan prosedural bergaya (asli dari kode; buk
 /* ================= TAHAP 7: PENGATURAN KONTROL & HAPTIK =================
    Tersimpan di localStorage 'harvismon2d-settings' (bukan bagian simpanan Buku Harian):
    skema kontrol (joy/dpad), sensitivitas joystick (%), musik latar on/off, getar on/off. */
-const SETTINGS = (() => { const d = { scheme:'joy', joySens:100, music:true, haptics:true, volMusic:80, volSfx:85 }; try{ return Object.assign(d, JSON.parse(localStorage.getItem('harvismon2d-settings') || '{}')); }catch(e){ return d; } })(); // Tahap 14: volMusic & volSfx = volume musik & SFX terpisah (0-100)
+const SETTINGS = (() => { const d = { scheme:'joy', joySens:100, music:true, haptics:true, volMusic:80, volSfx:85, ctl:'analog' }; try{ return Object.assign(d, JSON.parse(localStorage.getItem('harvismon2d-settings') || '{}')); }catch(e){ return d; } })(); // Tahap 14: volMusic & volSfx = volume musik & SFX terpisah (0-100); P24: ctl = mode kontrol (analog/ketuk/keduanya/dpad)
 function saveSettings(){ try{ localStorage.setItem('harvismon2d-settings', JSON.stringify(SETTINGS)); }catch(e){} }
 AudioMan.volume = (SETTINGS.volSfx == null ? 85 : SETTINGS.volSfx) / 100; // Tahap 14: volume SFX tersimpan diterapkan sejak awal
 function vib(ms){ if(SETTINGS.haptics && typeof navigator !== 'undefined' && navigator.vibrate){ try{ navigator.vibrate(ms); }catch(e){} } }
@@ -1055,6 +1176,9 @@ function roofLimasan(x,y,w,atas,bawah){
     ctx.fillStyle = 'rgba(0,0,0,.20)'; ctx.fillRect(x+inset, yy+rh-1.6, ww, 1.6);
     ctx.fillStyle = 'rgba(255,220,180,.13)'; ctx.fillRect(x+inset, yy, ww, 1.4); // kilau pucuk baris
   }
+  // P24-HD: garis tepi siluet nyaris hitam mengikuti tangga limasan (disiplin outline 1px)
+  ctx.fillStyle = 'rgba(26,18,10,.5)';
+  for(let i=0;i<rows;i++){ const inset2 = i*5, yy2 = y + i*rh, ww2 = w - inset2*2; ctx.fillRect(x+inset2-1, yy2, 1.7, rh); ctx.fillRect(x+inset2+ww2-.7, yy2, 1.7, rh); }
   // lisplang gelap di tepi bawah atap + bayangan atap jatuh ke dinding
   ctx.fillStyle = '#6e2f16'; ctx.fillRect(x, y + rows*rh - 1, w, 3);
   ctx.fillStyle = '#7e3a20'; ctx.fillRect(x+w/2-14, y-5, 28, 6); // bubungan
@@ -1062,14 +1186,54 @@ function roofLimasan(x,y,w,atas,bawah){
   ctx.fillStyle = atas; ctx.fillRect(x+w/2-14, y-5, 28, 2);
 }
 function signBoard(x,y,w,text,bg,fg){
-  ctx.fillStyle = 'rgba(0,0,0,.18)'; ctx.fillRect(x-2,y-1,w+6,20); // bayangan papan
-  ctx.fillStyle = '#5d4020'; ctx.fillRect(x-3,y-3,w+6,20);
-  ctx.fillStyle = bg; ctx.fillRect(x,y, w, 14);
-  ctx.fillStyle = 'rgba(255,255,255,.14)'; ctx.fillRect(x,y,w,3); // kilau atas papan
-  ctx.fillStyle = 'rgba(0,0,0,.16)'; ctx.fillRect(x,y+11,w,3);
-  ctx.fillStyle = '#2e1d08'; ctx.fillRect(x+2,y+2,2,2); ctx.fillRect(x+w-4,y+2,2,2); ctx.fillRect(x+2,y+10,2,2); ctx.fillRect(x+w-4,y+10,2,2); // paku sudut
-  ctx.fillStyle = fg; ctx.font = 'bold 10px "Lembah Serif", Georgia, serif'; // P21: papan nama berhuruf serif dongeng ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
-  ctx.fillText(text, x + w/2, y + 7.5); ctx.textAlign = 'left'; ctx.textBaseline = 'alphabetic';
+  /* P24 (vonis HP ke-4): papan nama ditulis ulang TOTAL — papan kayu PROPORSIONAL
+     mengikuti lebar teks (bukan lebar tetap pemanggil), terpasang MENEMPEL FISIK di
+     dinding: ada rel kayu penopang yang disekrup ke dinding di atas papan, dua tali
+     penggantung pendek dari rel ke papan, bayangan lembut papan jatuh ke dinding,
+     serat & sambungan papan kayu terlihat, dan 4 paku sudut. (x,w) dari pemanggil
+     kini hanya menentukan TITIK TENGAH papan & lebar maksimum yang masuk akal. */
+  ctx.save();
+  let fs = 10;
+  ctx.font = 'bold ' + fs + 'px "Lembah Serif", Georgia, serif';
+  let tw = ctx.measureText(text).width;
+  const maxW = Math.max(46, w + 16);
+  while(tw + 22 > maxW && fs > 6.5){ fs -= 0.5; ctx.font = 'bold ' + fs + 'px "Lembah Serif", Georgia, serif'; tw = ctx.measureText(text).width; }
+  const bw = Math.max(36, Math.min(maxW, Math.ceil(tw + 22)));
+  const bh = 16;
+  const cx = x + w / 2, bx = Math.round(cx - bw / 2), by = Math.round(y);
+  // rel kayu penopang (disekrup ke dinding, tepat di atas papan)
+  ctx.fillStyle = 'rgba(20,14,6,.25)'; ctx.fillRect(bx - 1, by - 2, bw + 4, 4); // bayangan rel
+  ctx.fillStyle = '#4a3418'; ctx.fillRect(bx - 2, by - 5, bw + 4, 5);
+  ctx.fillStyle = 'rgba(255,235,190,.20)'; ctx.fillRect(bx - 2, by - 5, bw + 4, 1.6);
+  ctx.fillStyle = '#241708'; ctx.fillRect(bx + 2, by - 4, 2.4, 2.4); ctx.fillRect(bx + bw - 4.4, by - 4, 2.4, 2.4); // sekrup rel
+  // tali penggantung pendek rel -> papan
+  ctx.fillStyle = '#33240f'; ctx.fillRect(bx + 8, by - 1, 2.4, 3); ctx.fillRect(bx + bw - 10.4, by - 1, 2.4, 3);
+  // bayangan lembut papan di dinding (jatuh ke kanan-bawah)
+  ctx.fillStyle = 'rgba(20,14,6,.30)'; ctx.fillRect(bx + 2, by + 3, bw, bh);
+  // rangka kayu papan
+  ctx.fillStyle = '#5d4020'; ctx.fillRect(bx - 2, by, bw + 4, bh + 3);
+  ctx.fillStyle = 'rgba(0,0,0,.28)'; ctx.fillRect(bx - 2, by + bh + 1, bw + 4, 2);
+  // muka papan (warna cat bangunan) + tekstur kayu: sambungan papan tengah + serat
+  ctx.fillStyle = bg; ctx.fillRect(bx, by + 1.6, bw, bh - 1.6);
+  ctx.fillStyle = 'rgba(255,255,255,.15)'; ctx.fillRect(bx, by + 1.6, bw, 2.6); // kilau atas
+  ctx.fillStyle = 'rgba(0,0,0,.17)'; ctx.fillRect(bx, by + bh - 3.4, bw, 3.4); // teduh bawah
+  ctx.fillStyle = 'rgba(0,0,0,.13)'; ctx.fillRect(bx + 2, by + 8.6, bw - 4, 1.2); // sambungan dua papan kayu
+  ctx.fillStyle = 'rgba(255,255,255,.07)'; ctx.fillRect(bx + 2, by + 9.8, bw - 4, 1);
+  ctx.fillStyle = 'rgba(0,0,0,.08)';
+  for(let gx2 = bx + 6; gx2 < bx + bw - 6; gx2 += 13) ctx.fillRect(gx2, by + 4.6, 7, 1); // serat kayu
+  // paku sudut (titik gelap + kilau kecil)
+  ctx.fillStyle = '#2e1d08';
+  ctx.fillRect(bx + 2.4, by + 3.4, 2.2, 2.2); ctx.fillRect(bx + bw - 4.6, by + 3.4, 2.2, 2.2);
+  ctx.fillRect(bx + 2.4, by + bh - 4.4, 2.2, 2.2); ctx.fillRect(bx + bw - 4.6, by + bh - 4.4, 2.2, 2.2);
+  ctx.fillStyle = 'rgba(255,255,255,.35)';
+  ctx.fillRect(bx + 2.4, by + 3.4, 1, 1); ctx.fillRect(bx + bw - 4.6, by + 3.4, 1, 1);
+  // teks: bayangan tipis lalu tinta utama — selalu mulai dari tengah papan yang sebenarnya
+  ctx.font = 'bold ' + fs + 'px "Lembah Serif", Georgia, serif';
+  ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+  ctx.fillStyle = 'rgba(0,0,0,.35)'; ctx.fillText(text, cx + 0.8, by + bh / 2 + 1.3);
+  ctx.fillStyle = fg; ctx.fillText(text, cx, by + bh / 2 + 0.6);
+  ctx.restore();
+  ctx.textAlign = 'left'; ctx.textBaseline = 'alphabetic';
 }
 function flowerPot(gx, gy, c1){
   ctx.fillStyle = '#a8502f'; ctx.fillRect(gx, gy + 6, 10, 7); ctx.fillStyle = '#7e3a20'; ctx.fillRect(gx - 1, gy + 4, 12, 3);
@@ -1678,7 +1842,7 @@ addProp({ id:'balai', x:8, y:24, w:8, h:5, door:{x:11,y:28}, interact:'balai', d
   ctx.fillStyle = ren ? '#f3e9d2' : '#e8e2d2'; ctx.fillRect(gx+12, gy+h-24, w-24, 24);
   if(ren){ ctx.fillStyle = '#ffd93b'; ctx.fillRect(gx+12, gy+50, w-24, 3); } // lis emas cat baru
   roofLimasan(gx, gy+6, w, ren ? '#a83226' : '#d98a5f');
-  signBoard(gx + w/2 - 40, gy + 34, 80, 'BALAI DESA', '#2c5d2c', '#ffffff');
+  signBoard(gx + w/2 - 40, gy + 58, 80, 'BALAI DESA', '#2c5d2c', '#ffffff'); // P24: papan menempel di DINDING depan (dulu menggantung di atap)
   ctx.fillStyle = '#2f7a2e'; ctx.fillRect(gx + w/2 - 48, gy + 46, 96, 6);
   ctx.fillStyle = '#ffd93b'; ctx.fillRect(gx + w/2 - 42, gy + 47, 3, 3); ctx.fillRect(gx + w/2 + 12, gy + 47, 3, 3);
   ctx.fillStyle = '#e85d75'; ctx.fillRect(gx + w/2 - 14, gy + 47, 3, 3); ctx.fillRect(gx + w/2 + 38, gy + 47, 3, 3);
@@ -1732,7 +1896,7 @@ addProp({ id:'musholla', x:13, y:18, w:4, h:4, door:{x:14,y:21}, draw(gx,gy){
   doorWood(gx + TILE + 7, gy + h - 30);
   terasBatu(gx + TILE - 2, gy + h - 5, 56); // TAHAP 13
   winWood(gx + 16, gy + 58);
-  signBoard(gx + w/2 - 30, gy + 96, 60, 'MUSHOLLA', '#1f9d55', '#ffffff');
+  signBoard(gx + w/2 - 30, gy + 78, 60, 'MUSHOLLA', '#1f9d55', '#ffffff'); // P24: papan menempel di dinding, di atas pintu — tidak menutupi kusen/jendela
   ctx.fillStyle = '#f4c542'; ctx.beginPath(); ctx.arc(gx + w/2, gy + 12, 6, 0, 7); ctx.fill();
   ctx.fillStyle = '#1f9d55'; ctx.beginPath(); ctx.arc(gx + w/2 + 3, gy + 10, 5, 0, 7); ctx.fill();
   ctx.fillStyle = '#f4c542'; ctx.fillRect(gx + w/2 + 8, gy + 6, 2.4, 2.4);
@@ -2078,13 +2242,20 @@ addProp({ id:'beringin', x:21, y:2, w:7, h:6, solidTiles:[[23,6],[24,6],[25,6],[
   ctx.beginPath(); ctx.moveTo(gx+44, gy+18); ctx.lineTo(gx+44 + swx, gy+58); ctx.stroke(); ctx.lineWidth = 1;
   ctx.fillStyle = '#2b2b2e'; ctx.beginPath(); ctx.ellipse(gx+44 + swx, gy+62, 8, 5, 0, 0, 7); ctx.fill();
   ctx.fillStyle = '#7ec8e3'; ctx.beginPath(); ctx.ellipse(gx+44 + swx, gy+62, 3.5, 2, 0, 0, 7); ctx.fill();
-  // tajuk daun raksasa berlapis (terakhir: menaungi sebagian atap gubuk)
-  const leaf = (cx,cy,r,c)=>{ ctx.fillStyle = c; ctx.beginPath(); ctx.arc(gx+cx, gy+cy, r, 0, 7); ctx.fill(); };
-  leaf(112, 6, 52, '#27632a'); leaf(52, 16, 38, '#27632a'); leaf(172, 14, 40, '#27632a');
-  leaf(112, 6, 52, '#2f7a2e'); leaf(52, 16, 38, '#2f7a2e'); leaf(172, 14, 40, '#2f7a2e');
-  leaf(84, -2, 40, '#3f9e3f'); leaf(140, 0, 38, '#3f9e3f'); leaf(112, 16, 34, '#4cb050');
-  leaf(60, 26, 24, '#3f9e3f'); leaf(164, 26, 25, '#3f9e3f');
-  leaf(96, 4, 20, 'rgba(120,220,110,.35)');
+  // P24-HD: tajuk digambar ulang ala sampel HD — gugus ber-outline + ramp terpotong siluet + tekstur deterministik; bergoyang halus, batang & rumah pohon diam
+  const blobsB = [[112, 6, 52], [52, 16, 38], [172, 14, 40], [84, -2, 40], [140, 0, 38], [112, 16, 34], [60, 26, 24], [164, 26, 25]];
+  const swB = Math.sin(t * 0.85) * 1.2;
+  const pathB = new Path2D(), pathO = new Path2D();
+  for(const [cx, cy, r] of blobsB){ const p = new Path2D(); p.arc(gx + cx + swB, gy + cy, r, 0, 7); pathB.addPath(p); const q = new Path2D(); q.arc(gx + cx + swB, gy + cy, r + 1.8, 0, 7); pathO.addPath(q); }
+  ctx.fillStyle = '#20242e'; ctx.fill(pathO);
+  ctx.fillStyle = '#27632a'; ctx.fill(pathB);
+  ctx.save(); ctx.clip(pathB);
+  const leafOff = (dx, dy, c) => { ctx.fillStyle = c; for(const [cx, cy, r] of blobsB){ ctx.beginPath(); ctx.arc(gx + cx + swB + dx, gy + cy + dy, r, 0, 7); ctx.fill(); } };
+  leafOff(5, 6, '#1e5220'); leafOff(-5, -6, '#3f9e3f'); leafOff(-2, -2, '#2f7a2e');
+  let sdB = 777; const rndB = () => { sdB = (sdB * 16807) % 2147483647; return sdB / 2147483647; };
+  for(let i = 0; i < 210; i++){ const dx = 8 + rndB() * 208, dy = -34 + rndB() * 74; ctx.fillStyle = rndB() < 0.7 ? '#57b83e' : '#2f7a2e'; ctx.fillRect(gx + dx, gy + dy, 2.4, 1.6); }
+  ctx.restore();
+  ctx.fillStyle = 'rgba(120,220,110,.30)'; ctx.beginPath(); ctx.arc(gx + 96 + swB, gy + 4, 20, 0, 7); ctx.fill();
   leafSpeck(gx, gy, 112, 2, 46, 777); leafSpeck(gx, gy, 56, 14, 30, 778); leafSpeck(gx, gy, 168, 12, 32, 779); // bintik cahaya tajuk raksasa
   // papan nama kecil di pangkal pohon
   signBoard(gx + 84, gy + 192, 56, 'BERINGIN', '#7a4d12', '#ffe9a8');
@@ -2254,11 +2425,14 @@ function buildTileCache(){
      Semua ubin tetap pra-render di kanvas 16x16 — tanpa biaya gambar per bingkai. */
   const SI = (typeof S !== 'undefined' && S && S.totalDay) ? seasonIdx() : 0;
   TILECACHE.season = SI;
+  /* P24 (grafik HD & berwarna): palet keseluruhan dinaikkan kejenuhannya secara
+     terukur — rumput lebih segar, kontras antar-nada lebih tegas. Semua ubin tetap
+     pra-render 16x16 di cache (tanpa biaya gambar per bingkai). */
   const PAL = [
-    { G1:'#67a84c', G2:'#58953f', G3:'#7cbc5a', G4:'#477f33', BL:'#8fce6f', BD:'#3d7030', patch:'#61a047', patch2:'#5da244' }, // Semi
-    { G1:'#63aa45', G2:'#4f9139', G3:'#79bd55', G4:'#3f7a2d', BL:'#8ac763', BD:'#356b26', patch:'#5c9c40', patch2:'#579a3e' }, // Panas
-    { G1:'#a99a4b', G2:'#96853c', G3:'#bcae5e', G4:'#7d6d2e', BL:'#cdbd72', BD:'#6d5c24', patch:'#a29044', patch2:'#9c8a40' }, // Gugur
-    { G1:'#76a37e', G2:'#63906c', G3:'#8ab494', G4:'#4f7a58', BL:'#a3c7ab', BD:'#40634a', patch:'#6f9a77', patch2:'#6a9571' }  // Dingin
+    { G1:'#5cb84a', G2:'#4a9e38', G3:'#79cc5e', G4:'#3a8029', BL:'#96e073', BD:'#2f6b21', patch:'#55a83f', patch2:'#51a83e' }, // Semi
+    { G1:'#58b040', G2:'#439431', G3:'#74c453', G4:'#357a24', BL:'#8cd763', BD:'#2a611c', patch:'#51a038', patch2:'#4f9c37' }, // Panas
+    { G1:'#b3a24a', G2:'#9c8a3a', G3:'#c6b95e', G4:'#847430', BL:'#d6c878', BD:'#6f5e24', patch:'#ab9c46', patch2:'#a69542' }, // Gugur
+    { G1:'#69b57e', G2:'#4f9c66', G3:'#83c793', G4:'#3d7d50', BL:'#a5dcb0', BD:'#2f6640', patch:'#5fab74', patch2:'#57a36e' }  // Dingin
   ][SI];
   const G1 = PAL.G1, G2 = PAL.G2, G3 = PAL.G3, G4 = PAL.G4;
   TILECACHE.grass = [];
@@ -2269,11 +2443,11 @@ function buildTileCache(){
       R(bx, by, 7, 6, PAL.patch); R(bx + 1, by + 1, 5, 4, G1);
       const cx2 = Math.floor(hash2(v * 11 + 4, 3) * 9), cy2 = Math.floor(hash2(6, v * 7 + 1) * 9);
       R(cx2, cy2, 6, 5, PAL.patch2);
-      pxSpeck(P, v * 17 + 3, 26, [G2, G3, G2, G4]);
+      pxSpeck(P, v * 17 + 3, 34, [G2, G3, G2, G4]); // P24: tekstur lebih rapat
       // helaian rumput: batang 2px dua nada (terang di atas, gelap di pangkal)
-      for(let i = 0; i < 9; i++){ const x = Math.floor(hash2(v * 7 + i, 21) * 15), y = 2 + Math.floor(hash2(3, v + i * 9) * 12); P(x, y - 1, PAL.BL); P(x, y, G2); P(x, y + 1, PAL.BD); if(i % 3 === 0) P(x + 1, y, PAL.BL); }
-      if(SI <= 1 && v % 3 === 1){ const fl = ['#ffd968', '#ffffff', '#e08ac0', '#f08c2e'];
-        for(let i = 0; i < 6; i++){ const x = 1 + Math.floor(hash2(v * 31 + i * 7, 13) * 14), y = 1 + Math.floor(hash2(5, v * 17 + i * 11) * 14); P(x, y, fl[i % fl.length]); P(x + 1, y, fl[(i + 1) % fl.length]); } }
+      for(let i = 0; i < 14; i++){ const x = Math.floor(hash2(v * 7 + i, 21) * 15), y = 2 + Math.floor(hash2(3, v + i * 9) * 12); P(x, y - 1, PAL.BL); P(x, y, G2); P(x, y + 1, PAL.BD); if(i % 3 === 0) P(x + 1, y, PAL.BL); } // P24: rumpun lebih lebat
+      if(SI <= 1 && v % 3 === 1){ const fl = ['#ffd968', '#ffffff', '#e08ac0', '#f08c2e', '#ff5d5d', '#b48ce8'];
+        for(let i = 0; i < 9; i++){ const x = 1 + Math.floor(hash2(v * 31 + i * 7, 13) * 14), y = 1 + Math.floor(hash2(5, v * 17 + i * 11) * 14); P(x, y, fl[i % fl.length]); P(x + 1, y, fl[(i + 1) % fl.length]); } } // P24: bunga lebih banyak & berwarna
       if(SI === 2 && v % 3 === 1){ for(let i = 0; i < 5; i++){ const x = 1 + Math.floor(hash2(v * 29 + i * 7, 13) * 14), y = 1 + Math.floor(hash2(5, v * 13 + i * 11) * 14); P(x, y, '#d07a2e'); P(x + 1, y, '#b85f1e'); } } // daun gugur
       if(v === 2 || v === 8){ for(const [x, y] of [[4, 5], [11, 10], [7, 13]]){ P(x, y, '#b9b3a4'); P(x + 1, y, '#9d968a'); } }
       if(v === 5 || v === 9){ R(3, 9, 4, 2, G2); P(4, 8, G2); }
@@ -2283,39 +2457,39 @@ function buildTileCache(){
     }));
   }
   TILECACHE.road = [0, 1, 2, 3].map(v => pxTile((P, R) => { // jalan tanah hangat + batu kecil
-    R(0, 0, 16, 16, ['#cfa96b', '#c69f60', '#d6b276', '#bd9254'][v]);
+    R(0, 0, 16, 16, ['#dcb671', '#d5ac62', '#e3bd7a', '#cb9f56'][v]); // P24: tanah jalan lebih hangat
     pxSpeck(P, 40 + v * 9, 26, ['#a67c42', '#dbb877', '#b28a4c']);
     for(const [x, y] of [[3 + v * 5, 4], [11 - v * 3, 11]]){ P(x, y, '#b9b3a4'); P(x + 1, y, '#8f887b'); P(x, y + 1, '#9d968a'); }
     if(v === 2){ P(6, 13, '#b9b3a4'); P(13, 6, '#9d968a'); P(7, 13, '#8f887b'); }
     if(v === 3){ P(0, 2, G3); P(1, 2, G1); P(15, 12, G3); P(14, 12, G1); P(0, 3, G2); P(15, 13, G2); }
   }));
   TILECACHE.paving = pxTile((P, R) => {
-    R(0, 0, 16, 16, '#a89f8c');
-    R(0, 0, 8, 8, '#b5ae9e'); R(8, 8, 8, 8, '#b0a894'); R(8, 0, 8, 8, '#aca28e'); R(0, 8, 8, 8, '#a39a86');
+    R(0, 0, 16, 16, '#b5ab97');
+    R(0, 0, 8, 8, '#c2bba9'); R(8, 8, 8, 8, '#beb49f'); R(8, 0, 8, 8, '#baaf99'); R(0, 8, 8, 8, '#b1a68f');
     R(0, 7, 16, 1, '#7e7663'); R(0, 15, 16, 1, '#7e7663'); R(7, 0, 1, 16, '#7e7663'); R(15, 0, 1, 16, '#7e7663');
     R(0, 0, 16, 1, '#8a8271'); R(0, 0, 1, 16, '#8a8271');
     P(2, 2, '#c4bda9'); P(10, 3, '#c4bda9'); P(4, 11, '#c4bda9'); P(12, 12, '#98917d'); P(5, 5, '#98917d');
   });
   TILECACHE.sawah = [0, 1].map(v => pxTile((P, R) => {
-    R(0, 0, 16, 16, '#8a6a42');
-    R(1, 1, 14, 14, '#79b5d9');
-    R(1, 1, 14, 2, '#93c7e6');
+    R(0, 0, 16, 16, '#966f3d');
+    R(1, 1, 14, 14, '#6fb7e8');
+    R(1, 1, 14, 2, '#a5d6f5');
     pxSpeck(P, 60 + v * 13, 8, ['#a8d4ee', '#5f9ec7'], (x, y) => x === 0 || y === 0 || x === 15 || y === 15);
     for(let i = 0; i < 3; i++){ const x = 3 + ((i * 4 + v * 2) % 10), y = 5 + ((i * 3 + v) % 8); P(x, y, '#4e9e3e'); P(x, y - 1, '#63b84e'); P(x + 1, y, '#57a83e'); }
     R(2, 12, 6, 1, 'rgba(255,255,255,.35)'); if(v === 1) R(9, 4, 5, 1, 'rgba(255,255,255,.3)'); // kilau permukaan air sawah
   }));
   TILECACHE.water = [0, 1, 2, 3].map(f => pxTile((P, R) => { // P16-V: biru pekat berlapis + gelombang bergeser per bingkai
-    R(0, 0, 16, 16, ['#2e6ab5', '#2c67b1', '#306eb9', '#2d69b3'][f]);
-    R(0, 0, 16, 3, '#3574c0'); R(0, 13, 16, 3, '#275f9e'); // P21: gradasi permukaan -> kedalaman
-    R(0, 4 + f * 2, 16, 2, '#245a99'); R(0, 11 - (f % 2) * 2, 16, 2, '#245a99');
-    R(2 + f * 3, 1 + (f % 2) * 6, 5, 1, 'rgba(255,255,255,.12)');
+    R(0, 0, 16, 16, ['#2273cf', '#2070cb', '#2477d3', '#2172cc'][f]); // P24: biru air lebih jernih & jenuh
+    R(0, 0, 16, 3, '#3d8fe3'); R(0, 13, 16, 3, '#185aab'); // P21+P24: gradasi permukaan -> kedalaman lebih tegas
+    R(0, 4 + f * 2, 16, 2, '#1c62b4'); R(0, 11 - (f % 2) * 2, 16, 2, '#1c62b4');
+    R(2 + f * 3, 1 + (f % 2) * 6, 5, 1, 'rgba(255,255,255,.16)');
     const wpos = [[2, 3], [9, 8], [4, 13], [12, 5], [6, 10], [13, 14]];
-    for(let i = 0; i < 4; i++){ const [x, y] = wpos[(i + f) % 6]; P(x, y, '#bfe3ff'); P(x + 1, y, '#bfe3ff'); P(x + 2, y, '#8fc3ec'); }
+    for(let i = 0; i < 6; i++){ const [x, y] = wpos[(i + f) % 6]; P(x, y, '#bfe3ff'); P(x + 1, y, '#bfe3ff'); P(x + 2, y, '#8fc3ec'); } // P24: kilau gelombang lebih rapat
     P(12 - (f % 2) * 7, 6 + (f % 3) * 3, '#eaf7ff');
     if(f % 2 === 0){ P(5, 12, '#dff2ff'); P(6, 12, '#9cc8ef'); } else { P(10, 2, '#dff2ff'); P(11, 2, '#9cc8ef'); } // P21: kilau matahari bergantian antar bingkai
   }));
   TILECACHE.bridge = pxTile((P, R) => {
-    R(0, 0, 16, 16, '#2e6ab5');
+    R(0, 0, 16, 16, '#2273cf');
     R(0, 3, 16, 10, '#a5713d');
     R(0, 3, 16, 1, '#c08b4e'); R(0, 12, 16, 1, '#7d5327');
     R(0, 6, 16, 1, '#7d5327'); R(0, 9, 16, 1, '#7d5327');
@@ -2323,10 +2497,10 @@ function buildTileCache(){
     for(const [x, y] of [[2, 4], [13, 7], [5, 10], [10, 4]]) P(x, y, '#5d3d1e');
   });
   const soilPx = (P, R, wet) => {
-    R(0, 0, 16, 16, wet ? '#5d3f24' : '#7d5636');
-    R(0, 0, 16, 2, wet ? '#66482a' : '#86603c'); // P21: tepi atas petak kena cahaya
-    R(0, 14, 16, 2, wet ? '#503620' : '#6f4c2e'); // P21: tepi bawah lebih gelap — kedalaman galian
-    for(const y of [3, 7, 11, 15]){ R(0, y, 16, 1, wet ? '#452e18' : '#64432a'); R(0, y - 1, 16, 1, wet ? '#755431' : '#96693f'); if(y < 15) R(0, y + 1, 16, 1, wet ? '#54381e' : '#73502f'); }
+    R(0, 0, 16, 16, wet ? '#63452a' : '#875e34'); // P24: cokelat tanah lebih kaya
+    R(0, 0, 16, 2, wet ? '#6d4c2d' : '#91683c'); // P21: tepi atas petak kena cahaya
+    R(0, 14, 16, 2, wet ? '#563a20' : '#77512e'); // P21: tepi bawah lebih gelap — kedalaman galian
+    for(const y of [3, 7, 11, 15]){ R(0, y, 16, 1, wet ? '#4a3016' : '#6b482a'); R(0, y - 1, 16, 1, wet ? '#7d5731' : '#9e6f40'); if(y < 15) R(0, y + 1, 16, 1, wet ? '#54381e' : '#7a552f'); }
     // P16-V: gumpalan organik — gumpal tanah tidak beraturan, bukan garis lurus saja
     for(let i = 0; i < 6; i++){ const gx = 1 + Math.floor(hash2(i * 7 + (wet ? 31 : 3), 41) * 12), gy = 1 + Math.floor(hash2(43, i * 11 + (wet ? 7 : 1)) * 12);
       R(gx, gy, 3, 2, wet ? '#4c3016' : '#6e4a2a'); P(gx + 1, gy - 1 < 0 ? gy : gy, wet ? '#755431' : '#96693f'); R(gx + 3, gy + 1, 1, 1, wet ? '#4c3016' : '#6e4a2a'); }
@@ -2376,12 +2550,16 @@ function drawGround(camX, camY, viewW, viewH){
       ctx.drawImage(TILECACHE.paving, px, py);
     } else if(g===3){
       ctx.drawImage(TILECACHE.sawah[h<.5?0:1], px, py);
+      // P24-HD: air sawah memantulkan warna langit jam setempat (pagi keemasan, siang terang, sore hangat, malam redup)
+      if(typeof S !== 'undefined' && S){ const jm = S.minutes/60; ctx.fillStyle = (jm>=5.5 && jm<9) ? 'rgba(255,205,130,.10)' : (jm>=9 && jm<15.5) ? 'rgba(200,232,255,.13)' : (jm>=15.5 && jm<18.5) ? 'rgba(255,170,100,.11)' : 'rgba(20,40,80,.10)'; ctx.fillRect(px+1, py+1, TILE-2, TILE-2); }
     } else if(g===4){
       ctx.drawImage(TILECACHE.water[(wFrame + (h>.5?1:0))%TILECACHE.water.length], px, py);
       // P21: air DALAM (sekeliling air) lebih gelap + kilau jarang — rasa kedalaman danau/sungai
       if(ty>0 && ty<MAPH-1 && tx>0 && tx<MAPW-1 && G[ty-1][tx]===4 && G[ty+1][tx]===4 && G[ty][tx-1]===4 && G[ty][tx+1]===4){
         ctx.fillStyle = 'rgba(8,32,72,.20)'; ctx.fillRect(px, py, TILE, TILE);
         if(h > .82){ ctx.fillStyle = 'rgba(230,246,255,.5)'; ctx.fillRect(px + 6 + h * 14, py + 8 + h * 9, 3, 1.6); }
+        // P24-HD: kedalaman lapis 2 — inti danau (8 tetangga air semua) lebih pekat lagi
+        if(G[ty-1][tx-1]===4 && G[ty-1][tx+1]===4 && G[ty+1][tx-1]===4 && G[ty+1][tx+1]===4) { ctx.fillStyle = 'rgba(6,24,58,.16)'; ctx.fillRect(px, py, TILE, TILE); }
       }
       ctx.fillStyle = '#cbb27a';
       if(ty>0 && G[ty-1][tx]!==4) ctx.fillRect(px, py, TILE, 3);
@@ -4035,8 +4213,19 @@ function updatePlayer(dt){
   // target kecepatan lalu dilicinkan (lerp/glide) agar gerak tidak patah-patah
   const speed = (S && S.riding ? 225 : (VEH.ride && VEH_INFO[VEH.ride] ? VEH_INFO[VEH.ride].spd : (S && S.stamina<=0 ? 65 : 132))) * (running ? 1.6 : 1) * (player.boating ? 0.72 : 1) * ((typeof buff16On === 'function' && buff16On('langkahRingan') && !(S && S.riding) && !VEH.ride) ? 1.12 : 1); // P16-1: buff Langkah Ringan (Kopi Tubruk) // Tahap P3: kendaraan; P4: mendayung perahu lebih pelan
   let tvx = 0, tvy = 0;
-  if(player.moving){ tvx = vx/(m||1)*speed; tvy = vy/(m||1)*speed;
-    if(Math.abs(vx) > Math.abs(vy)) player.dir = vx>0 ? 'right' : 'left'; else player.dir = vy>0 ? 'down' : 'up'; }
+  if(player.moving){
+    /* P24 (kontrol ala Stardew mobile): kecepatan mengikuti BESAR kemiringan stik
+       analog — miring sedikit = jalan pelan, miring penuh = kecepatan penuh.
+       Masukan digital (tombol/D-pad/gamepad, m>=1) dinormalkan seperti biasa. */
+    const mm = Math.max(1, m);
+    tvx = vx / mm * speed; tvy = vy / mm * speed;
+    /* Arah hadap 4 arah dengan HISTERESIS (pola anti-kedip P13): hadap hanya
+       berganti bila sumbu kandidat jelas dominan (1,5x) — jalan diagonal 8 arah
+       tetap mulus tanpa pose berganti-ganti. */
+    const ax = Math.abs(vx), ay = Math.abs(vy);
+    const cand = ax > ay ? (vx > 0 ? 'right' : 'left') : (vy > 0 ? 'down' : 'up');
+    if(cand !== player.dir){ const dom = Math.max(ax, ay), sub = Math.min(ax, ay); if(sub < 0.05 || dom > sub * 1.5) player.dir = cand; }
+  }
   const k = 1 - Math.exp(-dt * 11); // faktor lerp
   player.svx = (player.svx||0) + (tvx - (player.svx||0)) * k;
   player.svy = (player.svy||0) + (tvy - (player.svy||0)) * k;
@@ -8905,6 +9094,32 @@ function drawEnterScene(){
   for(let ty = 0; ty < EH2; ty++) for(let tx = 0; tx < EW2; tx++)
     ctx.drawImage(INTCACHE.floor[hash2(tx * 3, ty * 5) < .5 ? 0 : 1], tx * TILE, ty * TILE);
   ctx.drawImage(INTCACHE.carpet, 4 * TILE, 5 * TILE);
+  if(def.theme === 'ibadah'){
+    /* P24: KARPET SHAF musholla — karpet besar bermotif + garis-garis shaf +
+       sajjadah individual yang sejajar PERSIS dengan slot shaf jamaah P23
+       (imam [5,4] lebih besar & berwarna beda di depan-tengah). */
+    const cx0 = 0.8 * TILE, cy0 = 3.55 * TILE, cw = 10.4 * TILE, ch = 4.4 * TILE;
+    ctx.fillStyle = 'rgba(0,0,0,.25)'; ctx.fillRect(cx0 + 2, cy0 + 3, cw, ch);
+    ctx.fillStyle = '#17573a'; ctx.fillRect(cx0, cy0, cw, ch);
+    ctx.fillStyle = '#1e6b47'; ctx.fillRect(cx0 + 5, cy0 + 5, cw - 10, ch - 10);
+    ctx.strokeStyle = '#c9a227'; ctx.lineWidth = 1.6; ctx.strokeRect(cx0 + 3.5, cy0 + 3.5, cw - 7, ch - 7); ctx.lineWidth = 1;
+    ctx.strokeStyle = 'rgba(201,162,39,.55)'; ctx.strokeRect(cx0 + 7, cy0 + 7, cw - 14, ch - 14);
+    ctx.fillStyle = 'rgba(255,240,190,.10)';
+    for(let mx = cx0 + 16; mx < cx0 + cw - 10; mx += 24) for(let my = cy0 + 14; my < cy0 + ch - 8; my += 24){ ctx.save(); ctx.translate(mx, my); ctx.rotate(Math.PI / 4); ctx.fillRect(-3, -3, 6, 6); ctx.restore(); }
+    ctx.fillStyle = 'rgba(255,246,200,.5)';
+    for(const ry of [4, 5, 6, 7]) ctx.fillRect(cx0 + 6, ry * TILE - 1.4, cw - 12, 1.6); // garis shaf antar baris
+    const saj = (tx, ty, besar, c1, c2) => { const sx = tx * TILE + 3, sy = ty * TILE + 2, sw = TILE - 6, sh = TILE - 4;
+      ctx.fillStyle = 'rgba(0,0,0,.18)'; ctx.fillRect(sx + 1, sy + 2, sw, sh);
+      ctx.fillStyle = c1; ctx.fillRect(sx, sy, sw, sh);
+      ctx.strokeStyle = c2; ctx.lineWidth = 1.2; ctx.strokeRect(sx + 2, sy + 2, sw - 4, sh - 4); ctx.lineWidth = 1;
+      ctx.beginPath(); ctx.arc(sx + sw / 2, sy + 9, besar ? 5.4 : 4.4, Math.PI, 0); ctx.stroke();
+      ctx.fillStyle = c2; ctx.fillRect(sx + 3, sy + sh - 5, sw - 6, 1.6); };
+    saj(5, 4, true, '#7a1f24', '#e8c85a');
+    for(const tx of [2, 3, 4, 6, 7, 8, 9]) saj(tx, 4, false, '#205c40', '#d9b84a');
+    for(let tx = 2; tx <= 9; tx++) saj(tx, 5, false, tx % 2 ? '#7a1f24' : '#205c40', '#e8e2c8');
+    for(let tx = 2; tx <= 9; tx++) saj(tx, 6, false, '#205c40', '#d9b84a');
+    for(const tx of [2, 3, 4, 7, 8, 9]) saj(tx, 7, false, tx % 2 ? '#7a1f24' : '#205c40', '#e8e2c8');
+  }
   ctx.drawImage(INTCACHE.wall, 0, 0, EW2 * TILE, TILE);
   ctx.fillStyle = def.wall; ctx.fillRect(0, 0, EW2 * TILE, 10);
   ctx.fillStyle = 'rgba(0,0,0,.10)'; ctx.fillRect(0, 32, EW2 * TILE, 5);
@@ -8938,12 +9153,59 @@ function drawEnterScene(){
     ctx.fillStyle = def.themeSign === 'paw' ? '#2c7a3f' : '#c9403d'; ctx.font = 'bold 11px sans-serif'; ctx.textAlign = 'center';
     ctx.fillText(def.themeSign === 'paw' ? '🐾' : '✚', 6 * TILE, 1 * TILE + 15); ctx.textAlign = 'left';
   } else if(def.theme === 'ibadah'){
-    ctx.fillStyle = '#2c7a3f'; ctx.fillRect(4 * TILE, 1 * TILE + 2, 4 * TILE, 24);
-    ctx.fillStyle = '#fdf6dd'; ctx.beginPath(); ctx.arc(6 * TILE, 1 * TILE + 14, 13, Math.PI, 0); ctx.fill();
-    ctx.fillStyle = '#2c7a3f'; ctx.fillRect(6 * TILE - 1, 1 * TILE - 4, 2, 6);
-    ctx.fillStyle = '#e8c85a'; ctx.beginPath(); ctx.arc(6 * TILE, 1 * TILE - 5, 2.4, 0, 7); ctx.fill();
+    /* P24: interior musholla Indonesia yang dikenali — dinding putih aksen hijau,
+       MIHRAB (ceruk imam) di dinding kiblat tengah-depan, mimbar kecil di kanan
+       mihrab, rak Al-Qur'an, kipas angin dinding, jendela berventilasi, lampu gantung. */
+    ctx.fillStyle = '#eef4ee'; ctx.fillRect(0, 0, EW2 * TILE, TILE); // cat putih dinding kiblat
+    ctx.fillStyle = '#1e6b47'; ctx.fillRect(0, 29, EW2 * TILE, 6);   // lis hijau
+    ctx.fillStyle = '#c9a227'; ctx.fillRect(0, 28, EW2 * TILE, 1.4); // garis emas tipis di atas lis
+    ctx.fillStyle = 'rgba(0,0,0,.10)'; ctx.fillRect(0, 35, EW2 * TILE, 3);
+    // jendela berventilasi (kiri & kanan dinding kiblat)
+    for(const wx of [0.5 * TILE, 10.1 * TILE]){
+      ctx.fillStyle = '#14532d'; ctx.fillRect(wx - 2, 10, 1.4 * TILE + 4, 19);
+      ctx.fillStyle = '#cfeaf7'; ctx.fillRect(wx, 12, 1.4 * TILE, 15);
+      ctx.fillStyle = 'rgba(20,83,45,.55)'; for(let sy2 = 15; sy2 < 26; sy2 += 4) ctx.fillRect(wx + 2, sy2, 1.4 * TILE - 4, 1.6);
+      ctx.fillStyle = 'rgba(255,255,255,.5)'; ctx.fillRect(wx + 3, 12, 8, 14);
+    }
+    // rak Al-Qur'an menempel dinding (kiri mihrab): dua papan + punggung mushaf berwarna
+    ctx.fillStyle = '#6e4520'; ctx.fillRect(2.3 * TILE, 13, 1.9 * TILE, 3.4); ctx.fillRect(2.3 * TILE, 24.4, 1.9 * TILE, 2.6);
+    const mushaf = ['#7a1f24', '#1e6b47', '#274690', '#c9a227', '#5b2a86', '#7a1f24'];
+    for(let b3 = 0; b3 < 6; b3++){ ctx.fillStyle = mushaf[b3]; ctx.fillRect(2.3 * TILE + 3 + b3 * 9.4, 16, 6.2, 8.4); ctx.fillStyle = 'rgba(255,215,120,.85)'; ctx.fillRect(2.3 * TILE + 3 + b3 * 9.4, 17.6, 6.2, 1.3); }
+    // kipas angin dinding (berputar pelan)
+    for(const fx of [3.4 * TILE, 8.6 * TILE]){
+      ctx.fillStyle = '#3d4a42'; ctx.beginPath(); ctx.arc(fx, 19, 8.6, 0, 7); ctx.fill();
+      ctx.fillStyle = '#dfe7e2'; ctx.beginPath(); ctx.arc(fx, 19, 7.4, 0, 7); ctx.fill();
+      ctx.fillStyle = '#9fb4a8'; for(let bl = 0; bl < 3; bl++){ const a = bl * 2.1 + (performance.now() / 300) % 6.28; ctx.beginPath(); ctx.ellipse(fx + Math.cos(a) * 3.4, 19 + Math.sin(a) * 3.4, 3.6, 1.7, a, 0, 7); ctx.fill(); }
+      ctx.fillStyle = '#5a6b60'; ctx.beginPath(); ctx.arc(fx, 19, 1.8, 0, 7); ctx.fill();
+    }
+    // MIHRAB — ceruk lengkung tempat imam, tengah-depan dinding kiblat
+    const mx0 = 5 * TILE + 2, mw = 2 * TILE - 4;
+    ctx.fillStyle = 'rgba(0,0,0,.20)'; ctx.fillRect(mx0 + 3, 44, mw, 74);
+    ctx.fillStyle = '#14532d'; ctx.beginPath(); ctx.moveTo(mx0, 118); ctx.lineTo(mx0, 62); ctx.arc(6 * TILE, 62, mw / 2, Math.PI, 0); ctx.lineTo(mx0 + mw, 118); ctx.closePath(); ctx.fill();
+    ctx.fillStyle = '#e9f5ec'; ctx.beginPath(); ctx.moveTo(mx0 + 5, 118); ctx.lineTo(mx0 + 5, 64); ctx.arc(6 * TILE, 64, mw / 2 - 5, Math.PI, 0); ctx.lineTo(mx0 + mw - 5, 118); ctx.closePath(); ctx.fill();
+    ctx.fillStyle = '#dcefe2'; ctx.fillRect(mx0 + 10, 84, mw - 20, 34);
+    ctx.strokeStyle = '#c9a227'; ctx.lineWidth = 1.6; ctx.beginPath(); ctx.moveTo(mx0 + 5, 118); ctx.lineTo(mx0 + 5, 64); ctx.arc(6 * TILE, 64, mw / 2 - 5, Math.PI, 0); ctx.lineTo(mx0 + mw - 5, 118); ctx.stroke(); ctx.lineWidth = 1;
+    ctx.fillStyle = '#c9a227'; ctx.beginPath(); ctx.arc(6 * TILE, 22, 3, 0, 7); ctx.fill(); ctx.fillRect(6 * TILE - 1, 25, 2, 6); // bintang & tangkai puncak mihrab
+    // MIMBAR kecil di kanan mihrab: undakan kayu + kubah mungil + tongkat
+    const mbx = 7.5 * TILE, mby = 118;
+    ctx.fillStyle = '#7a4d21'; ctx.fillRect(mbx, mby - 16, 34, 16); ctx.fillRect(mbx + 3, mby - 26, 28, 10); ctx.fillRect(mbx + 6, mby - 34, 22, 8);
+    ctx.fillStyle = '#8a5a2b'; ctx.fillRect(mbx, mby - 16, 34, 3); ctx.fillRect(mbx + 3, mby - 26, 28, 3);
+    ctx.fillStyle = '#1e6b47'; ctx.beginPath(); ctx.arc(mbx + 17, mby - 34, 10, Math.PI, 0); ctx.fill();
+    ctx.fillStyle = '#c9a227'; ctx.fillRect(mbx + 16, mby - 48, 2, 5); ctx.beginPath(); ctx.arc(mbx + 17, mby - 49, 2.2, 0, 7); ctx.fill();
+    ctx.fillStyle = '#5d4020'; ctx.fillRect(mbx + 28, mby - 30, 2.4, 14);
+    // lampu gantung di atas shaf
+    for(const lx of [3 * TILE, 9 * TILE]){
+      ctx.strokeStyle = '#3a3a3a'; ctx.lineWidth = 1.2; ctx.beginPath(); ctx.moveTo(lx, 0); ctx.lineTo(lx, 12); ctx.stroke(); ctx.lineWidth = 1;
+      ctx.fillStyle = '#1e6b47'; ctx.beginPath(); ctx.moveTo(lx - 8, 20); ctx.lineTo(lx, 11); ctx.lineTo(lx + 8, 20); ctx.closePath(); ctx.fill();
+      ctx.fillStyle = 'rgba(255,214,120,.85)'; ctx.beginPath(); ctx.arc(lx, 21.4, 3, 0, 7); ctx.fill();
+      ctx.fillStyle = 'rgba(255,205,90,.13)'; ctx.beginPath(); ctx.arc(lx, 24, 15, 0, 7); ctx.fill();
+    }
+    // nama bangunan digambar ulang di atas cat putih dinding
+    ctx.fillStyle = '#14532d'; ctx.font = 'bold 10px sans-serif'; ctx.textAlign = 'center';
+    ctx.fillText(def.nama.toUpperCase(), 6 * TILE, 15); ctx.textAlign = 'left';
   }
-  // konter kayu (baris y=3, x2..7)
+  // konter kayu (baris y=3, x2..7) — P24: musholla TIDAK punya konter toko (bukan ruangan dagang)
+  if(def.theme !== 'ibadah'){
   ctx.fillStyle = 'rgba(0,0,0,.14)'; ctx.fillRect(2 * TILE, 3 * TILE + 26, 6 * TILE, 5);
   ctx.fillStyle = '#8a5a2b'; ctx.fillRect(2 * TILE, 3 * TILE + 8, 6 * TILE, 20);
   ctx.fillStyle = '#a5713d'; ctx.fillRect(2 * TILE, 3 * TILE + 8, 6 * TILE, 5);
@@ -8951,6 +9213,7 @@ function drawEnterScene(){
   ctx.fillStyle = '#ffd968'; ctx.font = '10px sans-serif'; ctx.textAlign = 'center';
   ctx.fillText(def.theme === 'makan' ? '🍛' : def.theme === 'kendaraan' ? '🔧' : def.theme === 'layanan' ? '✚' : '🛒', 3 * TILE + 8, 3 * TILE + 24);
   ctx.fillText('🧾', 6 * TILE + 20, 3 * TILE + 24); ctx.textAlign = 'left';
+  }
   // dekorasi lantai per bangunan
   if(def.deco) for(const d of def.deco) drawEnterDeco(d);
   // dinding bawah + pintu keluar
@@ -8958,6 +9221,18 @@ function drawEnterScene(){
   ctx.fillStyle = '#54350f'; ctx.fillRect(5 * TILE - 3, 8 * TILE - 2, 70, TILE + 2);
   ctx.fillStyle = '#7a4d21'; ctx.fillRect(5 * TILE, 8 * TILE, 64, TILE);
   ctx.fillStyle = 'rgba(255,248,225,.92)'; ctx.font = 'bold 8px sans-serif'; ctx.textAlign = 'center'; ctx.fillText('KELUAR', 6 * TILE, 8 * TILE - 5); ctx.textAlign = 'left';
+  if(def.theme === 'ibadah'){
+    /* P24: AREA SANDAL di dekat pintu masuk (di BELAKANG shaf): rak rendah + pasangan sandal warga */
+    for(const rx of [2.2 * TILE, 8.2 * TILE]){
+      ctx.fillStyle = 'rgba(0,0,0,.18)'; ctx.fillRect(rx + 1, 8 * TILE + 24, 1.7 * TILE, 4);
+      ctx.fillStyle = '#6e4520'; ctx.fillRect(rx, 8 * TILE + 20, 1.7 * TILE, 5);
+      ctx.fillStyle = '#8a5a2b'; ctx.fillRect(rx, 8 * TILE + 12, 1.7 * TILE, 3);
+      const sc = ['#c9403d', '#2c5d8a', '#3f7a34', '#e0a51e'];
+      for(let sd = 0; sd < 4; sd++){ const sxp = rx + 3 + sd * 13; ctx.fillStyle = sc[sd % 4];
+        ctx.beginPath(); ctx.ellipse(sxp + 3, 8 * TILE + 17.4, 3.4, 5.2, 0.25, 0, 7); ctx.fill();
+        ctx.beginPath(); ctx.ellipse(sxp + 8.6, 8 * TILE + 17.4, 3.4, 5.2, -0.25, 0, 7); ctx.fill(); }
+    }
+  }
   const ents = [{ y: player.y, draw:() => drawChar(player.x, player.y, Object.assign({ kind: 'player', shirt: (S && S.shirtColor) || '#5d6b3a', hop: 0 }, player)) }];
   const ko = keeperPresent(def) ? keeperDrawObj(def) : null;
   if(ko) ents.push({ y: 2 * TILE + 30, draw:() => {
@@ -9187,8 +9462,8 @@ const ENTER_DEFS = {
     menu: balaiMenu, deco: [{ tx: 2, ty: 5, kind: 'bendera' }, { tx: 9, ty: 5, kind: 'meja' }, { tx: 10, ty: 5, kind: 'kursi' }], solids: ['2,5','9,5','10,5'],
     flavor: 'Aula balai yang luas — tempat musyawarah warga. Hadapi meja depan untuk layanan desa (Museum, KUD, Renovasi).' },
   musholla: { nama: 'Musholla An-Nur', sign: '🕌 Musholla An-Nur', wall: '#dff0e2', theme: 'ibadah',
-    menu: mushollaMenu, deco: [{ tx: 2, ty: 5, kind: 'sajadah' }, { tx: 3, ty: 5, kind: 'sajadah' }, { tx: 9, ty: 5, kind: 'sajadah' }], solids: ['2,5','3,5','9,5'],
-    flavor: 'Sajadah tergelar rapi. Tempat yang tenang untuk beribadah.' },
+    menu: mushollaMenu, deco: [], solids: [], /* P24: karpet & sajjadah kini digambar menyatu oleh adegan (bukan deco lepas); menu diganti modul P24 */
+    flavor: 'Sajadah tergelar rapi dalam shaf menghadap mihrab. Tempat yang tenang untuk beribadah.' },
   stanCukur: { nama: 'Stan Cukur Kang Ujang', sign: '💈 Stan Cukur Kang Ujang', wall: '#f0e2c8', theme: 'layanan', keeper: { npc: 'ujang' }, keeperName: 'Kang Ujang',
     keeperGone: 'Kang Ujang sedang keliling kampung. Potong rambut bisa dilayani saat beliau ada di stan cukurnya (biasanya pagi & sore).',
     menu: () => openBarber(), deco: [{ tx: 9, ty: 5, kind: 'kursi' }, { tx: 2, ty: 6, kind: 'kursi' }], solids: ['9,5','2,6'],
@@ -11021,6 +11296,30 @@ function refillCan(tx, ty){
   updateHUD();
 }
 
+/* ---------- P24 #8: panel Catatan Error (data ditulis logger di kepala berkas) ---------- */
+function leErrorList(){ try{ const a = JSON.parse(localStorage.getItem('le_errorlog') || '[]'); return Array.isArray(a) ? a : []; }catch(e){ return []; } }
+function leErrorCount(){ return leErrorList().length; }
+function openErrorLog(){
+  /* Render manual ke panel #shop (BUKAN openShop/rowBtn): pembungkus baris
+     Pengaturan & baris toko selalu membuka ulang panel asalnya sesudah fn(),
+     yang menutup panel ini seketika. Di sini panel tampil menetap. */
+  const arr = leErrorList();
+  const box = document.getElementById('shopRows'); if(!box) return;
+  document.getElementById('shopTitle').textContent = '🧾 Catatan Error — build ' + GAME_BUILD;
+  box.innerHTML = '';
+  const mkRow = (label, btnText, fn) => { const div = document.createElement('div'); div.className = 'shoprow'; const s = document.createElement('span'); s.innerHTML = label; div.appendChild(s); if(btnText){ const b = document.createElement('button'); b.textContent = btnText; b.addEventListener('click', fn); div.appendChild(b); } box.appendChild(div); };
+  if(!arr.length) mkRow('✅ Belum ada error tercatat — game berjalan bersih.', null, null);
+  const show = arr.slice(-10).reverse();
+  for(const e of show) mkRow('<b>' + String(e.t || '').replace('T', ' ').slice(0, 19) + '</b> [' + (e.build || '?') + '] ' + String(e.msg || '').replace(/</g, '&lt;').slice(0, 90) + (e.src ? '<br><small>' + String(e.src).replace(/</g, '&lt;').slice(0, 70) + '</small>' : ''), null, null);
+  if(arr.length > 10) mkRow('…dan ' + (arr.length - 10) + ' entri lebih lama (maksimum 50 tersimpan).', null, null);
+  mkRow('🗑️ Bersihkan semua catatan error', 'Bersihkan', () => { try{ localStorage.removeItem('le_errorlog'); }catch(e){} toast('🧾 Catatan error dibersihkan.'); try{ document.querySelectorAll('#setRows .shoprow').forEach(r => { if(/Catatan Error/.test(r.textContent)){ const sp = r.querySelector('span'); if(sp) sp.innerHTML = '🧾 Catatan Error: <b>0 entri</b>'; } }); }catch(e){} openErrorLog(); });
+  mkRow('↩️ Kembali ke Pengaturan', 'Kembali', () => { shopEl.classList.remove('show'); openSettings(); });
+  const sm = document.getElementById('shopMoney'); if(sm && typeof S !== 'undefined' && S && typeof S.money === 'number') sm.textContent = 'Uangmu: Rp ' + S.money.toLocaleString('id-ID');
+  const st = document.getElementById('settings'); if(st) st.classList.remove('show');
+  if(typeof dlg !== 'undefined' && dlg) dlg.classList.remove('show');
+  shopEl.classList.add('show');
+}
+
 /* ---------- Panel Pengaturan tunggal (layar judul & menu jeda) ---------- */
 function openSettings(){
   closePanels();
@@ -11028,7 +11327,20 @@ function openSettings(){
   box.innerHTML = '';
   const rowBtn = (label, btnText, fn) => { const div = document.createElement('div'); div.className = 'shoprow'; const s = document.createElement('span'); s.innerHTML = label; div.appendChild(s); const b = document.createElement('button'); b.textContent = btnText; b.addEventListener('click', () => { sndBlip(); fn(); openSettings(); }); div.appendChild(b); box.appendChild(div); };
   const rowSlider = (label, get, set) => { const div = document.createElement('div'); div.className = 'shoprow'; const s = document.createElement('span'); s.innerHTML = label + ' <b class="setVal">' + get() + '%</b>'; div.appendChild(s); const inp = document.createElement('input'); inp.type = 'range'; inp.min = '0'; inp.max = '100'; inp.step = '5'; inp.value = get(); inp.style.flex = '1'; inp.setAttribute('aria-label', label); inp.addEventListener('input', () => { set(+inp.value); s.querySelector('.setVal').textContent = inp.value + '%'; }); inp.addEventListener('change', () => { if(label.indexOf('SFX') >= 0) AudioMan.play('click'); }); div.appendChild(inp); box.appendChild(div); };
-  rowBtn('🎮 Skema kontrol: <b>' + (SETTINGS.scheme === 'dpad' ? 'D-Pad' : 'Joystick') + '</b>', 'Ganti', () => { SETTINGS.scheme = SETTINGS.scheme === 'dpad' ? 'joy' : 'dpad'; saveSettings(); applyScheme(); });
+  /* P24: mode kontrol ala Stardew mobile — Analog (joystick mengambang) / Ketuk
+     (ketuk tanah untuk berjalan) / Keduanya / D-Pad (warisan). Default: Analog. */
+  rowBtn('🎮 Mode kontrol: <b>' + ({ analog:'Analog (joystick)', ketuk:'Ketuk untuk jalan', keduanya:'Keduanya', dpad:'D-Pad' }[SETTINGS.ctl || 'analog'] || 'Analog (joystick)') + '</b>', 'Ganti', () => {
+    const urut = ['analog', 'ketuk', 'keduanya', 'dpad'];
+    const cur = SETTINGS.ctl || 'analog';
+    const nx = urut[(urut.indexOf(cur) + 1) % urut.length];
+    SETTINGS.ctl = nx;
+    SETTINGS.scheme = nx === 'dpad' ? 'dpad' : 'joy';
+    saveSettings(); applyScheme();
+    if(typeof window.__p24ApplyCtl === 'function') window.__p24ApplyCtl();
+    openSettings();
+  });
+  /* P24 #8: baris manual (BUKAN rowBtn — rowBtn membuka ulang Pengaturan sesudah fn dan akan menutup panel Catatan Error seketika) */
+  { const div = document.createElement('div'); div.className = 'shoprow'; const s = document.createElement('span'); s.innerHTML = '🧾 Catatan Error: <b>' + leErrorCount() + ' entri</b>'; div.appendChild(s); const b = document.createElement('button'); b.textContent = 'Lihat'; b.addEventListener('click', () => { sndBlip(); openErrorLog(); }); div.appendChild(b); box.appendChild(div); }
   if(SETTINGS.scheme === 'joy') rowBtn('🕹️ Sensitivitas joystick: <b>' + SETTINGS.joySens + '%</b>', 'Ubah', () => { SETTINGS.joySens = SETTINGS.joySens >= 140 ? 60 : SETTINGS.joySens + 20; saveSettings(); });
   rowSlider('🎵 Volume Musik', () => SETTINGS.volMusic, v => { SETTINGS.volMusic = v; saveSettings(); });
   rowSlider('🔊 Volume SFX', () => SETTINGS.volSfx, v => { SETTINGS.volSfx = v; AudioMan.volume = v / 100; saveSettings(); });
@@ -11091,10 +11403,13 @@ function render(){
   const worldW = MAPW*TILE, worldH = MAPH*TILE;
   const z = TS / TILE; // faktor zoom
   const viewW = VW / z, viewH = VH / z; // ukuran pandangan dalam piksel dunia
-  const tCamX = viewW >= worldW ? (worldW - viewW)/2 : clamp(player.x - viewW/2, 0, worldW - viewW);
+  /* P24: LOOKAHEAD kamera ala Stardew — kamera mengintip sedikit searah gerak
+     pemain (sebanding kecepatan, maks 24px dunia) di atas lerp halus yang ada. */
+  const lkX = clamp((player.svx || 0) * 0.20, -24, 24), lkY = clamp((player.svy || 0) * 0.20, -24, 24);
+  const tCamX = viewW >= worldW ? (worldW - viewW)/2 : clamp(player.x + lkX - viewW/2, 0, worldW - viewW);
   /* Kamera dibias sedikit ke atas: dunia tampil lebih rendah di layar agar papan nama
      bangunan di tepi atas tidak tertutup chip HUD. */
-  const tCamY = viewH >= worldH ? (worldH - viewH)/2 : clamp(player.y - viewH/2 - 22 + ((typeof DLG !== 'undefined' && DLG) ? 36 : 0), 0, worldH - viewH); // P21: saat dialog berjalan kamera bergeser turun — pemain & pembicara terlihat PENUH di atas kotak dialog bawah
+  const tCamY = viewH >= worldH ? (worldH - viewH)/2 : clamp(player.y + lkY - viewH/2 - 22 + ((typeof DLG !== 'undefined' && DLG) ? 36 : 0), 0, worldH - viewH); // P21: saat dialog berjalan kamera bergeser turun — pemain & pembicara terlihat PENUH di atas kotak dialog bawah
   if(!CAM.init){ CAM.x = tCamX; CAM.y = tCamY; CAM.init = true; }
   else if(Math.abs(tCamX - CAM.x) > 48 || Math.abs(tCamY - CAM.y) > 48){ CAM.x = tCamX; CAM.y = tCamY; } // teleport: sekejap
   else { const ck = 1 - Math.exp(-(render._dt || 0.016) * 5); CAM.x += (tCamX - CAM.x) * ck; CAM.y += (tCamY - CAM.y) * ck; }
@@ -11247,9 +11562,10 @@ function render(){
     const h = S.minutes / 60;
     let dark = 0, warm = 0;
     if(h >= 19 || h < 4.5) dark = 0.62;                                        // malam penuh (tetap terbaca, tidak hitam pekat)
-    else if(h >= 18.5){ const t = (h - 18.5) / 0.5; dark = 0.25 + 0.37 * t; warm = 0.15 * (1 - t) + 0.03 * t; } // senja -> malam
-    else if(h >= 17){ const t = (h - 17) / 1.5; dark = 0.25 * t; warm = 0.15 * t; }                            // senja keemasan
-    else if(h >= 5){ const t = h - 5; dark = 0.45 * (1 - t); warm = 0.10 * (1 - t); }                             // fajar
+    else if(h >= 18.5){ const t = (h - 18.5) / 0.5; dark = 0.25 + 0.37 * t; warm = 0.20 * (1 - t) + 0.03 * t; } // senja -> malam (P24: keemasan lebih terasa)
+    else if(h >= 17){ const t = (h - 17) / 1.5; dark = 0.25 * t; warm = 0.22 * t; }                            // senja keemasan (P24)
+    else if(h >= 6){ warm = 0.08 * (1 - (h - 6) / 3); }                                                          // P24: pagi cerah keemasan 06:00–09:00
+    else if(h >= 5){ const t = h - 5; dark = 0.45 * (1 - t); warm = 0.15 * (1 - t); }                             // fajar (P24: lebih hangat)
     else { const t = (h - 4.5) / 0.5; dark = 0.62 - 0.17 * t; warm = 0.03 * t; }                                  // menjelang fajar
     // tiang lampu jalan desa di jalan utama (selalu digambar; bolanya menyala saat gelap)
     const LAMPS = [[19,5],[20,11],[19,18],[20,25],[8,15],[14,15],[27,15],[33,15]];
@@ -14215,16 +14531,30 @@ function regJourneyPlay(route, done){
   const veh = (mode, x, y, t) => {
     g.save(); g.translate(x, y);
     if(mode === 'angkot' || mode === 'bus'){ const L = mode === 'bus' ? 120 : 84, H = mode === 'bus' ? 52 : 46;
-      g.fillStyle = mode === 'bus' ? '#3f6fb5' : '#c9a227'; g.fillRect(0, -H, L, H - 10);
-      g.fillStyle = '#bfe3f2'; for(let i = 0; i < (mode === 'bus' ? 6 : 3); i++) g.fillRect(8 + i * 18, -H + 8, 13, 14);
-      g.fillStyle = '#20303a'; for(const wx of [16, L - 20]){ g.beginPath(); g.arc(wx, -4, 9, 0, 7); g.fill(); g.fillStyle = '#9aa2a8'; g.beginPath(); g.arc(wx, -4, 4, 0, 7); g.fill(); g.fillStyle = '#20303a'; }
+      /* P24-HD: kendaraan digambar berlapis — bayangan blob, bodi dua nada dari
+         ramp bersama, garis tepi nyaris hitam, jendela berbingkai, roda lapis
+         terpisah dengan jari-jari berputar mengikuti jarak tempuh. */
+      const utama = mode === 'bus' ? '#3f6fb5' : '#c9a227', gelap = mode === 'bus' ? '#2c4f80' : '#8f6f16', terang = mode === 'bus' ? '#5f8fd0' : '#e3bc3a';
+      g.fillStyle = 'rgba(20,26,18,.28)'; g.beginPath(); g.ellipse(L / 2, 3, L / 2 + 4, 5.5, 0, 0, 7); g.fill();
+      g.fillStyle = utama; g.fillRect(0, -H, L, H - 10);
+      g.fillStyle = terang; g.fillRect(0, -H, L, 7);
+      g.fillStyle = gelap; g.fillRect(0, -17, L, 7);
+      g.fillStyle = '#20242e'; g.fillRect(L - 3, -H + 10, 3, H - 22);
+      g.fillStyle = '#ffe9a8'; g.beginPath(); g.arc(L - 4, -20, 3.2, 0, 7); g.fill();
+      const nw = mode === 'bus' ? 6 : 3;
+      for(let i = 0; i < nw; i++){ const wx0 = 7 + i * 18; g.fillStyle = '#20303a'; g.fillRect(wx0 - 1.5, -H + 8.5, 14, 15); g.fillStyle = '#bfe3f2'; g.fillRect(wx0, -H + 10, 11, 12); g.fillStyle = 'rgba(255,255,255,.55)'; g.fillRect(wx0, -H + 10, 11, 3.5); }
+      g.strokeStyle = '#20242e'; g.lineWidth = 2; g.strokeRect(1, -H + 1, L - 2, H - 12); g.lineWidth = 1;
+      const putar = x * 0.055;
+      for(const wx of [16, L - 20]){ g.fillStyle = '#16181d'; g.beginPath(); g.arc(wx, -4, 9.5, 0, 7); g.fill(); g.strokeStyle = '#3c4148'; g.lineWidth = 2; for(let s2 = 0; s2 < 3; s2++){ const a2 = putar + s2 * 2.09; g.beginPath(); g.moveTo(wx, -4); g.lineTo(wx + Math.cos(a2) * 6.4, -4 + Math.sin(a2) * 6.4); g.stroke(); } g.lineWidth = 1; g.fillStyle = '#9aa2a8'; g.beginPath(); g.arc(wx, -4, 3.4, 0, 7); g.fill(); }
     } else if(mode === 'kereta'){
-      g.fillStyle = '#a03c30'; g.fillRect(0, -46, 90, 36); g.fillStyle = '#54687f'; for(let c = 0; c < 3; c++) g.fillRect(-(c + 1) * 78, -42, 70, 32);
+      g.fillStyle = 'rgba(20,26,18,.25)'; g.beginPath(); g.ellipse(-70, 4, 165, 5, 0, 0, 7); g.fill();
+      g.fillStyle = '#a03c30'; g.fillRect(0, -46, 90, 36); g.fillStyle = '#7e2a20'; g.fillRect(0, -18, 90, 8); g.strokeStyle = '#20242e'; g.lineWidth = 2; g.strokeRect(1, -45, 88, 34); g.lineWidth = 1; g.fillStyle = '#54687f'; for(let c = 0; c < 3; c++) g.fillRect(-(c + 1) * 78, -42, 70, 32);
       g.fillStyle = '#bfe3f2'; g.fillRect(56, -38, 20, 14); for(let c = 0; c < 3; c++) for(let w = 0; w < 3; w++) g.fillRect(-(c + 1) * 78 + 8 + w * 20, -34, 13, 12);
       g.fillStyle = '#20303a'; for(const wx of [14, 66, -60, -130, -205]){ g.beginPath(); g.arc(wx, -4, 8, 0, 7); g.fill(); }
     } else if(mode === 'kapal'){
       const bob = Math.sin(t / 400) * 3; g.translate(0, bob);
-      g.fillStyle = '#7a3b2c'; g.beginPath(); g.moveTo(0, -6); g.lineTo(120, -6); g.lineTo(104, 12); g.lineTo(14, 12); g.closePath(); g.fill();
+      g.fillStyle = 'rgba(16,48,80,.30)'; g.beginPath(); g.ellipse(60, 15, 62, 4.6, 0, 0, 7); g.fill();
+      g.fillStyle = '#7a3b2c'; g.beginPath(); g.moveTo(0, -6); g.lineTo(120, -6); g.lineTo(104, 12); g.lineTo(14, 12); g.closePath(); g.fill(); g.strokeStyle = '#20242e'; g.lineWidth = 1.6; g.stroke(); g.lineWidth = 1;
       g.fillStyle = '#f2ecd8'; g.fillRect(22, -34, 66, 28); g.fillStyle = '#3f6fb5'; for(let i = 0; i < 4; i++) g.fillRect(30 + i * 15, -27, 9, 9);
       g.fillStyle = '#c9554d'; g.fillRect(78, -52, 10, 20);
     } else { /* pesawat */
@@ -19576,7 +19906,7 @@ if(typeof openShop === 'function'){
      "v2.5" di layar judul (label itu urusan P16-V, tak disentuh di sini).
    Di peramban biasa (tanpa __otaBridge) modul ini pasif: tidak ada unduhan
    yang bisa dipasang, pemeriksaan senyap tidak berjalan. */
-const GAME_BUILD = "4.11"; // P23: PERBAIKAN VONIS HP (sholat di dalam musholla, Subuh 03:30 & hari mulai 03:30, bola liar, bangunan di kebun, papan nama, NPC makan duduk)
+const GAME_BUILD = "4.12"; // P24: PERBAIKAN VONIS HP KE-4 (papan nama fisik proporsional, interior musholla asli + sholat pemain sekali per waktu, dispersal pelataran, grafik HD berwarna, kontrol analog ala Stardew) — riwayat: P23: PERBAIKAN VONIS HP (sholat di dalam musholla, Subuh 03:30 & hari mulai 03:30, bola liar, bangunan di kebun, papan nama, NPC makan duduk)
 const UPDATE_MANIFEST_URL = "https://raw.githubusercontent.com/YunobiAirdrop/lembah-encle-update/main/manifest.json";
 (function(){
 'use strict';
@@ -28815,6 +29145,1647 @@ if(typeof window !== 'undefined') window.__p21 = {
     titikFajar: (id) => { try{ const bands = NPC_SCHEDULES[id]; if(!bands || !bands.length) return null; const b = bands[bands.length - 1]; return [b[1] * TILE23 + 16, b[2] * TILE23 + 16]; }catch(e){ return null; } },
     bolaSah: p23BolaSah, jendelaMakan: p23JendelaMakan
   };
+})();
+</script>
+
+<script>
+/* ================= TAHAP P24 — VONIS HP KE-4 ATAS 4.11 (5 KELUHAN) + KONTROL STARDEW =================
+   1) Papan nama: ditulis ulang di inti signBoard (proporsional & menempel fisik).
+   2) Interior musholla: ditulis ulang di inti drawEnterScene (mihrab, mimbar, karpet shaf).
+   3) SHOLAT PEMAIN (modul ini): menu musholla diganti — aksi "Berdoa" yang bisa
+      di-spam DIHAPUS; selama jendela sholat ada "Ikut Sholat": pemain menempati
+      slot shaf kosong, memainkan rangkaian gerakan 2 rakaat lengkap bersama
+      jamaah (berdiri -> rukuk -> berdiri -> sujud -> duduk -> sujud, dst.),
+      buff Hati Tenang diberikan SEKALI per waktu sholat (state S.p24.sholatDone
+      per hari+waktu, tersimpan di Buku Harian, save lama tetap jalan).
+   4) DISPERSAL pelataran musholla: target basi menuju ubin kumpul dibersihkan
+      di luar jendela sholat — tidak ada lagi NPC idle berkelompok di paving
+      depan musholla sesudah jamaah bubar.
+   5) Grafik HD & berwarna: palet tile inti dinaikkan + ambien diperkuat.
+   6) KONTROL ala Stardew mobile: kecepatan analog mengikuti kemiringan stik
+      (inti updatePlayer), mode kontrol Analog/Ketuk/Keduanya/D-Pad di
+      Pengaturan, ketuk-untuk-jalan memakai BFS desa yang ada, tahan tombol
+      AKSI = pakai alat beruntun ke petak valid berikutnya, lookahead kamera. */
+(function(){
+  if(window.__p24loaded) return; window.__p24loaded = true;
+  const TILE24 = 32;
+
+  /* ---------- State P24 (aman untuk save lama: dibuat malas saat pertama dipakai) ---------- */
+  function p24State(){
+    if(typeof S === 'undefined' || !S) return null;
+    if(!S.p24 || typeof S.p24 !== 'object') S.p24 = {};
+    if(!S.p24.sholatDone || typeof S.p24.sholatDone !== 'object') S.p24.sholatDone = {};
+    return S.p24;
+  }
+
+  /* ---------- Rangkaian gerakan sholat pemain: 2 rakaat disederhanakan (26 detik) ---------- */
+  const P24_SEQ = [
+    ['berdiri', 2.5], ['rukuk', 2.5], ['berdiri', 1.5], ['sujud', 2.5], ['duduk', 2], ['sujud', 2.5],
+    ['berdiri', 2.5], ['rukuk', 2.5], ['berdiri', 1.5], ['sujud', 2.5], ['duduk', 3.5]
+  ];
+  const P24_TOTAL = P24_SEQ.reduce((a, s) => a + s[1], 0);
+  function p24PoseAt(sec){
+    let t = 0;
+    for(const s of P24_SEQ){ if(sec < t + s[1]) return s[0]; t += s[1]; }
+    return 'duduk';
+  }
+
+  /* ---------- Gambar pemain sholat (gaya figur P18, warna pemain sendiri;
+     jangkar sama persis dengan p18DrawPraying: px = tengah figur, py = alas kaki) ---------- */
+  function p24DrawPemain(px, py, pose){
+    const female = (typeof S !== 'undefined' && S && S.gender === 'P');
+    const skin = '#d99e63', hair = '#241a12', shirt = (typeof S !== 'undefined' && S && S.shirtColor) || '#3f6fb5';
+    ctx.fillStyle = 'rgba(0,0,0,.22)'; ctx.beginPath(); ctx.ellipse(px, py - .6, 11, 3.4, 0, 0, 7); ctx.fill();
+    if(pose === 'sujud'){
+      ctx.fillStyle = female ? '#f2f2e8' : shirt;
+      ctx.beginPath(); ctx.ellipse(px, py - 8, 13, 6, 0, 0, 7); ctx.fill();
+      if(female){
+        ctx.fillStyle = '#f2f2e8'; ctx.beginPath(); ctx.arc(px + 10, py - 8, 5.6, 0, 7); ctx.fill();
+        ctx.fillStyle = skin; ctx.beginPath(); ctx.arc(px + 12, py - 6, 3.4, 0, 7); ctx.fill();
+      } else {
+        ctx.fillStyle = skin; ctx.beginPath(); ctx.arc(px + 10, py - 6, 5, 0, 7); ctx.fill();
+        ctx.fillStyle = hair; ctx.beginPath(); ctx.arc(px + 10, py - 9, 5, Math.PI, 0); ctx.fill();
+      }
+      return;
+    }
+    if(pose === 'rukuk'){
+      ctx.fillStyle = female ? '#f2f2e8' : shirt;
+      ctx.save(); ctx.translate(px, py - 26); ctx.rotate(1.1); ctx.fillRect(-6, -14, 12, 26); ctx.restore();
+      ctx.fillStyle = female ? '#f2f2e8' : '#e8e2d2'; ctx.fillRect(px - 5, py - 30, 10, 10);
+      ctx.fillStyle = skin; ctx.fillRect(px - 4, py - 24, 8, 7);
+      if(!female){ ctx.fillStyle = hair; ctx.fillRect(px - 4, py - 30, 8, 4); }
+      return;
+    }
+    if(pose === 'duduk'){
+      /* duduk di antara dua sujud / tasyahud: kaki bersila, badan tegak, tangan di lutut */
+      ctx.fillStyle = female ? '#e9e9dd' : '#3f4a3a';
+      ctx.beginPath(); ctx.ellipse(px, py - 4, 13, 5, 0, 0, 7); ctx.fill();
+      ctx.fillStyle = female ? '#f2f2e8' : shirt; ctx.fillRect(px - 6, py - 24, 12, 16);
+      ctx.fillStyle = skin; ctx.fillRect(px - 8, py - 12, 4, 6); ctx.fillRect(px + 4, py - 12, 4, 6);
+      if(female){
+        ctx.fillStyle = '#f2f2e8'; ctx.beginPath(); ctx.arc(px, py - 30, 7.4, 0, 7); ctx.fill();
+        ctx.fillStyle = skin; ctx.beginPath(); ctx.arc(px, py - 29, 4.6, 0, 7); ctx.fill();
+      } else {
+        ctx.fillStyle = skin; ctx.beginPath(); ctx.arc(px, py - 29, 6.4, 0, 7); ctx.fill();
+        ctx.fillStyle = hair; ctx.beginPath(); ctx.arc(px, py - 31, 6.4, Math.PI, 0); ctx.fill();
+        ctx.fillRect(px - 6.4, py - 31, 2.6, 4.6); ctx.fillRect(px + 3.8, py - 31, 2.6, 4.6);
+      }
+      return;
+    }
+    /* berdiri: tangan bersedekap */
+    ctx.fillStyle = female ? '#f2f2e8' : shirt; ctx.fillRect(px - 6, py - 40, 12, 26);
+    ctx.fillStyle = female ? '#f2f2e8' : '#3f4a3a'; ctx.fillRect(px - 6, py - 14, 12, 13);
+    ctx.fillStyle = skin; ctx.fillRect(px - 4, py - 46, 8, 8);
+    if(female){
+      ctx.fillStyle = '#f2f2e8'; ctx.beginPath(); ctx.arc(px, py - 44, 7, 0, 7); ctx.fill();
+      ctx.fillStyle = skin; ctx.beginPath(); ctx.arc(px, py - 43, 4.5, 0, 7); ctx.fill();
+    } else { ctx.fillStyle = hair; ctx.fillRect(px - 4, py - 50, 8, 4); }
+    ctx.fillStyle = skin; ctx.fillRect(px - 3, py - 26, 6, 3);
+  }
+
+  /* ---------- Slot shaf terpakai: mereplikasi penugasan gambar jamaah P23 ---------- */
+  function p24SlotTerpakai(){
+    const used = new Set();
+    const S23 = (typeof window !== 'undefined' && window.__p23) ? window.__p23.slots : null;
+    if(!S23 || typeof NPCS === 'undefined') return used;
+    const arrived = NPCS.filter(n => n._p23in === 'sholat');
+    const priaD = [], priaA = [], wanD = [], wanA = [];
+    for(const n of arrived){
+      if(typeof P18_PRIA !== 'undefined' && P18_PRIA.indexOf(n.id) >= 0) priaD.push(n);
+      else if(typeof P18_WANITA !== 'undefined' && P18_WANITA.indexOf(n.id) >= 0) wanD.push(n);
+      else if(n.id === 'dimas' || n.id === 'raka') priaA.push(n);
+      else wanA.push(n);
+    }
+    const imam = priaD.find(n => n.id === 'oman') || priaD[0];
+    if(imam) used.add(S23.imam.join(','));
+    let i = 0;
+    for(const n of priaD){ if(n === imam) continue; if(i < S23.pria.length) used.add(S23.pria[i++].join(',')); }
+    for(const n of priaA){ if(i < S23.pria.length) used.add(S23.pria[i++].join(',')); }
+    let j = 0;
+    for(const n of wanD){ if(j < S23.wanita.length) used.add(S23.wanita[j++].join(',')); }
+    for(const n of wanA){ if(j < S23.wanita.length) used.add(S23.wanita[j++].join(',')); }
+    return used;
+  }
+
+  /* ---------- Mulai & selesai sholat pemain ---------- */
+  function p24StartSholat(w){
+    const P = p24State(); if(!P || typeof player === 'undefined') return;
+    const key = S.totalDay + ':' + w.id;
+    if(P.sholatDone[key]){ toast('🕌 Kamu sudah sholat ' + w.nama + ' pada waktu ini.'); return; }
+    const S23 = window.__p23 && window.__p23.slots;
+    if(!S23){ toast('🕌 Jamaah belum berkumpul — coba sesaat lagi.'); return; }
+    const used = p24SlotTerpakai();
+    const female = S.gender === 'P';
+    const cand = (female ? S23.wanita : S23.pria).concat([[5, 7], [6, 7], [5, 6], [6, 5], [4, 7], [7, 6]]);
+    let slot = null;
+    for(const s of cand){ if(!used.has(s.join(','))){ slot = s; break; } }
+    if(!slot){ toast('🕌 Shaf sedang penuh — coba sesaat lagi.'); return; }
+    closePanels();
+    /* posisi digambar sejajar PERSIS dengan jamaah P23: px = tengah ubin - 15, py = bawah ubin - 42 */
+    player.x = slot[0] * TILE24 + 1;
+    player.y = (slot[1] + 1) * TILE24 - 42;
+    player.dir = 'up'; player.svx = 0; player.svy = 0; player.moving = false;
+    player._p24sholat = { wid: w.id, nama: w.nama, key: key, slot: [slot[0], slot[1]], t0: performance.now() };
+    if(typeof sndHarvest === 'function') sndHarvest();
+    toast('🕌 Kamu mengambil tempat di shaf — sholat ' + w.nama + ' berjamaah dimulai. Khusyuk ya…');
+  }
+  function p24SelesaiSholat(){
+    const ss = player._p24sholat; if(!ss) return;
+    player._p24sholat = null;
+    const P = p24State(); if(P) P.sholatDone[ss.key] = 1;
+    if(!S.buff16) S.buff16 = { food: null, drink: null };
+    S.buff16.doa = { id: 'hatiTenang', day: S.totalDay };
+    S.stamina = clamp((S.stamina || 0) + 20, 0, 100);
+    if(typeof addNeed === 'function') addNeed('ngantuk', 10);
+    if(typeof sndHarvest === 'function') sndHarvest();
+    if(typeof updateHUD === 'function') updateHUD();
+    toast('🤲 Sholat ' + ss.nama + ' selesai — hati terasa tenang. (Buff Hati Tenang aktif; sholat waktu ini tidak bisa diulang.)');
+  }
+
+  /* ---------- Menu musholla BARU (menggantikan menu lama; TIDAK ada lagi "Berdoa") ---------- */
+  function p24MushollaMenu(){
+    const P = p24State();
+    const w = (typeof p18WaktuNow === 'function') ? p18WaktuNow() : null;
+    const rows = [];
+    const ss = (typeof player !== 'undefined' && player) ? player._p24sholat : null;
+    let status = '';
+    if(ss){
+      rows.push({ label: '🕌 Sedang sholat ' + ss.nama + '… khusyuk dulu ya', fn: () => closePanels() });
+    } else if(w && w.sholat){
+      const key = S.totalDay + ':' + w.id;
+      if(P && P.sholatDone[key]){
+        status = '<br>✔ <b>Kamu sudah sholat ' + w.nama + '</b> pada waktu ini — buff Hati Tenang aktif. Sholat berikutnya: waktu sholat selanjutnya.';
+        rows.push({ label: '✔ Sudah Sholat ' + w.nama + ' (buff Hati Tenang aktif)', fn: () => closePanels() });
+      } else {
+        status = '<br>🕌 <b>Sekarang waktu ' + w.nama + (w.jumat ? ' (Jumatan)' : '') + '</b> — jamaah bershaf di dalam. Ambil tempatmu di shaf!';
+        rows.push({ label: '🕌 Ikut Sholat ' + w.nama + ' Berjamaah', fn: () => p24StartSholat(w) });
+      }
+    }
+    rows.push({ label: '🕌 Jadwal Sholat Hari Ini', fn: () => p18SholatView() });
+    rows.push({ label: 'Keluar', fn: closePanels });
+    showDialog('🕌 Musholla An-Nur', 'Musholla kecil desa dengan mihrab menghadap kiblat, karpet shaf tergelar rapi, dan rak mushaf di dinding. Suara toa-nya mengumandangkan adzan lima waktu.' + status, rows);
+  }
+  try{ if(typeof ENTER_DEFS !== 'undefined' && ENTER_DEFS.musholla) ENTER_DEFS.musholla.menu = p24MushollaMenu; }catch(e){}
+
+  /* ---------- drawChar: pemain yang sedang sholat digambar dengan pose rangkaiannya ---------- */
+  if(typeof drawChar === 'function'){
+    const _dc24 = drawChar;
+    drawChar = function(px, py, o){
+      if(o && typeof player !== 'undefined' && player && player._p24sholat
+         && typeof ENTER !== 'undefined' && ENTER.active && (o.kind === 'player' || o === player)){
+        const el = (performance.now() - player._p24sholat.t0) / 1000;
+        p24DrawPemain(px, py, p24PoseAt(el));
+        return;
+      }
+      return _dc24(px, py, o);
+    };
+  }
+
+  /* ---------- Keluar interior dikunci selama sholat berlangsung ---------- */
+  if(typeof exitEnter === 'function'){
+    const _ee24 = exitEnter;
+    exitEnter = function(){
+      if(typeof player !== 'undefined' && player && player._p24sholat){ toast('🕌 Selesaikan sholat dulu — sebentar lagi selesai.'); return; }
+      return _ee24();
+    };
+  }
+
+  /* ---------- Slot cadangan di luar daftar P23: TIDAK PERNAH dipakai penugasan
+     jamaah, jadi pemain yang pindah ke sini tidak akan tertimpa jamaah susulan.
+     (Penugasan P23 menggeser slot tiap ada jamaah baru masuk; tanpa ini figur
+     pemain bisa tertindih figur jamaah yang datang belakangan.) ---------- */
+  let _p24CekSlotT = 0;
+  function p24JagaSlot(){
+    const ss = player._p24sholat; if(!ss) return;
+    const now = performance.now();
+    if(now - _p24CekSlotT < 500) return;
+    _p24CekSlotT = now;
+    const used = p24SlotTerpakai();
+    if(!used.has(ss.slot.join(','))) return;
+    /* cadangan: tepi baris sesuai gender dulu (kiri lebih dulu — tidak tertutup
+       panel HUD kanan), baru tepi baris seberang */
+    const cad = (typeof S !== 'undefined' && S && S.gender === 'P')
+      ? [[1, 6], [1, 7], [10, 6], [10, 7], [1, 4], [1, 5], [10, 4], [10, 5]]
+      : [[1, 4], [1, 5], [10, 4], [10, 5], [1, 6], [1, 7], [10, 6], [10, 7]];
+    for(const s of cad){
+      if(!used.has(s.join(','))){
+        ss.slot = [s[0], s[1]];
+        player.x = s[0] * TILE24 + 1;
+        player.y = (s[1] + 1) * TILE24 - 42;
+        return;
+      }
+    }
+  }
+
+  /* ---------- updatePlayer: bekukan pemain selama sholat + kemudi ketuk-untuk-jalan ---------- */
+  function p24ManualInput(){
+    try{
+      if(typeof joyId !== 'undefined' && joyId !== null) return true;
+      if(typeof dpadDown !== 'undefined' && dpadDown.size > 0) return true;
+      if(typeof keys !== 'undefined'){ for(const k in keys) if(keys[k]) return true; }
+      if(typeof padVec !== 'undefined' && (Math.abs(padVec.x) > 0.2 || Math.abs(padVec.y) > 0.2)) return true;
+    }catch(e){}
+    return false;
+  }
+  let _p24StepPhase = 0;
+  if(typeof updatePlayer === 'function'){
+    const _up24 = updatePlayer;
+    updatePlayer = function(dt){
+      if(typeof player !== 'undefined' && player && player._p24sholat){
+        const el = (performance.now() - player._p24sholat.t0) / 1000;
+        player.moving = false; player.svx = 0; player.svy = 0; player.dir = 'up';
+        try{ p24JagaSlot(); }catch(e){}
+        if(el >= P24_TOTAL) p24SelesaiSholat();
+        return;
+      }
+      let saved = null;
+      if(typeof player !== 'undefined' && player && player._p24path && player._p24path.length){
+        if(p24ManualInput()){ player._p24path = null; }
+        else {
+          const wp = player._p24path[0];
+          const dx = wp.x - player.x, dy = wp.y - player.y, d = Math.hypot(dx, dy);
+          if(d < 7){ player._p24path.shift(); }
+          else if(typeof joyVec !== 'undefined'){ saved = joyVec; const mag = Math.min(1, d / 26 + 0.35); joyVec = { x: dx / d * mag, y: dy / d * mag }; }
+        }
+      }
+      _up24(dt);
+      if(saved) joyVec = saved;
+      /* Juice (skill lembah-visual-craft): fase langkah TERKUNCI JARAK.
+         drawChar memilih frame jalan dari jam dinding (105ms/frame); pada
+         kecepatan analog sebagian kaki akan meluncur (moonwalk). Geser seed
+         pemain tiap tick agar fase frame maju sebanding JARAK tempuh —
+         13,86px/frame = kecepatan rancangan 132px/dtk × 0,105 dtk/frame.
+         seed tidak masuk kunci cache sprite (charKey), jadi aman. */
+      try{
+        if(typeof player !== 'undefined' && player && player.moving){
+          const sp = Math.hypot(player.svx || 0, player.svy || 0);
+          if(sp > 1){
+            _p24StepPhase += (sp * Math.min(dt || 0, 0.05)) / 13.86;
+            player.seed = (_p24StepPhase - performance.now() / 105) / 7;
+          }
+        }
+      }catch(e){}
+      if(typeof player !== 'undefined' && player && player._p24path && !player._p24path.length) player._p24path = null;
+    };
+  }
+
+  /* ---------- Dispersal pelataran + kebersihan jalur ketuk (tick berkala) ---------- */
+  function p24DiPelataran(tx, ty){ return tx >= 12 && tx <= 17 && ty >= 21 && ty <= 23; }
+  let _p24DispT = 0;
+  const _p24YardT = {};
+  function p24Tick(){
+    try{
+      if(typeof S === 'undefined' || !S) return;
+      if(typeof player !== 'undefined' && player && player._p24path
+         && (S.area !== 'desa' || (typeof ENTER !== 'undefined' && ENTER.active) || panelOpen())) player._p24path = null;
+      if(S.area !== 'desa' || typeof NPCS === 'undefined') return;
+      const now = performance.now();
+      if(now - _p24DispT < 800) return;
+      _p24DispT = now;
+      const w = (typeof p18WaktuNow === 'function') ? p18WaktuNow() : null;
+      if(w && w.sholat) return; /* jendela sholat: berkumpul itu sah */
+      for(const n of NPCS){
+        if(n._p23in) continue;
+        if(typeof p18NpcPraying === 'function' && p18NpcPraying(n)) continue; /* TPQ dsb: memang menuju musholla */
+        const tx = Math.floor(n.x / TILE24), ty = Math.floor(n.y / TILE24);
+        const ttx = n.target ? Math.floor(n.target.x / TILE24) : -1;
+        const tty = n.target ? Math.floor(n.target.y / TILE24) : -1;
+        if(!p24DiPelataran(tx, ty) && !p24DiPelataran(ttx, tty)) continue;
+        const sp = (typeof schedulePoint === 'function') ? schedulePoint(n) : null;
+        if(!sp) continue;
+        if(p24DiPelataran(Math.floor(sp.x / TILE24), Math.floor(sp.y / TILE24))) continue; /* jadwal sah, mis. Pasar Pagi */
+        n.target = null; n._path = null; n._pkey = null; n._anchorKey = null;
+        /* Macet total di pelataran: diam, tanpa target/jalur, padahal titik
+           jadwalnya di luar pelataran (kasus pengepul sesudah keluar interior —
+           pengendali khususnya tidak menghitung ulang jalan dari pintu).
+           Sesudah 6 detik diam terus, pindahkan ke titik jadwalnya sendiri. */
+        if(!n.moving && !n.target && !(n._path && n._path.length) && p24DiPelataran(tx, ty)){
+          if(!_p24YardT[n.id]) _p24YardT[n.id] = now;
+          else if(now - _p24YardT[n.id] > 6000){
+            n.x = sp.x; n.y = sp.y;
+            n.target = null; n._path = null; n._pkey = null; n._anchorKey = null;
+            delete _p24YardT[n.id];
+          }
+        } else if(_p24YardT[n.id]) delete _p24YardT[n.id];
+      }
+    }catch(e){}
+  }
+  if(typeof updateNPCs === 'function'){
+    const _un24 = updateNPCs;
+    updateNPCs = function(dt){ _un24(dt); p24Tick(); };
+  }
+
+  /* ---------- Mode kontrol: terapkan ke zona joystick ---------- */
+  function p24ApplyCtl(){
+    try{
+      const jz = document.getElementById('joyZone'); if(!jz) return;
+      const ctl = (typeof SETTINGS !== 'undefined' && SETTINGS.ctl) || 'analog';
+      if(typeof SETTINGS !== 'undefined' && SETTINGS.scheme === 'dpad'){ jz.style.pointerEvents = 'none'; return; }
+      jz.style.pointerEvents = (ctl === 'ketuk') ? 'none' : 'auto';
+    }catch(e){}
+  }
+  window.__p24ApplyCtl = p24ApplyCtl;
+  if(typeof applyScheme === 'function'){
+    const _as24 = applyScheme;
+    applyScheme = function(){ _as24(); p24ApplyCtl(); };
+  }
+  p24ApplyCtl();
+
+  /* ---------- Ketuk-untuk-jalan: ketuk tanah -> BFS desa -> berjalan ke titik itu ---------- */
+  try{
+    const cvEl = document.getElementById('game');
+    if(cvEl) cvEl.addEventListener('pointerdown', e => {
+      try{
+        const ctl = (typeof SETTINGS !== 'undefined' && SETTINGS.ctl) || 'analog';
+        if(ctl !== 'ketuk' && ctl !== 'keduanya') return;
+        if(typeof started === 'undefined' || !started || !S || panelOpen() || S.area !== 'desa') return;
+        if(typeof ENTER !== 'undefined' && ENTER.active) return;
+        if((typeof HOUSE !== 'undefined' && HOUSE.active) || (typeof VISIT !== 'undefined' && VISIT.active)
+           || (typeof SCHOOL !== 'undefined' && SCHOOL.active) || (typeof JKT !== 'undefined' && JKT.active)) return;
+        if(typeof player === 'undefined' || !player || player._p24sholat) return;
+        const r = cvEl.getBoundingClientRect();
+        const z = TS / TILE24;
+        const wx = CAM.x + (e.clientX - r.left) * (VW / r.width) / z;
+        const wy = CAM.y + (e.clientY - r.top) * (VH / r.height) / z;
+        let tx = Math.max(0, Math.min(MAPW - 1, Math.floor(wx / TILE24)));
+        let ty = Math.max(0, Math.min(MAPH - 1, Math.floor(wy / TILE24)));
+        const walkable = (x, y) => { try{ return !isSolidTile(x, y) && !(typeof G !== 'undefined' && G[y] && (G[y][x] === 3 || G[y][x] === 4)); }catch(err){ return false; } };
+        if(!walkable(tx, ty)){
+          let found = null;
+          for(let rad = 1; rad <= 2 && !found; rad++)
+            for(let dx = -rad; dx <= rad && !found; dx++)
+              for(let dy = -rad; dy <= rad; dy++){
+                const nx = tx + dx, ny = ty + dy;
+                if(nx < 0 || ny < 0 || nx >= MAPW || ny >= MAPH) continue;
+                if(walkable(nx, ny)){ found = [nx, ny]; break; }
+              }
+          if(!found) return;
+          tx = found[0]; ty = found[1];
+        }
+        const p = bfsPathNPC(Math.floor(player.x / TILE24), Math.floor(player.y / TILE24), tx, ty);
+        if(!p) return;
+        player._p24path = p;
+        player._p24mark = { x: tx * TILE24 + 16, y: ty * TILE24 + 16, t: performance.now() };
+        if(typeof sndBlip === 'function') sndBlip();
+      }catch(err){}
+    });
+  }catch(e){}
+
+  /* ---------- Penanda titik ketuk (riak kecil di tanah) ---------- */
+  if(typeof render === 'function'){
+    const _rd24 = render;
+    render = function(){
+      _rd24();
+      try{
+        if(typeof player !== 'undefined' && player && player._p24mark && typeof S !== 'undefined' && S && S.area === 'desa'
+           && !(typeof ENTER !== 'undefined' && ENTER.active)){
+          const age = performance.now() - player._p24mark.t;
+          if(age < 900){
+            const z = TS / TILE24;
+            const sx = (player._p24mark.x - CAM.x) * z, sy = (player._p24mark.y - CAM.y) * z;
+            const rr = 5 + age / 900 * 11, a = 1 - age / 900;
+            ctx.save(); ctx.setTransform(1, 0, 0, 1, 0, 0);
+            ctx.strokeStyle = 'rgba(255,240,170,' + (a * 0.95).toFixed(3) + ')'; ctx.lineWidth = 2.2;
+            ctx.beginPath(); ctx.arc(sx, sy, rr, 0, 7); ctx.stroke();
+            ctx.fillStyle = 'rgba(255,240,170,' + (a * 0.9).toFixed(3) + ')';
+            ctx.beginPath(); ctx.arc(sx, sy, 2.2, 0, 7); ctx.fill();
+            ctx.restore();
+          } else player._p24mark = null;
+        }
+      }catch(e){}
+    };
+  }
+
+  /* ---------- Tahan AKSI = pakai alat beruntun (rasa Stardew): selama tombol
+     ditahan, tiap kali petak di depan berubah ke petak tani yang valid, alat
+     dipakai sekali (cangkul/tanam/siram/panen mengikuti SMART TOOL farmAction).
+     Ketukan biasa tidak berubah (bindTap lama tetap menembak sekali). ---------- */
+  try{
+    const ba = document.getElementById('btnAct');
+    if(ba){
+      let hT = null, hIv = null, lastK = '';
+      const stopHold = () => { if(hT){ clearTimeout(hT); hT = null; } if(hIv){ clearInterval(hIv); hIv = null; } lastK = ''; };
+      const farmCtx = () => {
+        try{
+          if(typeof S === 'undefined' || !S || S.area !== 'desa') return false;
+          const ft = facedTile(); const tx = ft.tx, ty = ft.ty, k = tx + ',' + ty;
+          if(S.farm && S.farm[k]) return true;
+          if(typeof SAWAH !== 'undefined' && SAWAH.has(k)) return true;
+          if(typeof FIELD !== 'undefined' && tx >= FIELD.x && tx < FIELD.x + FIELD.w && ty >= FIELD.y && ty < FIELD.y + FIELD.h) return true;
+          if(typeof inField2 === 'function' && inField2(tx, ty)) return true;
+        }catch(e){}
+        return false;
+      };
+      ba.addEventListener('pointerdown', () => {
+        stopHold();
+        hT = setTimeout(() => {
+          hIv = setInterval(() => {
+            try{
+              if(typeof started === 'undefined' || !started || panelOpen()){ stopHold(); return; }
+              if(typeof player !== 'undefined' && player && player._p24sholat){ stopHold(); return; }
+              if(!farmCtx()) return;
+              const ft = facedTile(); const k = ft.tx + ',' + ft.ty;
+              if(k !== lastK){ lastK = k; doAction(); }
+            }catch(e){}
+          }, 280);
+        }, 430);
+      });
+      ba.addEventListener('pointerup', stopHold);
+      ba.addEventListener('pointercancel', stopHold);
+      ba.addEventListener('pointerleave', stopHold);
+    }
+  }catch(e){}
+
+  /* ---------- Ekspos untuk probe P24 ---------- */
+  /* ---------- Sanitasi simpanan (anti-slop S3): satu field korup tidak boleh
+     meracuni seluruh save — bersihkan field inti yang salah tipe SEBELUM
+     normalizeState bawaan berjalan, sisanya biarkan normalizer yang mengisi. */
+  if(typeof normalizeState === 'function'){
+    const _ns24 = normalizeState;
+    normalizeState = function(s){
+      try{
+        if(s && typeof s === 'object'){
+          if(typeof s.money !== 'number' || !isFinite(s.money)) s.money = 5000;
+          if(!s.bag || typeof s.bag !== 'object' || Array.isArray(s.bag)) s.bag = {};
+          if(!s.farm || typeof s.farm !== 'object' || Array.isArray(s.farm)) s.farm = {};
+          if(!s.items || typeof s.items !== 'object' || Array.isArray(s.items)) s.items = {};
+          if(typeof s.totalDay !== 'number' || !isFinite(s.totalDay) || s.totalDay < 1) s.totalDay = 1;
+          if(typeof s.minutes !== 'number' || !isFinite(s.minutes)) s.minutes = 210;
+        }
+      }catch(e){}
+      return _ns24(s);
+    };
+  }
+
+  window.__p24 = {
+    stepPhase: () => _p24StepPhase,
+    state: p24State, poseAt: p24PoseAt, seqTotal: P24_TOTAL, seq: P24_SEQ,
+    menu: p24MushollaMenu, startSholat: p24StartSholat, selesaiSholat: p24SelesaiSholat,
+    slotTerpakai: p24SlotTerpakai, drawPemain: p24DrawPemain,
+    diPelataran: p24DiPelataran, applyCtl: p24ApplyCtl,
+    session: () => (typeof player !== 'undefined' && player && player._p24sholat) ? player._p24sholat : null,
+    path: () => (typeof player !== 'undefined' && player && player._p24path) ? player._p24path : null
+  };
+})();
+</script>
+<script>
+/* ============================================================
+   P24-UI — PRESENTASI SPEK VISUAL (lampiran butir #7): panel jam
+   kanan atas + dial matahari/bulan + uang angka merah + akses
+   cepat; bar HP & Energi VERTIKAL tepi kanan; label perolehan
+   item kiri bawah; tooltip tanaman kotak kayu; dialog potret di
+   KANAN + papan nama kayu; TAS bertab ikon kayu + strip karakter
+   + tombol X merah. Semua elemen lama hanya DIPINDAH (id & fungsi
+   utuh); total penghasilan tercatat mulai versi ini via
+   recordMoney. Rekap penjualan pagi = P25 (belum dibangun).
+   ============================================================ */
+(function(){
+  'use strict';
+  if(window.__p24uiLoaded) return; window.__p24uiLoaded = true;
+  const wrap = document.getElementById('wrap');
+  if(!wrap) return;
+  const $ = id => document.getElementById(id);
+  const rp = n => 'Rp ' + Math.round(n || 0).toLocaleString('id-ID');
+
+  /* ---- total penghasilan seumur (untuk strip karakter) ---- */
+  const _rmUI = recordMoney;
+  recordMoney = function(delta, label){
+    const r = _rmUI(delta, label);
+    try{ if(delta > 0 && typeof S !== 'undefined' && S){ if(!S.p24) S.p24 = { sholatDone: {} }; if(typeof S.p24.earnTotal !== 'number') S.p24.earnTotal = 0; S.p24.earnTotal += delta; } }catch(e){}
+    return r;
+  };
+
+  /* ---- kolom kanan atas: panel jam + uang + akses cepat ---- */
+  const hudTimeEl = $('hudTime'), hudMoneyEl = $('hudMoney'), hudBagEl = $('hudBag'), needEl = $('needbox');
+  const side = document.createElement('div'); side.id = 'sideHud24';
+  const clockRow = document.createElement('div'); clockRow.id = 'clockRow24';
+  const dial = document.createElement('canvas'); dial.id = 'dial24'; dial.width = 46; dial.height = 46;
+  clockRow.appendChild(dial); if(hudTimeEl) clockRow.appendChild(hudTimeEl);
+  side.appendChild(clockRow);
+  if(hudMoneyEl) side.appendChild(hudMoneyEl);
+  const quick = document.createElement('div'); quick.id = 'quick24';
+  if(hudBagEl) quick.appendChild(hudBagEl);
+  side.appendChild(quick);
+  if(needEl) side.appendChild(needEl);
+  wrap.appendChild(side);
+  /* chip stamina lama disembunyikan — diganti bar vertikal di bawah */
+  try{ const sb = document.querySelector('#hud .hudbox:has(#stambar)'); if(sb) sb.style.display = 'none'; }catch(e){}
+
+  function drawDial(){
+    try{
+      const g = dial.getContext('2d');
+      const h = (typeof S !== 'undefined' && S) ? S.minutes / 60 : 10;
+      const isSun = h >= 5 && h < 18.5;
+      const grad = g.createLinearGradient(0, 0, 0, 46);
+      if(isSun){ grad.addColorStop(0, '#7ec3ee'); grad.addColorStop(1, '#d7f0fc'); } else { grad.addColorStop(0, '#131b38'); grad.addColorStop(1, '#2e3d66'); }
+      g.clearRect(0, 0, 46, 46);
+      g.fillStyle = grad; g.beginPath(); g.arc(23, 23, 21.5, 0, 7); g.fill();
+      if(!isSun){ g.fillStyle = '#ffe9a8'; for(const p of [[10, 12], [31, 9], [37, 19], [13, 27], [26, 14]]){ g.fillRect(p[0], p[1], 1.7, 1.7); } }
+      const t = isSun ? (h - 5) / 13.5 : (((h + 24 - 18.5) % 24) / 10.5);
+      const a = Math.PI * (1 - Math.min(1, Math.max(0, t)));
+      const bx = 23 + Math.cos(a) * 13.5, by = 24 - Math.sin(a) * 13.5;
+      g.strokeStyle = 'rgba(64,38,10,.85)'; g.lineWidth = 2; g.beginPath(); g.moveTo(23, 24); g.lineTo(bx, by); g.stroke(); g.lineWidth = 1;
+      if(isSun){
+        g.fillStyle = '#ffd23f'; g.beginPath(); g.arc(bx, by, 5.6, 0, 7); g.fill();
+        g.fillStyle = '#ffb63f'; g.beginPath(); g.arc(bx, by, 3.5, 0, 7); g.fill();
+      } else {
+        g.fillStyle = '#f4f1de'; g.beginPath(); g.arc(bx, by, 5, 0, 7); g.fill();
+        g.fillStyle = '#232f52'; g.beginPath(); g.arc(bx + 2.2, by - 1.6, 4.1, 0, 7); g.fill();
+      }
+      g.fillStyle = '#40260a'; g.beginPath(); g.arc(23, 24, 2.3, 0, 7); g.fill();
+    }catch(e){}
+  }
+  drawDial(); setInterval(drawDial, 1000);
+
+  /* ---- bar HP & Energi vertikal di tepi kanan ---- */
+  const vb = document.createElement('div'); vb.id = 'vBars24';
+  vb.innerHTML = '<div class="vbCol"><div class="vbLbl">E</div><div class="vbTrack"><div class="vbFill" id="vStamFill"></div></div><div class="vbNum" id="vStamNum">100</div></div>' +
+    '<div class="vbCol" id="vHpCol" style="display:none"><div class="vbLbl">HP</div><div class="vbTrack"><div class="vbFill hp" id="vHpFill"></div></div><div class="vbNum" id="vHpNum"></div></div>';
+  wrap.appendChild(vb);
+  setInterval(() => {
+    try{
+      if(typeof S === 'undefined' || !S) return;
+      const st = Math.max(0, Math.min(100, S.stamina || 0));
+      const f = $('vStamFill'); if(f){ f.style.height = st + '%'; f.classList.toggle('low', st < 25); }
+      const n = $('vStamNum'); if(n) n.textContent = '' + Math.round(st);
+      const col = $('vHpCol');
+      if(col && S.adv && S.adv.registered && typeof advMaxHP === 'function'){
+        col.style.display = '';
+        const mh = Math.max(1, advMaxHP()), pct = Math.max(0, Math.min(100, (S.adv.hp || 0) / mh * 100));
+        const hf = $('vHpFill'); if(hf) hf.style.height = pct + '%';
+        const hn = $('vHpNum'); if(hn) hn.textContent = '' + Math.max(0, Math.round(S.adv.hp || 0));
+      } else if(col) col.style.display = 'none';
+    }catch(e){}
+  }, 400);
+
+  /* ---- label perolehan item (kiri bawah, hilang sendiri) ---- */
+  const pk = document.createElement('div'); pk.id = 'pickup24'; wrap.appendChild(pk);
+  let pkT = null; const snaps = {};
+  function showPickup(txt){
+    pk.textContent = txt; pk.classList.add('show');
+    if(pkT) clearTimeout(pkT);
+    pkT = setTimeout(() => pk.classList.remove('show'), 2200);
+  }
+  setInterval(() => {
+    try{
+      if(typeof S === 'undefined' || !S) return;
+      for(const pair of [['bag', ''], ['bagQ1', ' ✿'], ['bagStar', ' ⭐'], ['bagQ3', ' 🌟']]){
+        const bag = S[pair[0]]; if(!bag) continue;
+        const sn = snaps[pair[0]] || (snaps[pair[0]] = {});
+        for(const k of Object.keys(bag)){
+          const v = bag[k] || 0;
+          if(typeof sn[k] === 'number' && v > sn[k]) showPickup('🎒 ' + ((typeof namaBarang === 'function') ? namaBarang(k) : k) + pair[1] + ' +' + (v - sn[k]));
+          sn[k] = v;
+        }
+      }
+    }catch(e){}
+  }, 600);
+
+  /* ---- tooltip tanaman: nama + sisa hari + status siram ---- */
+  const ct = document.createElement('div'); ct.id = 'cropTip24'; wrap.appendChild(ct);
+  setInterval(() => {
+    try{
+      if(typeof S === 'undefined' || !S || !started || panelOpen() || S.area !== 'desa' || (typeof ENTER !== 'undefined' && ENTER.active)){ ct.classList.remove('show'); return; }
+      const ft = facedTile(); const f = S.farm && S.farm[ft.tx + ',' + ft.ty];
+      if(f && f.crop && typeof CROPS !== 'undefined' && CROPS[f.crop]){
+        const c = CROPS[f.crop]; const sisa = Math.max(0, c.hari - Math.floor(f.prog || 0));
+        ct.innerHTML = '🌱 <b>' + c.nama + '</b> • ' + (sisa <= 0 ? 'siap panen!' : 'panen ' + sisa + ' hari lagi') + (f.watered ? ' • 💧 sudah disiram' : ' • belum disiram');
+        ct.classList.add('show');
+      } else ct.classList.remove('show');
+    }catch(e){}
+  }, 500);
+
+  /* ---- dialog: potret di KANAN + papan nama kayu di bawahnya ---- */
+  try{
+    const row = document.querySelector('#dialog .dlgRow');
+    const cvv = $('dlgPortrait'), who = $('dlgWho');
+    if(row && cvv && who){
+      const col = document.createElement('div'); col.id = 'dlgCol24';
+      row.appendChild(col); col.appendChild(cvv); col.appendChild(who);
+    }
+  }catch(e){}
+
+  /* ---- TAS: tab ikon kayu + strip karakter + X merah ---- */
+  const shop = $('shop');
+  if(shop){
+    const tabs = document.createElement('div'); tabs.id = 'bagTabs24';
+    tabs.innerHTML = '<button class="bt on" data-bt="tas">🎒<small>Tas</small></button><button class="bt" data-bt="karakter">👤<small>Karakter</small></button><button class="bt" data-bt="sosial">❤️<small>Sosial</small></button><button class="bt" data-bt="peta">🗺️<small>Peta</small></button><button class="bt" data-bt="koleksi">⭐<small>Koleksi</small></button>';
+    const strip = document.createElement('div'); strip.id = 'charStrip24';
+    strip.innerHTML = '<canvas id="charStripCv" width="54" height="54"></canvas><div><div class="csName"></div><div class="csLine"></div><div class="csLine2"></div></div>';
+    shop.insertBefore(tabs, shop.firstChild);
+    shop.insertBefore(strip, tabs.nextSibling);
+    tabs.addEventListener('click', e => {
+      const b = e.target.closest('button'); if(!b) return;
+      const k = b.dataset.bt;
+      if(k === 'tas') return;
+      if(k === 'karakter'){ toast('👤 Panel karakter ringkas ada di bagian atas Tas ini.'); return; }
+      closePanels();
+      if(k === 'peta' && typeof openWorldMap === 'function') openWorldMap();
+      else if(k === 'sosial' && typeof p18PhoneBookPanel === 'function') p18PhoneBookPanel();
+      else if(k === 'koleksi' && typeof openMuseum === 'function') openMuseum();
+      else toast('Tab ini menyusul di pembaruan berikutnya.');
+    });
+    const updBag = () => {
+      const on = shop.classList.contains('show') && shop.classList.contains('bagmode16');
+      tabs.style.display = on ? 'flex' : 'none';
+      strip.style.display = on ? 'flex' : 'none';
+      const xc = $('shopClose'); if(xc) xc.textContent = on ? '✕' : 'Tutup';
+      if(on && typeof S !== 'undefined' && S){
+        try{
+          strip.querySelector('.csName').textContent = '🧑‍🌾 ' + playerName() + ' • Kebun Warisan Kakek';
+          strip.querySelector('.csLine').textContent = '💰 Dana ' + rp(S.money) + ' • Total penghasilan ' + rp(S.p24 && S.p24.earnTotal);
+          strip.querySelector('.csLine2').textContent = '📅 ' + seasonName() + ', Hari ke-' + dayOfSeason() + ' • Tahun ' + (Math.floor((S.totalDay - 1) / 120) + 1);
+          const cvx = $('charStripCv'); const img = (S.gender === 'P') ? POTRET_ANIME_P : POTRET_ANIME;
+          if(cvx && img && img.complete && img.naturalWidth){ const g2 = cvx.getContext('2d'); g2.clearRect(0, 0, 54, 54); g2.drawImage(img, 0, 0, 54, 54); }
+        }catch(e){}
+      }
+    };
+    new MutationObserver(updBag).observe(shop, { attributes: true, attributeFilter: ['class'] });
+    setInterval(() => { if(shop.classList.contains('show') && shop.classList.contains('bagmode16')) updBag(); }, 1500);
+  }
+
+  window.__p24ui = { drawDial };
+})();
+</script>
+<script>
+/* ================================================================
+   P24-HD — GAMBAR ULANG LINGKUNGAN versi HD (butir #5, klarifikasi
+   ruang lingkup): sprite pohon pra-render bergaya sampel user
+   (gugus lingkaran + ramp 5 + outline nyaris hitam + tekstur daun
+   deterministik, digambar SEKALI ke kanvas lalu di-blit), genangan
+   cuaca di jalan desa, kedalaman danau lapis-2 & kilau sawah ada di
+   drawGround inti. Semua orisinal, pola mengikuti hd_sample.py.
+   ================================================================ */
+(function(){
+  'use strict';
+  if(window.__p24hdLoaded) return; window.__p24hdLoaded = true;
+  const OUT = '#20242e';
+  function rng(seed){ let a = (seed * 2654435761) >>> 0; return () => { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+  function mkCv(w, h){ const c = document.createElement('canvas'); c.width = w; c.height = h; return c; }
+  const SC = 3; // skala internal sprite: 3px kanvas per 1 satuan dunia
+
+  /* ----- sprite pohon: dua lapis (bawah: bayangan+batang; tajuk) ----- */
+  function blobPass(g, blobs, color, dx, dy, grow){
+    g.fillStyle = color;
+    for(const [cx, cy, r] of blobs){ g.beginPath(); g.arc((cx + dx) * SC, (cy + dy) * SC, (r + grow) * SC, 0, 7); g.fill(); }
+  }
+  function buildTree(kind){
+    const W = 48, H = 52;
+    const under = mkCv(W * SC, H * SC), canopy = mkCv(W * SC, H * SC);
+    const gu = under.getContext('2d'), gc = canopy.getContext('2d');
+    const R = rng(kind === 'mangga' ? 11 : kind === 'pisang' ? 23 : kind === 'kelapa' ? 37 : 51);
+    if(kind === 'pisang'){
+      gu.fillStyle = 'rgba(0,0,0,.15)'; gu.beginPath(); gu.ellipse(24 * SC, 48.5 * SC, 15 * SC, 3.4 * SC, 0, 0, 7); gu.fill();
+      const browns = ['#5d4020', '#7fae4c', '#93c25e'];
+      for(let y = 0; y < 20; y++){ const yy = 28 + y; gu.fillStyle = y % 5 === 4 ? '#6d9c40' : browns[1]; gu.fillRect(21.4 * SC, yy * SC, 5.2 * SC, SC); }
+      gu.fillStyle = browns[2]; gu.fillRect(21.4 * SC, 28 * SC, 1.7 * SC, 20 * SC);
+      const fronds = [[-15, -7, 17, -0.5], [4, -11, 19, 0.35], [-6, -12, 15, -0.15], [13, -4, 14, 0.65], [-16, 1, 13, -0.8]];
+      for(const pass of [0, 1]) for(const [dx, dy, len, rot] of fronds){
+        gc.save(); gc.translate(24 * SC, 29 * SC); gc.rotate(rot);
+        gc.fillStyle = pass === 0 ? OUT : (rot > 0.3 ? '#4da63a' : '#57b83e');
+        const w0 = pass === 0 ? 3.4 : 2.2;
+        gc.beginPath(); gc.ellipse((dx + len / 2) * SC, dy * SC, len / 2 * SC, w0 * SC, 0, 0, 7); gc.fill();
+        if(pass === 1){ gc.fillStyle = 'rgba(20,70,15,.45)'; gc.fillRect(dx * SC, (dy - 0.4) * SC, len * SC, 0.8 * SC); }
+        gc.restore();
+      }
+      gc.fillStyle = '#8a5a2b'; gc.fillRect(27 * SC, 31 * SC, 3 * SC, 3 * SC);
+      gc.fillStyle = '#7a2e4d'; gc.fillRect(27.6 * SC, 33.6 * SC, 1.8 * SC, 3.2 * SC);
+      return { under, canopy, W, H, swayAmp: 1.1 };
+    }
+    if(kind === 'kelapa'){
+      gu.fillStyle = 'rgba(0,0,0,.15)'; gu.beginPath(); gu.ellipse(23 * SC, 48.5 * SC, 16 * SC, 3.6 * SC, 0, 0, 7); gu.fill();
+      gu.fillStyle = '#9a7a52';
+      gu.fillRect(19 * SC, 34 * SC, 5 * SC, 14 * SC); gu.fillRect(22 * SC, 25 * SC, 5 * SC, 10 * SC); gu.fillRect(25 * SC, 16 * SC, 5 * SC, 10 * SC);
+      gu.fillStyle = 'rgba(70,50,25,.5)';
+      gu.fillRect(19.4 * SC, 39 * SC, 4.4 * SC, 1.2 * SC); gu.fillRect(20.2 * SC, 44 * SC, 4.2 * SC, 1.2 * SC); gu.fillRect(22.6 * SC, 28 * SC, 4.2 * SC, 1.2 * SC); gu.fillRect(25.4 * SC, 20 * SC, 4.2 * SC, 1.2 * SC);
+      gu.fillStyle = 'rgba(255,240,200,.20)'; gu.fillRect(19 * SC, 34 * SC, 1.4 * SC, 14 * SC);
+      for(const pass of [0, 1]) for(const a of [-0.4, -0.9, -1.5, -2.1, -2.7]){
+        gc.strokeStyle = pass === 0 ? OUT : '#3f9e3f'; gc.lineWidth = (pass === 0 ? 4.6 : 2.8) * SC / 1.6;
+        gc.beginPath(); gc.moveTo(28 * SC, 17 * SC);
+        gc.quadraticCurveTo((28 + Math.cos(a) * 12) * SC, (17 + Math.sin(a) * 8 - 3) * SC, (28 + Math.cos(a) * 20) * SC, (17 + Math.sin(a) * 12 + 6) * SC); gc.stroke();
+      }
+      gc.lineWidth = 1;
+      for(const [fx, fy] of [[24.5, 17.5], [29.5, 19.5]]){ gc.fillStyle = OUT; gc.beginPath(); gc.arc(fx * SC, fy * SC, 2.5 * SC, 0, 7); gc.fill(); gc.fillStyle = '#6e4520'; gc.beginPath(); gc.arc(fx * SC, fy * SC, 1.9 * SC, 0, 7); gc.fill(); gc.fillStyle = '#8a5f30'; gc.fillRect((fx - 0.7) * SC, (fy - 0.7) * SC, 1.3 * SC, 1.3 * SC); }
+      return { under, canopy, W, H, swayAmp: 1.3 };
+    }
+    /* mangga, jeruk & semak bunga: tajuk gugus lingkaran ala sampel HD */
+    const bunga = kind === 'bunga';
+    const jeruk = kind === 'jeruk';
+    const greens = bunga ? ['#1c4d1e', '#27632a', '#2f7a2e', '#3f9e3f', '#57b83e'] : ['#1e5220', '#27632a', '#2f7a2e', '#3f9e3f', '#57b83e', '#7ed957'];
+    const browns = ['#4a2f14', '#6e4520', '#8a5f30'];
+    const cy0 = bunga ? 30 : 22, blobs = bunga
+      ? [[24, cy0, 10], [15, cy0 + 4, 7.5], [33, cy0 + 4, 7.5], [24, cy0 - 5, 8]]
+      : jeruk
+        ? [[24, 21, 11.5], [14.5, 26, 8], [33.5, 26, 8], [24, 30, 10], [24, 14.5, 7.5], [17, 17, 6.5], [31, 17, 6.5]]
+        : [[24, 20, 12], [13, 26, 8.5], [35, 26, 8.5], [18, 30, 9.5], [30, 30, 9.5], [24, 26, 10.5], [17, 14, 6.5], [31, 14, 6.5]];
+    gu.fillStyle = 'rgba(0,0,0,.16)'; gu.beginPath(); gu.ellipse(24 * SC, 48.5 * SC, (bunga ? 15 : 18) * SC, 3.6 * SC, 0, 0, 7); gu.fill();
+    if(!bunga){
+      for(let y = 0; y < 16; y++){ const yy = 33 + y, w = 2.6 + (y / 16) * 2.6; gu.fillStyle = browns[1]; gu.fillRect((24 - w) * SC, yy * SC, w * 2 * SC, SC + 0.5); }
+      gu.fillStyle = browns[2]; gu.fillRect(22.2 * SC, 33 * SC, 1.6 * SC, 16 * SC);
+      gu.fillStyle = browns[0]; gu.fillRect(26.4 * SC, 33 * SC, 1.6 * SC, 16 * SC);
+      gu.fillStyle = browns[1]; gu.fillRect(19 * SC, 47.5 * SC, 3.4 * SC, 1.8 * SC); gu.fillRect(26 * SC, 47.5 * SC, 3.6 * SC, 1.8 * SC);
+      gu.strokeStyle = browns[1]; gu.lineWidth = 2.6; gu.beginPath(); gu.moveTo(23 * SC, 35 * SC); gu.lineTo(15 * SC, 27 * SC); gu.moveTo(25 * SC, 35 * SC); gu.lineTo(33 * SC, 26 * SC); gu.stroke(); gu.lineWidth = 1;
+    }
+    blobPass(gc, blobs, OUT, 0, 0, 1.25);
+    blobPass(gc, blobs, greens[1], 0, 0, 0);
+    gc.globalCompositeOperation = 'source-atop';
+    blobPass(gc, blobs, greens[0], 2.6, 3.2, 0);
+    blobPass(gc, blobs, greens[3], -2.6, -3.2, 0);
+    blobPass(gc, blobs, greens[2], -0.8, -1, 0);
+    for(let i = 0; i < (bunga ? 60 : 110); i++){ const x = 6 + R() * 36, y = (cy0 - 13) + R() * 22; gc.fillStyle = R() < 0.72 ? greens[4] : greens[2]; gc.fillRect(x * SC, y * SC, 1.7 * SC, 1.1 * SC); }
+    if(!bunga) for(let i = 0; i < 22; i++){ const x = 9 + R() * 30, y = 8 + R() * 14; gc.fillStyle = greens[5]; gc.fillRect(x * SC, y * SC, 1.3 * SC, 1.3 * SC); }
+    gc.globalCompositeOperation = 'source-over';
+    if(bunga){
+      const cols = ['#e5484d', '#f4c542', '#e08ac0', '#ffffff', '#f08c2e'];
+      for(let i = 0; i < 12; i++){ const x = 10 + R() * 28, y = cy0 - 6 + R() * 14; gc.fillStyle = OUT; gc.fillRect((x - 0.4) * SC, (y - 0.4) * SC, 2.6 * SC, 2.6 * SC); gc.fillStyle = cols[i % 5]; gc.fillRect(x * SC, y * SC, 1.8 * SC, 1.8 * SC); gc.fillStyle = '#fff7ae'; gc.fillRect((x + 0.5) * SC, (y + 0.5) * SC, 0.8 * SC, 0.8 * SC); }
+    } else if(jeruk){
+      /* buah jeruk TIDAK dibakar ke sprite — penanda buah digambar pembungkus orchard sesuai jumlah panen saat ini */
+    } else {
+      for(const [fx, fy] of [[15, 30], [33, 34], [24, 38], [37, 22]]){ gc.fillStyle = '#f2b138'; gc.fillRect(fx * SC, fy * SC, 2.2 * SC, 2.6 * SC); gc.fillStyle = '#d98e1c'; gc.fillRect(fx * SC, (fy + 1.7) * SC, 2.2 * SC, 0.9 * SC); }
+    }
+    return { under, canopy, W, H, swayAmp: 0.7 };
+  }
+  const _spr = {};
+  function treeSprite(kind){ if(!_spr[kind]) _spr[kind] = buildTree(kind); return _spr[kind]; }
+  function blitTree(kind, gx, gy){
+    const s = treeSprite(kind);
+    const ox = gx - 8, oy = gy - 20;
+    ctx.drawImage(s.under, ox, oy, s.W, s.H);
+    const sw = Math.sin(performance.now() / 1400 + (gx * 0.7 + gy * 1.3)) * s.swayAmp;
+    ctx.drawImage(s.canopy, ox + sw, oy, s.W, s.H);
+  }
+  try{
+    if(typeof TREE_DRAW !== 'undefined'){
+      TREE_DRAW.mangga = (gx, gy) => blitTree('mangga', gx, gy);
+      TREE_DRAW.pisang = (gx, gy) => blitTree('pisang', gx, gy);
+      TREE_DRAW.kelapa = (gx, gy) => blitTree('kelapa', gx, gy);
+      TREE_DRAW.bunga = (gx, gy) => blitTree('bunga', gx, gy);
+    }
+  }catch(e){}
+
+  /* ----- Genangan cuaca: decal di ubin jalan/paving desa ----- */
+  let _pud = 0, _pudLast = 0, _pudSpots = null;
+  function pudSpots(){
+    if(_pudSpots) return _pudSpots;
+    _pudSpots = [];
+    try{
+      for(let ty = 0; ty < MAPH; ty++) for(let tx = 0; tx < MAPW; tx++){
+        const g = G[ty][tx];
+        if(g !== 1 && g !== 2) continue;
+        const h = hash2(tx * 7 + 3, ty * 13 + 5);
+        if(h < 0.055 && _pudSpots.length < 42) _pudSpots.push({ x: tx * 32 + 16 + (h * 977 % 9) - 4, y: ty * 32 + 18 + (h * 613 % 7) - 3, rx: 9 + (h * 331 % 5), ry: 3.4 + (h * 197 % 1.8), v: 0.65 + (h * 71 % 0.35) });
+      }
+    }catch(e){}
+    return _pudSpots;
+  }
+  function skyReflect(){
+    const jm = (typeof S !== 'undefined' && S) ? S.minutes / 60 : 10;
+    if(jm >= 5.5 && jm < 9) return '#cdb490';
+    if(jm >= 9 && jm < 15.5) return '#a8cdea';
+    if(jm >= 15.5 && jm < 18.5) return '#d9a877';
+    return '#2e4a6b';
+  }
+  function drawPuddles(){
+    try{
+      if(typeof S === 'undefined' || !S || S.area !== 'desa') return;
+      if(typeof ENTER !== 'undefined' && ENTER.active) return;
+      if(typeof REG !== 'undefined' && REG.active) return;
+      const now = performance.now();
+      const dt = Math.min(0.1, _pudLast ? (now - _pudLast) / 1000 : 0.016); _pudLast = now;
+      const raining = S.weather === 'Hujan' || S.weather === 'Badai';
+      _pud = Math.max(0, Math.min(1, _pud + (raining ? dt * 0.10 : -dt * 0.012)));
+      if(_pud <= 0.02) return;
+      const fill = skyReflect();
+      for(const p of pudSpots()){
+        const a = _pud * p.v;
+        ctx.fillStyle = 'rgba(38,30,16,' + (0.38 * a).toFixed(3) + ')';
+        ctx.beginPath(); ctx.ellipse(p.x, p.y, p.rx + 1.2, p.ry + 1, 0, 0, 7); ctx.fill();
+        ctx.globalAlpha = 0.62 * a; ctx.fillStyle = fill;
+        ctx.beginPath(); ctx.ellipse(p.x, p.y, p.rx, p.ry, 0, 0, 7); ctx.fill();
+        ctx.globalAlpha = 0.5 * a; ctx.fillStyle = '#ffffff';
+        ctx.beginPath(); ctx.ellipse(p.x - p.rx * 0.25, p.y - p.ry * 0.25, p.rx * 0.42, p.ry * 0.4, 0, 0, 7); ctx.fill();
+        ctx.globalAlpha = 1;
+      }
+    }catch(e){}
+  }
+  try{
+    if(typeof drawGround === 'function'){
+      const _dgHD = drawGround;
+      drawGround = function(a, b, c, d){ _dgHD(a, b, c, d); drawPuddles(); };
+    }
+  }catch(e){}
+  /* ---------- SPESIES TAMBAHAN (mandat sampel lengkap): bambu, pohon liar, orchard ---------- */
+  /* BAMBU — batang beruas cincin krem + rumbai daun di pucuk; lapis daun melentur, batang diam */
+  function buildBambu(){
+    const W = 44, H = 48;
+    const under = mkCv(W * SC, H * SC), can = mkCv(W * SC, H * SC);
+    const gu = under.getContext('2d'), gc = can.getContext('2d');
+    gu.fillStyle = 'rgba(0,0,0,.16)'; gu.beginPath(); gu.ellipse(22 * SC, 46.5 * SC, 16 * SC, 3 * SC, 0, 0, 7); gu.fill();
+    gu.fillStyle = 'rgba(38,84,28,.5)'; gu.beginPath(); gu.ellipse(22 * SC, 46.2 * SC, 13 * SC, 2.4 * SC, 0, 0, 7); gu.fill();
+    const culms = [[6, 38], [12, 44], [18, 41], [24, 45], [30, 40], [36, 43]];
+    for(const [cx, bh] of culms){
+      const top = H - bh;
+      gu.fillStyle = OUT; gu.fillRect((cx - 2.2) * SC, top * SC, 4.4 * SC, bh * SC);
+      gu.fillStyle = '#3c8a2e'; gu.fillRect((cx - 1.5) * SC, top * SC, 3 * SC, bh * SC);
+      gu.fillStyle = '#5cb84e'; gu.fillRect((cx - 1.5) * SC, top * SC, 1.7 * SC, bh * SC);
+      gu.fillStyle = '#8fd06a'; gu.fillRect((cx - 1.5) * SC, top * SC, 0.8 * SC, bh * SC);
+      for(let ny = top + 6; ny < H - 3; ny += 7){ gu.fillStyle = '#d9c98f'; gu.fillRect((cx - 1.7) * SC, ny * SC, 3.4 * SC, 1.3 * SC); gu.fillStyle = 'rgba(20,40,14,.5)'; gu.fillRect((cx - 1.7) * SC, (ny + 1.3) * SC, 3.4 * SC, 0.7 * SC); }
+    }
+    for(const [cx, bh] of culms){
+      const top = H - bh;
+      for(const pass of [0, 1]) for(let i = 0; i < 6; i++){
+        const dir = i % 2 ? 1 : -1, ll = 4.5 + (i * 7 % 3);
+        gc.save(); gc.translate(cx * SC, top * SC); gc.rotate(dir * (0.5 + (i % 3) * 0.22));
+        gc.fillStyle = pass === 0 ? OUT : (i % 2 ? '#3f9e3f' : '#57b83e');
+        gc.fillRect(0, (pass === 0 ? -1.1 : -0.7) * SC, dir * ll * SC, (pass === 0 ? 2.2 : 1.4) * SC);
+        gc.restore();
+      }
+    }
+    return { under, canopy: can, W, H, swayAmp: 0.9 };
+  }
+  const bambuSpr = buildBambu();
+  function blitBambu(gx, gy){
+    ctx.drawImage(bambuSpr.under, gx - 6, gy - 16, bambuSpr.W, bambuSpr.H);
+    const sw = Math.sin(performance.now() / 1500 + (gx * 0.7 + gy * 1.3)) * bambuSpr.swayAmp;
+    ctx.drawImage(bambuSpr.canopy, gx - 6 + sw, gy - 16, bambuSpr.W, bambuSpr.H);
+  }
+  if(typeof drawBambuClump === 'function') drawBambuClump = function(gx, gy){ blitBambu(gx, gy); };
+
+  /* POHON LIAR generik (drawPohonBesar14, prop 2×2) — tajuk gugus besar tidak beraturan + batang kekar */
+  function buildLiar(){
+    const W = 84, H = 80;
+    const under = mkCv(W * SC, H * SC), can = mkCv(W * SC, H * SC);
+    const gu = under.getContext('2d'), gc = can.getContext('2d');
+    const R = rng(99);
+    gu.fillStyle = 'rgba(0,0,0,.17)'; gu.beginPath(); gu.ellipse(42 * SC, 76.5 * SC, 30 * SC, 5 * SC, 0, 0, 7); gu.fill();
+    gu.fillStyle = '#5d4020'; gu.beginPath(); gu.moveTo(35 * SC, 78 * SC); gu.lineTo(38 * SC, 44 * SC); gu.lineTo(46 * SC, 44 * SC); gu.lineTo(49 * SC, 78 * SC); gu.closePath(); gu.fill();
+    gu.fillStyle = '#7d5527'; gu.beginPath(); gu.moveTo(37.5 * SC, 78 * SC); gu.lineTo(39.5 * SC, 44 * SC); gu.lineTo(44 * SC, 44 * SC); gu.lineTo(45.5 * SC, 78 * SC); gu.closePath(); gu.fill();
+    gu.fillStyle = '#a5713d'; gu.fillRect(39.8 * SC, 48 * SC, 1.6 * SC, 28 * SC);
+    gu.fillStyle = '#5d4020'; gu.fillRect(30 * SC, 75.5 * SC, 8 * SC, 3 * SC); gu.fillRect(46 * SC, 75.5 * SC, 9 * SC, 3 * SC);
+    const blobs = [[24, 30, 16], [60, 30, 16], [42, 17, 19], [29, 15, 12], [55, 13, 12], [42, 33, 14]];
+    blobPass(gc, blobs, OUT, 0, 0, 1.8);
+    blobPass(gc, blobs, '#27632a', 0, 0, 0);
+    gc.globalCompositeOperation = 'source-atop';
+    blobPass(gc, blobs, '#1e5220', 3, 4, 0);
+    blobPass(gc, blobs, '#3f9e3f', -3, -3.5, 0);
+    blobPass(gc, blobs, '#2f7a2e', -1, -1, 0);
+    for(let i = 0; i < 170; i++){ const x = 8 + R() * 68, y = 2 + R() * 42; gc.fillStyle = R() < 0.72 ? '#57b83e' : '#2f7a2e'; gc.fillRect(x * SC, y * SC, 2.3 * SC, 1.5 * SC); }
+    gc.globalCompositeOperation = 'source-over';
+    return { under, canopy: can, W, H, swayAmp: 1.15 };
+  }
+  const liarSpr = buildLiar();
+  if(typeof drawPohonBesar14 === 'function') drawPohonBesar14 = function(gx, gy){
+    ctx.drawImage(liarSpr.under, gx - 10, gy - 16, liarSpr.W, liarSpr.H);
+    const sw = Math.sin(performance.now() / 1500 + (gx * 0.7 + gy * 1.3)) * liarSpr.swayAmp;
+    ctx.drawImage(liarSpr.canopy, gx - 10 + sw, gy - 16, liarSpr.W, liarSpr.H);
+  };
+
+  /* ORCHARD (mangga/jeruk tertanam) — tahap >=1 memakai sprite HD; penanda buah & label dipertahankan */
+  const _orch24 = (typeof drawOrchardSpot === 'function') ? drawOrchardSpot : null;
+  if(_orch24) drawOrchardSpot = function(gx, gy, spot){
+    const tr = (typeof S !== 'undefined' && S && S.trees) ? S.trees[spot.x + ',' + spot.y] : null;
+    if(!tr || tr.stage === 0) return _orch24(gx, gy, spot);
+    ctx.fillStyle = 'rgba(120,90,40,.3)'; ctx.fillRect(gx + 2, gy + 24, 28, 6);
+    const s = treeSprite(tr.type === 'jeruk' ? 'jeruk' : 'mangga');
+    const sc = tr.stage === 1 ? 0.7 : (tr.stage >= 3 ? 1.05 : 0.92);
+    const dw = s.W * sc, dh = s.H * sc, dx = gx + 16 - dw / 2, dy = gy + 32 - dh;
+    ctx.drawImage(s.under, dx, dy, dw, dh);
+    const sw = Math.sin(performance.now() / 1400 + (gx * 0.7 + gy * 1.3)) * s.swayAmp;
+    ctx.drawImage(s.canopy, dx + sw, dy, dw, dh);
+    if((tr.fruit || 0) > 0){
+      const fc = tr.type === 'jeruk' ? '#f08c2e' : '#f4c542', pos = [[7, 8], [22, 10], [14, 3], [26, 16]];
+      for(let i = 0; i < Math.min(4, tr.fruit); i++){ ctx.fillStyle = fc; ctx.fillRect(gx + pos[i][0], gy + pos[i][1], 4, 4); ctx.fillStyle = '#b3540e'; ctx.fillRect(gx + pos[i][0], gy + pos[i][1] + 3, 4, 1); }
+      ctx.fillStyle = '#fff7e0'; ctx.font = 'bold 9px sans-serif'; ctx.fillText((tr.type === 'jeruk' ? '🍊' : '🥭') + '×' + tr.fruit, gx + 2, gy + 36);
+    }
+  };
+
+  /* DAUN GUGUR ambien di pohon besar (beringin + pohon liar) — siklus deterministik, tanpa state */
+  const LEAF_SPOTS = [[24, 3.2], [20, 33], [49, 19], [9, 36]];
+  function drawFallingLeaves(){
+    if(typeof S === 'undefined' || !S || (typeof ENTER !== 'undefined' && ENTER && ENTER.active) || (typeof REG !== 'undefined' && REG && REG.active)) return;
+    const now = performance.now() / 1000;
+    for(const [tx, ty] of LEAF_SPOTS){
+      for(let i = 0; i < 2; i++){
+        const off = tx * 1.7 + ty * 2.3 + i * 5.3;
+        const ph = ((now * 0.09 + off) % 1 + 1) % 1;
+        const lx = tx * 32 + 16 + Math.sin(ph * 9 + off) * 7 + (i * 13 - 6);
+        const ly = ty * 32 + 6 + ph * 74;
+        if(typeof player !== 'undefined' && player && (Math.abs(lx - player.x) > 640 || Math.abs(ly - player.y) > 480)) continue;
+        const lz = (typeof TS !== 'undefined' && typeof TILE !== 'undefined') ? TS / TILE : 1.5;
+        const lsx = (lx - ((typeof CAM !== 'undefined' && CAM) ? CAM.x : 0)) * lz, lsy = (ly - ((typeof CAM !== 'undefined' && CAM) ? CAM.y : 0)) * lz;
+        if(lsx < -20 || lsy < -20 || lsx > (typeof VW !== 'undefined' ? VW : 9999) + 20 || lsy > (typeof VH !== 'undefined' ? VH : 9999) + 20) continue;
+        ctx.save();
+        ctx.globalAlpha = ph < 0.12 ? ph / 0.12 : (ph > 0.85 ? (1 - ph) / 0.15 : 1);
+        ctx.translate(lsx, lsy); ctx.rotate(Math.sin(ph * 7 + off) * 0.9); ctx.scale(lz / 1.5, lz / 1.5);
+        ctx.fillStyle = i ? '#57b83e' : '#3f9e3f'; ctx.fillRect(-1.6, -1, 3.2, 2);
+        ctx.fillStyle = 'rgba(20,52,18,.6)'; ctx.fillRect(0.4, -1, 0.8, 2);
+        ctx.restore();
+      }
+    }
+  }
+  if(typeof render === 'function'){ const _rLeaf = render; render = function(){ _rLeaf(); try{ drawFallingLeaves(); }catch(e){} }; }
+
+  window.__p24hd = { treeSprite, pudLevel: () => _pud, pudSpots: () => pudSpots().length, pudList: () => pudSpots(), bambu: () => !!bambuSpr, liar: () => !!liarSpr, leaves: () => LEAF_SPOTS.length };
+})();
+</script>
+
+<script>
+/* ================= TAHAP P24 — AMENDEMEN USER (23:37–23:41) =================
+   A1) HUD MINIMAL: bar vertikal HP/stamina & strip kebutuhan DIHAPUS dari HUD;
+       status lengkap pindah ke panel karakter TAS + aplikasi Status Ponselku.
+       Stamina di layar = ikon ⚡ kecil yang berubah warna saat kritis.
+       Buff aktif tidak lagi ditempel di panel jam.
+   A1b) PENGATURAN BER-TAB: Kontrol | Suara | Tampilan | Gameplay | Data.
+   A2) DIALOG PAGINASI: string dialog panjang dipecah otomatis jadi halaman
+       yang MUAT PENUH di kotak dialog (scroll dialog dilarang); surat warisan
+       juga dipaginasi. Ketuk: lengkapi halaman -> halaman berikut -> pilihan.
+   A3) PERINGATAN KEBUTUHAN berjenjang: <=50% lencana titik di tombol TAS & HP;
+       <=25% toast 1 baris + label ikon kiri bawah; <=10% toast ulang + ikon
+       pikiran di atas kepala. Jeda anti-spam per ambang per kebutuhan.
+       Ngantuk: peringatan 01:00 lebih kuat + animasi menguap berkala. */
+(function(){
+  if(window.__p24amLoaded) return; window.__p24amLoaded = true;
+  const $ = id => document.getElementById(id);
+  const clampN = (v, a, b) => Math.max(a, Math.min(b, v));
+
+  const st = document.createElement('style'); st.id = 'p24amStyle';
+  st.textContent =
+    '#vBars24{ display:none !important; }' +
+    '#needbox{ display:none !important; }' +
+    '#questbox{ max-width:44vw; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }' +
+    '#stamIco24{ align-self:flex-end; font-size:15px; line-height:1; padding:4px 7px; border-radius:9px; background:rgba(38,26,10,.82); border:1.5px solid #7a5a20; color:#b7f0a8; margin-top:4px; }' +
+    '#stamIco24.warn{ color:#ffd23f; border-color:#a87e1c; }' +
+    '#stamIco24.crit{ color:#ff7a6b; border-color:#b03a2e; animation:stamPulse24 .6s ease-in-out infinite alternate; }' +
+    '@keyframes stamPulse24{ from{ transform:scale(1);} to{ transform:scale(1.18);} }' +
+    '.needDot24{ position:absolute; top:-3px; right:-3px; width:11px; height:11px; border-radius:50%; background:#e8a13a; border:2px solid #fff2cf; display:none; z-index:5; }' +
+    '.needDot24.crit{ background:#d3352b; }' +
+    '#needWarn24{ position:fixed; left:10px; bottom:196px; z-index:26; background:rgba(46,32,12,.92); color:#ffe9b0; border:1.5px solid #8a5a2b; border-radius:9px; padding:5px 10px; font:600 12.5px var(--fontUI); opacity:0; pointer-events:none; transition:opacity .3s; }' +
+    '#needWarn24.show{ opacity:1; }' +
+    '#charStats24{ display:none; margin:6px 10px 2px; padding:7px 10px; background:rgba(64,38,10,.14); border:1.5px solid rgba(122,77,18,.5); border-radius:10px; font:12.5px var(--fontUI); color:#3a2a10; }' +
+    '#charStats24 .nsRow{ display:flex; align-items:center; gap:6px; margin:2.5px 0; }' +
+    '#charStats24 .nsLbl{ width:74px; font-weight:700; }' +
+    '#charStats24 .nsBar{ flex:1; height:9px; border-radius:5px; background:rgba(90,60,20,.25); overflow:hidden; border:1px solid rgba(90,60,20,.45); }' +
+    '#charStats24 .nsFill{ height:100%; border-radius:5px; background:#58b368; transition:width .3s; }' +
+    '#charStats24 .nsFill.warn{ background:#e8a13a; }' +
+    '#charStats24 .nsFill.crit{ background:#d3352b; }' +
+    '#charStats24 .nsNum{ width:30px; text-align:right; font-weight:700; }' +
+    '#charStats24 .csLine{ margin-top:4px; }' +
+    '#charStats24 .csActs{ margin-top:6px; display:flex; gap:6px; }' +
+    '#charStats24 .csActs button{ flex:1; padding:6px 4px; border-radius:8px; border:2px solid #7a4d12; background:linear-gradient(180deg,#ffe9b0,#f3d98b); font:700 12.5px var(--fontUI); color:#5a3c10; cursor:pointer; }' +
+    '#charStats24 .csActs button:active{ transform:translateY(1px); filter:brightness(.96); }' +
+    '#setTabs24{ display:flex; gap:5px; flex-wrap:wrap; margin:6px 0 8px; }' +
+    '#setTabs24 button{ flex:1; min-width:86px; padding:7px 4px; border-radius:9px; border:2px solid #7a4d12; background:linear-gradient(180deg,#e8cf96,#d9b968); font:700 12px var(--fontUI); color:#5a3c10; cursor:pointer; }' +
+    '#setTabs24 button.on{ background:linear-gradient(180deg,#8a5a2b,#6e4520); color:#ffe9b0; border-color:#4a3208; }' +
+    '#setTabs24 button:active{ transform:translateY(1px); }' +
+    '.setEmpty24{ font:12.5px var(--fontUI); opacity:.75; padding:8px 2px; }' +
+    '#dialog .txt{ overflow-y:hidden !important; }' +
+    '.cinePageInd21{ text-align:center; font-size:11.5px; color:#8a6a3a; margin-top:6px; font-style:italic; }';
+  document.head.appendChild(st);
+
+  /* ---------- A1: HUD minimal ---------- */
+  try{ const vb = $('vBars24'); if(vb) vb.remove(); }catch(e){}
+  let stamIco = null;
+  try{
+    const side = $('sideHud24'), clockRow = $('clockRow24');
+    if(side && clockRow){
+      stamIco = document.createElement('div'); stamIco.id = 'stamIco24'; stamIco.textContent = '⚡';
+      clockRow.after(stamIco);
+    }
+  }catch(e){}
+  /* buff tidak lagi ditempel di panel jam (pindah ke panel karakter TAS) */
+  if(typeof updateHUD === 'function'){
+    const _uhAM = updateHUD;
+    updateHUD = function(){
+      _uhAM();
+      try{
+        const ht = $('hudTime');
+        if(ht && typeof buff16HudTxt === 'function'){
+          const b = buff16HudTxt();
+          if(b){ const seg = ' • ' + b; if(ht.innerHTML.indexOf(seg) >= 0) ht.innerHTML = ht.innerHTML.replace(seg, ''); }
+        }
+      }catch(e){}
+    };
+  }
+
+  /* ---------- A3: definisi kebutuhan & keadaan peringatan ---------- */
+  const NEEDS = [
+    { id: 'haus', nama: 'Haus', ico: '💧', tIco: '💧', msg: 'Kamu haus — minum dulu', get: () => (typeof S !== 'undefined' && S && S.needs) ? S.needs.haus : 100 },
+    { id: 'lapar', nama: 'Lapar', ico: '🍽️', tIco: '🍽️', msg: 'Kamu lapar — makan dulu', get: () => (typeof S !== 'undefined' && S && S.needs) ? S.needs.lapar : 100 },
+    { id: 'stamina', nama: 'Stamina', ico: '⚡', tIco: '💦', msg: 'Stamina menipis — istirahat atau makan dulu', get: () => (typeof S !== 'undefined' && S) ? S.stamina : 100 },
+    { id: 'ngantuk', nama: 'Ngantuk', ico: '😴', tIco: '💤', msg: 'Kamu mengantuk — tidur sebelum pingsan jam 02:00', get: () => (typeof S !== 'undefined' && S && S.needs) ? S.needs.ngantuk : 100 },
+  ];
+  const nState = {}; NEEDS.forEach(n => nState[n.id] = { tier: 0, lastToast: -1e9, lastThought: -1e9 });
+  let _thought = null; // { ico, until }
+  let _warn1Day = -1, _lastYawn = 0;
+
+  const dotBag = document.createElement('span'); dotBag.className = 'needDot24';
+  const dotHp = document.createElement('span'); dotHp.className = 'needDot24';
+  try{ const hb = $('hudBag'); if(hb) hb.appendChild(dotBag); }catch(e){}
+  try{ const bp = $('btnPhone22'); if(bp) bp.appendChild(dotHp); }catch(e){}
+  const warnLbl = document.createElement('div'); warnLbl.id = 'needWarn24';
+  try{ const w = $('wrap'); if(w) w.appendChild(warnLbl); }catch(e){}
+  let warnLblT = null;
+  function showWarnLabel(txt){
+    warnLbl.textContent = txt; warnLbl.classList.add('show');
+    if(warnLblT) clearTimeout(warnLblT);
+    warnLblT = setTimeout(() => warnLbl.classList.remove('show'), 5000);
+  }
+
+  function needTick(){
+    try{
+      if(typeof S === 'undefined' || !S || typeof started === 'undefined' || !started) return;
+      /* updateHUD menulis ulang innerHTML hudBag — tempel ulang titik lencana bila terlepas */
+      const hb = $('hudBag'); if(hb && dotBag.parentNode !== hb) hb.appendChild(dotBag);
+      const bp2 = $('btnPhone22'); if(bp2 && dotHp.parentNode !== bp2) bp2.appendChild(dotHp);
+      const now = performance.now();
+      let anyTier = 0, anyCrit = false;
+      for(const n of NEEDS){
+        const v = clampN(Math.round(n.get() || 0), 0, 100);
+        const tier = v <= 10 ? 3 : v <= 25 ? 2 : v <= 50 ? 1 : 0;
+        const stt = nState[n.id];
+        if(tier > stt.tier){
+          if(tier >= 2 && now - stt.lastToast > 60000){
+            stt.lastToast = now;
+            if(typeof toast === 'function') toast(n.ico + ' ' + n.msg);
+            showWarnLabel(n.ico + ' ' + n.nama + ' ' + v + '% — ' + n.msg);
+          }
+          if(tier >= 3 && now - stt.lastThought > 90000){
+            stt.lastThought = now;
+            _thought = { ico: n.tIco, until: now + 5000 };
+          }
+        }
+        if(tier > stt.tier) stt.tier = tier;
+        else if(tier < stt.tier && v > [100, 56, 31, 16][stt.tier]) stt.tier = tier;
+        if(tier > anyTier) anyTier = tier;
+        if(tier >= 3) anyCrit = true;
+        if(n.id === 'stamina' && stamIco){
+          stamIco.className = v < 25 ? 'crit' : v < 50 ? 'warn' : '';
+          stamIco.id = 'stamIco24';
+        }
+      }
+      dotBag.style.display = anyTier >= 1 ? 'block' : 'none';
+      dotHp.style.display = anyTier >= 1 ? 'block' : 'none';
+      dotBag.classList.toggle('crit', anyCrit); dotHp.classList.toggle('crit', anyCrit);
+      /* Ngantuk larut: 01:00 peringatan kuat sekali sehari + menguap berkala */
+      if(S.minutes >= 60 && S.minutes < 120){
+        if(_warn1Day !== S.totalDay){
+          _warn1Day = S.totalDay;
+          if(typeof toast === 'function') toast('🌙 Sudah jam 1 pagi! Segera pulang & tidur — kamu pingsan jam 02:00.');
+        }
+        if(!_thought && now - _lastYawn > 26000){
+          _lastYawn = now;
+          _thought = { ico: '🥱', until: now + 2400 };
+        }
+      }
+    }catch(e){}
+  }
+  setInterval(needTick, 800);
+
+  /* ikon pikiran di atas kepala pemain (koordinat layar dari dunia) */
+  function drawThought(){
+    try{
+      if(!_thought) return;
+      const now = performance.now();
+      if(now > _thought.until){ _thought = null; return; }
+      if(typeof S === 'undefined' || !S || typeof player === 'undefined' || !player) return;
+      if(typeof ENTER !== 'undefined' && ENTER && ENTER.active) return;
+      if(typeof REG !== 'undefined' && REG && REG.active) return;
+      if(typeof HOUSE !== 'undefined' && HOUSE && HOUSE.active) return;
+      if(typeof JKT !== 'undefined' && JKT && JKT.active) return;
+      if(typeof DNG !== 'undefined' && DNG && DNG.active) return;
+      const z = (typeof TS !== 'undefined' && typeof TILE !== 'undefined') ? TS / TILE : 1.5;
+      const cx = (typeof CAM !== 'undefined') ? CAM.x : 0, cy = (typeof CAM !== 'undefined') ? CAM.y : 0;
+      const sx = (player.x - cx) * z, sy = (player.y - cy) * z - 62 * z + Math.sin(now / 280) * 2.5;
+      ctx.save();
+      ctx.fillStyle = 'rgba(255,253,245,.94)';
+      ctx.strokeStyle = 'rgba(90,60,20,.65)'; ctx.lineWidth = 1.4;
+      ctx.beginPath(); ctx.ellipse(sx, sy, 13 * z / 1.5, 10.5 * z / 1.5, 0, 0, 7); ctx.fill(); ctx.stroke();
+      ctx.beginPath(); ctx.arc(sx - 5, sy + 12 * z / 1.5, 3.1, 0, 0, 7); ctx.fill(); ctx.stroke();
+      ctx.beginPath(); ctx.arc(sx - 8, sy + 17 * z / 1.5, 1.9, 0, 0, 7); ctx.fill(); ctx.stroke();
+      ctx.font = (12 * z / 1.5 + 2) + 'px serif'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+      ctx.fillText(_thought.ico, sx, sy + 1);
+      ctx.restore();
+    }catch(e){}
+  }
+  if(typeof render === 'function'){ const _rAM = render; render = function(){ _rAM(); drawThought(); }; }
+
+  /* ---------- A1+A3: panel status lengkap di TAS ---------- */
+  let statsEl = null;
+  try{
+    const strip = $('charStrip24'), shop = $('shop');
+    if(strip && shop){
+      statsEl = document.createElement('div'); statsEl.id = 'charStats24';
+      statsEl.innerHTML =
+        NEEDS.map(n => '<div class="nsRow"><span class="nsLbl">' + n.ico + ' ' + n.nama + '</span><div class="nsBar"><div class="nsFill" data-nf="' + n.id + '"></div></div><span class="nsNum" data-nn="' + n.id + '">–</span></div>').join('') +
+        '<div class="csLine" data-cs="hp"></div>' +
+        '<div class="csLine" data-cs="buff"></div>' +
+        '<div class="csLine" data-cs="cls"></div>' +
+        '<div class="csLine" data-cs="stat"></div>' +
+        '<div class="csActs"><button type="button" data-act="makan">🍽️ Makan Cepat</button><button type="button" data-act="minum">🥤 Minum Cepat</button></div>';
+      strip.parentNode.insertBefore(statsEl, strip.nextSibling);
+      statsEl.querySelectorAll('.csActs button').forEach(b => b.addEventListener('click', () => {
+        try{ closePanels(); if(typeof openConsume === 'function') openConsume(); }catch(e){}
+      }));
+    }
+  }catch(e){}
+  function updStats(){
+    try{
+      const shop = $('shop'); if(!statsEl || !shop) return;
+      const on = shop.classList.contains('show') && shop.classList.contains('bagmode16');
+      statsEl.style.display = on ? 'block' : 'none';
+      if(!on || typeof S === 'undefined' || !S) return;
+      for(const n of NEEDS){
+        const v = clampN(Math.round(n.get() || 0), 0, 100);
+        const f = statsEl.querySelector('[data-nf="' + n.id + '"]');
+        if(f){ f.style.width = v + '%'; f.className = 'nsFill' + (v <= 25 ? ' crit' : v <= 50 ? ' warn' : ''); }
+        const nm = statsEl.querySelector('[data-nn="' + n.id + '"]');
+        if(nm) nm.textContent = v;
+      }
+      const hpL = statsEl.querySelector('[data-cs="hp"]');
+      if(hpL){
+        if(S.adv && S.adv.registered && typeof advMaxHP === 'function') hpL.textContent = '❤️ HP Petualang: ' + Math.max(0, Math.round(S.adv.hp || 0)) + '/' + advMaxHP();
+        else hpL.textContent = '❤️ HP Petualang: — (belum daftar guild)';
+      }
+      const bfL = statsEl.querySelector('[data-cs="buff"]');
+      if(bfL){
+        const bt = (typeof buff16HudTxt === 'function') ? buff16HudTxt() : '';
+        bfL.textContent = '✨ Buff aktif: ' + (bt ? bt : '—');
+      }
+      const clL = statsEl.querySelector('[data-cs="cls"]');
+      if(clL){
+        let s = '';
+        try{
+          if(S.adv && S.adv.cls && typeof CLASSES !== 'undefined' && CLASSES[S.adv.cls]) s = '⚔️ Kelas: ' + (CLASSES[S.adv.cls].nama || S.adv.cls);
+          if(typeof SKILLS !== 'undefined' && typeof skillLv === 'function'){
+            const ks = Object.keys(SKILLS).slice(0, 4).map(k => (SKILLS[k].nama || k) + ' Lv' + skillLv(k)).join(' • ');
+            s += (s ? ' • ' : '🎓 ') + ks;
+          }
+        }catch(e){}
+        clL.textContent = s || '🎓 Belum memilih kelas — daftar di guild.';
+      }
+      const stL = statsEl.querySelector('[data-cs="stat"]');
+      if(stL && S.stats){
+        const parts = [];
+        const map = [ ['panen', '🌾 Panen'], ['tebang', '🪓 Tebang'], ['mancing', '🎣 Pancing'], ['kill', '⚔️ Monster'], ['masak', '🍳 Masak'] ];
+        for(const [k, l] of map) if(S.stats[k]) parts.push(l + ' ' + S.stats[k]);
+        stL.textContent = parts.length ? '📊 ' + parts.join(' • ') : '';
+        stL.style.display = parts.length ? '' : 'none';
+      }
+    }catch(e){}
+  }
+  if(statsEl){
+    new MutationObserver(updStats).observe($('shop'), { attributes: true, attributeFilter: ['class'] });
+    setInterval(updStats, 900);
+  }
+
+  /* ---------- A3: aplikasi Status di Ponselku ---------- */
+  function statusBarsHTML(){
+    const bar = (n) => {
+      const v = clampN(Math.round(n.get() || 0), 0, 100);
+      const c = v <= 25 ? '#d3352b' : v <= 50 ? '#e8a13a' : '#58b368';
+      return '<div style="margin:7px 0"><div style="display:flex;justify-content:space-between"><b>' + n.ico + ' ' + n.nama + '</b><span>' + v + '%</span></div>' +
+        '<div style="height:10px;border-radius:5px;background:rgba(120,90,40,.25);overflow:hidden"><div style="height:100%;width:' + v + '%;background:' + c + '"></div></div></div>';
+    };
+    let h = '<b>📊 Status — ' + (typeof playerName === 'function' ? playerName() : 'Pemain') + '</b>';
+    h += NEEDS.map(bar).join('');
+    try{ const bt = (typeof buff16HudTxt === 'function') ? buff16HudTxt() : ''; h += '<div style="margin-top:8px">✨ Buff aktif: ' + (bt || '—') + '</div>'; }catch(e){}
+    h += '<button class="p8btn" id="p8StatusBack24" style="width:100%;margin-top:10px">⬅ Kembali</button>';
+    return h;
+  }
+  let statusTimer = null;
+  function p24PhoneStatus(){
+    try{
+      const body = document.querySelector('#p8body'); if(!body) return;
+      body.innerHTML = statusBarsHTML();
+      const bk = $('p8StatusBack24');
+      if(bk) bk.onclick = () => { if(statusTimer) clearInterval(statusTimer); if(typeof p8PhoneRender === 'function') p8PhoneRender('home'); };
+      if(statusTimer) clearInterval(statusTimer);
+      statusTimer = setInterval(() => {
+        const b2 = document.querySelector('#p8body');
+        if(!b2 || !$('p8StatusBack24')){ clearInterval(statusTimer); statusTimer = null; return; }
+        b2.innerHTML = statusBarsHTML();
+        const bk2 = $('p8StatusBack24'); if(bk2) bk2.onclick = bk.onclick;
+      }, 1500);
+    }catch(e){}
+  }
+  try{
+    const _obsAM = new MutationObserver(() => {
+      try{
+        const grid = document.querySelector('#p8body .p8grid');
+        if(grid && !grid.querySelector('[data-app="status24"]')){
+          const d = document.createElement('div'); d.className = 'p8app'; d.setAttribute('data-app', 'status24');
+          d.innerHTML = '📊<br>Status<small>Bar kebutuhan, HP & buff aktif</small>';
+          d.onclick = () => p24PhoneStatus();
+          grid.appendChild(d);
+        }
+      }catch(e){}
+    });
+    _obsAM.observe(document.documentElement, { childList: true, subtree: true });
+  }catch(e){}
+
+  /* ---------- A1b: Pengaturan ber-tab ---------- */
+  const SET_TABS = [ ['kontrol', '🎮 Kontrol'], ['suara', '🔊 Suara'], ['tampilan', '🖼️ Tampilan'], ['gameplay', '🕹️ Gameplay'], ['data', '💾 Data'] ];
+  let setTabCur = 'kontrol';
+  function setClassify(txt){
+    const t = (txt || '').toLowerCase();
+    if(/mode kontrol|sensitivitas|joystick/.test(t)) return 'kontrol';
+    if(/volume|musik|sfx|suara|bisu/.test(t)) return 'suara';
+    if(/catatan error|pembaruan|kredit|versi|hapus|data/.test(t)) return 'data';
+    return 'gameplay';
+  }
+  function applySetTab(){
+    document.querySelectorAll('#setTabs24 button').forEach(b => b.classList.toggle('on', b.getAttribute('data-stab') === setTabCur));
+    document.querySelectorAll('#setPages24 .setPage24').forEach(p => p.style.display = p.getAttribute('data-spage') === setTabCur ? '' : 'none');
+  }
+  function tabifySettings(){
+    const stEl = $('settings'), box = $('setRows'); if(!stEl || !box) return;
+    let tabs = $('setTabs24'), pages = $('setPages24');
+    if(!tabs){
+      tabs = document.createElement('div'); tabs.id = 'setTabs24';
+      stEl.insertBefore(tabs, box);
+      pages = document.createElement('div'); pages.id = 'setPages24';
+      box.parentNode.insertBefore(pages, box.nextSibling);
+      tabs.innerHTML = SET_TABS.map(([k, l]) => '<button type="button" data-stab="' + k + '">' + l + '</button>').join('');
+      tabs.addEventListener('click', e => { const b = e.target.closest('button'); if(!b) return; setTabCur = b.getAttribute('data-stab'); applySetTab(); });
+    }
+    pages.innerHTML = SET_TABS.map(([k]) => '<div class="setPage24" data-spage="' + k + '"></div>').join('');
+    const pageEls = {};
+    pages.querySelectorAll('.setPage24').forEach(p => pageEls[p.getAttribute('data-spage')] = p);
+    [...box.children].forEach(ch => {
+      if(ch.classList && ch.classList.contains('setHead16')){ ch.remove(); return; }
+      pageEls[setClassify(ch.textContent)].appendChild(ch);
+    });
+    for(const [k] of SET_TABS){
+      if(!pageEls[k].children.length){
+        const d = document.createElement('div'); d.className = 'setEmpty24';
+        d.textContent = 'Belum ada pengaturan di kategori ini.';
+        pageEls[k].appendChild(d);
+      }
+    }
+    box.style.display = 'none';
+    applySetTab();
+  }
+  if(typeof openSettings === 'function'){
+    const _osAM = openSettings;
+    openSettings = function(){
+      try{
+        ['p11KreditRow', 'p12KreditRow', 'otaRow'].forEach(id => { const e = $(id); if(e) e.remove(); });
+        const pg = $('setPages24'); if(pg) pg.innerHTML = '';
+      }catch(e){}
+      _osAM();
+      try{ tabifySettings(); }catch(e){}
+    };
+  }
+
+  /* ---------- A2: paginasi dialog otomatis ---------- */
+  function dlgBudgetPx(){ return Math.max(34, Math.round(window.innerHeight * 0.13) - 2); }
+  let dlgClone = null;
+  function dlgMeasureClone(){
+    const dlgEl = $('dialog'); if(!dlgEl) return null;
+    if(!dlgClone || !dlgClone.isConnected){
+      dlgClone = dlgEl.cloneNode(true);
+      dlgClone.id = 'dialogMeasure24';
+      dlgClone.classList.remove('show');
+      dlgClone.style.cssText = 'position:fixed;left:0;bottom:64px;visibility:hidden;pointer-events:none;display:block;max-height:none;z-index:-1;';
+      document.body.appendChild(dlgClone);
+    }
+    return dlgClone;
+  }
+  function dlgPageHeight(html){
+    const cl = dlgMeasureClone(); if(!cl) return 0;
+    const txt = cl.querySelector('.txt'); if(!txt) return 0;
+    txt.style.maxHeight = 'none'; txt.style.overflow = 'visible';
+    txt.innerHTML = '<div class="dlgPage on">' + html + '</div>';
+    const pg = txt.firstChild;
+    return pg ? pg.getBoundingClientRect().height : 0;
+  }
+  function dlgTokens(html){
+    const toks = []; const re = /<[^>]+>|[^<]+/g; let m;
+    while((m = re.exec(html))){
+      const s = m[0];
+      if(s[0] === '<') toks.push({ tag: s });
+      else for(const p of s.split(/(\s+)/)){ if(!p) continue; toks.push(/\S/.test(p) ? { word: p } : { space: p }); }
+    }
+    return toks;
+  }
+  function dlgTagName(tag){ const m = /^<\/?\s*([a-zA-Z0-9]+)/.exec(tag); return m ? m[1].toLowerCase() : ''; }
+  function dlgRenderRange(toks, a, b){
+    const VOID = { br: 1, img: 1, hr: 1, input: 1 };
+    const stack = [];
+    for(let i = 0; i < a; i++){
+      const t = toks[i]; if(!t.tag) continue;
+      const nm = dlgTagName(t.tag);
+      if(/^<\//.test(t.tag)){ if(stack.length && stack[stack.length - 1].nm === nm) stack.pop(); }
+      else if(!VOID[nm] && !/\/>$/.test(t.tag)) stack.push({ nm, html: t.tag });
+    }
+    let out = stack.map(s => s.html).join('');
+    const local = stack.slice();
+    for(let i = a; i < b; i++){
+      const t = toks[i];
+      if(t.tag){
+        out += t.tag; const nm = dlgTagName(t.tag);
+        if(/^<\//.test(t.tag)){ if(local.length && local[local.length - 1].nm === nm) local.pop(); }
+        else if(!VOID[nm] && !/\/>$/.test(t.tag)) local.push({ nm, html: t.tag });
+      } else out += (t.word || t.space || '');
+    }
+    for(let i = local.length - 1; i >= 0; i--) out += '</' + local[i].nm + '>';
+    return out;
+  }
+  function dlgSplitFallback(html, B){
+    if(dlgPageHeight(html) <= B + 2) return [html];
+    const toks = dlgTokens(html);
+    const wIdx = []; toks.forEach((t, i) => { if(t.word) wIdx.push(i); });
+    if(wIdx.length <= 2) return [html];
+    const mid = wIdx[Math.floor(wIdx.length / 2)];
+    return [...dlgSplitFallback(dlgRenderRange(toks, 0, mid), B), ...dlgSplitFallback(dlgRenderRange(toks, mid, toks.length), B)];
+  }
+  function dlgSplitPages(html){
+    const B = dlgBudgetPx();
+    if(typeof html !== 'string' || !html) return [html];
+    if(dlgPageHeight(html) <= B) return [html];
+    const toks = dlgTokens(html);
+    const wordTok = []; toks.forEach((t, i) => { if(t.word) wordTok.push(i); });
+    let words = [];
+    try{
+      const cl = dlgMeasureClone(); const txt = cl.querySelector('.txt');
+      txt.style.maxHeight = 'none'; txt.style.overflow = 'visible';
+      txt.innerHTML = '<div class="dlgPage on">' + html + '</div>';
+      if(typeof dlgMeasureWords === 'function') words = dlgMeasureWords(txt.firstChild) || [];
+    }catch(e){}
+    if(!words.length || words.length !== wordTok.length) return dlgSplitFallback(html, B);
+    const ranges = []; let startW = 0, pageTop = words[0].top;
+    for(let k = 1; k < words.length; k++){
+      if(words[k].bottom - pageTop > B){ ranges.push([startW, k]); startW = k; pageTop = words[k].top; }
+    }
+    ranges.push([startW, words.length]);
+    let pages = ranges.map(([a, b]) => dlgRenderRange(toks, wordTok[a], b < wordTok.length ? wordTok[b] : toks.length));
+    const out = [];
+    for(const p of pages){
+      if(dlgPageHeight(p) <= B + 2) out.push(p);
+      else out.push(...dlgSplitFallback(p, B));
+    }
+    const clean = out.filter(p => p.replace(/<[^>]+>/g, '').trim().length > 0);
+    return clean.length ? clean : [html];
+  }
+  if(typeof showDialog === 'function'){
+    const _sdAM = showDialog;
+    showDialog = function(who, text, choices, opts){
+      try{
+        if(opts && opts.pageMeta) return _sdAM(who, text, choices, opts);
+        if(typeof text === 'string' && text.length > 30){
+          const pages = dlgSplitPages(text);
+          if(pages.length > 1) return _sdAM(who, pages, choices, opts);
+        } else if(Array.isArray(text)){
+          let changed = false;
+          const np = [];
+          for(const t of text){
+            if(typeof t === 'string' && t.length > 30){
+              const pp = dlgSplitPages(t);
+              if(pp.length > 1) changed = true;
+              np.push(...pp);
+            } else np.push(t);
+          }
+          if(changed) return _sdAM(who, np, choices, opts);
+        }
+      }catch(e){}
+      return _sdAM(who, text, choices, opts);
+    };
+  }
+
+  /* ---------- A2: paginasi Surat Warisan (panel surat sinematik) ---------- */
+  function paginateLetter(){
+    const ov = $('cineOv21'); if(!ov) return;
+    const letter = ov.querySelector('#cineLetter21'), surat = ov.querySelector('.surat'), go = ov.querySelector('#cineGo21');
+    if(!letter || !surat || !go || go.getAttribute('data-p24pg')) return;
+    const full = (typeof P21_SURAT !== 'undefined') ? P21_SURAT : surat.textContent;
+    const maxH = Math.round(window.innerHeight * 0.88) + 2;
+    const fits = t => { surat.textContent = t; return letter.scrollHeight <= maxH; };
+    if(fits(full)) return;
+    const paras = full.split(/\n\n+/);
+    const pages = []; let cur = '';
+    const pushCur = () => { if(cur.trim()) pages.push(cur); cur = ''; };
+    for(const para of paras){
+      const cand = cur ? cur + '\n\n' + para : para;
+      if(fits(cand)){ cur = cand; continue; }
+      if(cur) pushCur();
+      if(fits(para)){ cur = para; continue; }
+      const sents = para.split(/(?<=[.!?…])\s+/);
+      for(const snt of sents){
+        const c2 = cur ? cur + ' ' + snt : snt;
+        if(fits(c2)){ cur = c2; continue; }
+        if(cur) pushCur();
+        if(fits(snt)){ cur = snt; continue; }
+        const wordsArr = snt.split(/\s+/);
+        for(const w of wordsArr){
+          const c3 = cur ? cur + ' ' + w : w;
+          if(fits(c3)) cur = c3; else { pushCur(); cur = w; }
+        }
+      }
+    }
+    pushCur();
+    if(pages.length <= 1) return;
+    let idx = 0;
+    const ind = document.createElement('div'); ind.className = 'cinePageInd21';
+    surat.parentNode.insertBefore(ind, surat.nextSibling);
+    const go2 = go.cloneNode(true); go2.setAttribute('data-p24pg', '1');
+    go.parentNode.replaceChild(go2, go);
+    const origLabel = go.innerHTML;
+    const showPg = () => {
+      surat.textContent = pages[idx];
+      letter.style.overflowY = 'hidden';
+      ind.textContent = 'Halaman ' + (idx + 1) + ' dari ' + pages.length;
+      go2.innerHTML = idx < pages.length - 1 ? '📄 Halaman Berikutnya ▼' : origLabel;
+    };
+    go2.addEventListener('click', () => {
+      if(idx < pages.length - 1){ idx++; showPg(); }
+      else if(typeof p21StartJourney === 'function') p21StartJourney();
+    });
+    showPg();
+  }
+  if(typeof p21ShowLetter === 'function'){
+    const _p21sl = p21ShowLetter;
+    p21ShowLetter = function(){ _p21sl(); try{ paginateLetter(); }catch(e){} };
+  }
+  /* p21ShowLetter terkurung closure modul P21 — picu juga lewat pengamat DOM
+     saat overlay sinematik tampil (jalur p21Opening memakai DOM langsung). */
+  try{
+    const _obsL = new MutationObserver(() => {
+      try{ const ov = $('cineOv21'); if(ov && ov.classList.contains('show')) paginateLetter(); }catch(e){}
+    });
+    _obsL.observe(document.documentElement, { childList: true, subtree: true, attributes: true, attributeFilter: ['class'] });
+  }catch(e){}
+
+  window.__p24am = {
+    splitPages: dlgSplitPages,
+    pageHeight: dlgPageHeight,
+    budget: dlgBudgetPx,
+    needState: () => { const o = {}; for(const n of NEEDS){ try{ o[n.id] = { v: Math.round(n.get()), tier: nState[n.id].tier }; }catch(e){} } return o; },
+    thought: () => _thought,
+    setTab: k => { setTabCur = k; applySetTab(); },
+    tab: () => setTabCur,
+    updStats,
+  };
+})();
+</script>
+
+<script>
+/* ================= TAHAP P24b — PERBAIKAN TINJAUAN INDUK (2026-11-01) =================
+   1) BARIS MISI vs PANEL JAM (cacat utama foto f/e2/g1/g2: teks misi berakhir
+      "…di ladar" tertutup lingkaran jam): akar masalahnya ganda — #questbox
+      max-width 44vw membuatnya melebar sampai DI BAWAH panel jam (#sideHud24,
+      z-index lebih tinggi), dan teks panjang ikut terpotong ellipsis di dalam
+      kotaknya sendiri. Perbaikan: lebar kotak dihitung dari GEOMETRI NYATA
+      (tepi kiri panel jam − tepi kiri kotak misi − jeda), lalu tangga pas:
+      (a) satu baris huruf dasar; (b) huruf menyusut 11→9,5px; (c) pecah dua
+      baris TERKENDALI di batas kata terdekat ke tengah — jeda baris eksplisit
+      <br data-p24b>, white-space tetap nowrap, huruf 10,5px, tinggi kotak
+      tetap <= 34px; (d) jalan terakhir bungkus alami. Hasil akhir pada
+      panjang teks berapa pun: terbaca PENUH, tidak pernah tertutup panel jam.
+   2) PANEL STATUS TAS: label "⚡ Stamina"/"😴 Ngantuk" tadinya membungkus
+      jadi 2 baris (kolom label 74px) sehingga baris-barisnya 44px dan bar
+      ke-4 (Ngantuk) menjorok terpotong di tepi bawah panel. Label kini satu
+      baris (nowrap, lebar mengikuti isi) + panel dipadatkan seperlunya →
+      keempat bar kebutuhan tampil PENUH tanpa geser. Panel #shop yang
+      memang panjang (isi tas) mendapat penanda geser berupa pil
+      "▼ gulir ke bawah" menempel di tepi bawah panel (dihitung dari
+      rect panel, tidak menutupi isi; hilang saat tiba di ujung)
+      + batang geser tipis. */
+(function(){
+  if(window.__p24bLoaded) return; window.__p24bLoaded = true;
+  const $ = id => document.getElementById(id);
+
+  const st = document.createElement('style'); st.id = 'p24bStyle';
+  st.textContent =
+    '#shop #charStats24{ padding:6px 10px; }' +
+    '#shop #charStats24 .nsRow{ margin:2px 0; }' +
+    '#shop #charStats24 .nsLbl{ flex:0 0 auto; width:auto; min-width:88px; white-space:nowrap; }' +
+    '#shop #charStats24 .csLine{ margin-top:3px; }' +
+    '#shop #charStats24 .csActs{ margin-top:5px; }' +
+    '#shop::-webkit-scrollbar{ width:6px; }' +
+    '#shop::-webkit-scrollbar-track{ background:rgba(122,77,18,.10); }' +
+    '#shop::-webkit-scrollbar-thumb{ background:rgba(122,77,18,.55); border-radius:3px; }' +
+    '#shopScrollHint24b{ position:fixed; z-index:15; transform:translateX(-50%); width:fit-content; max-width:92vw; padding:4px 13px; border-radius:999px; background:rgba(64,38,10,.92); color:#ffe9a8; border:1.5px solid rgba(255,233,168,.65); box-shadow:0 2px 7px rgba(0,0,0,.35); font:600 11.5px var(--fontUI); text-align:center; pointer-events:none; display:none; }';
+  document.head.appendChild(st);
+
+  /* ---------- 2) penanda geser panel #shop ---------- */
+  const shop = $('shop');
+  let hint = null;
+  if(shop){
+    hint = document.createElement('div'); hint.id = 'shopScrollHint24b';
+    hint.textContent = '▼ gulir ke bawah — masih ada isi di bawah';
+    document.body.appendChild(hint);
+  }
+  function updHint(){
+    if(!shop || !hint) return;
+    const show = shop.classList.contains('show') && (shop.scrollHeight - shop.clientHeight - shop.scrollTop > 10);
+    if(!show){ hint.style.display = 'none'; return; }
+    const sr = shop.getBoundingClientRect();
+    hint.style.left = (sr.left + sr.width / 2) + 'px';
+    hint.style.top = (sr.bottom - 12) + 'px';
+    hint.style.display = 'block';
+  }
+  if(shop) shop.addEventListener('scroll', updHint, { passive: true });
+
+  /* ---------- 1) baris misi pas geometri ---------- */
+  const q = $('questbox'), side = $('sideHud24');
+  const BR = 'data-p24b';
+  let fitState = { sig: null, avail: -1 };
+
+  function stripBreaks(){
+    if(!q) return;
+    q.querySelectorAll('br[' + BR + ']').forEach(b => b.remove());
+    q.normalize();
+  }
+  function strippedSig(){
+    if(!q) return '';
+    const c = q.cloneNode(true);
+    c.querySelectorAll('br[' + BR + ']').forEach(b => b.remove());
+    return c.innerHTML;
+  }
+  function availNow(){
+    if(!q) return 0;
+    const qr = q.getBoundingClientRect();
+    let avail = window.innerWidth - qr.left - 8;
+    if(side){ const sr = side.getBoundingClientRect(); if(sr.width > 0) avail = Math.min(avail, sr.left - qr.left - 8); }
+    return Math.max(90, Math.floor(avail));
+  }
+  function fits(){ return q.scrollWidth <= q.clientWidth + 1; }
+  function breakCandidates(){
+    const nodes = [];
+    const walker = document.createTreeWalker(q, NodeFilter.SHOW_TEXT);
+    let n; while((n = walker.nextNode())) nodes.push(n);
+    const total = nodes.reduce((a, t) => a + t.data.length, 0);
+    const cands = [];
+    let pos = 0;
+    for(const t of nodes){
+      for(let i = 0; i < t.data.length; i++){
+        if(t.data[i] === ' '){
+          const g = pos + i;
+          if(g >= 10 && total - g >= 8) cands.push({ node: t, off: i, g });
+        }
+      }
+      pos += t.data.length;
+    }
+    cands.sort((a, b) => Math.abs(a.g - total / 2) - Math.abs(b.g - total / 2));
+    return cands;
+  }
+  function insertBreakAt(c){
+    const rest = c.node.splitText(c.off);
+    if(rest.data.charAt(0) === ' ') rest.data = rest.data.slice(1);
+    const br = document.createElement('br'); br.setAttribute(BR, '1');
+    c.node.parentNode.insertBefore(br, rest);
+  }
+  function attemptBreaks(){
+    for(let i = 0; i < 8; i++){
+      stripBreaks();
+      const cs = breakCandidates();
+      if(i >= cs.length) return false;
+      insertBreakAt(cs[i]);
+      if(fits()) return true;
+    }
+    stripBreaks();
+    return false;
+  }
+  function done(){ fitState = { sig: strippedSig(), avail: availNow() }; }
+  function fitQuest(){
+    if(!q) return;
+    stripBreaks();
+    q.style.whiteSpace = '';
+    q.style.fontSize = '';
+    q.style.lineHeight = '';
+    q.style.padding = '';
+    q.style.maxWidth = availNow() + 'px';
+    if(fits()) return done();
+    for(const fs of [10.5, 10, 9.5]){
+      q.style.fontSize = fs + 'px';
+      if(fits()) return done();
+    }
+    q.style.fontSize = '10.5px'; q.style.lineHeight = '1.15'; q.style.padding = '2px 8px';
+    if(attemptBreaks()) return done();
+    q.style.fontSize = '10px';
+    if(attemptBreaks()) return done();
+    stripBreaks();
+    q.style.fontSize = ''; q.style.lineHeight = ''; q.style.padding = '';
+    q.style.whiteSpace = 'normal';
+    done();
+  }
+  function checkFit(){
+    if(!q) return;
+    if(strippedSig() !== fitState.sig || availNow() !== fitState.avail) fitQuest();
+    updHint();
+  }
+  let fitQueued = false;
+  function queueFit(){ if(fitQueued) return; fitQueued = true; requestAnimationFrame(() => { fitQueued = false; try{ checkFit(); }catch(e){} }); }
+
+  try{ fitQuest(); }catch(e){}
+  if(q) new MutationObserver(queueFit).observe(q, { childList: true, subtree: true, characterData: true });
+  if(side) new MutationObserver(queueFit).observe(side, { childList: true, subtree: true, characterData: true });
+  window.addEventListener('resize', queueFit);
+  window.addEventListener('orientationchange', queueFit);
+  if(document.fonts && document.fonts.ready) document.fonts.ready.then(() => { fitState.sig = null; queueFit(); });
+  setInterval(() => { try{ checkFit(); }catch(e){} }, 800);
+
+  window.__p24b = { fitQuest, checkFit, updHint };
 })();
 </script>
 
