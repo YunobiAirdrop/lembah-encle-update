@@ -744,7 +744,7 @@ let chosenGender = 'L'; // Tahap P5b: pilihan gender di layar judul ('L' | 'P')
 let S = null;
 function newState(){
   return {
-    totalDay: 1, minutes: 6 * 60, weather: 'Cerah',
+    totalDay: 1, minutes: 3 * 60 + 30, weather: 'Cerah', /* P23: hari mulai 03:30 (Subuh) */
     money: 5000, stamina: 100, // uang awal permainan BARU Rp 5.000 (perintah user 2026-10-29 — 300 terlalu sedikit; simpanan lama tidak berubah karena nilai tersimpan menimpa default ini; rasio diaudit ulang di P8)
     seeds: Object.assign(emptyCrops(), { lobak: 3 }), bag: emptyCrops(),
     shipped: emptyCrops(), farm: {},
@@ -974,7 +974,7 @@ rectG(16,8,3,1,2); rectG(44,23,3,1,2); rectG(42,21,3,1,2); rectG(21,21,9,1,2);
 rectG(11,17,2,1,2); rectG(26,28,3,1,2); rectG(42,29,3,1,2); rectG(40,39,3,1,2);
 rectG(8,34,3,1,2); rectG(24,24,3,1,2); rectG(33,23,3,1,2);
 // Sawah berjenjang di tepi kanan & bawah-kiri
-rectG(34,17,6,4,3); rectG(35,21,5,4,3); rectG(36,25,4,5,3);
+rectG(36,17,4,4,3); rectG(35,21,5,4,3); rectG(36,25,4,5,3); /* P23: teras sawah timur digeser — tidak lagi di bawah Toko Pak Budi */
 rectG(0,24,5,3,3); rectG(0,27,6,3,3);
 // Tahap P4: kolam kecil barat DIHAPUS — semua air & aktivitas air desa menyatu
 // di satu badan air: Danau Encle besar di selatan (lihat blok Tahap 14/P4).
@@ -1855,7 +1855,7 @@ addProp({ id:'gerobakGorengan', x:33, y:22, w:2, h:1, interact:'gorengan', door:
 /* ================= TAHAP P3: BANGUNAN TOKO BARU (berpintu, berinterior) ================= */
 rectG(1, 13, 5, 1, 2); rectG(12, 13, 5, 1, 2); rectG(33, 13, 6, 1, 2); rectG(7, 35, 6, 1, 2); rectG(39, 36, 6, 1, 2);
 addProp({ id:'tokopancing', x:7, y:31, w:5, h:3, door:{x:9,y:33}, draw(gx, gy){ drawShopP3(gx, gy, { wt:5, ht:3, wall:'#dcebe4', roof:'#2c7a3f', roof2:'#35914e', sign:'TOKO PANCING', signBg:'#1f5c2e' }); } });
-addProp({ id:'tokosepeda', x:13, y:5, w:5, h:3, door:{x:16,y:7}, draw(gx, gy){ drawShopP3(gx, gy, { wt:5, ht:3, wall:'#f3e3c2', roof:'#8a5a2b', roof2:'#a5713d', sign:'TOKO SEPEDA', signBg:'#7a4d12' }); } });
+addProp({ id:'tokosepeda', x:2, y:10, w:5, h:3, door:{x:5,y:12}, draw(gx, gy){ drawShopP3(gx, gy, { wt:5, ht:3, wall:'#f3e3c2', roof:'#8a5a2b', roof2:'#a5713d', sign:'TOKO SEPEDA', signBg:'#7a4d12' }); } }); /* P23: dipindah dari atas ladang pemain (13,5) ke tanah kosong (2,10) */
 addProp({ id:'dealer', x:40, y:17, w:6, h:4, door:{x:43,y:20}, draw(gx, gy){ drawShopP3(gx, gy, { wt:6, ht:4, wall:'#e8e6df', roof:'#37455e', roof2:'#46586e', sign:'DEALER MOTOR & MOBIL', signBg:'#26374a', showroom:true }); } });
 addProp({ id:'tokoperabot', x:24, y:24, w:6, h:4, door:{x:27,y:27}, draw(gx, gy){ drawShopP3(gx, gy, { wt:6, ht:4, wall:'#f7e8ee', roof:'#8a2f4f', roof2:'#a83a5f', sign:'TOKO PERABOTAN', signBg:'#6e243d' }); } });
 addProp({ id:'tokobangunan', x:38, y:35, w:6, h:4, door:{x:41,y:38}, draw(gx, gy){ drawShopP3(gx, gy, { wt:6, ht:4, wall:'#e9dfc8', roof:'#6e5136', roof2:'#84643f', sign:'TOKO BANGUNAN', signBg:'#54350f' }); } });
@@ -1869,7 +1869,8 @@ addProp({ id:'terminal', x:22, y:26, w:2, h:2, interact:'terminal', draw(gx,gy){
   ctx.fillStyle = '#5a4632'; ctx.fillRect(gx+3, gy+16, 4, h-26); ctx.fillRect(gx+w-7, gy+16, 4, h-26); // tiang halte
   ctx.fillStyle = '#2c5d8a'; ctx.fillRect(gx-2, gy+8, w+4, 9); // atap halte
   ctx.fillStyle = '#1d4066'; ctx.fillRect(gx-2, gy+15, w+4, 2.4);
-  signBoard(gx + w/2 - 30, gy - 6, 60, '🚌 TERMINAL', '#f4f1e6', '#2c4a6e');
+  ctx.fillStyle = '#5a4632'; ctx.fillRect(gx + w/2 - 2, gy - 4, 4, 12); // P23: tiang papan — papan menempel fisik pada halte, bukan teks melayang
+  signBoard(gx + w/2 - 30, gy - 10, 60, 'TERMINAL', '#f4f1e6', '#2c4a6e');
   ctx.fillStyle = '#3f8fbf'; ctx.fillRect(gx+8, gy+h-30, 46, 17); // bus mini menunggu
   ctx.fillStyle = '#bfe3f5'; ctx.fillRect(gx+11, gy+h-27, 8, 6); ctx.fillRect(gx+21, gy+h-27, 8, 6); ctx.fillRect(gx+31, gy+h-27, 8, 6); ctx.fillRect(gx+41, gy+h-27, 8, 6);
   ctx.fillStyle = '#ffd93b'; ctx.fillRect(gx+8, gy+h-19, 46, 3);
@@ -8961,10 +8962,7 @@ function drawEnterScene(){
   const ko = keeperPresent(def) ? keeperDrawObj(def) : null;
   if(ko) ents.push({ y: 2 * TILE + 30, draw:() => {
     drawChar(4 * TILE + 16, 2 * TILE + 16, ko);
-    ctx.fillStyle = 'rgba(0,0,0,.45)'; const nm = def.keeperName || ''; const tw = ctx.measureText(nm).width;
-    ctx.font = 'bold 8px sans-serif'; const tw2 = ctx.measureText(nm).width;
-    ctx.fillRect(4 * TILE + 16 - tw2 / 2 - 3, 2 * TILE - 14, tw2 + 6, 11);
-    ctx.fillStyle = '#fff'; ctx.textAlign = 'center'; ctx.fillText(nm, 4 * TILE + 16, 2 * TILE - 5); ctx.textAlign = 'left';
+    /* P23: label nama melayang di atas penjaga DIHAPUS — identitas lewat dialog */
   } });
   ents.sort((a, b) => a.y - b.y);
   for(const e of ents) e.draw();
@@ -10098,7 +10096,7 @@ function nextDay(fainted){
       if(r < 0.10) f.weed = true; else if(r < 0.16) f.pest = true;
     }
   }
-  S.totalDay++; S.minutes = 6*60;
+  S.totalDay++; S.minutes = 3*60+30; /* P23: bangun 03:30 */
   // pohon buah tahunan: naik tahap & berbuah tiap pergantian musim
   if(seasonIdx() !== seasonKemarin){
     for(const k in S.trees){ const t = S.trees[k]; if(t.stage < 3) t.stage++; if(t.stage >= 2) t.fruit = Math.min(4, (t.fruit || 0) + 2); }
@@ -10658,7 +10656,7 @@ function drawWorldMap(){
       const mx = ox + (mt.x / TILE) * sc, my = oy + (mt.y / TILE) * sc, bob = Math.sin(performance.now() / 280) * 2.4;
       ctx.fillStyle = '#ffd93b'; ctx.beginPath(); ctx.arc(mx, my - 8 + bob, 6.4, 0, 7); ctx.fill();
       ctx.fillStyle = '#4a3208'; ctx.font = 'bold 9px sans-serif'; ctx.textAlign = 'center'; ctx.fillText('!', mx, my - 5 + bob);
-      ctx.font = 'bold 10px sans-serif'; ctx.fillStyle = '#ffd93b'; ctx.fillText('MISI: ' + (mt.label || ''), mx, my - 20 + bob); ctx.textAlign = 'left';
+      /* P23: teks nama misi di peta dihapus — cukup penanda '!' */
     }
   }
   // penanda pemain: panah berputar sesuai arah hadap
@@ -10869,7 +10867,7 @@ function drawPohonBesar14(gx, gy){
 }
 addProp({ id:'pohonPadang1', x:48, y:19, w:2, h:2, solidTiles:[[48,19],[49,19],[48,20],[49,20]], draw(gx, gy){ drawPohonBesar14(gx, gy); } });
 addProp({ id:'pohonPadang2', x:52, y:25, w:2, h:2, solidTiles:[[52,25],[53,25],[52,26],[53,26]], draw(gx, gy){ drawPohonBesar14(gx, gy); } });
-addProp({ id:'pohonDanau', x:21, y:33, w:2, h:2, solidTiles:[[21,33],[22,33],[21,34],[22,34]], draw(gx, gy){ drawPohonBesar14(gx, gy); } });
+addProp({ id:'pohonDanau', x:19, y:33, w:2, h:2, solidTiles:[[19,33],[20,33],[19,34],[20,34]], draw(gx, gy){ drawPohonBesar14(gx, gy); } }); /* P23: digeser ke darat penuh — sebelumnya 2 ubin masuk air danau */
 addProp({ id:'pohonSelatan', x:8, y:36, w:2, h:2, solidTiles:[[8,36],[9,36],[8,37],[9,37]], draw(gx, gy){ drawPohonBesar14(gx, gy); } });
 
 /* ---------- Potong rumput padang -> Rumput Segar ---------- */
@@ -11134,8 +11132,8 @@ function render(){
   if(window.__p9Ents) __p9Ents(ents); // Tahap P9: kurir, tukang angkut/galon, pejabat, pasangan & pendamping
   if(window.__p16aEnts) __p16aEnts(ents); // Tahap P16-A: lebah, kunang-kunang, riak hujan, ikan danau, gelembung emosi, rangkaian mancing & aktivitas pemain baru
   /* Tahap 9: anak (balita/anak) hadir di dunia — halaman rumah / lapangan Balai sore */
-  if(S && childBorn() && childPhase() !== 'bayi') ents.push({ y: CHILD.y, draw:() => { drawChar(CHILD.x, CHILD.y, childSpriteObj()); ctx.fillStyle = '#fff'; ctx.font = 'bold 8px sans-serif'; ctx.textAlign = 'center'; ctx.fillText('🧒 ' + childDisplayName(), CHILD.x, CHILD.y - 34); ctx.textAlign = 'left'; } });
-  if(S && child2Born() && child2Phase() !== 'bayi') ents.push({ y: CHILD2.y, draw:() => { drawChar(CHILD2.x, CHILD2.y, childSpriteObj2()); ctx.fillStyle = '#fff'; ctx.font = 'bold 8px sans-serif'; ctx.textAlign = 'center'; ctx.fillText('🧒 ' + child2DisplayName(), CHILD2.x, CHILD2.y - 34); ctx.textAlign = 'left'; } }); // Tahap 12: anak kedua di dunia
+  if(S && childBorn() && childPhase() !== 'bayi') ents.push({ y: CHILD.y, draw:() => { drawChar(CHILD.x, CHILD.y, childSpriteObj()); } }); /* P23: label nama melayang di atas anak dihapus (mandat tanpa teks melayang) */
+  if(S && child2Born() && child2Phase() !== 'bayi') ents.push({ y: CHILD2.y, draw:() => { drawChar(CHILD2.x, CHILD2.y, childSpriteObj2()); } }); // Tahap 12: anak kedua di dunia (P23: tanpa label nama melayang)
   const drawPlayerNow = () => { const hopH = player.hopT > 0 ? Math.sin((1 - player.hopT / 0.35) * Math.PI) * 11 : 0; if(S && S.riding){ ctx.save(); ctx.translate(player.x, player.y + 4); ctx.scale(1.4, 1.4); drawHorseAt(0, 0, true); ctx.restore(); } if(player.boating) drawBoatAt(player.x, player.y + 9, 0); if(VEH.ride && !(S && S.riding)) drawVehicleUnder(player.x, player.y + 2); drawChar(player.x, player.y - (S && S.riding ? 14 : (VEH.ride ? (VEH.ride === 'mobil' ? 12 : 9) : (player.boating ? 5 : 0))), Object.assign({ kind:'player', shirt:(S && S.shirtColor) || '#5d6b3a', hop: hopH }, player)); };
   ents.push({ y: player.y, draw: drawPlayerNow });
   ents.sort((a,b) => a.y - b.y);
@@ -11211,8 +11209,7 @@ function render(){
       ctx.fillStyle = '#ffd968'; ctx.strokeStyle = '#7a4d12'; ctx.lineWidth = 1.5;
       ctx.beginPath(); ctx.moveTo(13, 0); ctx.lineTo(-8, -7); ctx.lineTo(-8, 7); ctx.closePath(); ctx.fill(); ctx.stroke();
       ctx.restore();
-      ctx.fillStyle = '#ffffff'; ctx.font = 'bold 10px sans-serif'; ctx.textAlign = 'center';
-      ctx.fillText(mt2.label, ex, ey - 13); ctx.textAlign = 'left';
+      /* P23: teks nama pada panah misi DIHAPUS (mandat tanpa teks melayang) — panah saja */
     }
   }
   // hujan (badai lebih deras & miring)
@@ -11228,9 +11225,9 @@ function render(){
       if(lt < 110){ ctx.fillStyle = 'rgba(255,255,240,' + (0.26 * (1 - lt / 110)).toFixed(3) + ')'; ctx.fillRect(0, 0, VW, VH); }
     }
   }
-  // kabut pagi (06:00–08:00, cuaca cerah)
-  if(S.weather==='Cerah' && S.minutes < 8 * 60){
-    const a = 0.17 * (1 - (S.minutes - 360) / 120);
+  // kabut pagi (P23: 05:30–08:00, cuaca cerah — rumus lama mengasumsikan hari mulai 06:00 sehingga kabut justru menebal pada 03:30)
+  if(S.weather==='Cerah' && S.minutes >= 330 && S.minutes < 8 * 60){
+    const a = 0.17 * Math.sin((S.minutes - 330) / 150 * Math.PI);
     if(a > 0){
       ctx.fillStyle = 'rgba(240,248,255,' + a.toFixed(3) + ')'; ctx.fillRect(0, 0, VW, VH);
       ctx.fillStyle = 'rgba(245,250,255,' + (a * 0.8).toFixed(3) + ')';
@@ -19579,7 +19576,7 @@ if(typeof openShop === 'function'){
      "v2.5" di layar judul (label itu urusan P16-V, tak disentuh di sini).
    Di peramban biasa (tanpa __otaBridge) modul ini pasif: tidak ada unduhan
    yang bisa dipasang, pemeriksaan senyap tidak berjalan. */
-const GAME_BUILD = "4.10"; // P21: PERBAIKAN VONIS HP (toolbar pegangan, visual, tipografi, pembuka sinematik)
+const GAME_BUILD = "4.11"; // P23: PERBAIKAN VONIS HP (sholat di dalam musholla, Subuh 03:30 & hari mulai 03:30, bola liar, bangunan di kebun, papan nama, NPC makan duduk)
 const UPDATE_MANIFEST_URL = "https://raw.githubusercontent.com/YunobiAirdrop/lembah-encle-update/main/manifest.json";
 (function(){
 'use strict';
@@ -20963,10 +20960,7 @@ function p16aDrawLapakVendor(){
   const o = { kind: 'daster', shirt: '#7a4d9e', dress: '#5d3a7a', hair: '#2e2620', dir: 'down', moving: false, seed: 7.3,
     act: pour ? { tool: 'teapot', loop: 1, t: 0.3, seed: 7.3 } : { tool: 'tray', loop: 1, t: 0.3, seed: 7.3 } };
   drawChar(p.x * TILE + 50, p.y * TILE + 34, o);
-  ctx.fillStyle = 'rgba(0,0,0,.45)'; ctx.font = 'bold 7px sans-serif';
-  const nm = 'Penjual Es Teh'; const tw = ctx.measureText(nm).width;
-  ctx.fillRect(p.x * TILE + 50 - tw / 2 - 3, p.y * TILE - 8, tw + 6, 10);
-  ctx.fillStyle = '#fff'; ctx.textAlign = 'center'; ctx.fillText(nm, p.x * TILE + 50, p.y * TILE); ctx.textAlign = 'left';
+  /* P23: label nama melayang 'Penjual Es Teh' DIHAPUS — identitas penjual lewat dialog lapak */
 }
 /* kait entitas dunia desa (dipanggil render()) */
 window.__p16aEnts = function(ents){
@@ -21096,10 +21090,7 @@ function p16aDrawServiceBay(){
   ctx.save(); ctx.translate(0, myy); ctx.scale(1, 0.8); ctx.translate(0, -myy);
   drawChar(mx, myy, { kind: 'player', shirt: '#e08a2e', pants: '#37455e', skin: '#b57e4e', hair: '#26221f', dir: 'left', moving: false, seed: 3.2, act: { tool: 'wrench', loop: 1, t: 0.3, seed: 3.2 } });
   ctx.restore();
-  ctx.fillStyle = 'rgba(0,0,0,.5)'; ctx.font = 'bold 7px sans-serif';
-  const nm = 'Montir — sedang servis'; const tw = ctx.measureText(nm).width;
-  ctx.fillRect(mx - tw / 2 - 3, gy + 30, tw + 6, 10);
-  ctx.fillStyle = '#fff'; ctx.textAlign = 'center'; ctx.fillText(nm, mx, gy + 37.6); ctx.textAlign = 'left';
+  /* P23: label status melayang di atas montir DIHAPUS — montir tetap bekerja tanpa teks melayang */
 }
 if(typeof drawEnterScene === 'function'){
   const _de16a = drawEnterScene;
@@ -24225,7 +24216,7 @@ if(typeof ENTER_DEFS !== 'undefined' && !ENTER_DEFS.tokopakaian){
     flavor: 'Gantungan baju berderet rapi. Hadapi konter untuk membeli pakaian.' };
 }
 if(typeof addProp === 'function' && typeof PROPS !== 'undefined' && !PROPS.find(p => p.id === 'tokopakaian')){
-  addProp({ id: 'tokopakaian', x: 19, y: 10, w: 5, h: 3, door: { x: 21, y: 12 }, draw(gx, gy){ drawShopP3(gx, gy, { wt: 5, ht: 3, wall: '#f7e8ee', roof: '#7a4d9e', roof2: '#9a6dc0', sign: 'TOKO PAKAIAN', signBg: '#5b2a86' }); } });
+  addProp({ id: 'tokopakaian', x: 31, y: 10, w: 5, h: 3, door: { x: 34, y: 12 }, draw(gx, gy){ drawShopP3(gx, gy, { wt: 5, ht: 3, wall: '#f7e8ee', roof: '#7a4d9e', roof2: '#9a6dc0', sign: 'TOKO PAKAIAN', signBg: '#5b2a86' }); } }); /* P23: dipindah dari atas Petak Timur (19,10) ke tanah kosong (31,10) */
 }
 
 /* ---------------- acara hati semua ambang (butir 28) ---------------- */
@@ -28492,5 +28483,340 @@ if(typeof window !== 'undefined') window.__p21 = {
 })();
 
 </script>
+<script>
+/* ================= TAHAP P23 — VONIS HP KETIGA ATAS 4.10 (6 KELUHAN) =================
+   1) Sholat DI DALAM musholla: jamaah masuk interior & sholat dalam shaf (mesin masuk/keluar
+      bergilir lewat pintu, titik parkir tak terlihat di dalam tapak bangunan); interior
+      menggambar JAMA'AH ASLI yang sudah masuk (bukan figur palsu P18).
+   2) Bola liar: alat genggam P16-A hanya saat NPC DIAM; bola hanya pada konteks 'main'
+      resmi (band main anak, 09:00–17:30, bukan jam sholat, jauh dari musholla, bukan sawah/air).
+   3) Subuh 03:30 (P18_WAKTU digeser) + fajar 03:30–06:00 warga non-jamaah di rumah/tidur.
+   D) Bangunan di kebun: mutasi grid sawah timur & paving abu -> jalan tanah; wander dilarang
+      ke ubin sawah/air (pindah prop dikerjakan sebagai suntingan inti: tokosepeda/tokopakaian/
+      pohonDanau; pohon sawah dipindah di modul ini).
+   E) Papan nama: pass gambar-ulang papan di akhir render desa (papan tak pernah tertutup
+      bangunan lain); teks melayang sudah dihapus di inti (panah misi, peta, label anak,
+      label vendor es teh, label montir, label penjaga interior).
+   F) NPC makan DUDUK DIAM di bangku teras Warteg (16:30–18:30), pose duduk + mangkuk;
+      alat genggam tidak pernah muncul saat NPC berjalan. */
+(function(){
+  if(window.__p23loaded) return; window.__p23loaded = true;
+  const TILE23 = 32;
+
+  /* ---------- 3a: Subuh -> 03:30 (pengingat panel jam + Jadwal Sholat + jendela kumpul
+     semuanya membaca P18_WAKTU yang sama) ---------- */
+  try{
+    if(typeof P18_WAKTU !== 'undefined'){
+      for(const w of P18_WAKTU){ if(w.id === 'subuh'){ w.jam = 3.5; w.akhir = 4.0; } }
+    }
+  }catch(e){}
+
+  /* ---------- D: hamparan paving abu di depan rumah/SD (menempel ladang pemain) menjadi
+     jalan tanah desa; teras sawah timur sudah digeser di inti.
+     CATATAN: grid G dibangun ulang dari pola dasar saat permainan dimulai, jadi mutasi
+     diterapkan ulang dari tick P23 (idempoten — hanya menulis bila nilai belum target). ---------- */
+  function p23GridFix(){
+    try{
+      if(typeof G === 'undefined') return;
+      // hamparan paving abu di depan rumah pemain (baris 8, x2–6 — menempel pagar ladang)
+      for(let x = 2; x <= 6; x++) if(G[8] && G[8][x] === 2) G[8][x] = 1;
+    }catch(e){}
+  }
+  p23GridFix();
+
+  /* ---------- D: pohon di tengah sawah timur (38,20) -> tanah rumput (34,25) ---------- */
+  try{
+    if(typeof PROPS !== 'undefined'){
+      const ph = PROPS.find(p => p.id === 'pohon38_20');
+      if(ph && ph.x === 38 && ph.y === 20){
+        const dx = 34 - ph.x, dy = 25 - ph.y;
+        ph.x += dx; ph.y += dy;
+        if(Array.isArray(ph.solidTiles)) ph.solidTiles = ph.solidTiles.map(t => [t[0] + dx, t[1] + dy]);
+      }
+    }
+  }catch(e){}
+
+  /* ---------- F: bangku teras Warteg — tempat duduk nyata untuk makan ---------- */
+  try{
+    if(typeof addProp === 'function' && typeof PROPS !== 'undefined' && !PROPS.find(p => p.id === 'bangkuWarteg23')){
+      addProp({ id:'bangkuWarteg23', x:31, y:8, w:1, h:1, solid:false, draw(gx, gy){
+        ctx.fillStyle = 'rgba(0,0,0,.14)'; ctx.fillRect(gx + 3, gy + 24, 27, 4);
+        ctx.fillStyle = '#6e4520'; ctx.fillRect(gx + 4, gy + 13, 24, 4); // meja kecil
+        ctx.fillStyle = '#8a5a2b'; ctx.fillRect(gx + 4, gy + 11, 24, 3);
+        ctx.fillStyle = '#5d4020'; ctx.fillRect(gx + 6, gy + 17, 3, 8); ctx.fillRect(gx + 23, gy + 17, 3, 8);
+        ctx.fillStyle = '#7a4d21'; ctx.fillRect(gx + 8, gy + 22, 16, 3); // bangku panjang
+        ctx.fillStyle = '#5d4020'; ctx.fillRect(gx + 9, gy + 25, 3, 5); ctx.fillRect(gx + 20, gy + 25, 3, 5);
+        ctx.fillStyle = '#f7f3e6'; ctx.fillRect(gx + 12, gy + 8, 6, 3); // piring di meja
+        ctx.fillStyle = '#c9403d'; ctx.fillRect(gx + 20, gy + 8, 4, 3); // gelas
+      }});
+    }
+  }catch(e){}
+
+  /* ---------- Slot shaf interior musholla (ubin interior 12x9; kiblat = utara/mihrab) ---------- */
+  const P23_SLOTS = {
+    imam: [5, 4],
+    pria: [[2,4],[3,4],[4,4],[6,4],[7,4],[8,4],[9,4],[2,5],[3,5],[4,5],[5,5],[6,5],[7,5],[8,5],[9,5]],
+    wanita: [[2,6],[3,6],[4,6],[5,6],[6,6],[7,6],[8,6],[9,6],[2,7],[3,7],[4,7],[7,7],[8,7],[9,7]],
+    ngaji: [[3,5],[5,5],[7,5],[4,6],[6,6]]
+  };
+  const P23_PARKIR = [[13,20],[14,20],[15,20],[16,20],[13,21],[14,21],[15,21],[16,21]]; // di dalam tapak musholla (tertutup gambar bangunan dari luar)
+  const P23_MAKAN = { x: 31, y: 8, m0: 990, m1: 1110 }; // bangku Warteg, 16:30–18:30
+  function p23JendelaMakan(){ return !!(typeof S !== 'undefined' && S && S.minutes >= P23_MAKAN.m0 && S.minutes < P23_MAKAN.m1); }
+  function p23Pray(n){ try{ return (typeof p18NpcPraying === 'function') ? p18NpcPraying(n) : null; }catch(e){ return null; } }
+
+  /* ---------- schedulePoint: parkir di dalam (musholla/rumah), jam makan, fajar di rumah ---------- */
+  if(typeof schedulePoint === 'function'){
+    const _sp23 = schedulePoint;
+    schedulePoint = function(n){
+      try{
+        if(typeof S !== 'undefined' && S && n){
+          const mode = p23Pray(n);
+          if(mode && n._p23in && n._p23park) return { x: n._p23park[0], y: n._p23park[1], r: 0 };
+          if(!mode){
+            if(n.id === 'udin' && p23JendelaMakan()) return { x: P23_MAKAN.x * TILE23 + 16, y: P23_MAKAN.y * TILE23 + 16, r: 0 };
+            const m = S.minutes;
+            // FAJAR 03:30–06:00: warga non-jamaah di titik RUMAH/malam desain basis
+            // (band terakhir NPC_SCHEDULES) — pemilihan band bawaan keliru memilih band
+            // pertama (pagi) pada jam 3.5, jadi warga akan berkumpul pagi sebelum waktunya.
+            if(m >= 210 && m < 360 && n.id !== 'wiryo' && !(S.family && S.family.spouse === n.id)
+               && typeof NPC_SCHEDULES !== 'undefined' && NPC_SCHEDULES[n.id] && NPC_SCHEDULES[n.id].length){
+              const bands = NPC_SCHEDULES[n.id], b = bands[bands.length - 1];
+              return { x: b[1] * TILE23 + 16, y: b[2] * TILE23 + 16, r: b[3] || 0 };
+            }
+          }
+        }
+      }catch(e){}
+      return _sp23(n);
+    };
+  }
+
+  /* ---------- Mesin masuk/keluar musholla ---------- */
+  function p23ResetGerak(n){ n.target = null; n._path = null; n._pkey = null; n._anchorKey = null; }
+  function p23Tick(){
+    if(typeof S === 'undefined' || !S || S.area !== 'desa' || typeof NPCS === 'undefined') return;
+    p23GridFix();
+    const now = performance.now();
+    for(const n of NPCS){
+      const mode = p23Pray(n);
+      if(mode){
+        if(!n._p23in){
+          let dekat = false;
+          try{
+            if(typeof P18_MUSHOLLA !== 'undefined') for(const t of P18_MUSHOLLA){ if(Math.abs(n.x - (t[0] * TILE23 + 16)) < 30 && Math.abs(n.y - (t[1] * TILE23 + 16)) < 30){ dekat = true; break; } }
+          }catch(e){}
+          if(!dekat && Math.hypot(n.x - (14 * TILE23 + 16), n.y - (22 * TILE23 + 16)) < 36) dekat = true;
+          if(dekat && now - (window._p23GateIn || 0) > 350){
+            window._p23GateIn = now;
+            const idx = NPCS.filter(x => x._p23in).length % P23_PARKIR.length;
+            const s = P23_PARKIR[idx];
+            n._p23in = mode; n._p23park = [s[0] * TILE23 + 16, s[1] * TILE23 + 16];
+            n.x = n._p23park[0]; n.y = n._p23park[1]; n.moving = false; p23ResetGerak(n);
+          }
+        }
+      } else if(n._p23in){
+        if(now - (window._p23GateOut || 0) > 450){
+          window._p23GateOut = now;
+          n._p23in = null; n._p23park = null;
+          n.x = 14 * TILE23 + 16 + (((n.seed || 1) % 5) - 2) * 6;
+          n.y = 22 * TILE23 + 16 + ((n.seed || 1) % 3) * 6;
+          p23ResetGerak(n);
+        }
+      }
+      // D: target mengembara tidak boleh ke ubin sawah (3) / air (4)
+      if(n.target && typeof G !== 'undefined'){
+        const gx = Math.floor(n.target.x / TILE23), gy = Math.floor(n.target.y / TILE23);
+        if(G[gy] && (G[gy][gx] === 3 || G[gy][gx] === 4)){ n.target = null; }
+      }
+    }
+  }
+  if(typeof updateNPCs === 'function'){
+    const _un23 = updateNPCs;
+    updateNPCs = function(dt){ _un23(dt); try{ p23Tick(); }catch(e){} };
+  }
+
+  /* ---------- npcActivity: tak ada ikon aktivitas untuk yang di dalam; 'makan' hanya di jendela makan ---------- */
+  if(typeof npcActivity === 'function'){
+    const _na23 = npcActivity;
+    npcActivity = function(n){
+      if(!n) return _na23(n);
+      if(n._p23in) return null;
+      const a = _na23(n);
+      if(a === 'makan' && !(n.id === 'udin' && p23JendelaMakan())) return null;
+      return a;
+    };
+  }
+
+  /* ---------- P16-A act: tak ada alat genggam saat berjalan; bola hanya konteks sah ---------- */
+  function p23BolaSah(n){
+    try{
+      if(typeof S === 'undefined' || !S) return false;
+      if(S.minutes < 540 || S.minutes > 1050) return false; // 09:00–17:30
+      if(typeof p18WaktuNow === 'function' && p18WaktuNow()) return false; // bukan jam sholat/TPQ
+      const tx = Math.floor(n.x / TILE23), ty = Math.floor(n.y / TILE23);
+      if(typeof G !== 'undefined' && G[ty] && (G[ty][tx] === 3 || G[ty][tx] === 4)) return false; // bukan di sawah/air
+      if(tx >= 12 && tx <= 17 && ty >= 17 && ty <= 22) return false; // bukan di tapak/halaman musholla
+      return true;
+    }catch(e){ return false; }
+  }
+  if(typeof window.__p16aActObj === 'function'){
+    const _a23 = window.__p16aActObj;
+    window.__p16aActObj = function(n, act, o){
+      if(n && n.moving) return o; // F: berjalan = tangan kosong
+      const r = _a23(n, act, o);
+      if(r && r.act && r.act.tool === 'bola' && !(act === 'main' && p23BolaSah(n))){
+        const c = Object.assign({}, r); delete c.act; return c;
+      }
+      return r;
+    };
+  }
+
+  /* ---------- Gambar duduk makan (figur duduk + mangkuk, palet pakaian NPC sendiri) ---------- */
+  function p23DrawDuduk(x, y, o){
+    const skin = '#d99e63', hair = o.hair || '#241a12', baju = o.dress || o.shirt || '#888';
+    ctx.fillStyle = 'rgba(0,0,0,.16)'; ctx.beginPath(); ctx.ellipse(x, y - 1, 13, 3.4, 0, 0, 7); ctx.fill();
+    ctx.fillStyle = '#4a3826'; ctx.fillRect(x - 8, y - 13, 5, 10); ctx.fillRect(x + 4, y - 13, 5, 10); // kaki menekuk duduk
+    ctx.fillStyle = '#2e2620'; ctx.fillRect(x - 9, y - 4, 6, 3); ctx.fillRect(x + 4, y - 4, 6, 3); // sepatu
+    ctx.fillStyle = baju; ctx.fillRect(x - 7, y - 27, 15, 15); // badan tegak duduk
+    ctx.fillStyle = 'rgba(0,0,0,.14)'; ctx.fillRect(x - 7, y - 15, 15, 3);
+    ctx.fillStyle = skin; ctx.fillRect(x - 11, y - 24, 4, 10); ctx.fillRect(x + 8, y - 24, 4, 10); // lengan ke meja
+    ctx.fillStyle = '#f7f3e6'; ctx.beginPath(); ctx.ellipse(x + 2, y - 15, 6.4, 3.2, 0, 0, 7); ctx.fill(); // mangkuk
+    ctx.fillStyle = '#c9403d'; ctx.fillRect(x + 1, y - 17.4, 2.4, 2); // lauk di mangkuk
+    ctx.fillStyle = skin; ctx.beginPath(); ctx.arc(x, y - 33, 7.6, 0, 7); ctx.fill(); // kepala
+    ctx.fillStyle = hair; ctx.beginPath(); ctx.arc(x, y - 35.4, 7.6, Math.PI, 0); ctx.fill(); ctx.fillRect(x - 7.6, y - 35.4, 3, 5); ctx.fillRect(x + 4.6, y - 35.4, 3, 5);
+    ctx.fillStyle = '#241a12'; ctx.fillRect(x - 3.4, y - 32.4, 2, 2); ctx.fillRect(x + 1.8, y - 32.4, 2, 2); // mata
+  }
+
+  /* ---------- drawChar: yang di dalam musholla/rumah tidak digambar di dunia; Udin digambar duduk ---------- */
+  if(typeof drawChar === 'function'){
+    const _dc23 = drawChar;
+    drawChar = function(x, y, o){
+      if(o && o._p23in) return;
+      if(o && o.id === 'udin' && p23JendelaMakan() && !o.moving){
+        const tx = Math.floor(x / TILE23), ty = Math.floor((y - 6) / TILE23);
+        if(tx === P23_MAKAN.x && ty === P23_MAKAN.y){ p23DrawDuduk(x, y, o); return; }
+      }
+      return _dc23(x, y, o);
+    };
+  }
+
+  /* ---------- Interior musholla: gambar JAMA'AH ASLI dalam shaf (tanpa figur palsu P18) ---------- */
+  function p23GambarJamaah(){
+    if(typeof p18DrawPraying !== 'function' || typeof NPCS === 'undefined') return;
+    const w = (typeof p18WaktuNow === 'function') ? p18WaktuNow() : null; if(!w) return;
+    const mode = w.tpq ? 'ngaji' : 'sholat';
+    const z = (typeof TS !== 'undefined' ? TS : 48) / TILE23;
+    const ox = (VW / z - 12 * TILE23) / 2, oy = (VH / z - 9 * TILE23) / 2;
+    ctx.save(); ctx.scale(z, z); ctx.translate(ox, oy);
+    // seed diseragamkan (0) agar seluruh jamaah bergerak SEREMPAK (berdiri->rukuk->sujud
+    // bersama seperti sholat berjamaah sungguhan) — bukan pose acak per orang.
+    const gambar = (slot, n, md) => { try{ p18DrawPraying(slot[0] * TILE23 + 16 - 15, (slot[1] + 1) * TILE23 - 42, { id: n.id, seed: 0 }, md); }catch(e){} };
+    const arrived = NPCS.filter(n => n._p23in === mode);
+    if(mode === 'ngaji'){
+      const oman = arrived.find(n => n.id === 'oman'); if(oman) gambar(P23_SLOTS.imam, oman, 'ngaji');
+      let i = 0; for(const n of arrived){ if(n.id === 'oman') continue; if(i < P23_SLOTS.ngaji.length) gambar(P23_SLOTS.ngaji[i++], n, 'ngaji'); }
+    } else {
+      const priaD = [], priaA = [], wanD = [], wanA = [];
+      const isPria = id => (typeof P18_PRIA !== 'undefined' && P18_PRIA.indexOf(id) >= 0), isWan = id => (typeof P18_WANITA !== 'undefined' && P18_WANITA.indexOf(id) >= 0);
+      for(const n of arrived){ if(isPria(n.id)) priaD.push(n); else if(isWan(n.id)) wanD.push(n); else if(n.id === 'dimas' || n.id === 'raka') priaA.push(n); else wanA.push(n); }
+      let imam = priaD.find(n => n.id === 'oman') || priaD[0];
+      if(imam){ gambar(P23_SLOTS.imam, imam, 'sholat'); }
+      let i = 0; for(const n of priaD){ if(n === imam) continue; if(i < P23_SLOTS.pria.length) gambar(P23_SLOTS.pria[i++], n, 'sholat'); }
+      for(const n of priaA){ if(i < P23_SLOTS.pria.length) gambar(P23_SLOTS.pria[i++], n, 'sholat'); }
+      let j = 0; for(const n of wanD){ if(j < P23_SLOTS.wanita.length) gambar(P23_SLOTS.wanita[j++], n, 'sholat'); }
+      for(const n of wanA){ if(j < P23_SLOTS.wanita.length) gambar(P23_SLOTS.wanita[j++], n, 'sholat'); }
+    }
+    ctx.restore();
+  }
+  if(typeof drawEnterScene === 'function'){
+    const _des23 = drawEnterScene;
+    drawEnterScene = function(id){
+      if(id === 'musholla' && typeof p18DrawPraying === 'function'){
+        let basisOk = false;
+        try{ if(typeof _des18 === 'function'){ _des18(id); basisOk = true; } }catch(e){}
+        if(basisOk){
+          try{ p23GambarJamaah(); }catch(e){}
+          try{ if(typeof player !== 'undefined' && player._p18pose) p18DrawPraying(player.x - 15, player.y - 42, player, player._p18pose); }catch(e){}
+          return;
+        }
+      }
+      return _des23(id);
+    };
+  }
+
+  /* ---------- E: pass gambar-ulang papan nama di akhir render desa ---------- */
+  if(typeof signBoard === 'function' && typeof render === 'function'){
+    const _sb23 = signBoard;
+    signBoard = function(x, y, w, text, bg, fg){
+      _sb23(x, y, w, text, bg, fg);
+      if(window._p23PapanAktif){ try{ window._p23Papan.push({ a: [x, y, w, text, bg, fg], m: ctx.getTransform() }); }catch(e){} }
+    };
+    const _rd23 = render;
+    render = function(){
+      let desa = false;
+      try{
+        desa = !!(typeof S !== 'undefined' && S && S.area === 'desa'
+          && !(typeof JKT !== 'undefined' && JKT.active) && !(typeof HOUSE !== 'undefined' && HOUSE.active)
+          && !(typeof SCHOOL !== 'undefined' && SCHOOL.active) && !(typeof VISIT !== 'undefined' && VISIT.active)
+          && !(typeof ENTER !== 'undefined' && ENTER.active) && !(typeof DNG !== 'undefined' && DNG.active)
+          && !(typeof REG !== 'undefined' && REG.active) && !(typeof WMAP !== 'undefined' && WMAP.open));
+      }catch(e){}
+      window._p23Papan = []; window._p23PapanAktif = desa;
+      try{ _rd23(); } finally { window._p23PapanAktif = false; }
+      if(desa && window._p23Papan.length){
+        try{
+          for(const rec of window._p23Papan){ ctx.setTransform(rec.m); _sb23(rec.a[0], rec.a[1], rec.a[2], rec.a[3], rec.a[4], rec.a[5]); }
+          ctx.setTransform(1, 0, 0, 1, 0, 0);
+        }catch(e){}
+      }
+      window._p23Papan = [];
+    };
+  }
+
+  /* ---------- D: jalur jalan NPC tidak boleh memotong sawah/air ----------
+     bfsPathNPC bawaan hanya menghindari ubin solid, sehingga rute warga bisa memotong
+     sawah (mengeluh user: NPC berjalan DI ATAS sawah). Bila jalur bawaan melintasi ubin
+     sawah (G=3) / air (G=4), hitung ulang dengan BFS yang melarang kedua ubin itu
+     (titik awal & tujuan dikecualikan); bila tak ada jalur bersih, jalur bawaan dipakai. */
+  if(typeof bfsPathNPC === 'function' && typeof G !== 'undefined'){
+    const _bfs23 = bfsPathNPC;
+    const p23JalurKotor = (tiles) => { if(!tiles) return false; for(let i = 1; i < tiles.length; i++){ const tx = Math.floor(tiles[i].x / TILE23), ty = Math.floor(tiles[i].y / TILE23); if(G[ty] && (G[ty][tx] === 3 || G[ty][tx] === 4)) return true; } return false; };
+    bfsPathNPC = function(sx, sy, gx, gy){
+      const r = _bfs23(sx, sy, gx, gy);
+      if(!r || !p23JalurKotor(r)) return r;
+      try{
+        const walk = (x, y) => (x === gx && y === gy) || (x === sx && y === sy) || (!isSolidTile(x, y) && !(G[y] && (G[y][x] === 3 || G[y][x] === 4)));
+        const prev = new Map(); const q = [[sx, sy]]; prev.set(sx + ',' + sy, null);
+        let head = 0;
+        while(head < q.length){
+          const cur = q[head++], cx = cur[0], cy = cur[1];
+          if(cx === gx && cy === gy) break;
+          for(const d of [[1, 0], [-1, 0], [0, 1], [0, -1]]){
+            const nx = cx + d[0], ny = cy + d[1], k = nx + ',' + ny;
+            if(nx < 0 || ny < 0 || nx >= MAPW || ny >= MAPH || prev.has(k) || !walk(nx, ny)) continue;
+            prev.set(k, cx + ',' + cy); q.push([nx, ny]);
+          }
+        }
+        const gk = gx + ',' + gy;
+        if(prev.has(gk)){
+          const tiles = []; let k = gk;
+          while(k){ const pr = k.split(','); tiles.push({ x: (+pr[0]) * TILE23 + 16, y: (+pr[1]) * TILE23 + 16 }); k = prev.get(k); }
+          tiles.reverse(); tiles.shift();
+          return tiles;
+        }
+      }catch(e){}
+      return r;
+    };
+  }
+
+  /* ---------- Ekspos untuk probe P23 ---------- */
+  window.__p23 = {
+    slots: P23_SLOTS, parkir: P23_PARKIR, makan: P23_MAKAN,
+    jamaah: () => (typeof NPCS !== 'undefined' ? NPCS.filter(n => n._p23in).map(n => n.id) : []),
+    titikFajar: (id) => { try{ const bands = NPC_SCHEDULES[id]; if(!bands || !bands.length) return null; const b = bands[bands.length - 1]; return [b[1] * TILE23 + 16, b[2] * TILE23 + 16]; }catch(e){ return null; } },
+    bolaSah: p23BolaSah, jendelaMakan: p23JendelaMakan
+  };
+})();
+</script>
+
 </body>
 </html>
