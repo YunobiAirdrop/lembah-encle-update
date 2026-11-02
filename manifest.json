@@ -1,15 +1,15 @@
 {
-  "build": "5.12",
-  "appVersion": "5.12",
+  "build": "5.13",
+  "appVersion": "5.13",
   "minWrapper": 24,
-  "publishedAt": "2026-11-02T08:17:36.440Z",
-  "notes": "5.12 — Ilustrasi Gelombang 13: DUNGEON jadi ilustrasi — Alas Wingit tampil sebagai hutan angker ilustrasi dengan 10 hantu folklor tergambar baru (pocong, kuntilanak, tuyul, genderuwo, sundel bolong, wewe gombel, leak, banaspati, jenglot, babi ngepet), Gua Akar Bumi berlatar gua ilustrasi dan Naga Kuno lantai 700 kini naga ilustrasi raksasa. Layar pertarungan kini berkulit panel krem-hijau yang sama. Isi dungeon, lantai & drop tidak berubah. Simpanan lama tetap terbaca.",
+  "publishedAt": "2026-11-02T08:29:54.295Z",
+  "notes": "5.13 — Ilustrasi Gelombang 14: SEMUA monster Gua Akar Bumi kini ilustrasi — 4 slime, goblin, skeleton, orc, tikus gua, kelelawar, serigala, laba-laba raksasa, tengkorak melayang & arwah, plus bos-bos raksasa per 50 lantai (Raja Slime, Golem, Ksatria Tengkorak, Minotaur, Hydra, Ratu Laba-laba). Pertarungan & drop tetap sama. Simpanan lama tetap terbaca.",
   "files": [
     {
       "path": "index.html",
       "url": "files/index.html",
-      "size": 18197464,
-      "sha256": "017b361ce0f6fb4feb067b35ed915aa16ae85d982d3be557f4b4ae422f9f85b7"
+      "size": 20266964,
+      "sha256": "f83cd8bd0985bef5062a27d6266ef50625ff0456f8d91f5444d1d285c45fd419"
     }
   ]
 }
