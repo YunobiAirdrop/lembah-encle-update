@@ -1,15 +1,15 @@
 {
-  "build": "5.10",
-  "appVersion": "5.10",
+  "build": "5.11",
+  "appVersion": "5.11",
   "minWrapper": 24,
-  "publishedAt": "2026-11-02T07:50:07.132Z",
-  "notes": "5.10 — Ilustrasi Gelombang 11: eksterior batch 2 — klinik hewan, toko pakaian, toko bunga, warkop, tempat cukur, toko perabotan, toko pancing, dealer motor & mobil, toko sepeda, toko bangunan, penggilingan & bengkel kayu kini ilustrasi. Kini hampir semua bangunan desa tampil ilustrasi. Simpanan lama tetap terbaca.",
+  "publishedAt": "2026-11-02T08:02:35.165Z",
+  "notes": "5.11 — MEJA CRAFTING baru di dalam rumah: buat & tingkatkan senjata dan alatmu sendiri dari bahan yang dikumpulkan (kayu, besi, kristal & drop monster) — tempa Classic ke Epic bisa dari rumah; jenjang Mythic & Dewa tetap lewat Pak Bara sang pandai besi. Meja bergetar & berbunyi saat berhasil membuat. Simpanan lama tetap terbaca.",
   "files": [
     {
       "path": "index.html",
       "url": "files/index.html",
-      "size": 16501036,
-      "sha256": "dc4fd22f3d3e50843021f0fe1f9ec1556045b7948c5cfd40909a1eb849728090"
+      "size": 16563109,
+      "sha256": "744d701a9db00f30c6143c7b8d71d54f17a02870d7ed4dd6d4692d7b78a34368"
     }
   ]
 }
