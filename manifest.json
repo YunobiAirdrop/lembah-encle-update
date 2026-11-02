@@ -1,15 +1,15 @@
 {
-  "build": "5.16",
-  "appVersion": "5.16",
+  "build": "5.17",
+  "appVersion": "5.17",
   "minWrapper": 24,
-  "publishedAt": "2026-11-02T09:04:13.873Z",
-  "notes": "5.16 — Ilustrasi Gelombang 17: eksterior desa TUNTAS — 4 rumah warga (tiap rumah warna atapnya sendiri), SD Negeri lengkap dengan bendera merah-putih, gapura desa, terminal, pos ronda, rumah kaca & perpustakaan kini ilustrasi. Semua bangunan tetap bisa dimasuki seperti biasa. Simpanan lama tetap terbaca.",
+  "publishedAt": "2026-11-02T09:17:50.276Z",
+  "notes": "5.17 — Ilustrasi Gelombang 18: desa asal TUNTAS ilustrasi — Taman Bunga & Jembatan Batu (tahap jadi) kini ilustrasi, dan keempat kandang ternak berpagar kayu ilustrasi dengan gerbang yang terbuka, hewannya tetap terlihat & bisa diberi makan seperti biasa. Simpanan lama tetap terbaca.",
   "files": [
     {
       "path": "index.html",
       "url": "files/index.html",
-      "size": 25549855,
-      "sha256": "4b2d2c53747c2971b829e5b443094f5b89677376ba1263aa472fd503399fc661"
+      "size": 25785594,
+      "sha256": "b5fddb9a6eacf40fcceede1ae66b907826cb4e2e94673f73c95761d0e87429a4"
     }
   ]
 }
