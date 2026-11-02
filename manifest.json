@@ -1,15 +1,15 @@
 {
-  "build": "5.2",
-  "appVersion": "5.2",
+  "build": "5.3",
+  "appVersion": "5.3",
   "minWrapper": 24,
-  "publishedAt": "2026-11-02T05:28:30.737Z",
-  "notes": "5.2 — Ilustrasi Gelombang 3: pemain perempuan kini tampil ilustrasi penuh (4 arah + pose masak membelakangi kompor, avatar kapsul mengikuti gender); sprite Pak Jali (Toko Bangunan) digambar ulang sesuai perannya. Simpanan lama tetap terbaca.",
+  "publishedAt": "2026-11-02T05:54:48.927Z",
+  "notes": "5.3 — Ilustrasi Gelombang 4: interior Warteg, Toko Pak Budi, Musholla, dan Guild Petualang kini adegan ilustrasi penuh — penjaga berdiri di belakang konternya, papan misi & kasir bisa diketuk, dan sholat berjamaah berlangsung di baris sajadah menghadap mihrab (alur & buff Hati Tenang tetap sama). Simpanan lama tetap terbaca.",
   "files": [
     {
       "path": "index.html",
       "url": "files/index.html",
-      "size": 11231565,
-      "sha256": "014f17035355f6545efc39273f0c0ed738da6504057711287f233b79667cd7c6"
+      "size": 12404609,
+      "sha256": "3caaa3733ab33a8c8dfe2b83fca0bc523a100345fab7f0300a758f8f830b2b5b"
     }
   ]
 }
