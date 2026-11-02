@@ -1,1 +1,14 @@
-{"appVersion":"5.30","build":"5.30","files":[{"path":"index.html","sha256":"1e73ebe34d7059bed7cb56eb6a321904e213a14806b5897d21ab49e90672a7d4","size":42622073,"url":"https://drive.usercontent.google.com/download?id=1A9lcTvPhAceHHnQGmWhAFsh6rqgjqeYC&export=download&authuser=0&confirm=t"}],"minWrapper":24,"notes":"5.30 — DUA sistem baru + satu perbaikan. (1) PAPAN PEKERJAAN WARGA di Papan Misi Balai Desa: ambil pekerjaan dari warga & toko (antar barang, kumpulkan bahan, bantu kerja, antar makanan), maks 3 aktif, selesai dapat upah Rp + reputasi guild. Tawaran berganti tiap hari. (2) TAMBANG KRISTAL BERLAPIS: masuk dari Gua Tambang — 7 lapisan bertema, 5 kristal orisinal (Seruni sampai Purnama Emas Rp 4.200) yang juga dihitung sebagai bahan TEMPA; lapisan dalam butuh cangkul tempa Epic/Mythic/Dewa. (3) Perbaikan: status guild lama tanpa class tidak lagi membuat tombol senjata error. Simpanan lama tetap terbaca.","publishedAt":"2026-11-02T16:35:00.000Z"}
+{
+  "build": "5.31",
+  "appVersion": "5.31",
+  "minWrapper": 24,
+  "notes": "5.31 — Masak Serius & Ikan per Lokasi!\n\nMASAK SERIUS — Buku Resep baru di dapur rumahmu (dan Perpustakaan):\n• Total 59 resep masakan bisa dimasak — 45 resep BARU khas Indonesia: masakan rumahan, jajanan, minuman, sampai masakan khas daerah dari berbagai wilayah.\n• Resep didapat dari: membeli Buku Resep di toko lalu membacanya, hadiah dari warga yang sudah akrab denganmu, membeli resep warisan di Warteg & RM Padang, dan penemuan otomatis saat kamu pertama kali memegang bahan istimewa.\n• Resep yang belum kamu punya tampil sebagai \"???\" lengkap dengan petunjuk cara mendapatkannya.\n• Tiap resep butuh alatnya: wajan, panci & talenan sudah ada di dapurmu; Oven, Blender & Penggiling Kopi kini dijual di Toko Perabotan.\n• Harga jual masakan diatur adil — memasak dari hasil tani & tangkapanmu sendiri tetap yang paling untung.\n\nIKAN PER LOKASI × WAKTU:\n• Ikan yang menyambar sekarang tergantung TEMPAT dan WAKTU: 14 spesies BARU — Baung keluar malam di sungai, Toman pagi & sore, Bilih & Pora-Pora hanya di Danau Toba, Tenggiri hanya pagi musim Panas di pelabuhan tertentu, dan banyak lagi. Total kini 40 spesies!\n• Ikan legendaris tetap dengan syarat khususnya.\n• Bingung ikan apa ada di mana? Cek info lengkapnya di Toko Pancing Pak Darto atau Buku Koleksi — daftarnya selalu sama dengan isi airnya.\n• Hasil tangkapanmu kini tercatat per lokasi di koleksimu.\n\nSemua harga lama, resep lama, dan simpananmu tetap utuh — save lama langsung terbaca.\n",
+  "files": [
+    {
+      "name": "index.html",
+      "url": "https://drive.usercontent.google.com/download?id=1beUdfNTH8SMxcPG8OhAly-0-Oix5ZMzy&export=download&authuser=0&confirm=t",
+      "size": 42670758,
+      "sha256": "9defb325f0d5305ccd85bcd5677d6d075a9ab72f4173d3875ebd6faf9f90d480"
+    }
+  ]
+}
