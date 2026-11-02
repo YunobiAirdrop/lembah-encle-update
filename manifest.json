@@ -1,15 +1,15 @@
 {
-  "build": "5.3",
-  "appVersion": "5.3",
+  "build": "5.4",
+  "appVersion": "5.4",
   "minWrapper": 24,
-  "publishedAt": "2026-11-02T05:54:48.927Z",
-  "notes": "5.3 — Ilustrasi Gelombang 4: interior Warteg, Toko Pak Budi, Musholla, dan Guild Petualang kini adegan ilustrasi penuh — penjaga berdiri di belakang konternya, papan misi & kasir bisa diketuk, dan sholat berjamaah berlangsung di baris sajadah menghadap mihrab (alur & buff Hati Tenang tetap sama). Simpanan lama tetap terbaca.",
+  "publishedAt": "2026-11-02T06:15:41.066Z",
+  "notes": "5.4 — Ilustrasi Gelombang 5: interior RM Padang, Warung Madura (tetap buka 24 jam), Puskesmas, dan Klinik Hewan kini adegan ilustrasi penuh — Uni Ros, Bang Saiful, Suster Ayu & Dokter Wati berdiri di belakang konternya, semua panel lama tetap sama. Simpanan lama tetap terbaca.",
   "files": [
     {
       "path": "index.html",
       "url": "files/index.html",
-      "size": 12404609,
-      "sha256": "3caaa3733ab33a8c8dfe2b83fca0bc523a100345fab7f0300a758f8f830b2b5b"
+      "size": 13541857,
+      "sha256": "af3a7c4531c9f4d4eafdde140a079cf83968c24e8da8c237e9f340cf9ec30538"
     }
   ]
 }
