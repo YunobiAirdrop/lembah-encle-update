@@ -1,14 +1,14 @@
 {
-  "build": "5.33",
-  "appVersion": "5.33",
+  "build": "5.34",
+  "appVersion": "5.34",
   "minWrapper": 24,
-  "notes": "5.33 — Buku Cerita & 46 Misi Sampingan Warga!\n\nBUKU CERITA — 9 BAB UTAMA:\n• Kisahmu di Lembah Encle kini tercatat sebagai 9 bab bernomor: dari Tanah Warisan dan perkenalan warga, Renovasi Desa, Jejak Petualang, perjalanan Nusantara, sampai Tanah Bebas Tanggungan dan satu malam istimewa yang ditunggu desa.\n• Buka lewat TAS ▸ Buku Cerita & Misi Sampingan, atau dari Papan Misi Balai Desa.\n• Bab yang tonggaknya tercapai bisa diklaim berurutan untuk hadiah uang, barang, relasi, dan reputasi — total hadiah bab Rp 20.350.\n• Cerita pembuka, Renovasi Desa, dan semua misi lamamu tetap berjalan seperti biasa; Buku Cerita merangkai perjalanan yang memang sudah kamu jalani.\n\n46 MISI SAMPINGAN BARU:\n• 40 misi dari warga desa dan 6 misi dari tokoh Bandung, Banda Aceh, Medan, Bali, Kalimantan, dan Papua.\n• Isinya beragam: antar hasil tani & ternak, masakan rumah, barang tambang, kegiatan memancing, panen, festival, ojek, sampai pesan yang harus disampaikan ke warga lain.\n• 8 misi berantai 2–3 tahap — selesaikan satu langkah untuk membuka langkah berikutnya.\n• Ambil dari dialog warga atau langsung dari panel Buku Cerita. Maksimal 3 misi aktif bersamaan, tidak ada batas hari dan tidak kedaluwarsa.\n• Hadiah total seluruh misi Rp 20.220, di luar hadiah barang & reputasi tertentu.\n\nBEDANYA DENGAN PEKERJAAN WARGA:\n• Misi Sampingan bersifat SATU KALI dan bercerita.\n• Pekerjaan Warga di Papan Pekerjaan tetap harian, berupah, dan berganti seperti sebelumnya.\n\nSemua simpanan lama tetap terbaca — bab yang sudah kamu capai dari perjalanan sebelumnya langsung terdeteksi, dan misi barumu ikut tersimpan lewat Buku Harian seperti biasa.\n",
+  "notes": "5.34 — Musik Makin Enak & Semua Aksi Kini Berbunyi!\n\nKURASI MUSIK:\n• Musik kini dipilih menurut tempat & suasana, tidak lagi acak: desa pagi dan sore punya lagunya sendiri, begitu juga malam, interior rumah, interior toko, kota regional & Jakarta, perjalanan, dan tiap keluarga dungeon (Akar Bumi, Alas Wingit, Tambang Kristal, regional).\n• Di musholla kini mengalun musik yang tenang dan lembut — lagu yang kurang pas sudah diganti.\n• Gua Tambang & Tambang Kristal punya musik gua sendiri; minigame juga kini bermusik.\n• Pindah tempat tidak lagi memotong lagu secara kasar — ada peralihan memudar (fade) yang halus.\n• Lagu yang membosankan karena terlalu sering muncul sudah dikurangi; lagu judul layar pembuka dibersihkan dari trek yang tidak cocok.\n\nSFX SEMUA AKSI:\n• Aksi yang dulu bisu kini berbunyi: gigitan ikan saat menunggu, membuka dialog, pingsan, telur menetas & hewan lahir, menyimpan Buku Harian, minigame, dan saat kamu kena serangan musuh.\n• Bunyi yang dulu pinjam tidak pada tempatnya sudah dipisah: selesai sholat tidak lagi berbunyi seperti panen, naik kendaraan berbunyi pintu & mesin, menebang berbunyi benturan kayu, melempar kail berbunyi cipratan air.\n\nPENGATURAN SUARA DIPERBAIKI:\n• Slider Volume SFX kini berlaku untuk SEMUA bunyi, termasuk bunyi jurus, tempa, dan monster (dulu sebagian bunyi tidak mengikuti slider).\n• Slider 0% kini benar-benar senyap, untuk musik maupun SFX.\n\nSemua simpananmu tetap utuh — save lama langsung terbaca seperti biasa.\n",
   "files": [
     {
       "name": "index.html",
-      "url": "https://drive.usercontent.google.com/download?id=1Rx5L45TmKbZkrU07wYEjJ-VZOYA5g03W&export=download&authuser=0&confirm=t",
-      "size": 43447246,
-      "sha256": "1093cad7f26fc2018f5718c1c5cbb65a695ba02672098a0ad56abeb0c530fc0c"
+      "url": "https://drive.usercontent.google.com/download?id=1Va3XwqZAGjLaRNy6m1vFF3dG_AIs1IXE&export=download&authuser=0&confirm=t",
+      "size": 43476896,
+      "sha256": "2a72a81e063cc320c11f9f2bd4d3f5c5c503ffbbdac3d60a3d149509a3ef700b"
     }
   ]
 }
