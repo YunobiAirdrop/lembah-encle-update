@@ -1,15 +1,15 @@
 {
-  "build": "5.14",
-  "appVersion": "5.14",
+  "build": "5.15",
+  "appVersion": "5.15",
   "minWrapper": 24,
-  "publishedAt": "2026-11-02T08:39:34.069Z",
-  "notes": "5.14 — Ilustrasi Gelombang 15: SEMUA monster di semua dungeon kini ilustrasi — komodo, kepiting karang, ular hutan, harimau, macan, kasuari, kerangka kuno, tengkorak ungu, wraith & arwah biru; bos lantai 100 tiap kota kini tampil sebagai wujud familinya sendiri (Komodo Purba Agung, Raja Tikus Kanal, Harimau Gayo Agung, dll). Pertarungan & drop tetap sama. Simpanan lama tetap terbaca.",
+  "publishedAt": "2026-11-02T08:43:49.605Z",
+  "notes": "5.15 — Ilustrasi Gelombang 16: TUNTAS DUNGEON — ke-14 dungeon kota kini berlatar ilustrasi sesuai temanya (terowongan kanal, kawah putih, candi bawah tanah, gua pura, tambang emas tua, karang Bunaken, pulau komodo…) dan layar pertarungan kini berlatar dungeon yang sedang kamu masuki. Dengan ini seluruh dungeon di semua map sudah ilustrasi penuh. Simpanan lama tetap terbaca.",
   "files": [
     {
       "path": "index.html",
       "url": "files/index.html",
-      "size": 21159854,
-      "sha256": "87b0a0c91a4ede1baa6e23738c89178ec5b83751569c15cb6ea6bed4a1f879da"
+      "size": 24900731,
+      "sha256": "0a32dfddbe79481b1fa2ea355885f1a7a6e6355d566614e9d46538d7f9712f8d"
     }
   ]
 }
