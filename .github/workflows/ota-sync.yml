@@ -1,0 +1,28 @@
+name: OTA Payload Sync
+on:
+  workflow_dispatch:
+    inputs:
+      file_id:
+        description: "Google Drive file ID"
+        required: true
+      build:
+        description: "Build label"
+        required: true
+        default: "5.34"
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download payload from Drive
+        run: |
+          curl -L "https://drive.usercontent.google.com/download?id=${{ inputs.file_id }}&export=download&authuser=0&confirm=t" -o files/index.html
+          ls -la files/
+          test $(stat -c%s files/index.html) -gt 40000000
+      - name: Commit payload
+        run: |
+          git config user.name "ota-bot"
+          git config user.email "ota-bot@users.noreply.github.com"
+          git add files/index.html
+          git commit -m "OTA payload ${{ inputs.build }}"
+          git push
