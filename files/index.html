@@ -20000,7 +20000,7 @@ if(typeof openShop === 'function'){
      "v2.5" di layar judul (label itu urusan P16-V, tak disentuh di sini).
    Di peramban biasa (tanpa __otaBridge) modul ini pasif: tidak ada unduhan
    yang bisa dipasang, pemeriksaan senyap tidak berjalan. */
-const GAME_BUILD = "5.7"; // P26: GELOMBANG 8 (animasi ternak penuh: pose matok/makan ambient + massal saat diberi pakan, telur tampil di kandang, anak hasil pengeram tampil sprite anak, kotoran tanah visual) — sebelumnya GELOMBANG 7 (sisa hewan ilustrasi: kuda/domba/anjing/kucing + render dunia kelinci & babi ternak) — sebelumnya GELOMBANG 6 (kandang & hewan ternak ilustrasi: ayam/kambing/sapi/bebek) — sebelumnya GELOMBANG 5 (interior ilustrasi mode adegan batch 2: RM Padang, Warung Madura, Puskesmas, Klinik Hewan) — sebelumnya GELOMBANG 4 (interior ilustrasi mode adegan: Warteg, Toko, Musholla, Guild) — sebelumnya GELOMBANG 3 (39 sprite NPC ilustrasi + Laras) — sebelumnya GELOMBANG 1 VERSI ILUSTRASI (sprite ilustrasi pemain/Kades/Bu Sari, interior rumah adegan ilustrasi, kulit UI kapsul ala Meow City) — riwayat: 4.12 P24 // P24: PERBAIKAN VONIS HP KE-4 (papan nama fisik proporsional, interior musholla asli + sholat pemain sekali per waktu, dispersal pelataran, grafik HD berwarna, kontrol analog ala Stardew) — riwayat: P23: PERBAIKAN VONIS HP (sholat di dalam musholla, Subuh 03:30 & hari mulai 03:30, bola liar, bangunan di kebun, papan nama, NPC makan duduk)
+const GAME_BUILD = "5.8"; // P26: GELOMBANG 9 (sistem beranak mamalia: sapi/kambing/domba/kuda/kelinci/babi bisa hamil bila dewasa >=2 + diberi pakan kemarin + sehat; masa hamil=tumbuh kelinci 5/babi 9/kambing 10/domba 10/sapi 15/kuda 18 hari; anak persisten di save & tidak berproduksi sampai dewasa; sprite anak G8 digambar di kandang + penanda hati induk hamil + baris anak di panel kandang) — sebelumnya GELOMBANG 8 (animasi ternak penuh: pose matok/makan ambient + massal saat diberi pakan, telur tampil di kandang, anak hasil pengeram tampil sprite anak, kotoran tanah visual) — sebelumnya GELOMBANG 7 (sisa hewan ilustrasi: kuda/domba/anjing/kucing + render dunia kelinci & babi ternak) — sebelumnya GELOMBANG 6 (kandang & hewan ternak ilustrasi: ayam/kambing/sapi/bebek) — sebelumnya GELOMBANG 5 (interior ilustrasi mode adegan batch 2: RM Padang, Warung Madura, Puskesmas, Klinik Hewan) — sebelumnya GELOMBANG 4 (interior ilustrasi mode adegan: Warteg, Toko, Musholla, Guild) — sebelumnya GELOMBANG 3 (39 sprite NPC ilustrasi + Laras) — sebelumnya GELOMBANG 1 VERSI ILUSTRASI (sprite ilustrasi pemain/Kades/Bu Sari, interior rumah adegan ilustrasi, kulit UI kapsul ala Meow City) — riwayat: 4.12 P24 // P24: PERBAIKAN VONIS HP KE-4 (papan nama fisik proporsional, interior musholla asli + sholat pemain sekali per waktu, dispersal pelataran, grafik HD berwarna, kontrol analog ala Stardew) — riwayat: P23: PERBAIKAN VONIS HP (sholat di dalam musholla, Subuh 03:30 & hari mulai 03:30, bola liar, bangunan di kebun, papan nama, NPC makan duduk)
 const UPDATE_MANIFEST_URL = "https://raw.githubusercontent.com/YunobiAirdrop/lembah-encle-update/main/manifest.json";
 (function(){
 'use strict';
@@ -32991,6 +32991,366 @@ window.__p26g8 = { imgs: IMGS, eat: EAT, mass: MASS, young: YOUNG, dung: DUNG, p
   forceEat: function(kind, ms){ MASS[kind] = performance.now() + (ms || 4000); },
   forceDung: function(kind){ var P = PENS[kind]; if(P) DUNG[kind].push({ x: (P.x0 + P.x1) / 2, y: (P.y0 + P.y1) / 2, born: gameMin() }); },
   setYoung: function(kind, from, count){ if(typeof S !== 'undefined' && S) YOUNG[kind] = { day: S.totalDay, from: from, count: count }; } };
+})();
+</script>
+
+<script>
+/* ================================================================
+   P26 — GELOMBANG 9 VERSI ILUSTRASI (INTEGRASI, build 5.8)
+   SISTEM BERANAK MAMALIA (keputusan user 2026-11-02 13:51:
+   "Buat sistem beranak mamalia sekalian"). Sistem BARU yang
+   disetujui user — dibangun di atas pola game yang sudah ada:
+   - SPESIES: sapi, kambing, domba, kuda, kelinci, babi.
+     Ayam & bebek TIDAK diubah (sistem Pengeram P16-2 tetap).
+   - SYARAT HAMIL (dievaluasi pada rollover pagi, snapshot pra-
+     rollover sama persis dengan syarat produksi inti): dewasa
+     >= 2 ekor, diberi pakan kemarin (S.fed[kind] === hari lama),
+     tidak sakit (isSick). Maksimal 1 kehamilan per spesies;
+     jeda >= 3 hari sesudah melahirkan; maksimal 3 anak/spesies.
+   - MASA HAMIL = MASA TUMBUH ANAK (hari): kelinci 5, babi 9,
+     kambing 10, domba 10, sapi 15, kuda 18.
+   - KELAHIRAN & KEDEWASAAN diproses pada rollover pagi
+     (bungkus nextDay terluar, pola P16-2/G8) dengan toast pagi
+     mengikuti pola laporan menetas Pengeram.
+   - KESEIMBANGAN: anak TIDAK masuk S.animals sampai dewasa —
+     semua produksi lama (susu sapi/kambing, wol, bulu, jamur,
+     telur, kotoran) membaca S.animals = jumlah DEWASA dengan
+     logika lama PERSIS, jadi anak tidak menghasilkan apa pun
+     dan tidak menaikkan hasil. Saat dewasa: S.animals +1
+     (persis pola menetas Pengeram) & catatan anak dihapus.
+     Pakan anak: ikut bendera fed spesies yang sudah ada —
+     tidak ada stok pakan baru.
+   - STATE PERSISTEN DI SAVE: S.breed = {spesies: [{lahir}]},
+     S.breedPreg = {spesies: {mulai, due}}, S.breedCd =
+     {spesies: hari lahir terakhir}. Save lama (<= 5.7) tidak
+     punya field ini -> dinormalisasi kosong tanpa error
+     (normalizeState meneruskan field ekstra raw apa adanya,
+     jadi save 5.8 termuat kembali utuh).
+   - GAMBAR: anak memakai sprite anak terbundel G8
+     (anak-sapi/kambing/domba/kuda/kelinci/babi dari
+     ASET_P26_G8) pada titik gambar kandang spesiesnya (rumus
+     animalPose & slot G6/G7/G8), lengkap dengan pose makan
+     ambient G8 (fungsi eating() G8 dipakai ulang, termasuk
+     makan massal saat feedAnimal). Induk hamil: ikon hati
+     kecil melayang di atas induk pertama kandang itu.
+     Anak sapi/kambing/kuda tidak digambar di kandang selama
+     induknya sedang digiring ke Padang Rumput (pola G8).
+   - PANEL: baris keterangan anak/hamil ditambahkan ke panel
+     kandang sapi, kambing, kuda (penRows*), domba
+     (p162PenDomba) & kelinci/babi (p164PenDialog).
+   ================================================================ */
+(function(){
+'use strict';
+if(window.__p26g9Loaded) return; window.__p26g9Loaded = true;
+var SP = ['sapi', 'kambing', 'domba', 'kuda', 'kelinci', 'babi'];
+var GEST = { kelinci: 5, babi: 9, kambing: 10, domba: 10, sapi: 15, kuda: 18 };
+var LBL = { sapi: 'Sapi', kambing: 'Kambing', domba: 'Domba', kuda: 'Kuda', kelinci: 'Kelinci', babi: 'Babi' };
+var EMO = { sapi: '🐄', kambing: '🐐', domba: '🐑', kuda: '🐎', kelinci: '🐰', babi: '🐖' };
+var ANK = { sapi: 'anak sapi', kambing: 'anak kambing', domba: 'anak domba', kuda: 'anak kuda', kelinci: 'anak kelinci', babi: 'anak babi' };
+var MAXKID = 3, JEDA = 3;
+var BAYI = {
+  sapi:    { img: 'anakSapi',    makan: 'makanSapi',    H: 20 },
+  kambing: { img: 'anakKambing', makan: 'makanKambing', H: 16 },
+  domba:   { img: 'anakDomba',   makan: 'makanDomba',   H: 14 },
+  kuda:    { img: 'anakKuda',    makan: 'makanKuda',    H: 26 },
+  kelinci: { img: 'anakKelinci', makan: 'makanKelinci', H: 9 },
+  babi:    { img: 'anakBabi',    makan: 'makanBabi',    H: 13 }
+};
+/* ---------- sprite dari bundel G8 (sudah ter-keying di sana) ---------- */
+var IMGS = {};
+try{ var A8 = window.ASET_P26_G8 || {}; for(var k in A8){ var im = new Image(); im.src = A8[k]; IMGS[k] = im; } }catch(e){}
+function ok(im){ return !!(im && im.complete && im.naturalWidth > 0); }
+var G6 = window.__p26g6 || null, G7 = window.__p26g7 || null, G8 = window.__p26g8 || null;
+function gambar(im, cx, fy, H, f, bob, dip){
+  if(G6 && G6.gambar) return G6.gambar(im, cx, fy, H, f, bob, dip);
+  if(G7 && G7.gambar) return G7.gambar(im, cx, fy, H, f, bob, dip);
+  return false;
+}
+function eating(key, kind, now){ try{ if(G8 && G8.eating) return G8.eating(key, kind, now); }catch(e){} return false; }
+function isSickSafe(kind){ try{ return typeof isSick === 'function' && isSick(kind); }catch(e){ return false; } }
+function grazing(kind){ try{ return typeof isGrazing === 'function' && isGrazing(kind); }catch(e){ return false; } }
+/* ---------- normalisasi state (save lama aman) ---------- */
+function norm(){
+  if(typeof S === 'undefined' || !S) return false;
+  if(!S.breed || typeof S.breed !== 'object') S.breed = {};
+  if(!S.breedPreg || typeof S.breedPreg !== 'object') S.breedPreg = {};
+  if(!S.breedCd || typeof S.breedCd !== 'object') S.breedCd = {};
+  for(var i = 0; i < SP.length; i++){ var k = SP[i];
+    if(!Array.isArray(S.breed[k])) S.breed[k] = [];
+    else S.breed[k] = S.breed[k].filter(function(c){ return c && typeof c.lahir === 'number'; });
+    var p = S.breedPreg[k];
+    if(p && (typeof p !== 'object' || typeof p.due !== 'number')) delete S.breedPreg[k];
+    if(typeof S.breedCd[k] !== 'number') S.breedCd[k] = 0;
+  }
+  return true;
+}
+function kids(k){ try{ if(typeof S === 'undefined' || !S || !S.breed || !Array.isArray(S.breed[k])) return []; return S.breed[k]; }catch(e){ return []; } }
+function preg(k){ try{ if(typeof S === 'undefined' || !S || !S.breedPreg) return null; return S.breedPreg[k] || null; }catch(e){ return null; } }
+function padHati(kind){
+  try{ if(kind === 'domba' && typeof p162Hearts === 'function') p162Hearts('domba'); }catch(e){}
+  try{ if((kind === 'kelinci' || kind === 'babi') && typeof p164Hearts === 'function') p164Hearts(kind); }catch(e){}
+}
+/* ---------- inti sistem: proses pagi (sesudah rollover inti) ---------- */
+function g9Morning(oldDay, fedSnap, sickSnap){
+  if(!norm()) return;
+  var today = S.totalDay, notes = [];
+  for(var i = 0; i < SP.length; i++){
+    var kind = SP[i], g = GEST[kind], arr = S.breed[kind];
+    /* 1) KEDEWASAAN — anak berumur >= masa tumbuh jadi dewasa (+1) */
+    for(var j = arr.length - 1; j >= 0; j--){
+      if(today - arr[j].lahir >= g){
+        arr.splice(j, 1);
+        S.animals[kind] = (S.animals[kind] || 0) + 1;
+        padHati(kind);
+        notes.push(EMO[kind] + ' ' + ANK[kind].charAt(0).toUpperCase() + ANK[kind].slice(1) + ' sudah dewasa — kini ikut berproduksi.');
+      }
+    }
+    /* 2) KELAHIRAN — kehamilan yang jatuh tempo pagi ini */
+    var p = S.breedPreg[kind];
+    if(p && today >= p.due){
+      delete S.breedPreg[kind];
+      S.breedCd[kind] = today;
+      if(arr.length < MAXKID){
+        arr.push({ lahir: today });
+        notes.push(EMO[kind] + ' ' + LBL[kind] + ' melahirkan seekor ' + ANK[kind] + '! Dewasa ' + g + ' hari lagi.');
+      }
+    }
+    /* 3) KEHAMILAN BARU — syarat persis pola produksi inti */
+    if(!S.breedPreg[kind]){
+      var dewasa = S.animals[kind] || 0;
+      var jedaOk = !S.breedCd[kind] || (today - S.breedCd[kind] >= JEDA);
+      if(dewasa >= 2 && fedSnap[kind] === oldDay && !sickSnap[kind] && arr.length < MAXKID && jedaOk){
+        S.breedPreg[kind] = { mulai: today, due: today + g };
+      }
+    }
+  }
+  if(notes.length){
+    setTimeout(function(){ try{ toast(notes.join(' ')); }catch(e){} }, 1100);
+    try{ if(typeof updateHUD === 'function') updateHUD(); }catch(e){}
+  }
+}
+/* ---------- bungkus nextDay (terluar, sesudah G8) ---------- */
+try{
+  if(typeof nextDay === 'function'){
+    var _ndG9 = nextDay;
+    nextDay = function(){
+      var oldDay = 0, fedSnap = {}, sickSnap = {};
+      try{
+        if(typeof S !== 'undefined' && S){
+          oldDay = S.totalDay || 0;
+          for(var i = 0; i < SP.length; i++){ var k = SP[i];
+            fedSnap[k] = (S.fed && typeof S.fed[k] === 'number') ? S.fed[k] : -1;
+            sickSnap[k] = isSickSafe(k);
+          }
+        }
+      }catch(e){}
+      var r = _ndG9.apply(null, arguments);
+      try{ g9Morning(oldDay, fedSnap, sickSnap); }catch(e){}
+      return r;
+    };
+  }
+}catch(e){}
+/* ---------- gambar anak + penanda hamil di dunia ---------- */
+function gambarAnak(kind, fx, fy, j, now, f, bob){
+  var cfg = BAYI[kind]; if(!cfg) return;
+  var eat = eating(kind + '|anak' + j, kind, now);
+  var im = (eat && ok(IMGS[cfg.makan])) ? IMGS[cfg.makan] : IMGS[cfg.img];
+  if(!ok(im)) return;
+  gambar(im, fx, fy, cfg.H, f || 1, bob || 0, 0);
+}
+function gambarHati(x, y, now){
+  try{
+    ctx.save();
+    ctx.font = '9px sans-serif'; ctx.textAlign = 'center';
+    ctx.fillStyle = '#ff5b7f';
+    ctx.fillText('❤', x, y + Math.sin(now / 300) * 1.2);
+    ctx.restore();
+  }catch(e){}
+}
+function g9PushEnts(ents){
+  if(typeof S === 'undefined' || !S || !S.animals) return;
+  if(typeof HOUSE !== 'undefined' && HOUSE.active) return;
+  if(typeof ENTER !== 'undefined' && ENTER.active) return;
+  if(typeof REG !== 'undefined' && REG.active) return;
+  if(typeof VISIT !== 'undefined' && VISIT.active) return;
+  if(typeof TILE === 'undefined' || typeof animalPose !== 'function') return;
+  var now = performance.now();
+  /* --- sapi: rumus kandang sapi inti (42,10) --- */
+  (function(){
+    var kind = 'sapi', arr = kids(kind), p = preg(kind);
+    if((!arr.length && !p) || grazing(kind)) return;
+    var gx = 42 * TILE, gy = 10 * TILE, n = S.animals.sapi || 0;
+    ents.push({ y: 12.9 * TILE, draw: function(){
+      var t = performance.now();
+      for(var j = 0; j < arr.length; j++){
+        var pos = animalPose(kind, n + j, t);
+        var ax = gx + 20 + pos.u * 76, ay = gy + 36 + pos.v * 34;
+        if(ay < gy + 40 && ax < gx + 52) ay = gy + 42;
+        var f = (G6 && G6.faceFor) ? G6.faceFor('anakSapi|' + j, ax) : 1;
+        gambarAnak(kind, ax, ay + 13.5, j, t, f, (pos.step || 0) * 1.5);
+      }
+      if(p && n > 0){
+        var pos0 = animalPose(kind, 0, t);
+        var ax0 = gx + 20 + pos0.u * 76, ay0 = gy + 36 + pos0.v * 34;
+        if(ay0 < gy + 40 && ax0 < gx + 52) ay0 = gy + 42;
+        gambarHati(ax0, ay0 - 27, t);
+      }
+    }});
+  })();
+  /* --- kambing: rumus kandang kambing inti (49,3) --- */
+  (function(){
+    var kind = 'kambing', arr = kids(kind), p = preg(kind);
+    if((!arr.length && !p) || grazing(kind)) return;
+    var gx = 49 * TILE, gy = 3 * TILE, n = S.animals.kambing || 0;
+    ents.push({ y: 5.9 * TILE, draw: function(){
+      var t = performance.now();
+      for(var j = 0; j < arr.length; j++){
+        var pos = animalPose(kind, n + j, t);
+        var ax = gx + 12 + pos.u * 82, ay = gy + 28 + pos.v * 34;
+        if(ax > gx + 78 && ay < gy + 40) ax = gx + 74;
+        var f = (G6 && G6.faceFor) ? G6.faceFor('anakKambing|' + j, ax + 7.5) : 1;
+        gambarAnak(kind, ax + 7.5, ay + 14.5, j, t, f, (pos.step || 0) * 1.6);
+      }
+      if(p && n > 0){
+        var pos0 = animalPose(kind, 0, t);
+        var ax0 = gx + 12 + pos0.u * 82, ay0 = gy + 28 + pos0.v * 34;
+        if(ax0 > gx + 78 && ay0 < gy + 40) ax0 = gx + 74;
+        gambarHati(ax0 + 7.5, ay0 - 19, t);
+      }
+    }});
+  })();
+  /* --- kuda: anak kuda di kandang kuda (49,10), rumus gerak sapi --- */
+  (function(){
+    var kind = 'kuda', arr = kids(kind), p = preg(kind);
+    if((!arr.length && !p) || grazing(kind)) return;
+    var gx = 49 * TILE, gy = 10 * TILE, n = S.animals.kuda || 0;
+    ents.push({ y: 12.95 * TILE, draw: function(){
+      var t = performance.now();
+      for(var j = 0; j < arr.length; j++){
+        var pos = animalPose(kind, n + j, t);
+        var ax = gx + 20 + pos.u * 76, ay = gy + 36 + pos.v * 34;
+        var f = (G7 && G7.faceFor) ? G7.faceFor('anakKuda|' + j, ax) : 1;
+        gambarAnak(kind, ax + 4, ay + 13.5, j, t, f, (pos.step || 0) * 1.5);
+      }
+      if(p && n > 0){
+        var pos0 = animalPose(kind, 0, t);
+        gambarHati(gx + 20 + pos0.u * 76 + 4, gy + 36 + pos0.v * 34 - 38, t);
+      }
+    }});
+  })();
+  /* --- domba: slot tetap sesudah domba dewasa (pola G8) --- */
+  (function(){
+    var kind = 'domba', arr = kids(kind), p = preg(kind);
+    if(!arr.length && !p) return;
+    var base = Math.min(3, S.animals.domba || 0);
+    ents.push({ y: 5.7 * TILE, draw: function(){
+      var t = performance.now();
+      for(var j = 0; j < arr.length; j++){
+        var idx = base + j;
+        var dx = 50.4 * TILE + idx * 15, dy = 5.35 * TILE + Math.sin(t / 3000 + idx) * 1.2;
+        gambarAnak(kind, dx, dy + 10, j, t, 1, 0);
+      }
+      if(p) gambarHati(50.4 * TILE + 7, 5.35 * TILE - 15, t);
+    }});
+  })();
+  /* --- kelinci: slot tetap sesudah kelinci dewasa (pola G8) --- */
+  (function(){
+    var kind = 'kelinci', arr = kids(kind), p = preg(kind);
+    if(!arr.length && !p) return;
+    var base = Math.min(4, S.animals.kelinci || 0);
+    ents.push({ y: 5.66 * TILE, draw: function(){
+      var t = performance.now();
+      for(var j = 0; j < arr.length; j++){
+        var idx = base + j;
+        var dx = 42 * TILE + 20 + idx * 16, fy = 3 * TILE + 85;
+        var eat = eating(kind + '|anak' + j, kind, t);
+        var ph = (t / 2600 + idx * 0.37) % 1;
+        var hop = (!eat && ph < 0.28) ? Math.sin(ph / 0.28 * Math.PI) * 3 : 0;
+        gambarAnak(kind, dx, fy, j, t, (idx % 2) ? 1 : -1, hop);
+      }
+      if(p) gambarHati(42 * TILE + 28, 3 * TILE + 85 - 19, t);
+    }});
+  })();
+  /* --- babi: slot tetap sesudah babi dewasa (pola G8) --- */
+  (function(){
+    var kind = 'babi', arr = kids(kind), p = preg(kind);
+    if(!arr.length && !p) return;
+    var base = Math.min(3, S.animals.babi || 0);
+    ents.push({ y: 6.05 * TILE, draw: function(){
+      var t = performance.now();
+      for(var j = 0; j < arr.length; j++){
+        var idx = base + j;
+        var dx = 49 * TILE + 10 + idx * 16, fy = 3 * TILE + 90;
+        var bob = Math.sin(t / 900 + idx * 1.9) * 0.4;
+        gambarAnak(kind, dx, fy, j, t, (idx % 2) ? 1 : -1, bob);
+      }
+      if(p) gambarHati(49 * TILE + 18, 3 * TILE + 90 - 21, t);
+    }});
+  })();
+}
+try{
+  if(typeof window !== 'undefined' && typeof window.__p16aEnts === 'function'){
+    var _entsG9 = window.__p16aEnts;
+    window.__p16aEnts = function(ents){ _entsG9(ents); try{ g9PushEnts(ents); }catch(e){} };
+  }
+}catch(e){}
+/* ---------- panel kandang: baris keterangan anak & hamil ---------- */
+function breedRow(kind){
+  try{
+    if(!norm()) return null;
+    var arr = S.breed[kind] || [], p = S.breedPreg[kind], parts = [];
+    if(p){
+      var sisaP = p.due - S.totalDay;
+      parts.push('🤰 ' + LBL[kind] + ' sedang <b>hamil</b> — melahirkan ' + (sisaP <= 1 ? '<b>besok pagi</b>' : '<b>' + sisaP + ' hari lagi</b>') + '.');
+    }
+    if(arr.length){
+      var det = arr.map(function(c){ var s = GEST[kind] - (S.totalDay - c.lahir); return s <= 1 ? 'dewasa besok' : 'dewasa ' + s + ' hari lagi'; }).join(', ');
+      parts.push('🍼 <b>Anak: ' + arr.length + '</b> (' + det + ') — anak belum berproduksi.');
+    }
+    if(!parts.length) return null;
+    return { label: parts.join('<br>'), btn: 'Info', fn: function(){ try{ toast('Beranak: dewasa ≥2 ekor + diberi pakan kemarin + sehat → induk hamil. Anak tumbuh jadi dewasa, baru berproduksi sesudah dewasa.'); }catch(e){} } };
+  }catch(e){ return null; }
+}
+function bungkusPenRows(namaFn, kind){
+  try{
+    var fn = window[namaFn];
+    if(typeof fn !== 'function') return;
+    window[namaFn] = function(){
+      var rows = fn.apply(null, arguments);
+      try{ var br = breedRow(kind); if(br && Array.isArray(rows)) rows.push(br); }catch(e){}
+      return rows;
+    };
+  }catch(e){}
+}
+bungkusPenRows('penRowsKambing', 'kambing');
+bungkusPenRows('penRowsSapi', 'sapi');
+bungkusPenRows('penRowsKuda', 'kuda');
+function bungkusPanelOpenShop(namaFn, kindOf){
+  try{
+    var fn = window[namaFn];
+    if(typeof fn !== 'function' || typeof openShop !== 'function') return;
+    window[namaFn] = function(){
+      var kind = kindOf.apply(null, arguments);
+      var _os = openShop;
+      openShop = function(title, cb){
+        if(typeof cb === 'function'){
+          return _os(title, function(){
+            var rows = cb.apply(null, arguments);
+            try{ var br = breedRow(kind); if(br && Array.isArray(rows)) rows.push(br); }catch(e){}
+            return rows;
+          });
+        }
+        return _os.apply(null, arguments);
+      };
+      try{ return fn.apply(null, arguments); }
+      finally{ openShop = _os; }
+    };
+  }catch(e){}
+}
+bungkusPanelOpenShop('p162PenDomba', function(){ return 'domba'; });
+bungkusPanelOpenShop('p164PenDialog', function(kind){ return kind; });
+/* ---------- paparan untuk probe ---------- */
+window.__p26g9 = { cfg: GEST, norm: norm, kids: kids, preg: preg, row: breedRow, morning: g9Morning };
 })();
 </script>
 
