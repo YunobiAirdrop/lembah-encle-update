@@ -1,15 +1,15 @@
 {
-  "build": "5.0",
-  "appVersion": "5.0",
+  "build": "5.1",
+  "appVersion": "5.1",
   "minWrapper": 24,
-  "publishedAt": "2026-11-02T05:03:18.565Z",
-  "notes": "5.0 — Versi Ilustrasi (Gelombang 1): pemain tampil ilustrasi 4 arah (depan/belakang/samping) dengan arah hadap mengikuti objek; interior rumah utama menjadi adegan ilustrasi interaktif (masak menghadap kompor, tidur, TV, kulkas/peti, meja); UI kapsul status baru + dialog kartu; Pak Kades & Bu Sari tampil ilustrasi; perbaikan tombol Berangkat pada sinematik pembuka. Dunia luar dan NPC lain menyusul pada gelombang berikutnya.",
+  "publishedAt": "2026-11-02T05:20:25.101Z",
+  "notes": "5.1 — Ilustrasi Gelombang 2: SELURUH warga desa dan penjaga toko kini tampil ilustrasi (39 karakter baru + Pak Kades & Laras), termasuk Mas Arif penagih KUD. Simpanan lama tetap terbaca. Berikutnya: pemain perempuan, latar luar, dan interior toko versi ilustrasi.",
   "files": [
     {
       "path": "index.html",
       "url": "files/index.html",
-      "size": 7629480,
-      "sha256": "0b378adaea0f1ad1b775047ab4c7c65ff3b5d22ced6f07a78f13e05127e76545"
+      "size": 10990989,
+      "sha256": "9df81e81477ce6a5d30ff61cb7e90e0b73e3b7570d0cbab655491021bdd43ae6"
     }
   ]
 }
