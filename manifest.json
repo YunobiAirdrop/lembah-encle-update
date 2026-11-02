@@ -1,15 +1,1 @@
-{
-  "build": "5.20",
-  "appVersion": "5.20",
-  "minWrapper": 24,
-  "publishedAt": "2026-11-02T10:10:11.318Z",
-  "notes": "5.20 — Ilustrasi Gelombang 20+21: SEMUA interior toko di desa kini adegan ilustrasi yang bisa dijelajahi — Toko Pancing, Perabotan, Bangunan, Warkop, Toko Bunga, Bengkel Kayu, Balai Desa (bayar hutang KUD di dalamnya), Stan Cukur, Penggilingan, Toko Sepeda & Dealer. Semua transaksi tetap jalan seperti biasa. Simpanan lama tetap terbaca.",
-  "files": [
-    {
-      "path": "index.html",
-      "url": "https://github.com/YunobiAirdrop/lembah-encle-update/releases/download/v5.20/index.html",
-      "size": 29434440,
-      "sha256": "a098d884a9f5d2a22ea5340bc74adf1ac53f9f30360a9eb65f9b9568bd308bfb"
-    }
-  ]
-}
+{"appVersion":"5.21","build":"5.21","files":[{"path":"index.html","sha256":"c5551c89cf59b5bd168b74fe0d01b27e49724bc47f3c3c595a2cf38791549e6f","size":29757142,"url":"https://drive.usercontent.google.com/download?id=1KFu8h0QJuhtSLVinn3M35uLFVfkmJ675&export=download&authuser=0&confirm=t"}],"minWrapper":24,"notes":"5.21 — Ilustrasi Gelombang 22: Gerobak Gorengan Teh Imas kini adegan ilustrasi yang bisa dimasuki (buka tetap sore 15:00–21:00 & Pasar Malam, semua gorengan tetap jalan) dan penjual Es Teh di lapak pinggir jalan kini tampil sebagai sosok ilustrasi. Simpanan lama tetap terbaca.","publishedAt":"2026-11-02T11:12:00.000Z"}
