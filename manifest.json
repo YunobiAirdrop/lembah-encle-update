@@ -1,15 +1,15 @@
 {
-  "build": "5.7",
-  "appVersion": "5.7",
+  "build": "5.8",
+  "appVersion": "5.8",
   "minWrapper": 24,
-  "publishedAt": "2026-11-02T06:46:16.998Z",
-  "notes": "5.7 — Ilustrasi Gelombang 8: hewan ternak kini BERANIMASI — ayam & bebek matok, semua ternak makan/merumput berkala dan serempak saat diberi pakan, telur tampak di kandang selama belum diambil, anak ayam/bebek menetas dari Pengeram tampil sebagai anak, dan kotoran kandang muncul visual di tanah. Simpanan lama tetap terbaca.",
+  "publishedAt": "2026-11-02T07:04:30.389Z",
+  "notes": "5.8 — Sistem BERANAK mamalia baru: sapi, kambing, domba, kuda, kelinci & babi kini bisa hamil dan melahirkan bila ada minimal 2 ekor dewasa yang diberi pakan dan sehat. Anak tampil di kandang, tumbuh dewasa dalam beberapa hari (kelinci 5, babi 9, kambing & domba 10, sapi 15, kuda 18 hari), lalu menjadi dewasa penuh. Panel kandang menampilkan info anak & induk hamil. Simpanan lama tetap terbaca.",
   "files": [
     {
       "path": "index.html",
       "url": "files/index.html",
-      "size": 14715623,
-      "sha256": "880772697626ed46c4e54eafc32cfbab8cb7a57c5949f9a61c21290698b73d9f"
+      "size": 14732663,
+      "sha256": "fc2329f06afc62af8f9017453dbcba79f12d2d1a784eb18a78a85be95f9703f0"
     }
   ]
 }
