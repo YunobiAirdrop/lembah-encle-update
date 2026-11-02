@@ -1,1 +1,15 @@
-{"appVersion":"5.18","build":"5.18","files":[{"path":"index.html","sha256":"d90e6ac44f750998f5ea90a2d282b171fef6161e7a313d3d01e33a8764a7c3ff","size":26193997,"url":"files/index.html"}],"minWrapper":24,"notes":"5.18 — Ilustrasi Gelombang 19: pohon mangga, jeruk, kelapa & pohon besar liar kini ilustrasi (panen & tanam tetap sama), dan tanah rumput + jalan desa kini bertekstur ilustrasi lembut yang menyatu dengan musim. Simpanan lama tetap terbaca.","publishedAt":"2026-11-02T09:35:00.000Z"}
+{
+  "build": "5.20",
+  "appVersion": "5.20",
+  "minWrapper": 24,
+  "publishedAt": "2026-11-02T10:10:11.318Z",
+  "notes": "5.20 — Ilustrasi Gelombang 20+21: SEMUA interior toko di desa kini adegan ilustrasi yang bisa dijelajahi — Toko Pancing, Perabotan, Bangunan, Warkop, Toko Bunga, Bengkel Kayu, Balai Desa (bayar hutang KUD di dalamnya), Stan Cukur, Penggilingan, Toko Sepeda & Dealer. Semua transaksi tetap jalan seperti biasa. Simpanan lama tetap terbaca.",
+  "files": [
+    {
+      "path": "index.html",
+      "url": "https://github.com/YunobiAirdrop/lembah-encle-update/releases/download/v5.20/index.html",
+      "size": 29434440,
+      "sha256": "a098d884a9f5d2a22ea5340bc74adf1ac53f9f30360a9eb65f9b9568bd308bfb"
+    }
+  ]
+}
