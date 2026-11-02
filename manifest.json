@@ -1,15 +1,15 @@
 {
-  "build": "5.6",
-  "appVersion": "5.6",
+  "build": "5.7",
+  "appVersion": "5.7",
   "minWrapper": 24,
-  "publishedAt": "2026-11-02T06:33:54.398Z",
-  "notes": "5.6 — Ilustrasi Gelombang 7: SEMUA hewan kini ilustrasi — kuda (termasuk saat ditunggangi), domba, kelinci & babi ternak kini tampil di kandangnya, plus anjing Kopi dan kucing Oren. Logika ternak tetap sama. Simpanan lama tetap terbaca.",
+  "publishedAt": "2026-11-02T06:46:16.998Z",
+  "notes": "5.7 — Ilustrasi Gelombang 8: hewan ternak kini BERANIMASI — ayam & bebek matok, semua ternak makan/merumput berkala dan serempak saat diberi pakan, telur tampak di kandang selama belum diambil, anak ayam/bebek menetas dari Pengeram tampil sebagai anak, dan kotoran kandang muncul visual di tanah. Simpanan lama tetap terbaca.",
   "files": [
     {
       "path": "index.html",
       "url": "files/index.html",
-      "size": 13994520,
-      "sha256": "88768014c13ba1861ab475f50adde4b7393bc565c980d1e950f29b44e6b17145"
+      "size": 14715623,
+      "sha256": "880772697626ed46c4e54eafc32cfbab8cb7a57c5949f9a61c21290698b73d9f"
     }
   ]
 }
