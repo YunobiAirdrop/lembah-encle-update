@@ -1,15 +1,15 @@
 {
-  "build": "5.8",
-  "appVersion": "5.8",
+  "build": "5.9",
+  "appVersion": "5.9",
   "minWrapper": 24,
-  "publishedAt": "2026-11-02T07:04:30.389Z",
-  "notes": "5.8 — Sistem BERANAK mamalia baru: sapi, kambing, domba, kuda, kelinci & babi kini bisa hamil dan melahirkan bila ada minimal 2 ekor dewasa yang diberi pakan dan sehat. Anak tampil di kandang, tumbuh dewasa dalam beberapa hari (kelinci 5, babi 9, kambing & domba 10, sapi 15, kuda 18 hari), lalu menjadi dewasa penuh. Panel kandang menampilkan info anak & induk hamil. Simpanan lama tetap terbaca.",
+  "publishedAt": "2026-11-02T07:29:41.321Z",
+  "notes": "5.9 — Ilustrasi Gelombang 10: EKSTERIOR bangunan kini ilustrasi — rumah utama, musholla, balai desa, warteg, RM Padang, Warung Madura, guild, tempat tempa, puskesmas & Toko Pak Budi tampil sebagai bangunan ilustrasi di peta desa. Pintu, papan nama & semua fungsi bangunan tetap sama. Simpanan lama tetap terbaca.",
   "files": [
     {
       "path": "index.html",
       "url": "files/index.html",
-      "size": 14732663,
-      "sha256": "fc2329f06afc62af8f9017453dbcba79f12d2d1a784eb18a78a85be95f9703f0"
+      "size": 15512265,
+      "sha256": "360b22be120b5a64baca4398e49ad7af7ce37743626b1d319d8497056025e1df"
     }
   ]
 }
