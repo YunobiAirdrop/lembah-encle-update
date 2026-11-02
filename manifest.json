@@ -1,15 +1,15 @@
 {
-  "build": "5.13",
-  "appVersion": "5.13",
+  "build": "5.14",
+  "appVersion": "5.14",
   "minWrapper": 24,
-  "publishedAt": "2026-11-02T08:29:54.295Z",
-  "notes": "5.13 — Ilustrasi Gelombang 14: SEMUA monster Gua Akar Bumi kini ilustrasi — 4 slime, goblin, skeleton, orc, tikus gua, kelelawar, serigala, laba-laba raksasa, tengkorak melayang & arwah, plus bos-bos raksasa per 50 lantai (Raja Slime, Golem, Ksatria Tengkorak, Minotaur, Hydra, Ratu Laba-laba). Pertarungan & drop tetap sama. Simpanan lama tetap terbaca.",
+  "publishedAt": "2026-11-02T08:39:34.069Z",
+  "notes": "5.14 — Ilustrasi Gelombang 15: SEMUA monster di semua dungeon kini ilustrasi — komodo, kepiting karang, ular hutan, harimau, macan, kasuari, kerangka kuno, tengkorak ungu, wraith & arwah biru; bos lantai 100 tiap kota kini tampil sebagai wujud familinya sendiri (Komodo Purba Agung, Raja Tikus Kanal, Harimau Gayo Agung, dll). Pertarungan & drop tetap sama. Simpanan lama tetap terbaca.",
   "files": [
     {
       "path": "index.html",
       "url": "files/index.html",
-      "size": 20266964,
-      "sha256": "f83cd8bd0985bef5062a27d6266ef50625ff0456f8d91f5444d1d285c45fd419"
+      "size": 21159854,
+      "sha256": "87b0a0c91a4ede1baa6e23738c89178ec5b83751569c15cb6ea6bed4a1f879da"
     }
   ]
 }
