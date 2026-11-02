@@ -1,15 +1,15 @@
 {
-  "build": "5.1",
-  "appVersion": "5.1",
+  "build": "5.2",
+  "appVersion": "5.2",
   "minWrapper": 24,
-  "publishedAt": "2026-11-02T05:20:25.101Z",
-  "notes": "5.1 — Ilustrasi Gelombang 2: SELURUH warga desa dan penjaga toko kini tampil ilustrasi (39 karakter baru + Pak Kades & Laras), termasuk Mas Arif penagih KUD. Simpanan lama tetap terbaca. Berikutnya: pemain perempuan, latar luar, dan interior toko versi ilustrasi.",
+  "publishedAt": "2026-11-02T05:28:30.737Z",
+  "notes": "5.2 — Ilustrasi Gelombang 3: pemain perempuan kini tampil ilustrasi penuh (4 arah + pose masak membelakangi kompor, avatar kapsul mengikuti gender); sprite Pak Jali (Toko Bangunan) digambar ulang sesuai perannya. Simpanan lama tetap terbaca.",
   "files": [
     {
       "path": "index.html",
       "url": "files/index.html",
-      "size": 10990989,
-      "sha256": "9df81e81477ce6a5d30ff61cb7e90e0b73e3b7570d0cbab655491021bdd43ae6"
+      "size": 11231565,
+      "sha256": "014f17035355f6545efc39273f0c0ed738da6504057711287f233b79667cd7c6"
     }
   ]
 }
