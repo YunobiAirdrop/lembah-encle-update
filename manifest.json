@@ -1,15 +1,15 @@
 {
-  "build": "5.4",
-  "appVersion": "5.4",
+  "build": "5.5",
+  "appVersion": "5.5",
   "minWrapper": 24,
-  "publishedAt": "2026-11-02T06:15:41.066Z",
-  "notes": "5.4 — Ilustrasi Gelombang 5: interior RM Padang, Warung Madura (tetap buka 24 jam), Puskesmas, dan Klinik Hewan kini adegan ilustrasi penuh — Uni Ros, Bang Saiful, Suster Ayu & Dokter Wati berdiri di belakang konternya, semua panel lama tetap sama. Simpanan lama tetap terbaca.",
+  "publishedAt": "2026-11-02T06:22:33.255Z",
+  "notes": "5.5 — Ilustrasi Gelombang 6: hewan ternak kini ilustrasi — ayam, sapi, kambing & bebek (termasuk bebek berenang di kolam dan bebek liar Danau Encle); logika ternak tetap sama (pakan, hasil telur/susu, status sakit). Kuda, domba, kelinci & babi menyusul. Simpanan lama tetap terbaca.",
   "files": [
     {
       "path": "index.html",
       "url": "files/index.html",
-      "size": 13541857,
-      "sha256": "af3a7c4531c9f4d4eafdde140a079cf83968c24e8da8c237e9f340cf9ec30538"
+      "size": 13709664,
+      "sha256": "7181aea6e886816e1c38b6c1ed934af4f99ee93be74be25b60042daaafb3ee0a"
     }
   ]
 }
