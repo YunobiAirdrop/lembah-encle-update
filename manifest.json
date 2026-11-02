@@ -1,15 +1,15 @@
 {
-  "build": "5.17",
-  "appVersion": "5.17",
+  "build": "5.18",
+  "appVersion": "5.18",
   "minWrapper": 24,
-  "publishedAt": "2026-11-02T09:17:50.276Z",
-  "notes": "5.17 — Ilustrasi Gelombang 18: desa asal TUNTAS ilustrasi — Taman Bunga & Jembatan Batu (tahap jadi) kini ilustrasi, dan keempat kandang ternak berpagar kayu ilustrasi dengan gerbang yang terbuka, hewannya tetap terlihat & bisa diberi makan seperti biasa. Simpanan lama tetap terbaca.",
+  "publishedAt": "2026-11-02T09:32:34.530Z",
+  "notes": "5.18 — Ilustrasi Gelombang 19: pohon mangga, jeruk, kelapa & pohon besar liar kini ilustrasi (panen & tanam tetap sama), dan tanah rumput + jalan desa kini bertekstur ilustrasi lembut yang menyatu dengan musim. Simpanan lama tetap terbaca.",
   "files": [
     {
       "path": "index.html",
       "url": "files/index.html",
-      "size": 25785594,
-      "sha256": "b5fddb9a6eacf40fcceede1ae66b907826cb4e2e94673f73c95761d0e87429a4"
+      "size": 26193997,
+      "sha256": "d90e6ac44f750998f5ea90a2d282b171fef6161e7a313d3d01e33a8764a7c3ff"
     }
   ]
 }
