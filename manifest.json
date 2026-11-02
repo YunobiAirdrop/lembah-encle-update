@@ -1,15 +1,15 @@
 {
-  "build": "5.11",
-  "appVersion": "5.11",
+  "build": "5.12",
+  "appVersion": "5.12",
   "minWrapper": 24,
-  "publishedAt": "2026-11-02T08:02:35.165Z",
-  "notes": "5.11 — MEJA CRAFTING baru di dalam rumah: buat & tingkatkan senjata dan alatmu sendiri dari bahan yang dikumpulkan (kayu, besi, kristal & drop monster) — tempa Classic ke Epic bisa dari rumah; jenjang Mythic & Dewa tetap lewat Pak Bara sang pandai besi. Meja bergetar & berbunyi saat berhasil membuat. Simpanan lama tetap terbaca.",
+  "publishedAt": "2026-11-02T08:17:36.440Z",
+  "notes": "5.12 — Ilustrasi Gelombang 13: DUNGEON jadi ilustrasi — Alas Wingit tampil sebagai hutan angker ilustrasi dengan 10 hantu folklor tergambar baru (pocong, kuntilanak, tuyul, genderuwo, sundel bolong, wewe gombel, leak, banaspati, jenglot, babi ngepet), Gua Akar Bumi berlatar gua ilustrasi dan Naga Kuno lantai 700 kini naga ilustrasi raksasa. Layar pertarungan kini berkulit panel krem-hijau yang sama. Isi dungeon, lantai & drop tidak berubah. Simpanan lama tetap terbaca.",
   "files": [
     {
       "path": "index.html",
       "url": "files/index.html",
-      "size": 16563109,
-      "sha256": "744d701a9db00f30c6143c7b8d71d54f17a02870d7ed4dd6d4692d7b78a34368"
+      "size": 18197464,
+      "sha256": "017b361ce0f6fb4feb067b35ed915aa16ae85d982d3be557f4b4ae422f9f85b7"
     }
   ]
 }
