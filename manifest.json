@@ -1,15 +1,15 @@
 {
-  "build": "5.15",
-  "appVersion": "5.15",
+  "build": "5.16",
+  "appVersion": "5.16",
   "minWrapper": 24,
-  "publishedAt": "2026-11-02T08:43:49.605Z",
-  "notes": "5.15 — Ilustrasi Gelombang 16: TUNTAS DUNGEON — ke-14 dungeon kota kini berlatar ilustrasi sesuai temanya (terowongan kanal, kawah putih, candi bawah tanah, gua pura, tambang emas tua, karang Bunaken, pulau komodo…) dan layar pertarungan kini berlatar dungeon yang sedang kamu masuki. Dengan ini seluruh dungeon di semua map sudah ilustrasi penuh. Simpanan lama tetap terbaca.",
+  "publishedAt": "2026-11-02T09:04:13.873Z",
+  "notes": "5.16 — Ilustrasi Gelombang 17: eksterior desa TUNTAS — 4 rumah warga (tiap rumah warna atapnya sendiri), SD Negeri lengkap dengan bendera merah-putih, gapura desa, terminal, pos ronda, rumah kaca & perpustakaan kini ilustrasi. Semua bangunan tetap bisa dimasuki seperti biasa. Simpanan lama tetap terbaca.",
   "files": [
     {
       "path": "index.html",
       "url": "files/index.html",
-      "size": 24900731,
-      "sha256": "0a32dfddbe79481b1fa2ea355885f1a7a6e6355d566614e9d46538d7f9712f8d"
+      "size": 25549855,
+      "sha256": "4b2d2c53747c2971b829e5b443094f5b89677376ba1263aa472fd503399fc661"
     }
   ]
 }
