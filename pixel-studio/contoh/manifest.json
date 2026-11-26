@@ -1,0 +1,724 @@
+{
+ "karakter": [
+  {
+   "file": "contoh/karakter/playerM.png",
+   "nama": "Karakter Realistis v7 (playerM)",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/karakter/CHIBI2-playerM.png",
+   "nama": "Chibi v2 (playerM)",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/karakter/CHIBI-playerM.png",
+   "nama": "Chibi v1 (playerM)",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/karakter/budi.png",
+   "nama": "NPC Budi",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/karakter/ayu.png",
+   "nama": "NPC Ayu",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/karakter/anakms.png",
+   "nama": "Anak (anakms)",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/karakter/kostum_pocong.png",
+   "nama": "Kostum Pocong",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  }
+ ],
+ "bangunan": [
+  {
+   "file": "contoh/bangunan/madura.png",
+   "nama": "Warung Madura v7",
+   "lebar": 322,
+   "tinggi": 352,
+   "fw": 322,
+   "fh": 352,
+   "kolom": 1,
+   "baris": 1,
+   "barisNama": [
+    "Sprite"
+   ]
+  },
+  {
+   "file": "contoh/bangunan/madura-v6-polos.png",
+   "nama": "Warung Madura v6 POLOS (pembanding buruk)",
+   "lebar": 322,
+   "tinggi": 295,
+   "fw": 322,
+   "fh": 295,
+   "kolom": 1,
+   "baris": 1,
+   "barisNama": [
+    "Sprite"
+   ]
+  },
+  {
+   "file": "contoh/bangunan/guild.png",
+   "nama": "Guild",
+   "lebar": 322,
+   "tinggi": 304,
+   "fw": 322,
+   "fh": 304,
+   "kolom": 1,
+   "baris": 1,
+   "barisNama": [
+    "Sprite"
+   ]
+  },
+  {
+   "file": "contoh/bangunan/rumah_lv3.png",
+   "nama": "Rumah Pemain Lv3",
+   "lebar": 322,
+   "tinggi": 469,
+   "fw": 322,
+   "fh": 469,
+   "kolom": 1,
+   "baris": 1,
+   "barisNama": [
+    "Sprite"
+   ]
+  },
+  {
+   "file": "contoh/bangunan/masjid.png",
+   "nama": "Masjid",
+   "lebar": 322,
+   "tinggi": 358,
+   "fw": 322,
+   "fh": 358,
+   "kolom": 1,
+   "baris": 1,
+   "barisNama": [
+    "Sprite"
+   ]
+  },
+  {
+   "file": "contoh/bangunan/toko_biru.png",
+   "nama": "Toko Biru",
+   "lebar": 322,
+   "tinggi": 337,
+   "fw": 322,
+   "fh": 337,
+   "kolom": 1,
+   "baris": 1,
+   "barisNama": [
+    "Sprite"
+   ]
+  },
+  {
+   "file": "contoh/bangunan/warteg.png",
+   "nama": "Warteg",
+   "lebar": 322,
+   "tinggi": 337,
+   "fw": 322,
+   "fh": 337,
+   "kolom": 1,
+   "baris": 1,
+   "barisNama": [
+    "Sprite"
+   ]
+  },
+  {
+   "file": "contoh/bangunan/istana.png",
+   "nama": "Istana",
+   "lebar": 342,
+   "tinggi": 217,
+   "fw": 342,
+   "fh": 217,
+   "kolom": 1,
+   "baris": 1,
+   "barisNama": [
+    "Sprite"
+   ]
+  },
+  {
+   "file": "contoh/bangunan/gadang.png",
+   "nama": "Rumah Gadang",
+   "lebar": 342,
+   "tinggi": 226,
+   "fw": 342,
+   "fh": 226,
+   "kolom": 1,
+   "baris": 1,
+   "barisNama": [
+    "Sprite"
+   ]
+  },
+  {
+   "file": "contoh/bangunan/sekolah.png",
+   "nama": "Sekolah",
+   "lebar": 322,
+   "tinggi": 223,
+   "fw": 322,
+   "fh": 223,
+   "kolom": 1,
+   "baris": 1,
+   "barisNama": [
+    "Sprite"
+   ]
+  }
+ ],
+ "vegetasi": [
+  {
+   "file": "contoh/vegetasi/beringin.png",
+   "nama": "Beringin",
+   "lebar": 212,
+   "tinggi": 420,
+   "fw": 212,
+   "fh": 420,
+   "kolom": 1,
+   "baris": 1,
+   "barisNama": [
+    "Sprite"
+   ]
+  },
+  {
+   "file": "contoh/vegetasi/pinus.png",
+   "nama": "Pinus",
+   "lebar": 202,
+   "tinggi": 301,
+   "fw": 202,
+   "fh": 301,
+   "kolom": 1,
+   "baris": 1,
+   "barisNama": [
+    "Sprite"
+   ]
+  },
+  {
+   "file": "contoh/vegetasi/pohon.png",
+   "nama": "Pohon",
+   "lebar": 202,
+   "tinggi": 341,
+   "fw": 202,
+   "fh": 341,
+   "kolom": 1,
+   "baris": 1,
+   "barisNama": [
+    "Sprite"
+   ]
+  },
+  {
+   "file": "contoh/vegetasi/pohon2.png",
+   "nama": "Pohon 2",
+   "lebar": 202,
+   "tinggi": 452,
+   "fw": 202,
+   "fh": 452,
+   "kolom": 1,
+   "baris": 1,
+   "barisNama": [
+    "Sprite"
+   ]
+  },
+  {
+   "file": "contoh/vegetasi/palem.png",
+   "nama": "Palem",
+   "lebar": 202,
+   "tinggi": 261,
+   "fw": 202,
+   "fh": 261,
+   "kolom": 1,
+   "baris": 1,
+   "barisNama": [
+    "Sprite"
+   ]
+  },
+  {
+   "file": "contoh/vegetasi/sawit.png",
+   "nama": "Sawit",
+   "lebar": 202,
+   "tinggi": 252,
+   "fw": 202,
+   "fh": 252,
+   "kolom": 1,
+   "baris": 1,
+   "barisNama": [
+    "Sprite"
+   ]
+  },
+  {
+   "file": "contoh/vegetasi/semak.png",
+   "nama": "Semak",
+   "lebar": 98,
+   "tinggi": 69,
+   "fw": 98,
+   "fh": 69,
+   "kolom": 1,
+   "baris": 1,
+   "barisNama": [
+    "Sprite"
+   ]
+  },
+  {
+   "file": "contoh/vegetasi/semakbunga.png",
+   "nama": "Semak Bunga",
+   "lebar": 98,
+   "tinggi": 90,
+   "fw": 98,
+   "fh": 90,
+   "kolom": 1,
+   "baris": 1,
+   "barisNama": [
+    "Sprite"
+   ]
+  }
+ ],
+ "tanah": [
+  {
+   "file": "contoh/tanah/tilesheet-land-v5.png",
+   "nama": "Tilesheet Tanah (OGA 32px)",
+   "lebar": 320,
+   "tinggi": 384,
+   "fw": 32,
+   "fh": 32,
+   "kolom": 10,
+   "baris": 12,
+   "barisNama": [
+    "Baris 1",
+    "Baris 2",
+    "Baris 3",
+    "Baris 4",
+    "Baris 5",
+    "Baris 6",
+    "Baris 7",
+    "Baris 8",
+    "Baris 9",
+    "Baris 10",
+    "Baris 11",
+    "Baris 12"
+   ]
+  },
+  {
+   "file": "contoh/tanah/tilesheet-water.png",
+   "nama": "Tilesheet Air (OGA 32px)",
+   "lebar": 256,
+   "tinggi": 256,
+   "fw": 32,
+   "fh": 32,
+   "kolom": 8,
+   "baris": 8,
+   "barisNama": [
+    "Baris 1",
+    "Baris 2",
+    "Baris 3",
+    "Baris 4",
+    "Baris 5",
+    "Baris 6",
+    "Baris 7",
+    "Baris 8"
+   ]
+  },
+  {
+   "file": "contoh/tanah/tilesheets-nature.png",
+   "nama": "Tilesheet Alam (OGA)",
+   "lebar": 192,
+   "tinggi": 207,
+   "fw": 32,
+   "fh": 32,
+   "kolom": 6,
+   "baris": 6,
+   "barisNama": [
+    "Baris 1",
+    "Baris 2",
+    "Baris 3",
+    "Baris 4",
+    "Baris 5",
+    "Baris 6"
+   ]
+  },
+  {
+   "file": "contoh/tanah/tileset-lembar.png",
+   "nama": "Tileset Lembar P1",
+   "lebar": 768,
+   "tinggi": 432,
+   "fw": 48,
+   "fh": 48,
+   "kolom": 16,
+   "baris": 9,
+   "barisNama": [
+    "Baris 1",
+    "Baris 2",
+    "Baris 3",
+    "Baris 4",
+    "Baris 5",
+    "Baris 6",
+    "Baris 7",
+    "Baris 8",
+    "Baris 9"
+   ]
+  }
+ ],
+ "monster": [
+  {
+   "file": "contoh/monster/seta.png",
+   "nama": "Wyvern Seta (strip terbang)",
+   "lebar": 420,
+   "tinggi": 84,
+   "fw": 84,
+   "fh": 84,
+   "kolom": 5,
+   "baris": 1,
+   "barisNama": [
+    "Terbang"
+   ]
+  },
+  {
+   "file": "contoh/monster/dragon.png",
+   "nama": "Dragon",
+   "lebar": 150,
+   "tinggi": 116,
+   "fw": 150,
+   "fh": 116,
+   "kolom": 1,
+   "baris": 1,
+   "barisNama": [
+    "Sprite"
+   ]
+  },
+  {
+   "file": "contoh/monster/ireng.png",
+   "nama": "Ireng (Bos)",
+   "lebar": 101,
+   "tinggi": 118,
+   "fw": 101,
+   "fh": 118,
+   "kolom": 1,
+   "baris": 1,
+   "barisNama": [
+    "Sprite"
+   ]
+  },
+  {
+   "file": "contoh/monster/sapi.png",
+   "nama": "Sapi",
+   "lebar": 84,
+   "tinggi": 50,
+   "fw": 84,
+   "fh": 50,
+   "kolom": 1,
+   "baris": 1,
+   "barisNama": [
+    "Sprite"
+   ]
+  },
+  {
+   "file": "contoh/monster/ayam.png",
+   "nama": "Ayam",
+   "lebar": 26,
+   "tinggi": 28,
+   "fw": 26,
+   "fh": 28,
+   "kolom": 1,
+   "baris": 1,
+   "barisNama": [
+    "Sprite"
+   ]
+  },
+  {
+   "file": "contoh/monster/kucing.png",
+   "nama": "Kucing",
+   "lebar": 40,
+   "tinggi": 30,
+   "fw": 40,
+   "fh": 30,
+   "kolom": 1,
+   "baris": 1,
+   "barisNama": [
+    "Sprite"
+   ]
+  },
+  {
+   "file": "contoh/monster/domba.png",
+   "nama": "Domba",
+   "lebar": 63,
+   "tinggi": 42,
+   "fw": 63,
+   "fh": 42,
+   "kolom": 1,
+   "baris": 1,
+   "barisNama": [
+    "Sprite"
+   ]
+  },
+  {
+   "file": "contoh/monster/kuda.png",
+   "nama": "Kuda",
+   "lebar": 86,
+   "tinggi": 56,
+   "fw": 86,
+   "fh": 56,
+   "kolom": 1,
+   "baris": 1,
+   "barisNama": [
+    "Sprite"
+   ]
+  }
+ ],
+ "kendaraan": [
+  {
+   "file": "contoh/kendaraan/angkot.png",
+   "nama": "Angkot",
+   "lebar": 302,
+   "tinggi": 153,
+   "fw": 302,
+   "fh": 153,
+   "kolom": 1,
+   "baris": 1,
+   "barisNama": [
+    "Sprite"
+   ]
+  },
+  {
+   "file": "contoh/kendaraan/bus.png",
+   "nama": "Bus",
+   "lebar": 302,
+   "tinggi": 127,
+   "fw": 302,
+   "fh": 127,
+   "kolom": 1,
+   "baris": 1,
+   "barisNama": [
+    "Sprite"
+   ]
+  },
+  {
+   "file": "contoh/kendaraan/kereta.png",
+   "nama": "Kereta",
+   "lebar": 522,
+   "tinggi": 81,
+   "fw": 522,
+   "fh": 81,
+   "kolom": 1,
+   "baris": 1,
+   "barisNama": [
+    "Sprite"
+   ]
+  },
+  {
+   "file": "contoh/kendaraan/pesawat.png",
+   "nama": "Pesawat",
+   "lebar": 342,
+   "tinggi": 119,
+   "fw": 342,
+   "fh": 119,
+   "kolom": 1,
+   "baris": 1,
+   "barisNama": [
+    "Sprite"
+   ]
+  },
+  {
+   "file": "contoh/kendaraan/phinisi.png",
+   "nama": "Phinisi",
+   "lebar": 302,
+   "tinggi": 299,
+   "fw": 302,
+   "fh": 299,
+   "kolom": 1,
+   "baris": 1,
+   "barisNama": [
+    "Sprite"
+   ]
+  },
+  {
+   "file": "contoh/kendaraan/motor.png",
+   "nama": "Motor",
+   "lebar": 302,
+   "tinggi": 181,
+   "fw": 302,
+   "fh": 181,
+   "kolom": 1,
+   "baris": 1,
+   "barisNama": [
+    "Sprite"
+   ]
+  },
+  {
+   "file": "contoh/kendaraan/truk.png",
+   "nama": "Truk",
+   "lebar": 302,
+   "tinggi": 155,
+   "fw": 302,
+   "fh": 155,
+   "kolom": 1,
+   "baris": 1,
+   "barisNama": [
+    "Sprite"
+   ]
+  }
+ ],
+ "item": [
+  {
+   "file": "contoh/item/beras.png",
+   "nama": "Beras",
+   "lebar": 48,
+   "tinggi": 48,
+   "fw": 48,
+   "fh": 48,
+   "kolom": 1,
+   "baris": 1,
+   "barisNama": [
+    "Sprite"
+   ]
+  },
+  {
+   "file": "contoh/item/kelapa.png",
+   "nama": "Kelapa",
+   "lebar": 48,
+   "tinggi": 48,
+   "fw": 48,
+   "fh": 48,
+   "kolom": 1,
+   "baris": 1,
+   "barisNama": [
+    "Sprite"
+   ]
+  },
+  {
+   "file": "contoh/item/kopibiji.png",
+   "nama": "Kopi Biji",
+   "lebar": 48,
+   "tinggi": 48,
+   "fw": 48,
+   "fh": 48,
+   "kolom": 1,
+   "baris": 1,
+   "barisNama": [
+    "Sprite"
+   ]
+  },
+  {
+   "file": "contoh/item/tahu.png",
+   "nama": "Tahu",
+   "lebar": 48,
+   "tinggi": 48,
+   "fw": 48,
+   "fh": 48,
+   "kolom": 1,
+   "baris": 1,
+   "barisNama": [
+    "Sprite"
+   ]
+  },
+  {
+   "file": "contoh/item/tempe.png",
+   "nama": "Tempe",
+   "lebar": 48,
+   "tinggi": 48,
+   "fw": 48,
+   "fh": 48,
+   "kolom": 1,
+   "baris": 1,
+   "barisNama": [
+    "Sprite"
+   ]
+  },
+  {
+   "file": "contoh/item/minyakkelapa.png",
+   "nama": "Minyak Kelapa",
+   "lebar": 48,
+   "tinggi": 48,
+   "fw": 48,
+   "fh": 48,
+   "kolom": 1,
+   "baris": 1,
+   "barisNama": [
+    "Sprite"
+   ]
+  },
+  {
+   "file": "contoh/item/kedelai.png",
+   "nama": "Kedelai",
+   "lebar": 48,
+   "tinggi": 48,
+   "fw": 48,
+   "fh": 48,
+   "kolom": 1,
+   "baris": 1,
+   "barisNama": [
+    "Sprite"
+   ]
+  }
+ ]
+}
