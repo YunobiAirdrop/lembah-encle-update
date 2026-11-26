@@ -271,7 +271,7 @@ const S = {
   targetBanding:"A", mode:"peninjau", zoomB:6,
 };
 let MANIFES = {};
-const KATEGORI = [["karakter","Karakter"],["bangunan","Bangunan"],["vegetasi","Pohon & Vegetasi"],["tanah","Tanah & Air"],["monster","Monster & Hewan"],["kendaraan","Kendaraan"],["item","Item / Ikon"]];
+const KATEGORI = [["karakter","Karakter"],["bangunan","Bangunan"],["vegetasi","Pohon & Vegetasi"],["tanah","Tanah & Air"],["monster","Monster & Hewan"],["kendaraan","Kendaraan"],["item","Item / Ikon"],["region","Region & Sipil"],["dungeon","Dungeon"]];
 const CEPAT = {
   realistis:"contoh/karakter/playerM.png", chibi2:"contoh/karakter/CHIBI2-playerM.png",
   madura7:"contoh/bangunan/madura.png", madura6:"contoh/bangunan/madura-v6-polos.png",
@@ -646,7 +646,9 @@ const ADE = { item:[], pilih:-1, latar:"rumput", imgCache:{} };
 const PALET_ADEGAN = [
   ["bangunan","contoh/bangunan/madura.png"],["bangunan","contoh/bangunan/rumah_lv3.png"],["bangunan","contoh/bangunan/guild.png"],
   ["vegetasi","contoh/vegetasi/beringin.png"],["vegetasi","contoh/vegetasi/pinus.png"],["vegetasi","contoh/vegetasi/semak.png"],["vegetasi","contoh/vegetasi/semakbunga.png"],
-  ["karakter","contoh/karakter/playerM.png"],["monster","contoh/monster/seta.png"]
+  ["karakter","contoh/karakter/playerM.png"],["monster","contoh/monster/seta.png"],
+  ["bangunan","contoh/v8-bangunan/madura.png"],["bangunan","contoh/v8-bangunan/rumah_lv3.png"],["bangunan","contoh/v8-bangunan/guild.png"],
+  ["vegetasi","contoh/v8-vegetasi/pohon_rindang.png"],["vegetasi","contoh/v8-vegetasi/pohon_payung.png"],["vegetasi","contoh/v8-vegetasi/semak_lapis.png"],["vegetasi","contoh/v8-vegetasi/rumpun_bunga_a.png"]
 ];
 function bangunPaletAdegan(){
   const w=$("adeganPalet");
