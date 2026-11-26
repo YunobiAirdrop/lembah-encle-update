@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GLB Studio — Penampil &amp; Penguji Karakter 3D</title>
+<style>
+  :root{
+    --bg:#0a1120; --panel:#101a2e; --panel2:#0d1626; --line:#22334f;
+    --txt:#dbe7f5; --dim:#8498b3; --acc:#29b6e8; --acc2:#1e90c8;
+    --gold:#f5b83d; --danger:#e85d75;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html,body{height:100%;}
+  body{
+    font-family:"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
+    background:radial-gradient(1200px 600px at 50% -10%, #16263f 0%, var(--bg) 60%);
+    color:var(--txt); display:flex; flex-direction:column; overflow:hidden;
+  }
+  /* ===== Header ===== */
+  header{
+    display:flex; align-items:center; gap:14px; padding:10px 16px;
+    background:linear-gradient(180deg,#122036,#0d1728); border-bottom:1px solid var(--line);
+    flex:0 0 auto; z-index:5;
+  }
+  .logo{
+    width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(145deg,#12395c,#0d2237); border:1px solid #2b4a6b; font-size:20px;
+  }
+  .title{font-weight:800; letter-spacing:.14em; font-size:17px;}
+  .title small{display:block; letter-spacing:.02em; font-weight:500; color:var(--dim); font-size:10.5px;}
+  .chip{
+    display:flex; align-items:center; gap:8px; background:#0b1524; border:1px solid var(--line);
+    border-radius:8px; padding:6px 10px; font-size:12px; color:var(--dim); max-width:520px;
+    white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+  }
+  .chip .dot{color:#37d67a; font-size:10px; letter-spacing:.08em; font-weight:700;}
+  .chip b{color:var(--txt); font-weight:600;}
+  .spacer{flex:1;}
+  .btn{
+    background:linear-gradient(180deg,#1d2c46,#16233a); color:var(--txt); border:1px solid #2c425f;
+    border-radius:8px; padding:9px 14px; font-size:12.5px; font-weight:600; cursor:pointer; letter-spacing:.03em;
+  }
+  .btn:hover{border-color:var(--acc); color:#fff;}
+  .btn.primary{background:linear-gradient(180deg,#25a7dd,#1783b8); border-color:#3ec3f2; color:#fff;}
+  .btn.primary:hover{filter:brightness(1.1);}
+  .tabs{display:flex; background:#0b1524; border:1px solid var(--line); border-radius:9px; overflow:hidden;}
+  .tabs button{
+    background:transparent; border:0; color:var(--dim); padding:9px 14px; font-size:12px; font-weight:700;
+    letter-spacing:.05em; cursor:pointer;
+  }
+  .tabs button.active{background:linear-gradient(180deg,#25a7dd,#1783b8); color:#fff;}
+  /* ===== Layout ===== */
+  main{flex:1; display:flex; min-height:0;}
+  aside{
+    width:288px; flex:0 0 288px; background:var(--panel); border-right:1px solid var(--line);
+    display:flex; flex-direction:column; min-height:0;
+  }
+  aside.right{border-right:0; border-left:1px solid var(--line); width:300px; flex-basis:300px; overflow-y:auto;}
+  .p-head{
+    display:flex; align-items:center; justify-content:space-between; padding:12px 14px 8px;
+    font-size:11.5px; font-weight:800; letter-spacing:.12em; color:#a9c2dc;
+  }
+  .p-head .mini{
+    background:#0b1524; border:1px solid var(--line); color:var(--dim); border-radius:6px;
+    font-size:11px; padding:4px 8px; cursor:pointer; font-weight:600;
+  }
+  .p-head .mini:hover{color:#fff; border-color:var(--acc);}
+  .p-body{padding:2px 14px 14px; display:flex; flex-direction:column; gap:10px;}
+  .rowline{display:flex; align-items:center; justify-content:space-between; font-size:12.5px; color:var(--txt);}
+  .rowline .val{color:var(--acc); font-variant-numeric:tabular-nums; font-weight:700;}
+  input[type=range]{width:100%; accent-color:var(--acc); height:22px; cursor:pointer;}
+  label.check{display:flex; align-items:center; gap:8px; font-size:12.5px; cursor:pointer; color:var(--txt);}
+  label.check input{accent-color:var(--acc); width:15px; height:15px;}
+  .secttl{font-size:10.5px; letter-spacing:.12em; color:var(--dim); font-weight:800; margin-top:4px;}
+  #clipList{overflow-y:auto; flex:1; padding:4px 8px 12px; display:flex; flex-direction:column; gap:4px; min-height:0;}
+  .clip{
+    display:flex; align-items:center; gap:9px; padding:7px 9px; border-radius:7px; cursor:pointer;
+    border:1px solid transparent; font-size:12.5px;
+  }
+  .clip:hover{background:#16233a;}
+  .clip.active{background:linear-gradient(90deg,#14486b,#123a5c); border-color:#2b6ea3;}
+  .clip .idx{color:var(--dim); font-size:11px; width:20px; text-align:right; font-variant-numeric:tabular-nums;}
+  .clip.active .idx{color:#9fd8f5;}
+  .clip .nm{flex:1; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-weight:600;}
+  .clip .dur{color:var(--dim); font-size:11px; font-variant-numeric:tabular-nums;}
+  /* ===== Stage ===== */
+  section.stage{flex:1; position:relative; min-width:0;
+    background:radial-gradient(900px 480px at 50% 30%, #28486e 0%, #101d31 55%, #0a1322 100%);}
+  #gl{position:absolute; inset:0; width:100%; height:100%; display:block;}
+  .keybar{
+    position:absolute; left:50%; transform:translateX(-50%); bottom:14px; z-index:3;
+    background:rgba(8,15,27,.88); border:1px solid var(--line); border-radius:10px;
+    padding:8px 14px; display:flex; gap:14px; align-items:center; font-size:11.5px; color:var(--dim);
+    max-width:96%; flex-wrap:wrap; justify-content:center; backdrop-filter:blur(4px);
+  }
+  .keybar b{color:var(--txt); font-weight:700;}
+  .keybar .st{color:var(--acc); font-weight:700;}
+  .stageTag{
+    position:absolute; left:14px; bottom:14px; z-index:3; font-size:11px; color:var(--dim);
+    background:rgba(8,15,27,.75); border:1px solid var(--line); border-radius:8px; padding:6px 10px;
+  }
+  /* ===== Right panel bits ===== */
+  .swatches{display:flex; gap:8px;}
+  .sw{
+    flex:1; padding:8px 0; text-align:center; border-radius:8px; border:1px solid var(--line);
+    background:#0b1524; color:var(--dim); font-size:12px; font-weight:700; cursor:pointer;
+  }
+  .sw[data-style="Cyan"].active{border-color:#37e0f5; color:#37e0f5; box-shadow:0 0 0 1px #37e0f5 inset;}
+  .sw[data-style="Crimson"].active{border-color:#f5484d; color:#ff6b6f; box-shadow:0 0 0 1px #f5484d inset;}
+  .sw[data-style="Gold"].active{border-color:var(--gold); color:var(--gold); box-shadow:0 0 0 1px var(--gold) inset;}
+  .presets{display:grid; grid-template-columns:1fr 1fr; gap:8px;}
+  .presets .btn{padding:8px 6px; font-size:11.5px;}
+  .presets .btn.active{border-color:var(--acc); color:#fff; background:linear-gradient(180deg,#14486b,#123a5c);}
+  select{
+    width:100%; background:#0b1524; color:var(--txt); border:1px solid var(--line); border-radius:8px;
+    padding:8px; font-size:12.5px;
+  }
+  .sliderRow{display:grid; grid-template-columns:52px 1fr 44px; align-items:center; gap:8px; font-size:12px;}
+  .sliderRow .v{text-align:right; color:var(--acc); font-weight:700; font-variant-numeric:tabular-nums;}
+  .note{font-size:11px; color:var(--dim); line-height:1.55; background:#0b1524; border:1px solid var(--line);
+    border-radius:8px; padding:9px 10px;}
+  footer{
+    flex:0 0 auto; padding:6px 16px; font-size:10.5px; color:#5f748f; background:#0b1424;
+    border-top:1px solid var(--line); display:flex; justify-content:space-between; gap:10px;
+  }
+  #dropOverlay{
+    position:fixed; inset:0; z-index:50; display:none; align-items:center; justify-content:center;
+    background:rgba(6,12,22,.82); border:3px dashed var(--acc); color:#fff; font-size:22px; font-weight:800;
+    letter-spacing:.06em; pointer-events:none; text-align:center; padding:20px;
+  }
+  #toast{
+    position:fixed; left:50%; bottom:52px; transform:translateX(-50%) translateY(20px); z-index:60;
+    background:#123a5c; border:1px solid var(--acc); color:#fff; padding:10px 18px; border-radius:9px;
+    font-size:13px; font-weight:600; opacity:0; transition:.25s; pointer-events:none;
+  }
+  #toast.show{opacity:1; transform:translateX(-50%) translateY(0);}
+  ::-webkit-scrollbar{width:9px;} ::-webkit-scrollbar-thumb{background:#24385a; border-radius:6px;}
+  ::-webkit-scrollbar-track{background:transparent;}
+  @media (max-width:1080px){ aside{width:238px; flex-basis:238px;} aside.right{width:252px; flex-basis:252px;} }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">⚔️</div>
+  <div class="title">GLB STUDIO<small>Penampil &amp; Penguji Karakter 3D — Lembah Encle</small></div>
+  <div class="chip"><span class="dot">● GLB AKTIF</span><span id="fileInfo"><b>contoh.glb</b> • memuat…</span></div>
+  <div class="spacer"></div>
+  <button class="btn primary" id="btnLoad">⬆ MUAT KARAKTER GLB</button>
+  <div class="tabs">
+    <button id="tabInspector" class="active">STUDIO INSPECTOR</button>
+    <button id="tabPlay">PLAYABLE TEST (WASD)</button>
+  </div>
+  <input type="file" id="fileInput" accept=".glb" hidden>
+</header>
+
+<main>
+  <!-- ===== Panel kiri: animasi ===== -->
+  <aside>
+    <div class="p-head"><span>GLB ANIMATION</span><button class="mini" id="btnPause">❚❚ Pause</button></div>
+    <div class="p-body">
+      <div class="rowline"><span>Playback Speed</span><span class="val" id="speedVal">1.00x</span></div>
+      <input type="range" id="speed" min="0.1" max="2" step="0.05" value="1">
+      <label class="check"><input type="checkbox" id="chkInPlace" checked> In-Place Lock Clips (kunci gerak akar)</label>
+      <label class="check"><input type="checkbox" id="chkLoop" checked> Loop</label>
+      <div class="secttl" id="clipCount">ACTION CLIPS (0)</div>
+    </div>
+    <div id="clipList"></div>
+  </aside>
+
+  <!-- ===== Panggung 3D ===== -->
+  <section class="stage" id="stage">
+    <canvas id="gl"></canvas>
+    <div class="stageTag" id="socketInfo">Socket: —</div>
+    <div class="keybar" id="keybar">
+      <span><b id="kbState">STATE: Idle</b></span>
+      <span><b>WASD</b> Jalan</span><span><b>Shift</b> Lari</span><span><b>Space</b> Lompat</span>
+      <span><b>[J]</b> Serang 1</span><span><b>[K]</b> Serang 2</span><span><b>[L]</b> Serang 3</span>
+      <span><b>[R]</b> Roll</span><span class="st" id="kbMode">Mode: Inspector — seret mouse untuk orbit</span>
+    </div>
+  </section>
+
+  <!-- ===== Panel kanan: senjata ===== -->
+  <aside class="right">
+    <div class="p-head"><span>TEMPEL SENJATA</span><label class="check" style="letter-spacing:0;"><input type="checkbox" id="chkShowSword" checked> Tampil</label></div>
+    <div class="p-body">
+      <div class="rowline"><b>Cyber Broadsword</b><span class="val" id="swordStyleName">Cyan</span></div>
+      <div class="secttl">STYLE PEDANG</div>
+      <div class="swatches">
+        <button class="sw active" data-style="Cyan">Cyan</button>
+        <button class="sw" data-style="Crimson">Crimson</button>
+        <button class="sw" data-style="Gold">Gold</button>
+      </div>
+      <div class="secttl">PRESET ARAH GENGGAMAN (DERAJAT)</div>
+      <div class="presets">
+        <button class="btn active" data-preset="A">Preset A (Bawaan)</button>
+        <button class="btn" data-preset="B">Preset B (Balik Bilah)</button>
+        <button class="btn" data-preset="C">Preset C (Menyamping)</button>
+        <button class="btn" data-preset="D">Preset D (Tegak)</button>
+      </div>
+      <div class="secttl">POSITION OFFSET (METER)</div>
+      <div class="sliderRow"><span>Pos X</span><input type="range" id="posX" min="-0.6" max="0.6" step="0.005" value="0"><span class="v" id="posXv">0.000</span></div>
+      <div class="sliderRow"><span>Pos Y</span><input type="range" id="posY" min="-0.6" max="0.6" step="0.005" value="0"><span class="v" id="posYv">0.000</span></div>
+      <div class="sliderRow"><span>Pos Z</span><input type="range" id="posZ" min="-0.6" max="0.6" step="0.005" value="0"><span class="v" id="posZv">0.000</span></div>
+      <div class="secttl">ROTATION OFFSET (DERAJAT)</div>
+      <div class="sliderRow"><span>Rot X</span><input type="range" id="rotX" min="-180" max="180" step="1" value="0"><span class="v" id="rotXv">0°</span></div>
+      <div class="sliderRow"><span>Rot Y</span><input type="range" id="rotY" min="-180" max="180" step="1" value="0"><span class="v" id="rotYv">0°</span></div>
+      <div class="sliderRow"><span>Rot Z</span><input type="range" id="rotZ" min="-180" max="180" step="1" value="0"><span class="v" id="rotZv">0°</span></div>
+      <div class="secttl">SKALA &amp; EFEK</div>
+      <div class="sliderRow"><span>Skala</span><input type="range" id="swordScale" min="0.4" max="2" step="0.05" value="1"><span class="v" id="swordScalev">1.00</span></div>
+      <label class="check"><input type="checkbox" id="chkGlow" checked> Energy Glow &amp; Trail</label>
+      <div class="secttl">TULANG TEMPEL (SOCKET)</div>
+      <select id="boneSelect"></select>
+      <button class="btn primary" id="btnCopy">⧉ SALIN KONFIG SOCKET</button>
+      <div class="note">Geser offset sampai pedang pas di genggaman, lalu salin konfigurasinya sebagai JSON. Konfig ini bisa ditempel kembali ke catatan socket supaya posisi pedang konsisten di dalam game.</div>
+    </div>
+  </aside>
+</main>
+
+<footer>
+  <span>Alat bantu internal Lembah Encle — GLB Studio</span>
+  <span>Three.js • WebGL • Seret &amp; jatuhkan file .glb ke halaman untuk memuat karakter lain</span>
+</footer>
+
+<div id="dropOverlay">LEPASKAN FILE .GLB<br>untuk memuat karakter</div>
+<div id="toast"></div>
+
+<script type="importmap">
+{ "imports": {
+  "three": "./vendor/three.module.js",
+  "three/addons/": "./vendor/addons/"
+} }
+</script>
+
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+
+/* ================= Renderer / Scene ================= */
+const canvas = document.getElementById('gl');
+const stage  = document.getElementById('stage');
+const renderer = new THREE.WebGLRenderer({ canvas, antialias:true, alpha:true });
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.05;
+
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(42, 1, 0.1, 300);
+camera.position.set(2.6, 1.9, 3.4);
+
+const controls = new OrbitControls(camera, canvas);
+controls.enableDamping = true;
+controls.target.set(0, 0.95, 0);
+controls.maxPolarAngle = Math.PI * 0.55;
+controls.minDistance = 0.6; controls.maxDistance = 40;
+
+scene.add(new THREE.HemisphereLight(0xcfe5ff, 0x33415c, 0.85));
+const key = new THREE.DirectionalLight(0xffffff, 2.0);
+key.position.set(4, 7, 3);
+key.castShadow = true;
+key.shadow.mapSize.set(2048, 2048);
+key.shadow.camera.left = -6; key.shadow.camera.right = 6;
+key.shadow.camera.top = 6; key.shadow.camera.bottom = -6;
+key.shadow.bias = -0.0004;
+scene.add(key);
+const rim = new THREE.DirectionalLight(0x7fd4ff, 0.9);
+rim.position.set(-5, 3, -4); scene.add(rim);
+
+/* Lantai grid + lingkaran penanda */
+const floor = new THREE.Mesh(
+  new THREE.CircleGeometry(40, 64),
+  new THREE.MeshStandardMaterial({ color:0x8ba3c2, roughness:1, metalness:0 })
+);
+floor.rotation.x = -Math.PI/2; floor.receiveShadow = true; scene.add(floor);
+const grid = new THREE.GridHelper(80, 80, 0xdcebfb, 0x6d88ab);
+grid.position.y = 0.002;
+grid.material.transparent = true; grid.material.opacity = 0.5; scene.add(grid);
+const ring = new THREE.Mesh(
+  new THREE.RingGeometry(0.82, 0.93, 48),
+  new THREE.MeshBasicMaterial({ color:0x35c8f2, transparent:true, opacity:0.85, side:THREE.DoubleSide })
+);
+ring.rotation.x = -Math.PI/2; ring.position.y = 0.006; scene.add(ring);
+
+/* ================= Pedang (broadsword prosedural) ================= */
+const STYLES = {
+  Cyan:    { blade:0xd9f4ff, glow:0x2fd8f7, name:'Cyan' },
+  Crimson: { blade:0xffd9d9, glow:0xf53b47, name:'Crimson' },
+  Gold:    { blade:0xfff0c0, glow:0xf5b83d, name:'Gold' }
+};
+let swordStyle = 'Cyan';
+const sword = new THREE.Group();
+let bladeMat, glowMat, glowShell;
+{
+  const shape = new THREE.Shape();
+  shape.moveTo(-0.037, 0.02); shape.lineTo(-0.037, 0.74);
+  shape.lineTo(-0.016, 0.90); shape.lineTo(0, 1.0);
+  shape.lineTo(0.016, 0.90); shape.lineTo(0.037, 0.74); shape.lineTo(0.037, 0.02);
+  shape.closePath();
+  const bladeGeo = new THREE.ExtrudeGeometry(shape, { depth:0.014, bevelEnabled:true, bevelThickness:0.004, bevelSize:0.004, bevelSegments:1 });
+  bladeGeo.translate(0, 0, -0.007);
+  bladeMat = new THREE.MeshStandardMaterial({ color:STYLES.Cyan.blade, metalness:0.95, roughness:0.22, emissive:STYLES.Cyan.glow, emissiveIntensity:0.08 });
+  const blade = new THREE.Mesh(bladeGeo, bladeMat); blade.castShadow = true; sword.add(blade);
+  glowMat = new THREE.MeshBasicMaterial({ color:STYLES.Cyan.glow, transparent:true, opacity:0.30, blending:THREE.AdditiveBlending, depthWrite:false, side:THREE.DoubleSide });
+  glowShell = new THREE.Mesh(bladeGeo, glowMat);
+  glowShell.scale.set(1.13, 1.02, 2.6); glowShell.position.y = 0.005; sword.add(glowShell);
+  const ridge = new THREE.Mesh(new THREE.BoxGeometry(0.008, 0.86, 0.02),
+    new THREE.MeshStandardMaterial({ color:0x9fb6c9, metalness:1, roughness:0.3 }));
+  ridge.position.y = 0.46; sword.add(ridge);
+  const guardMat = new THREE.MeshStandardMaterial({ color:0x3a4a63, metalness:0.95, roughness:0.35 });
+  const guard = new THREE.Mesh(new THREE.BoxGeometry(0.24, 0.035, 0.055), guardMat);
+  guard.position.y = 0.01; guard.castShadow = true; sword.add(guard);
+  for (const s of [-1, 1]) {
+    const cap = new THREE.Mesh(new THREE.SphereGeometry(0.026, 12, 10), guardMat);
+    cap.position.set(0.125 * s, 0.01, 0); sword.add(cap);
+  }
+  const grip = new THREE.Mesh(new THREE.CylinderGeometry(0.020, 0.023, 0.17, 12),
+    new THREE.MeshStandardMaterial({ color:0x2b2118, roughness:0.92 }));
+  grip.position.y = -0.095; grip.castShadow = true; sword.add(grip);
+  const pommel = new THREE.Mesh(new THREE.OctahedronGeometry(0.036),
+    new THREE.MeshStandardMaterial({ color:0x8fa8c0, metalness:1, roughness:0.25, emissive:STYLES.Cyan.glow, emissiveIntensity:0.15 }));
+  pommel.position.y = -0.205; sword.add(pommel);
+  sword.userData.pommel = pommel;
+}
+const socket = new THREE.Group();
+socket.add(sword);
+sword.visible = true;
+
+/* Trail sederhana: pita dari riwayat posisi pangkal & ujung bilah */
+const TRAIL_N = 16;
+const trailPos = new Float32Array(TRAIL_N * 2 * 3);
+const trailCol = new Float32Array(TRAIL_N * 2 * 3);
+const trailIdx = [];
+for (let i = 0; i < TRAIL_N - 1; i++) {
+  const a = i * 2, b = i * 2 + 1, c = i * 2 + 2, d = i * 2 + 3;
+  trailIdx.push(a, b, c, b, d, c);
+}
+const trailGeo = new THREE.BufferGeometry();
+trailGeo.setAttribute('position', new THREE.BufferAttribute(trailPos, 3));
+trailGeo.setAttribute('color', new THREE.BufferAttribute(trailCol, 3));
+trailGeo.setIndex(trailIdx);
+const trail = new THREE.Mesh(trailGeo, new THREE.MeshBasicMaterial({
+  vertexColors:true, transparent:true, blending:THREE.AdditiveBlending,
+  depthWrite:false, side:THREE.DoubleSide
+}));
+trail.frustumCulled = false; scene.add(trail);
+const trailHist = [];
+const _v0 = new THREE.Vector3(), _v1 = new THREE.Vector3();
+const _lastTip = new THREE.Vector3();
+let _lastTipInit = false, _trailIdleFrames = 0;
+function updateTrail(on) {
+  if (!on || !sword.visible || !socket.parent) { trail.visible = false; trailHist.length = 0; _lastTipInit = false; return; }
+  sword.updateWorldMatrix(true, false);
+  _v0.set(0, 0.10, 0).applyMatrix4(sword.matrixWorld);
+  _v1.set(0, 0.98, 0).applyMatrix4(sword.matrixWorld);
+  if (!_lastTipInit) { _lastTip.copy(_v1); _lastTipInit = true; }
+  /* hanya rekam saat ujung bilah bergerak cukup jauh (ayunan), agar jalan/idle
+     tidak menyisakan lembaran diam; riwayat lama menyusut sendiri */
+  if (_v1.distanceTo(_lastTip) > 0.055) {
+    trailHist.unshift([_v0.clone(), _v1.clone()]);
+    _lastTip.copy(_v1);
+    _trailIdleFrames = 0;
+    if (trailHist.length > TRAIL_N) trailHist.pop();
+  } else if (trailHist.length && ++_trailIdleFrames > 2) {
+    trailHist.pop(); _trailIdleFrames = 0;
+  }
+  if (trailHist.length < 2) { trail.visible = false; return; }
+  trail.visible = true;
+  const c = new THREE.Color(STYLES[swordStyle].glow);
+  for (let i = 0; i < TRAIL_N; i++) {
+    const h = trailHist[Math.min(i, trailHist.length - 1)];
+    const f = Math.pow(1 - i / TRAIL_N, 2) * 0.38;
+    trailPos.set([h[0].x, h[0].y, h[0].z], i * 6);
+    trailPos.set([h[1].x, h[1].y, h[1].z], i * 6 + 3);
+    trailCol.set([c.r * f, c.g * f, c.b * f], i * 6);
+    trailCol.set([c.r * f, c.g * f, c.b * f], i * 6 + 3);
+  }
+  trailGeo.attributes.position.needsUpdate = true;
+  trailGeo.attributes.color.needsUpdate = true;
+}
+
+/* ================= State karakter ================= */
+let modelRoot = null, inner = null, mixer = null;
+let clips = [];            // {name, dur, action}
+let actions = new Map();
+let current = null;        // action aktif
+let currentName = '';
+let bones = [];            // daftar tulang unik
+let rootBone = null, rootBind = null;
+let charHeight = 1.8;
+let frozen = false;
+const params = new URLSearchParams(location.search);
+
+const $ = id => document.getElementById(id);
+function toast(msg) {
+  const t = $('toast'); t.textContent = msg; t.classList.add('show');
+  clearTimeout(t._h); t._h = setTimeout(() => t.classList.remove('show'), 2200);
+}
+function fmt(n, d=2) { return Number(n).toFixed(d); }
+
+const HAND_PATTERNS = [
+  /righthand/i, /hand\.r$/i, /hand_r$/i, /handr$/i,
+  /wrist\.r$/i, /wrist_r$/i, /wristr$/i, /handslot\.?r/i, /hand/i, /wrist/i
+];
+function pickHandBone(list) {
+  for (const p of HAND_PATTERNS) {
+    const hit = list.find(b => p.test(b.name));
+    if (hit) return hit;
+  }
+  return list[0] || null;
+}
+
+function buildClipList() {
+  const box = $('clipList'); box.innerHTML = '';
+  $('clipCount').textContent = `ACTION CLIPS (${clips.length})`;
+  clips.forEach((c, i) => {
+    const row = document.createElement('div');
+    row.className = 'clip' + (c.name === currentName ? ' active' : '');
+    row.innerHTML = `<span class="idx">${String(i).padStart(2,'0')}</span><span class="nm"></span><span class="dur">${fmt(c.dur)}s</span>`;
+    row.querySelector('.nm').textContent = c.name;
+    row.title = c.name;
+    row.onclick = () => playClip(c.name);
+    box.appendChild(row);
+  });
+}
+function markActive() {
+  [...$('clipList').children].forEach(r => {
+    r.classList.toggle('active', r.querySelector('.nm').textContent === currentName);
+  });
+  $('kbState').textContent = 'STATE: ' + (currentName || '—');
+}
+
+function playClip(name, opts = {}) {
+  const c = clips.find(x => x.name === name);
+  if (!c || !mixer) return;
+  const loop = opts.loop !== undefined ? opts.loop : $('chkLoop').checked;
+  const a = c.action;
+  a.reset();
+  a.setLoop(loop ? THREE.LoopRepeat : THREE.LoopOnce, Infinity);
+  a.clampWhenFinished = !loop;
+  a.setEffectiveTimeScale(1);
+  a.setEffectiveWeight(1);
+  a.fadeIn(opts.fade !== undefined ? opts.fade : 0.22);
+  a.play();
+  if (current && current !== a) current.fadeOut(0.22);
+  current = a; currentName = name;
+  markActive();
+}
+function idleClip() {
+  return clips.find(c => /\|idle$/i.test(c.name) || /^idle$/i.test(c.name))
+      || clips.find(c => /idle/i.test(c.name) && !/gun|point|shoot/i.test(c.name))
+      || clips.find(c => /idle/i.test(c.name)) || clips[0];
+}
+function findClip(re, avoid) {
+  return clips.find(c => re.test(c.name) && !(avoid && avoid.test(c.name)));
+}
+function attackClips() {
+  const order = [/slash/i, /attack/i, /combo/i, /slam/i, /punch/i, /kick/i, /shoot/i, /hit/i];
+  const found = [];
+  for (const re of order) for (const c of clips) if (re.test(c.name) && !found.includes(c)) found.push(c);
+  return found;
+}
+
+/* ================= Muat GLB ================= */
+const loader = new GLTFLoader();
+function disposeModel() {
+  if (modelRoot) { scene.remove(modelRoot); modelRoot = null; }
+  if (socket.parent) socket.parent.remove(socket);
+  mixer = null; clips = []; actions.clear(); current = null; currentName = '';
+  bones = []; rootBone = null;
+}
+function loadGLB(url, displayName) {
+  loader.load(url, gltf => {
+    disposeModel();
+    inner = gltf.scene;
+    modelRoot = new THREE.Group();
+    modelRoot.add(inner);
+    scene.add(modelRoot);
+
+    /* Normalisasi berbasis TULANG: Box3 geometri tidak bisa dipercaya untuk
+       SkinnedMesh (bind pose ≠ posisi tulang), jadi ukur rentang tulang dunia.
+       Skala dipaksa agar tinggi tampil 1,8 m & karakter berdiri di origin. */
+    inner.scale.setScalar(1); inner.position.set(0, 0, 0);
+    inner.updateWorldMatrix(true, true);
+    const boneBounds = () => {
+      const min = new THREE.Vector3(Infinity, Infinity, Infinity);
+      const max = new THREE.Vector3(-Infinity, -Infinity, -Infinity);
+      const p = new THREE.Vector3();
+      inner.traverse(o => { if (o.isBone) { o.getWorldPosition(p); min.min(p); max.max(p); } });
+      return { min, max };
+    };
+    let bb = boneBounds();
+    const spanY = Math.max(bb.max.y - bb.min.y, 0.01);
+    const k = 1.8 / spanY;
+    inner.scale.setScalar(k);
+    inner.updateWorldMatrix(true, true);
+    bb = boneBounds();
+    const center = bb.min.clone().add(bb.max).multiplyScalar(0.5);
+    inner.position.x -= center.x; inner.position.z -= center.z; inner.position.y -= bb.min.y;
+    charHeight = 1.8;
+    inner.traverse(o => { if (o.isMesh) { o.castShadow = true; o.receiveShadow = false; o.frustumCulled = false; } });
+
+    /* tulang */
+    const boneSet = new Map();
+    inner.traverse(o => { if (o.isBone) boneSet.set(o.name, o); });
+    bones = [...boneSet.values()];
+    const sel = $('boneSelect'); sel.innerHTML = '';
+    const sorted = [...bones].sort((a, b) => {
+      const ah = /hand|wrist/i.test(a.name) ? 0 : 1, bh = /hand|wrist/i.test(b.name) ? 0 : 1;
+      return ah - bh || a.name.localeCompare(b.name);
+    });
+    for (const b of sorted) {
+      const op = document.createElement('option'); op.value = b.name; op.textContent = b.name; sel.appendChild(op);
+    }
+    const hand = pickHandBone(bones);
+    if (hand) { sel.value = hand.name; attachSocket(hand); }
+    rootBone = bones.find(b => /^(root|hips)$/i.test(b.name)) || bones[0] || null;
+    if (rootBone) rootBind = rootBone.position.clone();
+
+    /* animasi */
+    mixer = new THREE.AnimationMixer(inner);
+    clips = gltf.animations.map(cl => ({
+      name: cl.name, dur: cl.duration, action: mixer.clipAction(cl)
+    }));
+    mixer.addEventListener('finished', e => {
+      if (e.action === current && !$('chkLoop').checked && mode === 'inspector') {
+        const idl = idleClip(); if (idl && idl.name !== currentName) playClip(idl.name);
+      }
+    });
+
+    /* info berkas */
+    let tris = 0;
+    inner.traverse(o => {
+      if (o.isMesh) {
+        const g = o.geometry;
+        tris += (g.index ? g.index.count : g.attributes.position.count) / 3;
+      }
+    });
+    $('fileInfo').innerHTML = `<b>${displayName}</b> • ${Math.round(tris).toLocaleString('id-ID')} tris • Tinggi ${fmt(charHeight)}m • ${clips.length} actions`;
+
+    /* kamera pas */
+    controls.target.set(0, charHeight * 0.55, 0);
+    const d = charHeight * 2.1;
+    camera.position.set(d * 0.72, charHeight * 1.05, d * 0.85);
+    key.shadow.camera.left = -charHeight * 3; key.shadow.camera.right = charHeight * 3;
+    key.shadow.camera.top = charHeight * 3; key.shadow.camera.bottom = -charHeight * 3;
+    key.shadow.camera.updateProjectionMatrix();
+
+    buildClipList();
+    const wantClip = params.get('clip');
+    const start = (wantClip && clips.find(c => c.name === wantClip)) || idleClip();
+    if (start) {
+      playClip(start.name, { fade: 0 });
+      const t = parseFloat(params.get('t'));
+      if (!isNaN(t) && current) { current.time = start.dur * THREE.MathUtils.clamp(t, 0, 1); }
+      if (params.get('freeze')) { frozen = true; mixer.update(0.001); }
+    }
+    toast('Karakter dimuat: ' + displayName);
+  }, undefined, err => {
+    console.error(err);
+    $('fileInfo').textContent = 'Gagal memuat GLB — lihat konsol.';
+    toast('Gagal memuat GLB');
+  });
+}
+function attachSocket(bone) {
+  if (socket.parent) socket.parent.remove(socket);
+  bone.add(socket);
+  /* kompensasi skala dunia tulang (rig bisa berskala 100× dsb.) */
+  if (inner) inner.updateWorldMatrix(true, true);
+  const ws = new THREE.Vector3();
+  bone.getWorldScale(ws);
+  socket.scale.setScalar(1 / Math.max(Math.abs(ws.x), 0.0001));
+  applySocket();
+  $('socketInfo').textContent = 'Socket: ' + bone.name + ' • ' + swordStyle;
+}
+function applySocket() {
+  socket.position.set(parseFloat($('posX').value), parseFloat($('posY').value), parseFloat($('posZ').value));
+  socket.rotation.set(
+    THREE.MathUtils.degToRad(parseFloat($('rotX').value)),
+    THREE.MathUtils.degToRad(parseFloat($('rotY').value)),
+    THREE.MathUtils.degToRad(parseFloat($('rotZ').value))
+  );
+  sword.scale.setScalar(parseFloat($('swordScale').value));
+}
+
+/* ================= UI: kontrol panel ================= */
+$('speed').addEventListener('input', e => {
+  $('speedVal').textContent = fmt(e.target.value) + 'x';
+  if (mixer) mixer.timeScale = parseFloat(e.target.value);
+});
+$('btnPause').addEventListener('click', () => {
+  if (!mixer) return;
+  const paused = mixer.timeScale !== 0;
+  mixer.timeScale = paused ? 0 : parseFloat($('speed').value);
+  $('btnPause').textContent = paused ? '▶ Putar' : '❚❚ Pause';
+});
+for (const id of ['posX','posY','posZ']) {
+  $(id).addEventListener('input', e => { $(id + 'v').textContent = fmt(e.target.value, 3); applySocket(); });
+}
+for (const id of ['rotX','rotY','rotZ']) {
+  $(id).addEventListener('input', e => { $(id + 'v').textContent = e.target.value + '°'; applySocket(); });
+}
+$('swordScale').addEventListener('input', e => { $('swordScalev').textContent = fmt(e.target.value); applySocket(); });
+$('boneSelect').addEventListener('change', e => {
+  const b = bones.find(x => x.name === e.target.value);
+  if (b) attachSocket(b);
+});
+$('chkShowSword').addEventListener('change', e => { sword.visible = e.target.checked; });
+$('chkGlow').addEventListener('change', e => { glowShell.visible = e.target.checked; });
+
+function setStyle(name) {
+  swordStyle = name;
+  const s = STYLES[name];
+  bladeMat.color.setHex(s.blade); bladeMat.emissive.setHex(s.glow);
+  glowMat.color.setHex(s.glow);
+  sword.userData.pommel.material.emissive.setHex(s.glow);
+  $('swordStyleName').textContent = name;
+  document.querySelectorAll('.sw').forEach(b => b.classList.toggle('active', b.dataset.style === name));
+  if (socket.parent) $('socketInfo').textContent = 'Socket: ' + socket.parent.name + ' • ' + name;
+}
+document.querySelectorAll('.sw').forEach(b => b.addEventListener('click', () => setStyle(b.dataset.style)));
+
+const PRESETS = {
+  A: { rot: [0, 0, 0] },
+  B: { rot: [0, 0, 180] },
+  C: { rot: [90, 0, 0] },
+  D: { rot: [-90, 0, 0] }
+};
+document.querySelectorAll('[data-preset]').forEach(b => b.addEventListener('click', () => {
+  const p = PRESETS[b.dataset.preset];
+  ['rotX','rotY','rotZ'].forEach((id, i) => {
+    $(id).value = p.rot[i]; $(id + 'v').textContent = p.rot[i] + '°';
+  });
+  document.querySelectorAll('[data-preset]').forEach(x => x.classList.toggle('active', x === b));
+  applySocket();
+}));
+
+$('btnCopy').addEventListener('click', async () => {
+  const cfg = {
+    bone: $('boneSelect').value || null,
+    position: { x:+$('posX').value, y:+$('posY').value, z:+$('posZ').value },
+    rotationDeg: { x:+$('rotX').value, y:+$('rotY').value, z:+$('rotZ').value },
+    scale: +$('swordScale').value,
+    style: swordStyle,
+    glowTrail: $('chkGlow').checked
+  };
+  const txt = JSON.stringify(cfg, null, 2);
+  try { await navigator.clipboard.writeText(txt); toast('Konfig socket tersalin ke clipboard'); }
+  catch { 
+    const ta = document.createElement('textarea'); ta.value = txt; document.body.appendChild(ta);
+    ta.select(); document.execCommand('copy'); ta.remove(); toast('Konfig socket tersalin');
+  }
+});
+
+/* Muat berkas */
+$('btnLoad').addEventListener('click', () => $('fileInput').click());
+$('fileInput').addEventListener('change', e => {
+  const f = e.target.files[0]; if (!f) return;
+  loadGLB(URL.createObjectURL(f), f.name);
+});
+const overlay = $('dropOverlay');
+addEventListener('dragover', e => { e.preventDefault(); overlay.style.display = 'flex'; });
+addEventListener('dragleave', e => { if (!e.relatedTarget) overlay.style.display = 'none'; });
+addEventListener('drop', e => {
+  e.preventDefault(); overlay.style.display = 'none';
+  const f = e.dataTransfer.files && e.dataTransfer.files[0];
+  if (f && /\.glb$/i.test(f.name)) loadGLB(URL.createObjectURL(f), f.name);
+  else toast('Berkas harus .glb');
+});
+
+/* ================= Mode & Playable Test ================= */
+let mode = 'inspector';
+const keysDown = new Set();
+let heading = 0, vy = 0, hopping = false, busyUntil = 0;
+function setMode(m) {
+  mode = m;
+  $('tabInspector').classList.toggle('active', m === 'inspector');
+  $('tabPlay').classList.toggle('active', m === 'play');
+  $('kbMode').textContent = m === 'play'
+    ? 'Mode: Playable — WASD gerak, kamera mengikuti'
+    : 'Mode: Inspector — seret mouse untuk orbit';
+  if (m === 'play') { const idl = idleClip(); if (idl) playClip(idl.name); }
+}
+$('tabInspector').addEventListener('click', () => setMode('inspector'));
+$('tabPlay').addEventListener('click', () => setMode('play'));
+addEventListener('keydown', e => {
+  if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT' || e.target.tagName === 'TEXTAREA') return;
+  keysDown.add(e.code);
+  if (mode !== 'play') return;
+  if (e.code === 'Space') { e.preventDefault(); doJump(); }
+  if (e.code === 'KeyJ') doAttack(0);
+  if (e.code === 'KeyK') doAttack(1);
+  if (e.code === 'KeyL') doAttack(2);
+  if (e.code === 'KeyR') { const r = findClip(/roll|dodge/i); if (r) oneShot(r.name); }
+});
+addEventListener('keyup', e => keysDown.delete(e.code));
+
+function oneShot(name) {
+  playClip(name, { loop: false, fade: 0.12 });
+  const c = clips.find(x => x.name === name);
+  busyUntil = performance.now() + (c ? c.dur * 900 : 500);
+  setTimeout(() => { if (mode === 'play') { const idl = idleClip(); if (idl) playClip(idl.name); } },
+             c ? c.dur * 1000 : 500);
+}
+function doAttack(i) {
+  const list = attackClips();
+  const slashFirst = [...list].sort((a, b) => (/slash/i.test(a.name) ? 0 : 1) - (/slash/i.test(b.name) ? 0 : 1));
+  if (slashFirst[i]) oneShot(slashFirst[i].name);
+}
+function doJump() {
+  const j = findClip(/jump|lompat/i);
+  if (j) { oneShot(j.name); return; }
+  if (!hopping) { hopping = true; vy = 4.4; }
+}
+
+const _fwd = new THREE.Vector3(), _right = new THREE.Vector3(), _move = new THREE.Vector3();
+function updatePlayable(dt) {
+  if (!modelRoot) return;
+  const now = performance.now();
+  let ix = 0, iz = 0;
+  if (keysDown.has('KeyW') || keysDown.has('ArrowUp')) iz += 1;
+  if (keysDown.has('KeyS') || keysDown.has('ArrowDown')) iz -= 1;
+  if (keysDown.has('KeyA') || keysDown.has('ArrowLeft')) ix -= 1;
+  if (keysDown.has('KeyD') || keysDown.has('ArrowRight')) ix += 1;
+  const running = keysDown.has('ShiftLeft') || keysDown.has('ShiftRight');
+  const moving = (ix !== 0 || iz !== 0) && now > busyUntil;
+  if (moving) {
+    camera.getWorldDirection(_fwd); _fwd.y = 0; _fwd.normalize();
+    _right.crossVectors(_fwd, new THREE.Vector3(0, 1, 0)).negate();
+    _move.set(0, 0, 0).addScaledVector(_fwd, iz).addScaledVector(_right, -ix).normalize();
+    const speed = (running ? 3.6 : 1.7) * (charHeight / 1.8);
+    const delta = _move.clone().multiplyScalar(speed * dt);
+    modelRoot.position.add(delta);
+    camera.position.add(delta); controls.target.add(delta);
+    const targetHeading = Math.atan2(_move.x, _move.z);
+    let diff = targetHeading - heading;
+    while (diff > Math.PI) diff -= Math.PI * 2;
+    while (diff < -Math.PI) diff += Math.PI * 2;
+    heading += diff * Math.min(1, dt * 12);
+    modelRoot.rotation.y = heading;
+    const want = running ? (findClip(/\brun\b|\|run$/i, /shoot|gun/i) || findClip(/run/i, /shoot|gun/i))
+                         : (findClip(/walk/i));
+    if (want && want.name !== currentName && now > busyUntil) playClip(want.name, { loop: true, fade: 0.15 });
+  } else if (now > busyUntil) {
+    const idl = idleClip();
+    if (idl && idl.name !== currentName && !hopping) playClip(idl.name, { fade: 0.2 });
+  }
+  if (hopping) {
+    vy -= 11.5 * dt;
+    modelRoot.position.y += vy * dt;
+    if (modelRoot.position.y <= 0) { modelRoot.position.y = 0; hopping = false; vy = 0; }
+  }
+}
+
+/* ================= Loop utama ================= */
+function resize() {
+  const w = stage.clientWidth, h = stage.clientHeight;
+  renderer.setSize(w, h, false);
+  camera.aspect = w / h; camera.updateProjectionMatrix();
+}
+addEventListener('resize', resize);
+resize();
+
+const clock = new THREE.Clock();
+function tick() {
+  requestAnimationFrame(tick);
+  const dt = Math.min(clock.getDelta(), 0.05);
+  if (mixer && !frozen) {
+    mixer.update(dt);
+    /* kunci akar: tahan posisi XZ tulang akar di nilai ikatnya */
+    if (rootBone && rootBind && ($('chkInPlace').checked || mode === 'play')) {
+      rootBone.position.x = rootBind.x;
+      rootBone.position.z = rootBind.z;
+    }
+  }
+  if (mode === 'play') updatePlayable(dt);
+  if (modelRoot) ring.position.set(modelRoot.position.x, 0.006, modelRoot.position.z);
+  updateTrail($('chkGlow').checked);
+  controls.update();
+  renderer.render(scene, camera);
+}
+tick();
+
+/* Muat contoh terpaket + parameter uji (?style=Gold&clip=...&t=0.4) */
+window.__dbg = { scene, camera, controls, THREE,
+  state: () => ({ modelRoot: !!modelRoot, charHeight,
+    camPos: camera.position.toArray(), target: controls.target.toArray(),
+    clips: clips.length, currentName }) };
+if (params.get('style') && STYLES[params.get('style')]) setStyle(params.get('style'));
+if (params.get('mode') === 'play') setMode('play');
+loadGLB('contoh.glb', 'contoh.glb');
+</script>
+</body>
+</html>
