@@ -1504,5 +1504,1417 @@
     "Sprite"
    ]
   }
+ ],
+ "chibi": [
+  {
+   "file": "contoh/chibi/anakms.png",
+   "nama": "Chibi — anakms",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/asep.png",
+   "nama": "Chibi — asep",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/ayu.png",
+   "nama": "Chibi — ayu",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/bimo.png",
+   "nama": "Chibi — bimo",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/budi.png",
+   "nama": "Chibi — budi",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/darma.png",
+   "nama": "Chibi — darma",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/dimas.png",
+   "nama": "Chibi — dimas",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/harto.png",
+   "nama": "Chibi — harto",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/imas.png",
+   "nama": "Chibi — imas",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/jaka.png",
+   "nama": "Chibi — jaka",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/jktbro.png",
+   "nama": "Chibi — jktbro",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/jktmpok.png",
+   "nama": "Chibi — jktmpok",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/jktsatpam.png",
+   "nama": "Chibi — jktsatpam",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/karso.png",
+   "nama": "Chibi — karso",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/laras.png",
+   "nama": "Chibi — laras",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/nadia.png",
+   "nama": "Chibi — nadia",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/oman.png",
+   "nama": "Chibi — oman",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/pengepul.png",
+   "nama": "Chibi — pengepul",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/playerM.png",
+   "nama": "Chibi — playerM",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/playerM_232323.png",
+   "nama": "Chibi — playerM_232323",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/playerM_26355e.png",
+   "nama": "Chibi — playerM_26355e",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/playerM_3f6fb5.png",
+   "nama": "Chibi — playerM_3f6fb5",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/playerM_5b2a86.png",
+   "nama": "Chibi — playerM_5b2a86",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/playerM_7a4d9e.png",
+   "nama": "Chibi — playerM_7a4d9e",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/playerM_c9403d.png",
+   "nama": "Chibi — playerM_c9403d",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/playerM_e0a51e.png",
+   "nama": "Chibi — playerM_e0a51e",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/playerP.png",
+   "nama": "Chibi — playerP",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/playerP_232323.png",
+   "nama": "Chibi — playerP_232323",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/playerP_26355e.png",
+   "nama": "Chibi — playerP_26355e",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/playerP_3f6fb5.png",
+   "nama": "Chibi — playerP_3f6fb5",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/playerP_5b2a86.png",
+   "nama": "Chibi — playerP_5b2a86",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/playerP_7a4d9e.png",
+   "nama": "Chibi — playerP_7a4d9e",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/playerP_c9403d.png",
+   "nama": "Chibi — playerP_c9403d",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/playerP_e0a51e.png",
+   "nama": "Chibi — playerP_e0a51e",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/prajurit.png",
+   "nama": "Chibi — prajurit",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/raja.png",
+   "nama": "Chibi — raja",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/raka.png",
+   "nama": "Chibi — raka",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/rani.png",
+   "nama": "Chibi — rani",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/ratna.png",
+   "nama": "Chibi — ratna",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/ros.png",
+   "nama": "Chibi — ros",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/sarmi.png",
+   "nama": "Chibi — sarmi",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/slamet.png",
+   "nama": "Chibi — slamet",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/sri.png",
+   "nama": "Chibi — sri",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/tini.png",
+   "nama": "Chibi — tini",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/udin.png",
+   "nama": "Chibi — udin",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/ujang.png",
+   "nama": "Chibi — ujang",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/wargaF1.png",
+   "nama": "Chibi — wargaF1",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/wargaF2.png",
+   "nama": "Chibi — wargaF2",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/wargaF3.png",
+   "nama": "Chibi — wargaF3",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/wargaF4.png",
+   "nama": "Chibi — wargaF4",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/wargaF5.png",
+   "nama": "Chibi — wargaF5",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/wargaF6.png",
+   "nama": "Chibi — wargaF6",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/wargaF7.png",
+   "nama": "Chibi — wargaF7",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/wargaF8.png",
+   "nama": "Chibi — wargaF8",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/wargaM1.png",
+   "nama": "Chibi — wargaM1",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/wargaM2.png",
+   "nama": "Chibi — wargaM2",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/wargaM3.png",
+   "nama": "Chibi — wargaM3",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/wargaM4.png",
+   "nama": "Chibi — wargaM4",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/wargaM5.png",
+   "nama": "Chibi — wargaM5",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/wargaM6.png",
+   "nama": "Chibi — wargaM6",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/wargaM7.png",
+   "nama": "Chibi — wargaM7",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/wargaM8.png",
+   "nama": "Chibi — wargaM8",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/wiryo.png",
+   "nama": "Chibi — wiryo",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/wulan.png",
+   "nama": "Chibi — wulan",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/yati.png",
+   "nama": "Chibi — yati",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/kostum_kostum_astronot.png",
+   "nama": "Kostum Chibi — kostum_kostum_astronot",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/kostum_kostum_ayam.png",
+   "nama": "Kostum Chibi — kostum_kostum_ayam",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/kostum_kostum_babi.png",
+   "nama": "Kostum Chibi — kostum_kostum_babi",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/kostum_kostum_banaspati.png",
+   "nama": "Kostum Chibi — kostum_kostum_banaspati",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/kostum_kostum_beruang.png",
+   "nama": "Kostum Chibi — kostum_kostum_beruang",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/kostum_kostum_dino.png",
+   "nama": "Kostum Chibi — kostum_kostum_dino",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/kostum_kostum_genderuwo.png",
+   "nama": "Kostum Chibi — kostum_kostum_genderuwo",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/kostum_kostum_jenglot.png",
+   "nama": "Kostum Chibi — kostum_kostum_jenglot",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/kostum_kostum_kelinci.png",
+   "nama": "Kostum Chibi — kostum_kostum_kelinci",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/kostum_kostum_kodok.png",
+   "nama": "Kostum Chibi — kostum_kostum_kodok",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/kostum_kostum_kucing.png",
+   "nama": "Kostum Chibi — kostum_kostum_kucing",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/kostum_kostum_kuntilanak.png",
+   "nama": "Kostum Chibi — kostum_kostum_kuntilanak",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/kostum_kostum_leak.png",
+   "nama": "Kostum Chibi — kostum_kostum_leak",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/kostum_kostum_panda.png",
+   "nama": "Kostum Chibi — kostum_kostum_panda",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/kostum_kostum_pocong.png",
+   "nama": "Kostum Chibi — kostum_kostum_pocong",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/kostum_kostum_rubah.png",
+   "nama": "Kostum Chibi — kostum_kostum_rubah",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/kostum_kostum_sundel.png",
+   "nama": "Kostum Chibi — kostum_kostum_sundel",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/kostum_kostum_tengkorak.png",
+   "nama": "Kostum Chibi — kostum_kostum_tengkorak",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/kostum_kostum_tuyul.png",
+   "nama": "Kostum Chibi — kostum_kostum_tuyul",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/kostum_kostum_wewe.png",
+   "nama": "Kostum Chibi — kostum_kostum_wewe",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/kostum_pahlawan_api.png",
+   "nama": "Kostum Chibi — kostum_pahlawan_api",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/kostum_pahlawan_bayangan.png",
+   "nama": "Kostum Chibi — kostum_pahlawan_bayangan",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/kostum_pahlawan_es.png",
+   "nama": "Kostum Chibi — kostum_pahlawan_es",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/kostum_pahlawan_petir.png",
+   "nama": "Kostum Chibi — kostum_pahlawan_petir",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/kostum_ranger_biru.png",
+   "nama": "Kostum Chibi — kostum_ranger_biru",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/kostum_ranger_hijau.png",
+   "nama": "Kostum Chibi — kostum_ranger_hijau",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/kostum_ranger_kuning.png",
+   "nama": "Kostum Chibi — kostum_ranger_kuning",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/kostum_ranger_merah.png",
+   "nama": "Kostum Chibi — kostum_ranger_merah",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  },
+  {
+   "file": "contoh/chibi/kostum_ranger_pink.png",
+   "nama": "Kostum Chibi — kostum_ranger_pink",
+   "lebar": 150,
+   "tinggi": 132,
+   "fw": 30,
+   "fh": 44,
+   "kolom": 5,
+   "baris": 3,
+   "barisNama": [
+    "Jalan Bawah",
+    "Jalan Samping",
+    "Jalan Atas"
+   ]
+  }
  ]
 }
